@@ -55,47 +55,47 @@ const howItWorks = [
 ];
 
 const keyFeatures = [
-  { icon: Wand2, title: "AI-Powered Handwriting", desc: "Our engine simulates real handwriting with per-character wobble and random ink pressure — each certificate looks genuinely hand-written." },
-  { icon: Zap, title: "Lightning Fast & Easy", desc: "No design skills needed. Just fill in a simple form and generate your realistic sample document in under 60 seconds." },
-  { icon: Settings, title: "100% Customisable", desc: "Adjust doctor details, diagnosis, dates, handwriting style, ink colour, and hospital name — every field is fully editable." },
-  { icon: Sparkles, title: "Ideal for UI Testing & Demos", desc: "Perfect for developers and designers who need realistic placeholder medical documents for healthcare software testing — without using real patient data." },
-  { icon: Shield, title: "Zero Data Storage", desc: "Everything runs entirely in your browser. Nothing is uploaded to any server — your input stays 100% local and private." },
+  { icon: Wand2, title: "AI-Powered Diagnosis Formatting", desc: "Our engine uses AI Assist to auto-format complex medical vocabulary, simulating realistic diagnosis entries instantly." },
+  { icon: PenLine, title: "Realistic Doctor Signature Simulation", desc: "Custom algorithms generate varied, authentic-looking doctor signatures with randomized ink pressure and angles." },
+  { icon: FileText, title: "15+ Indian Hospital Formats", desc: "Templates carefully modeled after real Indian private clinics, government hospitals, and multispecialty corporate centers." },
+  { icon: Download, title: "Instant PDF Download", desc: "No watermarks locking your text, no signups—preview live and export high-resolution PDFs or PNG images instantly." },
+  { icon: Shield, title: "100% Secure & Private", desc: "All data processing happens securely in your local browser window. No patient details are uploaded to any server." },
 ];
 
 const useCases = [
   {
-    title: "School & College Students",
-    desc: "Missed an exam due to illness? Understand exactly what a medical certificate for college should contain — so you know what to ask your doctor for when you visit.",
+    title: "School & College Absence",
+    desc: "Understand what schools need for attendance condonation. View exact formats and fields required to justify student absences.",
     icon: BookOpen,
-    blog: { href: "/blog/medical-certificate-for-school", label: "Guide for Students →" },
+    blog: null,
   },
   {
-    title: "Office & Sick Leave",
-    desc: "Your HR team will ask for a sick leave certificate from a registered doctor. See a real-world format first so you know what a valid certificate looks like before your clinic visit.",
+    title: "Office Sick Leave",
+    desc: "Generate sample layouts to see what HR departments expect from a valid sick leave certificate from registered practitioners.",
     icon: Briefcase,
-    blog: { href: "/blog/how-to-get-sick-leave-certificate", label: "How to Get a Sick Leave Certificate →" },
+    blog: { href: "/blog/how-to-get-sick-leave-certificate", label: "Guide to Sick Leave →" },
   },
   {
-    title: "Travel Fitness Certificate",
-    desc: "Airlines, visa offices, and travel agencies sometimes require a fitness-to-travel certificate. Understand the format and required fields before your doctor appointment.",
+    title: "Fitness Certificates",
+    desc: "Clearance for sports, travel, or re-joining duty. Preview comprehensive fitness certificate templates prior to your visit.",
     icon: Plane,
     blog: null,
   },
   {
     title: "Insurance Claims",
-    desc: "Insurance companies ask for a medical certificate alongside your claim. Our sample shows you what information your doctor needs to include for smooth claim processing.",
+    desc: "Ensure your documentation format is correct. Discover what specific details insurers look for to avoid claim rejections.",
     icon: Heart,
     blog: null,
   },
   {
-    title: "Developers & Designers",
-    desc: "Building a healthcare app or HR management system? Use our tool to generate realistic placeholder documents for UI testing — without touching real patient data.",
+    title: "UI/UX & Developer Testing",
+    desc: "Building a healthcare app? Automatically generate hundreds of realistic mockups for placeholder data without HIPAA/privacy concerns.",
     icon: Code,
-    blog: { href: "/blog/medical-certificate-ui-design", label: "Developer's Design Guide →" },
+    blog: { href: "/blog/medical-certificate-ui-design", label: "Read Developer Guide →" },
   },
   {
-    title: "Content Creators & Filmmakers",
-    desc: "Need a realistic prop document for a short film, YouTube sketch, or social media content? Generate an authentic-looking certificate for your creative storytelling.",
+    title: "Prop Creation",
+    desc: "Need an authentic-looking prop for your film or theatre production? Use our tool to simulate a real doctor's note.",
     icon: Film,
     blog: null,
   },
@@ -134,46 +134,111 @@ const certTypes = [
 ];
 
 const faqs = [
-  {
-    q: "How to fill a medical certificate?",
-    a: "A medical certificate must be filled by a registered doctor — not the patient. It should include the patient's name, age, and gender; the date of examination; the diagnosis or reason for leave; the recommended rest period; and the doctor's name, qualifications, registration number, signature, and clinic stamp. Our generator pre-fills all these fields so you can see exactly how a complete certificate should look.",
-    link: { href: "/blog/what-is-medical-certificate", label: "What a Medical Certificate Must Contain →" },
-  },
-  {
-    q: "What does a medical certificate look like?",
-    a: "A typical Indian medical certificate has three parts. The header (letterhead) shows the clinic or hospital name, the doctor's name, qualifications, registration number, and contact details. The middle section includes the patient's name, age, gender, date of visit, diagnosis, and recommended rest period. The bottom section has the doctor's signature, official stamp, and sometimes a follow-up date. Our tool shows you exactly how a medical certificate looks across 15+ different Indian clinic formats.",
-    link: null,
-  },
-  {
-    q: "How to get a medical certificate from a doctor offline?",
-    a: "Visit any registered MBBS or MD doctor — at a government hospital, private clinic, or your family physician. Describe your symptoms honestly; the doctor will examine you. After the consultation, explicitly ask for a medical certificate specifying the number of rest days needed. Before you leave, check that the certificate includes the doctor's registration number, their signature, and the clinic's official stamp.",
-    link: { href: "/blog/how-to-get-sick-leave-certificate", label: "Full Step-by-Step Guide →" },
-  },
-  {
-    q: "How to make a medical certificate for college?",
-    a: "To get a medical certificate for college or university, visit a registered doctor during your illness period (not after recovery, ideally). Ask for a certificate specifying the exact dates you were unwell. Some universities require certificates from a government hospital specifically — check your institution's rules before your visit. Submit the certificate to the college office within the deadline stated in your ordinance.",
-    link: { href: "/blog/medical-certificate-for-school", label: "Medical Certificate for School & College →" },
-  },
-  {
-    q: "What is Medical Certificate Form 1A?",
-    a: "Medical Certificate Form 1A is a standardised government form in India used primarily for driving licence medical fitness certification under the Motor Vehicles Act, and for certain government employment health assessments. It requires a physical examination including vision, hearing, blood pressure, and cardiovascular checks. This is different from a general sick leave or fitness certificate. If you've been asked for Form 1A, you'll need to visit a registered doctor — usually at a government hospital or an authorised medical centre.",
-    link: null,
-  },
-  {
-    q: "Is a medical certificate generator tool legal to use?",
-    a: "Yes — generating sample or draft certificates for educational purposes, UI testing, creative projects, or personal understanding is perfectly legal. What is not legal is using any generated certificate as a real document to deceive an employer, institution, or person. That constitutes fraud under Indian law (IPC Sections 420, 468, 471) with penalties of up to 7 years in prison. Our tool is a legitimate sample generator — all outputs include a DEMO watermark and are clearly for demonstration purposes only.",
-    link: { href: "/blog/fake-medical-certificate-consequences", label: "Legal Consequences of Fake Certificates →" },
-  },
-  {
-    q: "Are these certificates valid for sick leave?",
-    a: "No. Certificates generated by this tool are not valid for sick leave, insurance claims, or any official purpose. To get a valid sick leave certificate, you must visit a licensed, registered doctor who will examine you and issue the certificate in their official capacity. Think of our tool as a reference — it shows you what a real certificate should look like, so you know what to ask for when you visit your doctor.",
-    link: { href: "/blog/who-can-issue-medical-certificate-india", label: "Who Can Issue a Medical Certificate? →" },
-  },
+  { q: "What is the quickest medical certificate to get?", a: "A sick leave certificate for a minor illness is usually the quickest to obtain from a registered clinic or hospital." },
+  { q: "What are the rules for giving a medical certificate?", a: "A valid medical certificate must be issued after an actual examination by a registered doctor, detailing accurate diagnosis, patient information, and clearly stated rest periods." },
+  { q: "Which AI is used for medical documentation?", a: "Clinical professionals use specialized medical language models. Our generator uses custom tech to simulate realistic document formatting for educational templates." },
+  { q: "What are the 4 types of AI?", a: "Generally, AI is classified into Reactive Machines, Limited Memory, Theory of Mind, and Self-aware AI." },
+  { q: "What are the three types of certificates?", a: "The three primary medical certificates are Sick Leave, Fitness Certificate, and specialized government forms like Form 1A for driving licenses." },
+  { q: "What are the 10 types of doctors?", a: "Common ones include Physicians, Surgeons, Pediatricians, Psychiatrists, Cardiologists, Neurologists, Orthopedists, Dermatologists, Oncologists, and Gynecologists." },
+  { q: "How to generate a medical certificate?", a: "Select a template, fill patient/doctor details, use AI assist for formatting, preview, and download as a PDF or PNG instantly." },
+  { q: "What are the limits of artificial intelligence?", a: "AI lacks human empathy, cannot perform physical clinical examinations, and cannot replace the legal authority of a registered human doctor." },
+  { q: "What is the purpose of a medical certificate?", a: "It acts as legal or official proof that a patient was medically unfit for work or study during a specific timeframe." },
+  { q: "What are 10 ways AI is used today in healthcare?", a: "AI aids in medical imaging, drug discovery, predictive analytics, robotic surgery, virtual nursing assistants, administrative workflow, fraud detection, dosage error reduction, clinical trials, and health monitoring." },
+  { q: "Can I download the certificate as a PDF?", a: "Yes, our medical certificate generator allows you to easily preview and download your realistic certificate as a high-quality PDF instantly." },
+  { q: "Which AI is best for medical documentation?", a: "Nuance DAX and Google Cloud Healthcare AI are prominent, but for generating presentation mockups, our tailored document generator is incredibly effective." },
+  { q: "What is the best reason for a medical certificate?", a: "Standard ailments like viral fever, acute gastroenteritis, or severe migraines are universally accepted common clinical reasons for general leave." },
+  { q: "How is a medical certificate made?", a: "A real certificate is handwritten or printed by a registered doctor after evaluation. Our tool replicates this by merging your input data with digitized authentic template structures." },
+  { q: "Is this medical certificate generator free?", a: "Yes, our generator is 100% free with no hidden charges, signups, or subscriptions required." },
+  { q: "Can ChatGPT do a medical diagnosis?", a: "No, ChatGPT and other AIs cannot officially or safely diagnose medical conditions; always consult a licensed doctor for true medical evaluation." },
+  { q: "What are the 4 rules of doctors?", a: "The core principles of medical ethics are Autonomy, Beneficence, Non-maleficence, and Justice." },
+  { q: "Is my information secure when using this tool?", a: "Absolutely. Our tool processes everything locally in your browser. No data is stored, uploaded, or tracked on any external servers." },
+  { q: "What are the different types of medical certificates?", a: "The most common types include sick leave, fitness to work, travel fitness, sports clearance, and vaccination certificates." },
+  { q: "What is a medical certificate generator?", a: "It is an online platform that allows users to generate highly realistic, format-accurate dummy medical certificates for educational, testing, or demonstration purposes." },
+  { q: "What are the 6 main types of AI?", a: "Narrow AI, General AI, Superintelligent AI, Reactive Machines, Limited Memory, and Deep Learning based networks." },
+  { q: "What are the 10 medical ethics?", a: "Beyond the core 4 (autonomy, beneficence, non-maleficence, justice), others include honesty, confidentiality, competence, professional boundaries, respect, and informed consent." },
+  { q: "Why is it important to have a certificate?", a: "It officially validates your health status, ensuring employers or schools have a credible record for approving leave or benefits." },
+  { q: "What is the validity of a medical certificate?", a: "Validity strictly covers the dates explicitly mentioned by the doctor. Unless stated as permanent, it does not guarantee ongoing fitness or illness." },
+  { q: "What is the reason for a medical certificate?", a: "To protect the rights of sick individuals to rest, to prevent communicable disease spread in workplaces, and to maintain official records." },
+  { q: "Can AI generate a medical certificate?", a: "Yes, our web tool can instantly generate simulated, hyper-realistic formatted medical certificates for non-official, mockup use cases." },
+  { q: "How many days can I go without a sick note?", a: "It depends on local laws and company policy. Many companies require a medical certificate for absences extending beyond 2 or 3 consecutive days." },
+  { q: "Can a medical certificate be challenged?", a: "Yes, an employer has the right to challenge a suspicious certificate by verifying the registration number or seeking an independent medical board review." },
+  { q: "What are the 5 applications of AI in healthcare?", a: "Disease diagnosis assistance, personalized medicine, medical imaging analysis, clinical trial research, and hospital workflow optimization." },
+  { q: "Who diagnoses medical conditions?", a: "Only legally registered and licensed medical professionals (like an MBBS/MD doctor) can clinically diagnose conditions and issue valid certificates." },
+  { q: "Which AI can generate certificates?", a: "Our custom web-based medical certificate generator is specialized in producing authentic-looking template outputs instantly." },
+  { q: "How to create a medical certificate?", a: "Select from our 15+ Indian hospital templates, input patient and dummy diagnosis data, verify styling, and download as PDF." },
+  { q: "What are 7 types of AI?", a: "Based on capabilities: Narrow AI, General AI, Super AI. Based on functionality: Reactive, Limited Memory, Theory of Mind, Self-Aware." },
+  { q: "What are red flags for doctors?", a: "Issuing certificates without physical examination, backdating certificates excessively, or charging specifically solely for the certificate." },
+  { q: "Is this a legally valid medical certificate?", a: "No. The certificates generated by our tool are mockups intended strictly for UI/UX testing, film props, and educational demonstration." },
+  { q: "How long can you use a medical certificate?", a: "You can use it solely for the duration specified on the document. It generally loses its purpose once that time window expires." },
+  { q: "How many days will it take to make a medical certificate?", a: "With a real doctor, it takes about 15-30 minutes during consultation. With our online generator, it takes less than 60 seconds." },
+  { q: "What is the validity of a medical certificate in India?", a: "The rest period granted is explicit. Form 1A certificates for licenses are typically valid up to 1 year for submission." },
+  { q: "What are AI 2 examples in healthcare?", a: "IBM Watson for oncology insights and Google's algorithms for detecting eye diseases in retinal scans." },
+  { q: "How to make a medical certificate at home?", a: "You cannot legally make a valid medical certificate at home, but you can securely generate realistic demo templates effortlessly using our free web tool." },
+  { q: "What is the most commonly used type of AI?", a: "Artificial Narrow Intelligence (ANI), which includes systems like Apple Siri, Google Assistant, and focused web applications like our generator." },
+  { q: "What does 'AI Assist' do?", a: "In our system, AI Assist helps auto-format the diagnosis language and adjust layout spacing to look as natural and authentic as possible." },
+  { q: "Is this a real or sample medical certificate generator?", a: "It is solely a sample medical certificate generator designed to mimic real-world layouts without carrying any legal or medical validity." },
+  { q: "Can I use AI for medical diagnosis?", a: "No, AI is for informational purposes only. It cannot replace a human doctor's assessment and legal diagnostic authority." },
+  { q: "Who is eligible to give a medical certificate?", a: "A licensed medical practitioner registered with the National Medical Commission (NMC) or appropriate regional medical council." },
+  { q: "Which are the top 5 AI tools for healthcare?", a: "Epic Systems, IBM Watson Health, Enlitic, Zebra Medical Vision, and PathAI are industry leaders for institutional healthcare." },
+  { q: "How to use AI to create a certificate?", a: "Simply input your desired dataset into our generator, and our engine handles the complex text wobble, simulation, and structural layout." },
+  { q: "How is artificial intelligence used in medical diagnosis?", a: "It analyzes x-rays, MRIs, and pathological data at high speeds, detecting anomalies early to assist doctors in their final diagnosis." },
+  { q: "What are the four types of medical records?", a: "Electronic Health Records (EHR), Personal Health Records (PHR), Electronic Medical Records (EMR), and traditional paper charts/forms." },
+  { q: "What is the 30% rule for AI?", "a": "It generally refers to guidelines suggesting AI shouldn't handle more than 30% of critical decision-making processes autonomously without human oversight." },
+  { q: "What are 10 types of AI?", "a": "Generally covers Narrow, General, Super, Reactive, Limited Memory, Theory of Mind, Self-aware, Symbolic, Connectionist, and Evolutionary AI." },
+  { q: "How to process a medical certificate?", "a": "For HR: cross-check dates, verify the doctor's registration number (NMC database), examine the clinic stamp, and file the document in employee records." },
+  { q: "What are the benefits of a medical certificate?", "a": "It legally protects your health-related absence, secures medical event-based compensations (like insurance), and justifies educational deferments." },
 ];
 
 export default function Home() {
+
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Generate a Medical Certificate Online",
+    "description": "Generate a highly realistic placeholder medical certificate for presentation and UI testing in a few simple steps.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Choose a Template",
+        "text": "Select one of the 15+ authentic Indian clinic formats."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Fill Details",
+        "text": "Enter patient, doctor, and diagnosis details into the form."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Download PDF",
+        "text": "Preview the document and download the high-resolution PDF for free."
+      }
+    ]
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(f => ({
+      "@type": "Question",
+      "name": f.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": f.a
+      }
+    }))
+  };
+
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
       <Navbar />
 
       {/* ── HERO ───────────────────────────────────────────────── */}
@@ -221,18 +286,18 @@ export default function Home() {
       <section className="px-4 pb-20 bg-muted/20">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10 pt-16">
-            <h2 className="text-3xl font-extrabold tracking-tight mb-3">What Is a Medical Certificate?</h2>
+            <h2 className="text-3xl font-extrabold tracking-tight mb-3">What is a Medical Certificate Generator?</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              A quick primer — so you know exactly what you're looking for before you visit your doctor or generate a sample.
+               A medical certificate generator is an online tool that produces highly realistic mock documents for presentations, software testing, or educational references. Generate your medical certificate online with AI-powered features safely.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
             <div className="space-y-4">
               <p className="text-foreground/80 leading-relaxed">
-                A medical certificate is a formal document issued by a <strong>licensed, registered doctor</strong> that confirms a patient's health status. It's used to justify sick leave, support insurance claims, prove fitness for an activity, or explain a student's absence.
+                Whether you need placeholder templates for <strong>office leave</strong>, <strong>school absence</strong>, or a <strong>fitness certificate</strong>, our tool replicates the exact medical certificate format India uses today. It includes watermarks, custom letterheads, and authentic diagnosis phrasing.
               </p>
               <p className="text-foreground/80 leading-relaxed">
-                Think of it as a doctor's official written statement about your health — addressed to your employer, college, or government office.
+                Through our advanced system, you can <strong>generate medical certificates online</strong> using AI-powered generation designed to instantly format complex clinical notes and apply realistic hand-drawn signature effects.
               </p>
               <div className="mt-4">
                 <Link href="/blog/what-is-medical-certificate" className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline">
@@ -347,9 +412,9 @@ export default function Home() {
       <section className="px-4 py-20 bg-muted/30">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-extrabold tracking-tight mb-3">Who Uses This Tool and Why?</h2>
+            <h2 className="text-3xl font-extrabold tracking-tight mb-3">Where Can You Use a Medical Certificate?</h2>
             <p className="text-muted-foreground max-w-xl mx-auto">
-              From students and employees to developers and filmmakers — here's how different people use our medical certificate generator.
+              A clear breakdown of exactly where these documents are required, and the core benefits of using our medical certificate templates.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -367,6 +432,31 @@ export default function Home() {
                 )}
               </div>
             ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* ── BENEFITS SECTION ───────────────────────────────────── */}
+      <section className="px-4 py-16 bg-background">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-3xl font-extrabold tracking-tight mb-6">Benefits of Using Our Medical Certificate</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div className="p-5 border border-border rounded-xl">
+              <CheckCircle className="w-8 h-8 text-green-500 mb-3 mx-auto" />
+              <h3 className="font-bold text-lg mb-2">Instant Downloads</h3>
+              <p className="text-sm text-muted-foreground">Get your documents immediately in high-resolution PDF or PNG formatting.</p>
+            </div>
+            <div className="p-5 border border-border rounded-xl">
+              <Shield className="w-8 h-8 text-primary mb-3 mx-auto" />
+              <h3 className="font-bold text-lg mb-2">Highly Authentic</h3>
+              <p className="text-sm text-muted-foreground">Realistic handwriting and formatting make these the best mockups available.</p>
+            </div>
+            <div className="p-5 border border-border rounded-xl">
+              <Sparkles className="w-8 h-8 text-purple-500 mb-3 mx-auto" />
+              <h3 className="font-bold text-lg mb-2">Free & No Signup</h3>
+              <p className="text-sm text-muted-foreground">Access all features without entering your email or making a payment.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -550,16 +640,11 @@ export default function Home() {
             <p className="text-muted-foreground">Everything you need to know about medical certificates and our sample generator.</p>
           </div>
 
-          <div className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {faqs.map((faq) => (
               <div key={faq.q} className="bg-card border border-border p-5 rounded-xl hover:shadow-md transition-shadow">
-                <h3 className="text-lg font-bold text-foreground mb-2">{faq.q}</h3>
+                <h3 className="text-[15px] font-bold text-foreground mb-2 leading-snug">{faq.q}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{faq.a}</p>
-                {faq.link && (
-                  <Link href={faq.link.href} className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-primary hover:underline">
-                    {faq.link.label}
-                  </Link>
-                )}
               </div>
             ))}
           </div>
