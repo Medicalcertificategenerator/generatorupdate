@@ -22,7 +22,7 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
               Free Online Tool · India
             </span>
             <h1 className="text-3xl md:text-5xl font-extrabold mb-5 leading-tight">
-              {page.title}
+              {page.h1}
             </h1>
             <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto leading-relaxed">
               {page.intro}
@@ -36,22 +36,25 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
           </div>
         </section>
 
-        {/* INFORMATION */}
+        {/* DEEP CONTENT SECTIONS */}
         <section className="py-14 px-4">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl font-bold text-center mb-10">Understanding This Certificate</h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              {[
-                { heading: "What Is It?", body: page.whatIs },
-                { heading: "When Is It Used?", body: page.whenUsed },
-                { heading: "Why Is It Needed?", body: page.whyNeeded },
-              ].map(({ heading, body }) => (
-                <div key={heading} className="p-6 rounded-2xl border border-border bg-card hover:shadow-md transition-shadow">
-                  <h3 className="font-bold text-foreground mb-3">{heading}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{body}</p>
+          <div className="max-w-4xl mx-auto space-y-12">
+            {[
+              { heading: page.whatIsHeading, body: page.whatIs },
+              { heading: page.whenUsedHeading, body: page.whenUsed },
+              { heading: page.whyNeededHeading, body: page.whyNeeded },
+              { heading: page.howToGetHeading, body: page.howToGet },
+              { heading: page.legalValidityHeading, body: page.legalValidity },
+            ].map(({ heading, body }, idx) => (
+              <div key={idx} className="prose prose-slate max-w-none dark:prose-invert">
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">{heading}</h2>
+                <div className="space-y-4">
+                  {body.map((paragraph, i) => (
+                    <p key={i} className="text-muted-foreground leading-relaxed text-[15px] md:text-base">{paragraph}</p>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -74,7 +77,7 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
         <section className="py-14 px-4">
           <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-10 md:gap-16 items-center">
             <div className="flex-1">
-              <h2 className="text-2xl font-bold mb-6">Certificate Format &amp; Key Elements</h2>
+              <h2 className="text-2xl font-bold mb-6">{page.formatElementsHeading}</h2>
               <p className="text-muted-foreground text-sm mb-5 leading-relaxed">
                 A valid Indian medical certificate must include specific fields to be accepted by employers, institutions, and government departments. Missing any of these can result in rejection.
               </p>

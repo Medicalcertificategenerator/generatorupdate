@@ -179,9 +179,6 @@ export default function Generator() {
       <Navbar />
 
       <main className="flex-1 flex flex-col md:flex-row overflow-hidden h-[calc(100vh-64px)]">
-        {templateInfo && (
-          <h1 className="sr-only">{templateInfo.h1Heading}</h1>
-        )}
 
         {/* ── LEFT PANEL – CONTROLS ──────────────────────────── */}
         <div className="w-full md:w-[450px] lg:w-[500px] border-r border-border bg-card flex flex-col z-10 shadow-xl shadow-black/5 shrink-0">
@@ -439,26 +436,6 @@ export default function Generator() {
               </div>
             </div>
           </div>
-
-          {/* SEO Content Block */}
-          {templateInfo && templateInfo.content && (
-            <div className="px-4 md:px-8 lg:px-12 pb-12">
-              <div className="max-w-[800px] mx-auto space-y-8 bg-card p-6 md:p-10 rounded-2xl shadow-sm border border-border">
-                <section>
-                  <h2 className="text-xl md:text-2xl font-bold mb-3 text-foreground">About {templateInfo.useCase} Medical Certificate</h2>
-                  <p className="text-muted-foreground leading-relaxed text-sm md:text-base">{templateInfo.content.what}</p>
-                </section>
-                <section>
-                  <h2 className="text-xl md:text-2xl font-bold mb-3 text-foreground">When is it required?</h2>
-                  <p className="text-muted-foreground leading-relaxed text-sm md:text-base">{templateInfo.content.when}</p>
-                </section>
-                <section>
-                  <h2 className="text-xl md:text-2xl font-bold mb-3 text-foreground">What details are included?</h2>
-                  <p className="text-muted-foreground leading-relaxed text-sm md:text-base">{templateInfo.content.details}</p>
-                </section>
-              </div>
-            </div>
-          )}
         </div>
 
       </main>

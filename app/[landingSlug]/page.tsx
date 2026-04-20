@@ -71,6 +71,35 @@ export default async function LandingSlugPage({
     })),
   };
 
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: `How to Generate a ${page.title} Sample`,
+    description: `Step-by-step guide to generating a realistic ${page.title.toLowerCase()} sample in seconds.`,
+    step: [
+      {
+        "@type": "HowToStep",
+        name: "Choose a Template",
+        text: "Pick from our authentic Indian clinic and hospital formats.",
+      },
+      {
+        "@type": "HowToStep",
+        name: "Enter Clinical Details",
+        text: "Input the patient name, diagnosis, and rest period required.",
+      },
+      {
+        "@type": "HowToStep",
+        name: "Preview and Adjust",
+        text: "Review the dynamically generated preview and adjust the layout.",
+      },
+      {
+        "@type": "HowToStep",
+        name: "Download PDF",
+        text: "Download the high-resolution PDF instantly with no watermark.",
+      }
+    ]
+  };
+
   return (
     <>
       <script
@@ -80,6 +109,10 @@ export default async function LandingSlugPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
       <CertLandingPage page={page} />
     </>
