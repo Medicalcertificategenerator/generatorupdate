@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { m } from "framer-motion";
 import {
   ArrowRight,
@@ -278,7 +279,7 @@ export default function Home() {
                 <Link href={`/generator/${template.id}`}>
                   <div className="group cursor-pointer rounded-xl overflow-hidden border border-border bg-card shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-200">
                     <div className="relative aspect-[3/4] overflow-hidden bg-muted">
-                      <img src={template.previewImage} alt={template.name} className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+                      <Image src={template.previewImage} alt={template.name} fill sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw" className="object-cover object-top group-hover:scale-105 transition-transform duration-300" loading="lazy" />
                       <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/12 transition-colors duration-200 flex items-center justify-center">
                         <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-primary text-primary-foreground text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
                           Use Template

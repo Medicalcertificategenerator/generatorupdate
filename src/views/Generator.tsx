@@ -3,8 +3,6 @@
 import { useState, useRef, useEffect } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
-import { toPng } from "html-to-image";
-import { jsPDF } from "jspdf";
 import { format } from "date-fns";
 import { m } from "framer-motion";
 import {
@@ -29,8 +27,17 @@ import {
 } from "react-icons/fa6";
 
 import { Navbar } from "@/components/layout/Navbar";
-import { CertificatePreview } from "@/components/certificate/Preview";
 import type { CertificateData } from "@/types/certificate";
+import dynamic from "next/dynamic";
+import Image from "next/image";
+
+const CertificatePreview = dynamic(
+  () => import('@/components/certificate/Preview').then(mod => mod.CertificatePreview),
+  { 
+    ssr: false, 
+    loading: () => <div className="w-full aspect-[1/1.414] bg-muted animate-pulse rounded-md flex items-center justify-center text-muted-foreground text-sm">Loading Preview...</div> 
+  }
+);
 import { TEMPLATES } from "@/types/certificate";
 
 import { Button } from "@/components/ui/button";
@@ -105,6 +112,7 @@ export default function Generator() {
 
   const getImageDataUrl = async (): Promise<string> => {
     if (!certificateRef.current) throw new Error("No ref");
+    const { toPng } = await import("html-to-image");
     await new Promise((r) => setTimeout(r, 120));
     return toPng(certificateRef.current, { quality: 1.0, pixelRatio: 2, cacheBust: true });
   };
@@ -133,6 +141,7 @@ export default function Generator() {
       setIsDownloadingPdf(true);
       const dataUrl = await getImageDataUrl();
       // A4 dimensions in mm: 210 × 297
+      const { jsPDF } = await import("jspdf");
       const pdf = new jsPDF({ orientation: "portrait", unit: "mm", format: "a4" });
       const pageW = pdf.internal.pageSize.getWidth();
       const pageH = pdf.internal.pageSize.getHeight();
@@ -422,8 +431,8 @@ export default function Generator() {
                   <Link key={t.id} href={`/generator/${t.id}`}>
                     <div className="group cursor-pointer rounded-xl overflow-hidden border border-border bg-card shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
                       <div className="aspect-[3/4] overflow-hidden bg-muted">
-                        <img src={t.previewImage} alt={t.name}
-                          className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
+                        <Image src={t.previewImage} alt={t.name} fill sizes="(min-width: 1024px) 16vw, 33vw"
+                          className="object-cover object-top group-hover:scale-105 transition-transform duration-300"
                           loading="lazy" />
                       </div>
                       <div className="p-2">

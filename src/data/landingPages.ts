@@ -642,7 +642,7 @@ export const LANDING_PAGES: LandingPageConfig[] = [
     metaDescription: "Generate a medical certificate explaining severe headache or migraine absence. Choose authentic Indian clinic formats and download HR-ready PDFs instantly.",
     intro: "Need documentation to explain a sudden onset absence? Generate a highly realistic medical certificate for severe headaches and migraines instantly.",
     ctaText: "Generate Headache Certificate",
-    templateId: "shree-clinic",
+    templateId: "sanjivini-multi",
     whatIsHeading: "Documenting Acute Migraine Incapacity",
     whatIs: [
       "A medical certificate for severe headaches or migraines is specialized documentation justifying a brief, sudden inability to perform cognitive or visually demanding tasks.",
@@ -726,7 +726,7 @@ export const LANDING_PAGES: LandingPageConfig[] = [
     metaDescription: "Generate a medical certificate confirming severe Typhoid fever recovery. Realistic Indian hospital parameters dictating long-term infectious rest.",
     intro: "Need to justify a prolonged, severe illness? Generate a medical certificate detailing Typhoid fever, enforcing multi-week rest protocols via realistic templates.",
     ctaText: "Generate Typhoid Certificate",
-    templateId: "yash-hospital",
+    templateId: "dpk-hospital",
     whatIsHeading: "Infectious Disease Documentation",
     whatIs: [
       "A medical certificate for Typhoid represents formal documentation of a severe, notifiable infectious disease (Salmonella Typhi). It is a heavyweight medical mandate issued during prolonged periods of extreme lethargy and fever.",
@@ -810,7 +810,7 @@ export const LANDING_PAGES: LandingPageConfig[] = [
     metaDescription: "Generate a medical certificate complete with an authentic clinic stamp and signature. Instantly download highly realistic, verified-looking PDFs for free.",
     intro: "The presence of a rubber stamp is the ultimate trust signal for HR. Generate highly realistic medical certificates complete with authentic, culturally accurate clinic stamps.",
     ctaText: "Generate Stamped Certificate",
-    templateId: "ayur-care",
+    templateId: "astha-clinic",
     whatIsHeading: "The Power of the Clinic Stamp",
     whatIs: [
       "A medical certificate with a stamp refers to the physical (or digitally reproduced) impression of a rubber seal belonging to a hospital, clinic, or registered physician.",

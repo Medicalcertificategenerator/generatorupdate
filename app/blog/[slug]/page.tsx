@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const url = `${BASE_URL}/blog/${post.slug}`;
   // If the post title already contains 'Medical Certificate', use it as-is to avoid keyword stuffing
   const titleValue = /medical certificate/i.test(post.title)
-    ? { absolute: post.title }
-    : post.title;
+    ? post.title
+    : `${post.title} | Medical Certificate Generator`;
 
   return {
     title: titleValue,

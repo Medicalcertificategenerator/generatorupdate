@@ -1,7 +1,14 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
+import { DM_Sans, Outfit, Caveat, Dancing_Script, Kalam } from "next/font/google";
 import { Providers } from "@/components/layout/Providers";
 import "@/index.css";
+
+const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-sans" });
+const outfit = Outfit({ subsets: ["latin"], variable: "--font-display" });
+const caveat = Caveat({ subsets: ["latin"], variable: "--font-caveat" });
+const dancingScript = Dancing_Script({ subsets: ["latin"], variable: "--font-dancing" });
+const kalam = Kalam({ weight: ["300", "400", "700"], subsets: ["latin"], variable: "--font-kalam" });
 
 export const BASE_URL = "https://medicalcertificategenerator.co.in";
 
@@ -14,10 +21,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
-  title: {
-    default: "Generate Medical Certificate Online (Free PDF + Editable India Format)",
-    template: "%s | Medical Certificate Generator",
-  },
+  title: "Generate Medical Certificate Online (Free PDF + Editable India Format)",
   description:
     "Create a realistic medical certificate in seconds. Choose Indian hospital formats, edit details, and download PDF instantly. 100% free & customizable.",
   keywords: [
@@ -272,7 +276,7 @@ const howToSchema = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="antialiased">
+      <body className={`${dmSans.variable} ${outfit.variable} ${caveat.variable} ${dancingScript.variable} ${kalam.variable} antialiased`}>
         <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-C6359RT200" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`

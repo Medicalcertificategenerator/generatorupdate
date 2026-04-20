@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Blog from "@/views/Blog";
 
 export const metadata: Metadata = {
-  title: "Blog — Medical Certificate Tips & Guides",
+  title: "Blog — Medical Certificate Tips & Guides | Medical Certificate Generator",
   description: "Expert guides on medical certificates in India — formats, legal requirements, how to get sick leave certificates, and more. Written by Ziven Borceg.",
   alternates: { canonical: "https://medicalcertificategenerator.co.in/blog/" },
   openGraph: {
