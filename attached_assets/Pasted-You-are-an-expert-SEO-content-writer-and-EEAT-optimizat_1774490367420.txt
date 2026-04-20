@@ -1,0 +1,150 @@
+You are an expert SEO content writer and EEAT optimization specialist.
+
+Update the existing **About Us page and Author section** of the website:
+👉 medicalcertificategenerator.in
+
+---
+
+# 🎯 GOAL
+
+Improve trust, credibility, and EEAT (Experience, Expertise, Authoritativeness, Trustworthiness) by adding a **well-written, professional, and transparent section** explaining:
+
+* Research process
+* Expert consultation
+* Legal clarity
+* Responsible use
+* Ethical positioning
+
+---
+
+# ✍️ CONTENT REQUIREMENTS
+
+Add a new section with a strong heading such as:
+
+👉 "Our Research, Expert Consultation & Responsible Approach"
+
+---
+
+## 📌 INCLUDE THESE POINTS (Rewrite professionally, not raw):
+
+1. Before building this tool, we carefully researched how real medical certificates are structured.
+
+2. We consulted:
+
+   * Experienced doctors
+   * Medical professionals
+   * Healthcare experts
+
+3. Purpose of consultation:
+
+   * To understand proper format of medical certificates
+   * To ensure realistic structure (for educational/demo use only)
+   * To clearly understand what should NOT be included
+
+4. Clearly explain:
+
+   * This tool is created ONLY for:
+
+     * Educational purposes
+     * Demo projects
+     * Design/reference use
+   * NOT for real-world misuse
+
+---
+
+## ⚖️ LEGAL & ETHICAL CLARITY
+
+Add a paragraph:
+
+* We also discussed the concept with legal professionals/law advisors
+* They guided that:
+
+  * Such a tool is acceptable IF:
+
+    * It is not used for fraud or misrepresentation
+    * It clearly states disclaimer
+* Emphasize responsible usage
+
+---
+
+## 🚫 MISUSE WARNING
+
+Clearly state:
+
+* Any misuse (fraud, fake submission, deception) is strictly discouraged
+* Users are fully responsible for how they use generated content
+
+---
+
+## 🤝 OPTIONAL SUPPORT (IMPORTANT – WRITE CAREFULLY)
+
+Add a **carefully worded and safe version** of:
+
+* If users genuinely need medical assistance or real documentation,
+  they should consult licensed medical professionals
+
+* You may offer:
+  👉 Guidance on how to connect with genuine doctors (NOT direct certification)
+
+⚠️ IMPORTANT:
+DO NOT claim that you provide real certificates
+DO NOT imply illegal services
+
+---
+
+## 🧑‍💼 AUTHOR SECTION IMPROVEMENT
+
+Enhance Author (Ziven Borceg):
+
+Include:
+
+* Creator of the platform
+* Focus on building useful online tools
+* Commitment to transparency and responsible usage
+* Interest in tech + user-friendly tools
+
+---
+
+# 🧱 STRUCTURE
+
+* Use proper headings (H2, H3)
+* Paragraph-based writing
+* Professional tone
+* Trust-building language
+
+---
+
+# 🚀 SEO OPTIMIZATION
+
+* Naturally include keywords:
+
+  * medical certificate generator
+  * educational use
+  * demo certificate
+* Avoid keyword stuffing
+* Add internal linking to:
+
+  * Disclaimer
+  * Terms page
+
+---
+
+# ❌ AVOID
+
+* Casual or unsafe language
+* Anything that suggests illegal usage
+* Claims of providing real medical certificates
+
+---
+
+# FINAL OUTPUT
+
+Provide:
+
+* Clean, ready-to-paste content for:
+
+  1. About Us page section
+  2. Author section enhancement
+
+Make it sound:
+👉 Professional, trustworthy, and legally safe

@@ -1,0 +1,239 @@
+You are a senior Next.js developer, SEO expert, and UI/UX engineer.
+
+Work on the existing website:
+👉 medicalcertificategenerator.in
+
+Your task is to FIX bugs, IMPROVE UX, ADD features, and OPTIMIZE SEO content.
+
+---
+
+# 🛠️ PART 1 — SCROLL BUG FIX (VERY IMPORTANT)
+
+## ISSUE:
+
+When navigating to a new page (blog/article/other pages), the page loads at the **bottom instead of the top**.
+
+---
+
+## FIX REQUIREMENTS:
+
+1. Ensure every page scrolls to TOP on navigation
+
+2. Implement one of the following (App Router):
+
+* Use:
+
+```js
+useEffect(() => {
+  window.scrollTo(0, 0);
+}, []);
+```
+
+OR
+
+* Create a global ScrollToTop component
+
+3. Also fix:
+
+* Browser back/forward scroll behavior
+* Ensure smooth scroll reset
+
+---
+
+# 🎯 PART 2 — RESULT SECTION IMPROVEMENTS
+
+## ADD NEW FEATURES:
+
+### 1. PDF DOWNLOAD OPTION
+
+* Along with PNG, add:
+  👉 "Download as PDF"
+
+Use:
+
+* html-to-image OR
+* jsPDF
+
+Ensure:
+
+* High quality output
+* Proper scaling
+
+---
+
+### 2. SOCIAL SHARING OPTIONS
+
+Add buttons:
+
+* WhatsApp
+* Facebook
+* Twitter (X)
+* Telegram
+
+## Behavior:
+
+* Share preview image OR page link
+* Use Web Share API (mobile)
+* Fallback for desktop
+
+---
+
+# 🎨 PART 3 — RELATED TEMPLATES SECTION
+
+Add at bottom of generator/result page:
+
+## Title:
+
+👉 "Try Other Templates"
+
+## UI:
+
+* Horizontal scroll OR grid
+* Template cards with preview
+* Click → switch template
+
+---
+
+# 🧾 PART 4 — BLOG CONTENT FIX (CRITICAL FOR SEO)
+
+## ISSUE:
+
+Existing articles have little/no content (thin content problem)
+
+---
+
+## TASK:
+
+For EACH blog article:
+
+### ✍️ CONTENT REQUIREMENTS:
+
+* Minimum: **1500+ words**
+* No fluff
+* No repetition
+* Informational + valuable
+
+---
+
+### 🧠 INCLUDE:
+
+* Real explanations
+* Practical use cases
+* Structured headings (H1, H2, H3)
+* Bullet points where needed
+
+---
+
+### 🔍 SEO OPTIMIZATION:
+
+* Add:
+
+  * Proper Title (SEO optimized)
+  * Meta description (150–160 chars)
+  * Focus keywords
+
+---
+
+### 🔗 INTERNAL LINKING:
+
+* Link to:
+
+  * Generator page
+  * Templates page
+  * Other blog posts
+
+---
+
+### 🌐 EXTERNAL LINKS:
+
+* Add 2–5 authority sources:
+
+  * Health organizations
+  * Legal info sites
+
+---
+
+### 🖼️ IMAGES:
+
+* Add relevant images:
+
+  * Certificates examples
+  * Medical-related visuals
+
+* Optimize:
+
+  * Alt text (SEO friendly)
+  * Proper filenames
+
+---
+
+# 🧑‍⚕️ PART 5 — EEAT OPTIMIZATION
+
+Every article must include:
+
+## Experience:
+
+* Practical explanation
+
+## Expertise:
+
+* Well-researched info
+
+## Authoritativeness:
+
+* Strong confident tone
+
+## Trust:
+
+* Disclaimer
+* Clear intent
+
+---
+
+# 📄 ADD FAQ SECTION (IMPORTANT)
+
+Each article should have:
+
+👉 "Frequently Asked Questions"
+
+* 4–6 questions
+* Schema-ready structure
+
+---
+
+# ⚡ PART 6 — PERFORMANCE + UX
+
+* Ensure fast loading
+* Optimize images
+* Lazy loading
+* Mobile responsive
+
+---
+
+# ❌ AVOID:
+
+* Thin content
+* Keyword stuffing
+* Generic AI writing
+* Broken links
+
+---
+
+# 📦 FINAL OUTPUT:
+
+Provide:
+
+1. Scroll fix implementation (code)
+2. PDF download functionality
+3. Social sharing implementation
+4. Related templates UI code
+5. One fully optimized sample blog article (1500+ words)
+6. SEO meta tags example
+7. Clean and reusable code
+
+---
+
+# 🎯 FINAL GOAL:
+
+Transform this website into:
+👉 A fast, polished, SEO-optimized, feature-rich SaaS tool with strong content authority.

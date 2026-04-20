@@ -1,0 +1,275 @@
+You are a senior Next.js developer, SEO strategist, and UI/UX expert.
+
+Work on the website:
+👉 medicalcertificategenerator.in
+
+Your goal is to implement **supporting blog articles, homepage improvements, generator linking, and navigation updates** with proper SEO, EEAT, and clean UI.
+
+---
+
+# 🧠 PART 1 — SUPPORTING ARTICLES (BLOG SYSTEM)
+
+## TASK:
+
+on a **Blog section** and place all supporting articles under:
+
+👉 `/blog/`
+
+---
+
+## 📄 CREATE THESE ARTICLES:
+
+1. How to Get a Medical Certificate (Complete Guide)
+2. How to Get Medical Certificate for Leave
+3. How to Get Medical Certificate from Government Hospital
+4. How to Get Medical Fitness Certificate
+5. How to Make Medical Certificate Online
+6. How to Write a Medical Certificate (Format + Examples)
+7. What is a Medical Certificate (Full Guide)
+8. What is Medical Fitness Certificate
+9. How to Fill a Medical Certificate
+10. How Medical Certificate Looks Like (With Examples)
+11. How to Make Medical Certificate for College
+12. Medical Certificate Kaise Banta Hai (Hindi Article)
+
+
+---
+
+## ✍️ CONTENT RULES:
+
+* Minimum **1200–2000 words per article**
+* No fluff or repetition
+* Include:
+
+  * Step-by-step explanations
+  * Real use cases
+  * Structured headings (H1, H2, H3)
+  * FAQ section (4–6 questions)
+____
+For EVERY blog article:
+
+ADD IMAGES:
+Featured Image (Top of article)
+3–5 inline images within content
+IMAGE TYPES:
+Medical certificate examples
+Doctor writing notes
+Hospital/clinic visuals
+Certificate formats
+Form filling visuals
+SEO OPTIMIZATION:
+
+For each image:
+
+Use descriptive file names same as title:
+👉 medical-certificate-for-leave-example.png
+Add ALT text:
+👉 "medical certificate for leave sample format"
+Add captions (optional but recommended)
+PERFORMANCE:
+Use next/image
+Enable lazy loading
+Optimize size and format
+
+TEMPLATE IMAGES IN ARTICLES
+TASK:
+
+Inside blog articles, ADD a section:
+
+Title:
+
+👉 "Sample Medical Certificate Template"
+
+CONTENT:
+Show 1–2 certificate preview images
+Add short explanation below each
+
+---
+
+## 🔍 SEO REQUIREMENTS:
+
+* Add meta title & description
+* Use keywords naturally
+* Add internal linking to:
+
+  * Generator pages
+  * Other blog articles
+* Add 1–3 external authority links
+
+---
+
+## 🧠 EEAT:
+
+Each article must include:
+
+* Experience (practical explanation)
+* Expertise (accurate info)
+* Authority (clear tone)
+* Trust (disclaimer section)
+
+---
+
+## ⚠️ IMPORTANT:
+
+For “fake certificate” topic:
+👉 Only create a **warning/educational article**
+👉 DO NOT promote misuse
+
+---
+
+# 🏠 PART 2 — HOMEPAGE UPDATE
+
+## TASK:
+
+Add a new section on homepage:
+
+### Title:
+
+👉 "Generate Medical Certificates for Every Situation"
+
+---
+
+## CONTENT:
+
+Display previously created tool/landing pages as cards:
+
+* Medical Certificate for Leave
+* Sick Leave Certificate
+* Fitness Certificate
+* School Certificate
+* Office Leave Certificate
+* Condition-based templates
+
+---
+
+## UI:
+
+* Grid layout
+* Each card:
+
+  * Title
+  * Short description
+  * CTA: "Use Template"
+* Click → navigate to respective page
+
+---
+
+# 🔗 PART 3 — GENERATOR LINKING (IMPORTANT)
+
+## TASK:
+
+On EVERY SEO landing page:
+
+👉 Add at the BOTTOM:
+
+### Section Title:
+
+"Try Related Certificate Generators"
+
+---
+
+## CONTENT:
+
+* Show 4–6 related templates
+* Cards with preview
+* Click → switch template
+
+---
+
+## ALSO:
+
+Embed generator in page:
+
+* Pre-filled based on page keyword
+
+---
+
+# 🧭 PART 4 — HEADER NAVIGATION UPDATE
+
+## TASK:
+
+Add a dropdown menu in header:
+
+### Menu Name:
+
+👉 "Doctor Notes"
+
+---
+
+## IMPORTANT BEHAVIOR:
+
+* Do NOT create a dedicated page
+* Use:
+
+  * `#` OR
+  * button trigger
+
+---
+
+## DROPDOWN ITEMS:
+
+* Sick Leave Notes
+* Doctor Excuse Notes
+* Fitness Notes
+* School Notes
+
+---
+
+## FUNCTIONALITY:
+
+* Clicking item:
+
+  * Opens generator with pre-filled data
+    OR
+  * Scrolls to generator section
+
+---
+
+# 🎨 PART 5 — UI/UX REQUIREMENTS
+
+* Clean SaaS-style UI
+* Mobile responsive
+* Smooth hover effects
+* Clear CTA buttons
+
+---
+
+# 🧱 PART 6 — SEMANTIC STRUCTURE
+
+Use proper HTML tags
+
+---
+
+# ⚡ FINAL OUTPUT REQUIREMENTS
+
+Provide:
+
+1. Blog structure + article pages
+2. Homepage section code
+3. Related templates component
+4. Header dropdown implementation
+5. Internal linking strategy
+
+---
+
+# ❌ AVOID:
+
+* Thin content
+* Duplicate pages
+* Broken links
+* Creating unnecessary URLs for dropdown
+
+---
+
+# 🎯 FINAL GOAL:
+
+Build a **complete SEO ecosystem** where:
+
+* Blog brings traffic
+* Landing pages convert users
+* Generator drives engagement
+* Homepage connects everything
+
+Result:
+👉 Higher rankings, better UX, and strong topical authority.
+And update on sitemap also.

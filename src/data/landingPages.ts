@@ -1,0 +1,743 @@
+export interface LandingPageConfig {
+  slug: string;
+  title: string;
+  metaTitle: string;
+  metaDescription: string;
+  intro: string;
+  ctaText: string;
+  templateId: string;
+  whatIs: string;
+  whenUsed: string;
+  whyNeeded: string;
+  useCases: string[];
+  formatElements: string[];
+  benefits: string[];
+  faqs: { q: string; a: string }[];
+  relatedPages: { title: string; href: string }[];
+  externalLinks: { label: string; href: string; description: string }[];
+}
+
+export const LANDING_PAGES: LandingPageConfig[] = [
+  {
+    slug: "medical-certificate-for-leave",
+    title: "Medical Certificate for Leave",
+    metaTitle: "Medical Certificate for Leave — Free Generator Tool",
+    metaDescription: "Generate a medical certificate for leave instantly. Realistic Indian hospital and clinic formats, fully editable, free PNG and PDF download. No signup required.",
+    intro: "Need a medical certificate to support a leave application? Generate a realistic, fully customisable certificate based on authentic Indian hospital formats in seconds — completely free.",
+    ctaText: "Generate Leave Certificate",
+    templateId: "formal-cert",
+    whatIs: "A medical certificate for leave is a document issued by a registered medical practitioner certifying that a patient is medically unfit to attend work, college, or school for a specified period. It serves as official documentation to support a leave application.",
+    whenUsed: "This certificate is used whenever a person requires authorised absence from their duties due to illness or injury. It is required for sick leave approval in most companies, government departments, and educational institutions.",
+    whyNeeded: "Employers and institutions need verifiable proof that the absence is medically justified, not voluntary. Without a certificate, leave may be marked as unauthorised absence, leading to pay deductions or disciplinary proceedings.",
+    useCases: [
+      "Submitting sick leave to a private company HR department",
+      "Applying for medical leave under Factories Act provisions",
+      "Government employees applying for sick leave under CCS Leave Rules",
+      "College students applying for leave on medical grounds",
+      "Supporting an ESI sickness benefit claim",
+      "Leave application for chronic condition requiring periodic rest",
+      "Airlines or railway stations requesting medical documentation for assistance",
+      "Supporting a labour tribunal hearing on unauthorised absence",
+    ],
+    formatElements: [
+      "Doctor's full name, qualifications, and NMC/State Council registration number",
+      "Hospital or clinic name, address, and contact details",
+      "Patient's full name, age, and gender",
+      "Date of examination",
+      "Clinical diagnosis or reason for the leave",
+      "Recommended rest period with specific start and end dates",
+      "Doctor's signature and official stamp/seal",
+    ],
+    benefits: [
+      "15+ authentic Indian hospital and clinic formats to choose from",
+      "Fully editable fields — patient name, diagnosis, rest period, doctor details",
+      "Instant PNG and PDF download — no account needed",
+      "All certificate generation happens in your browser — no data is stored",
+      "Designed to match real Indian prescription pad layouts",
+      "Use for staging, training, UI testing, or educational purposes",
+    ],
+    faqs: [
+      {
+        q: "How many days of leave can a medical certificate cover?",
+        a: "A medical certificate can cover any number of days that the doctor clinically recommends. For minor illnesses, this is typically 2–7 days. For major surgery or serious conditions, it can extend to weeks or months. The recommended period must be clinically justified.",
+      },
+      {
+        q: "Can my employer reject my medical certificate?",
+        a: "An employer can question a certificate on valid grounds — for example, if required details like the doctor's registration number are missing, or if the stated condition seems inconsistent with the recommended rest period. However, arbitrary rejection without cause can be challenged through the HR grievance process or a Labour Commissioner.",
+      },
+      {
+        q: "Do I need a medical certificate for a single day of leave?",
+        a: "Most companies allow self-certified leave for one to three days. However, some companies and all government departments require a medical certificate for even one day of sick leave if the absence is to be treated as medical leave rather than casual leave. Check your company's leave policy.",
+      },
+      {
+        q: "Can a certificate be issued for days I was sick before visiting the doctor?",
+        a: "Yes. A doctor can issue a retrospective certificate if clinical examination reveals evidence of the illness during the stated period. However, deliberately backdating a certificate to cover unauthorised absence is fraudulent and illegal.",
+      },
+      {
+        q: "What is the difference between casual leave and sick leave?",
+        a: "Casual leave is informal short-term leave that typically does not require documentation. Sick leave (medical leave) is specifically for illness, is supported by a medical certificate, and draws from a separate leave balance that may attract sick pay or ESI benefits.",
+      },
+    ],
+    relatedPages: [
+      { title: "Sick Leave Medical Certificate", href: "/sick-leave-medical-certificate" },
+      { title: "Medical Certificate for Office Leave", href: "/medical-certificate-for-office-leave" },
+      { title: "Medical Certificate for School Absence", href: "/medical-certificate-for-school-absence" },
+      { title: "Rules for Medical Certificate Leave India", href: "/blog/rules-medical-certificate-leave-india" },
+    ],
+    externalLinks: [
+      { label: "CCS Leave Rules 1972 — Central Government", href: "https://dopt.gov.in/sites/default/files/ccsleave.pdf", description: "Official Department of Personnel & Training document on leave rules for central government employees" },
+      { label: "Telemedicine Practice Guidelines — MoHFW", href: "https://www.mohfw.gov.in/", description: "Ministry of Health and Family Welfare guidelines on valid medical certification" },
+    ],
+  },
+  {
+    slug: "sick-leave-medical-certificate",
+    title: "Sick Leave Medical Certificate",
+    metaTitle: "Sick Leave Medical Certificate — Free Generator India",
+    metaDescription: "Generate a sick leave medical certificate online for free. Realistic Indian clinic formats, editable patient and doctor details, instant download as PNG or PDF.",
+    intro: "Generate an authentic sick leave medical certificate in seconds. Choose from 15+ Indian hospital and clinic templates, customise all fields, and download instantly — free, no signup.",
+    ctaText: "Generate Sick Leave Certificate",
+    templateId: "ishnavi-clinic",
+    whatIs: "A sick leave medical certificate is a formal document from a registered doctor certifying that you were medically unfit to perform your work duties during a specified period due to illness. It is the standard documentation required by employers in India to approve paid sick leave.",
+    whenUsed: "It is used when an employee is ill and needs to take time off work. The certificate is typically submitted to the HR department or immediate supervisor after returning from sick leave, or in some organisations before or during the leave period.",
+    whyNeeded: "Without a medical certificate, sick leave may not be approved and the employee could face pay deductions, disciplinary action, or loss of leave balance. It also protects the employee's rights by formally documenting the medical basis for absence.",
+    useCases: [
+      "Private sector employees taking sick leave for fever, viral illness, or injury",
+      "Central and state government employees applying for sick leave under service rules",
+      "ESI-covered workers claiming sickness benefit (requires ESI-authorised doctor)",
+      "Employees under notice period requiring documented sick leave",
+      "Contractual and gig workers whose contract requires medical documentation",
+      "HR managers verifying employee sick leave claims",
+      "Labour law compliance documentation in factory settings",
+      "Insurance companies processing income protection claims",
+    ],
+    formatElements: [
+      "Clinic or hospital letterhead with name and address",
+      "Doctor's MBBS/MD qualification and registration number",
+      "Date of consultation (must match actual examination date)",
+      "Patient name, age, gender, and contact details",
+      "Primary diagnosis or nature of illness",
+      "Duration of recommended rest — specific calendar dates",
+      "Doctor's handwritten or stamped signature with clinic seal",
+    ],
+    benefits: [
+      "Generates realistic specimens matching real Indian sick leave certificate formats",
+      "Editable diagnosis field — viral fever, migraine, gastroenteritis, or any condition",
+      "Editable rest period — specify exact dates for the sick leave",
+      "Multiple clinic and hospital letterhead styles available",
+      "Free PNG download or high-resolution PDF for printing",
+      "Safe to use for HR training, policy demos, and app development",
+    ],
+    faqs: [
+      {
+        q: "How long is a sick leave medical certificate valid for?",
+        a: "A sick leave certificate covers the specific rest period stated in it — typically the date range written by the doctor. It is not time-limited beyond that. However, it should be submitted to the employer promptly, as most HR policies require submission within 2–3 working days of the leave ending.",
+      },
+      {
+        q: "Can I get a sick leave certificate from a telemedicine app?",
+        a: "Yes, provided the app connects you with a registered MBBS doctor who conducts a genuine consultation. Telemedicine certificates are recognised under the Telemedicine Practice Guidelines 2020. However, some employers — particularly in the public sector — may still require a physical certificate.",
+      },
+      {
+        q: "Does a sick leave certificate need a stamp?",
+        a: "In practice, yes. Indian employers almost universally expect a clinic stamp or rubber seal on the certificate alongside the doctor's signature. A certificate without a stamp is likely to be questioned or rejected, even if it technically meets legal requirements.",
+      },
+      {
+        q: "What diagnosis should I expect on my sick leave certificate?",
+        a: "The diagnosis should accurately reflect your condition. For common illnesses, doctors typically write: Acute viral fever, Upper respiratory tract infection, Acute gastroenteritis, Migraine, or similar. For sensitive conditions, you can request a general description like 'medical condition requiring rest.'",
+      },
+      {
+        q: "Can I use a sick leave certificate for ESI sickness benefit?",
+        a: "For ESI sickness benefit, the certificate must come from an ESI-empanelled Insurance Medical Officer (IMO), not just any registered doctor. Submit your certificate at your local ESIC dispensary or hospital to access the benefit.",
+      },
+    ],
+    relatedPages: [
+      { title: "Medical Certificate for Leave", href: "/medical-certificate-for-leave" },
+      { title: "Medical Certificate for Office Leave", href: "/medical-certificate-for-office-leave" },
+      { title: "How to Get a Sick Leave Certificate from a Doctor", href: "/blog/how-to-get-sick-leave-certificate" },
+      { title: "Rules for Medical Certificate Leave India", href: "/blog/rules-medical-certificate-leave-india" },
+    ],
+    externalLinks: [
+      { label: "ESI Corporation — Sickness Benefit Guidelines", href: "https://www.esic.gov.in/", description: "Official ESIC portal with guidelines on sickness benefit claims and required medical documentation" },
+      { label: "National Medical Commission — Doctor Verification", href: "https://www.nmc.org.in/", description: "Verify the registration of any doctor issuing your sick leave certificate" },
+    ],
+  },
+  {
+    slug: "fitness-medical-certificate",
+    title: "Fitness Medical Certificate",
+    metaTitle: "Fitness Medical Certificate — Free Generator India",
+    metaDescription: "Generate a fitness medical certificate for job, sports, or return to work. Authentic Indian hospital format, editable details, free PNG and PDF download.",
+    intro: "Create a realistic fitness medical certificate for employment, sport participation, or return to work. Fully customisable Indian clinic formats, instant free download.",
+    ctaText: "Generate Fitness Certificate",
+    templateId: "health-first",
+    whatIs: "A fitness medical certificate — also called a medical fitness certificate or fit-for-duty certificate — is a document from a registered doctor confirming that a patient has been examined and found medically fit for a specific activity or role. Unlike a sick leave certificate, it certifies capacity rather than incapacity.",
+    whenUsed: "It is used before joining a new job, returning to work after extended illness, participating in competitive sports, applying for a driving licence (Form 1A), joining the armed forces, going on pilgrimages to high-altitude destinations, or for insurance underwriting.",
+    whyNeeded: "Employers and institutions need assurance that the individual can safely perform the required duties or activities without risk to themselves or others. It also protects the employer from liability for employing someone whose health condition makes them unfit for the role.",
+    useCases: [
+      "Pre-employment medical examination for private sector jobs",
+      "Fitness certificate for joining government or PSU positions",
+      "Return-to-work fitness clearance after surgery or serious illness",
+      "Driving licence application — Form 1A requirement under Motor Vehicles Rules",
+      "Sports and adventure activity participation clearance",
+      "Pilgrimage registrations (Amarnath Yatra, Char Dham) requiring medical fitness",
+      "Life insurance policy issuance — medical underwriting fitness declaration",
+      "Armed forces and paramilitary recruitment medical fitness",
+    ],
+    formatElements: [
+      "Doctor's name, qualifications, and registration number",
+      "Hospital or clinic name and address",
+      "Patient's full name, age, gender",
+      "Date of examination",
+      "Specific statement of fitness for the purpose (job, driving, sports, etc.)",
+      "Any restrictions or limitations noted (e.g. no heavy lifting for 6 weeks)",
+      "Validity period of the certificate",
+      "Doctor's signature and official stamp",
+    ],
+    benefits: [
+      "Generate fitness certificate specimens that match real Indian employer requirements",
+      "Customisable fitness statement — specify the purpose (employment, sports, etc.)",
+      "Realistic letterhead from hospitals and clinics across formats",
+      "Useful for HR training, employment form mock-ups, and application demos",
+      "Instant download — PNG for digital submission, PDF for print",
+      "No data collection — certificate generated entirely in your browser",
+    ],
+    faqs: [
+      {
+        q: "How long is a fitness certificate valid in India?",
+        a: "Validity depends on the purpose. For employment, most fitness certificates are valid for 6 to 12 months. For driving licence, the fitness certificate (Form 1A) is valid based on age. For aviation (DGCA medical), it is valid 6 to 12 months. For insurance, validity is typically up to 3 months after issuance.",
+      },
+      {
+        q: "Does a pre-employment fitness certificate need to be from a specific doctor?",
+        a: "For most private employers, any registered MBBS doctor is acceptable. For government positions, factories under the Factories Act, and hazardous industries, the doctor may need to be an approved Certifying Surgeon or Medical Officer on an approved panel.",
+      },
+      {
+        q: "Can a fitness certificate be issued after a telemedicine consultation?",
+        a: "Generally, no. A fitness certificate typically requires a physical examination — measuring blood pressure, vision, hearing, weight, and other parameters. This cannot be adequately performed remotely. Employers and licensing authorities usually require evidence of an in-person examination.",
+      },
+      {
+        q: "What is the difference between a fitness certificate and a medical certificate?",
+        a: "A medical certificate typically certifies that a person is unfit for work due to illness (incapacity). A fitness certificate certifies that a person is fit to perform specific activities (capacity). Both are issued by registered doctors but serve opposite purposes.",
+      },
+      {
+        q: "Can a company refuse employment based on a fitness certificate finding?",
+        a: "Yes, in some circumstances. A company can withdraw a conditional offer if the medical examination reveals a condition that makes the person unfit for the specific role. However, this cannot be grounds for discrimination based on disability under the Rights of Persons with Disabilities Act, 2016, if reasonable accommodation can be made.",
+      },
+    ],
+    relatedPages: [
+      { title: "Medical Certificate for Leave", href: "/medical-certificate-for-leave" },
+      { title: "Medical Certificate vs Fitness Certificate — Key Differences", href: "/blog/medical-certificate-vs-fitness-certificate" },
+      { title: "Who Can Issue a Medical Certificate in India", href: "/blog/who-can-issue-medical-certificate-india" },
+    ],
+    externalLinks: [
+      { label: "DGCA — Medical Requirements for Pilots", href: "https://www.dgca.gov.in/", description: "Official Directorate General of Civil Aviation guidelines on aviation fitness certificates" },
+      { label: "Ministry of Road Transport — Driving Licence Medical (Form 1A)", href: "https://parivahan.gov.in/", description: "Official Parivahan portal for driving licence applications requiring Form 1A fitness certificate" },
+    ],
+  },
+  {
+    slug: "medical-certificate-for-office-leave",
+    title: "Medical Certificate for Office Leave",
+    metaTitle: "Medical Certificate for Office Leave — Free Generator",
+    metaDescription: "Generate a medical certificate for office leave. Authentic Indian clinic format, editable fields, instant PNG and PDF download for HR submission.",
+    intro: "Generate a medical certificate formatted for corporate office leave submissions. Choose from authentic Indian clinic and hospital templates, fill in your details, and download instantly.",
+    ctaText: "Generate Office Leave Certificate",
+    templateId: "narayan-care",
+    whatIs: "A medical certificate for office leave is a standard sick leave certificate tailored to the corporate workplace context. It confirms to an employee's HR department that their absence from office was medically necessary and supported by a registered doctor's examination.",
+    whenUsed: "It is presented to an HR department or team manager when an employee has been absent from the office due to illness for a period requiring formal medical documentation — typically three or more consecutive days in most private companies.",
+    whyNeeded: "Corporate HR policies almost universally require medical documentation for sick leave that exceeds the self-certified limit. Without it, the leave may be converted to Leave Without Pay or marked as an unauthorised absence, affecting the employee's salary and performance record.",
+    useCases: [
+      "Software and IT company employees applying for sick leave",
+      "BPO and call centre staff supporting leave documentation",
+      "Banking and finance sector employees submitting HR leave requests",
+      "Manufacturing unit office staff (non-factory floor) leave applications",
+      "Media and creative industry freelancers supporting client absences",
+      "Remote workers whose company requires formal sick leave documentation",
+      "Employees on probation requiring medical cover for absence",
+      "Senior executives needing documented leave for regulatory compliance",
+    ],
+    formatElements: [
+      "Private clinic or hospital letterhead reflecting a professional aesthetic",
+      "Doctor's MBBS qualification and Medical Council registration number",
+      "Date of examination — must be contemporaneous with the illness",
+      "Patient's name and contact details matching employment records",
+      "Clear diagnosis — viral fever, migraine, back pain, injury, etc.",
+      "Rest period specified as a date range (e.g. 14 March to 17 March)",
+      "Doctor's signature with clinic rubber stamp",
+    ],
+    benefits: [
+      "Corporate-appropriate certificate formats that HR departments will recognise",
+      "Match your clinic format to the nearest facility for believable staging demos",
+      "Editable rest period — input the exact leave dates required",
+      "Professional layout with clean borders and letterhead formatting",
+      "Download as PDF for email submission or PNG for digital upload to HRMS",
+      "Designed for UI/UX demos, HR workflow testing, and staging environments",
+    ],
+    faqs: [
+      {
+        q: "How many days of office sick leave require a medical certificate?",
+        a: "Most Indian private companies require a medical certificate for sick leave exceeding 3 consecutive days. Some companies require it from day 1 under their strict HR policies. Check your company's HR policy document or employee handbook for the specific threshold.",
+      },
+      {
+        q: "Can I email a scanned medical certificate to HR?",
+        a: "Most corporate HR departments accept scanned or photographed certificates submitted via email or uploaded to the company's HRMS. Some companies require the original physical certificate on return. Digital submission is now standard practice, particularly for remote or hybrid employees.",
+      },
+      {
+        q: "What happens if I cannot get a medical certificate immediately?",
+        a: "If you were too ill to visit a doctor during your sick leave, you can see a doctor upon recovery and request a retrospective certificate. The doctor can certify retrospectively if clinical examination supports the history. Inform HR proactively about the delay rather than waiting.",
+      },
+      {
+        q: "Can HR question the diagnosis on my medical certificate?",
+        a: "HR may ask clarifying questions but cannot demand specific diagnosis details for sensitive conditions. You have a right to privacy regarding your medical information. For sensitive diagnoses (psychiatric, reproductive health, HIV), the certificate can state 'medical condition requiring rest' without specifying the diagnosis.",
+      },
+      {
+        q: "Does my office leave certificate need to mention my job title or company name?",
+        a: "No. A valid medical certificate from the doctor is addressed to the patient, not to the employer. It does not need to mention the company name, job title, or employment status. The certificate is the patient's document, which the employee then submits to their employer.",
+      },
+    ],
+    relatedPages: [
+      { title: "Sick Leave Medical Certificate", href: "/sick-leave-medical-certificate" },
+      { title: "Medical Certificate for Leave", href: "/medical-certificate-for-leave" },
+      { title: "Rules for Medical Certificate Leave in India", href: "/blog/rules-medical-certificate-leave-india" },
+    ],
+    externalLinks: [
+      { label: "Labour Law Advisor — Sick Leave Rights India", href: "https://labour.gov.in/", description: "Official Ministry of Labour portal on worker rights including sick leave entitlement" },
+      { label: "ESIC — Sickness Benefit Claims", href: "https://www.esic.gov.in/", description: "ESI Corporation guidelines on sickness benefit for covered employees" },
+    ],
+  },
+  {
+    slug: "medical-certificate-for-school-absence",
+    title: "Medical Certificate for School Absence",
+    metaTitle: "Medical Certificate for School Absence — Free Generator",
+    metaDescription: "Generate a medical certificate for school or college absence. Authentic Indian hospital formats, fully editable student and doctor details, free download.",
+    intro: "Generate a medical certificate to justify a student's absence from school, college, or university examinations. Authentic Indian hospital formats with fully editable fields — free download.",
+    ctaText: "Generate School Absence Certificate",
+    templateId: "janya-rx",
+    whatIs: "A medical certificate for school absence is a document from a registered doctor confirming that a student was medically unable to attend school, college, or an examination during a specified period. It is submitted to the school principal, college registrar, or examination controller.",
+    whenUsed: "It is submitted when a student misses classes or examinations due to illness, injury, or hospitalisation, and needs the absence to be officially condoned or to apply for a medical re-examination or medical grace marks.",
+    whyNeeded: "Schools and universities require verified documentation to differentiate genuine medical absences from truancy. A condoned medical absence may restore attendance eligibility, allow the student to sit for an alternative examination, or protect their academic record from the consequences of absence.",
+    useCases: [
+      "School students submitting absence certificates for missed class days",
+      "College students applying for medical grace marks or condonation",
+      "University students applying for a supplementary examination on medical grounds",
+      "Students who missed board exams or competitive tests due to illness",
+      "Parents submitting medical proof for their child's extended school absence",
+      "Students applying for a deferred semester due to chronic illness",
+      "Sports students requesting leave for treatment without academic penalty",
+      "Hostel students explaining extended leave away from the institution",
+    ],
+    formatElements: [
+      "Hospital or clinic header clearly showing name and city",
+      "Doctor's name with MBBS or equivalent qualification and registration number",
+      "Student's full name and age (not employee details)",
+      "Date or dates of examination by the doctor",
+      "Nature of illness or diagnosis",
+      "Dates during which the student was medically unable to attend school/college",
+      "Whether rest is recommended or the student may resume studies",
+      "Doctor's signature and official stamp",
+    ],
+    benefits: [
+      "Generates specimens for student-context certificates — age and name fields appropriate",
+      "Multiple hospital and clinic formats from across Indian cities",
+      "Editable date range to match the specific absence period",
+      "Download as PDF for email submission to college or school administration",
+      "Useful for UI mock-ups of student portals and academic management systems",
+      "No data stored — all generation happens locally in the browser",
+    ],
+    faqs: [
+      {
+        q: "Can a medical certificate help a student get grace marks in board exams?",
+        a: "Yes, under some state board rules. Students who fall ill during board examinations can apply for grace marks or a supplementary examination with a valid medical certificate. The rules differ by board (CBSE, state boards) and by exam. Check the specific board's rules.",
+      },
+      {
+        q: "Does the school need the original medical certificate or is a photocopy acceptable?",
+        a: "Most schools accept a clear photocopy or scanned PDF, particularly for routine absences. For formal applications — supplementary exams, condonation of attendance shortage — the original certificate is typically required.",
+      },
+      {
+        q: "Can a parent's certificate from a family doctor be used for a school absence?",
+        a: "Yes. Any registered MBBS doctor can issue a certificate for a student's illness. Some schools specify that certificates must come from government hospitals for absences of more than a certain number of days — check your school's rules.",
+      },
+      {
+        q: "How long can a medical certificate cover a school absence?",
+        a: "The certificate covers whatever period the doctor recommends as medically necessary. For routine illnesses, this is typically 3–7 days. For surgery or serious conditions, it can be much longer. The duration must be clinically justified by the doctor.",
+      },
+      {
+        q: "What should I do if my medical certificate was rejected by the college?",
+        a: "First, ask for the specific reason for rejection in writing. Common reasons include missing the doctor's registration number, absence of a stamp, or insufficient clinical detail. Once you know the reason, you can ask your doctor to issue a revised certificate addressing those points.",
+      },
+    ],
+    relatedPages: [
+      { title: "Medical Certificate for Leave", href: "/medical-certificate-for-leave" },
+      { title: "Student Medical Certificate Format", href: "/student-medical-certificate-format" },
+      { title: "What Is a Medical Certificate — Complete Guide", href: "/blog/what-is-medical-certificate" },
+    ],
+    externalLinks: [
+      { label: "CBSE — Guidelines on Medical Grounds Condonation", href: "https://www.cbse.gov.in/", description: "Official CBSE portal with rules on attendance condonation and exam access on medical grounds" },
+      { label: "UGC — Medical Leave Provisions for Universities", href: "https://www.ugc.gov.in/", description: "University Grants Commission guidelines that universities follow for student medical leave" },
+    ],
+  },
+  {
+    slug: "medical-certificate-for-leg-fracture",
+    title: "Medical Certificate for Leg Fracture",
+    metaTitle: "Medical Certificate for Leg Fracture — Free Generator",
+    metaDescription: "Generate a medical certificate for leg fracture. Specify fracture type, rest period, and mobility restrictions. Authentic Indian hospital format, free download.",
+    intro: "Need a medical certificate for a leg fracture? Generate a realistic certificate specifying the fracture, recommended rest period, and mobility restrictions — based on authentic Indian hospital formats.",
+    ctaText: "Generate Fracture Certificate",
+    templateId: "ank-multi",
+    whatIs: "A medical certificate for leg fracture is issued by an orthopaedic surgeon or general physician certifying that a patient has sustained a fracture to the leg — such as the tibia, fibula, femur, or ankle — and specifying the required period of rest and any mobility restrictions.",
+    whenUsed: "This certificate is submitted to employers for extended sick leave, to colleges for attendance condonation, to insurance companies for accident claims, to courts for personal injury matters, or to transport authorities for disability travel concessions during recovery.",
+    whyNeeded: "A leg fracture typically requires several weeks of rest and mobility restriction. This is medically significant — it affects the employee's ability to commute, stand, or perform physical tasks. The certificate documents both the injury and its functional impact on work capacity.",
+    useCases: [
+      "Employees on extended sick leave due to leg fracture from a road accident",
+      "Factory workers filing a Workmen's Compensation claim for workplace fracture injury",
+      "Students with a leg fracture applying for attendance condonation",
+      "Insurance claim for fracture sustained in an accident",
+      "Personal injury litigation requiring medical evidence of the fracture",
+      "Applying for railway or airline assistance due to mobility limitation during recovery",
+      "Orthopaedic fitness clearance before return to physically demanding work",
+      "ESIC sickness benefit claim during fracture recovery period",
+    ],
+    formatElements: [
+      "Orthopaedic or multispeciality hospital letterhead",
+      "Doctor's name with MS (Ortho) or MBBS qualification and registration number",
+      "Type of fracture — closed/open, bone affected (tibia, fibula, femur, ankle)",
+      "Date of injury and date of clinical examination",
+      "Imaging confirmation reference (X-ray or CT scan report number)",
+      "Recommended non-weight-bearing or partial-weight-bearing period",
+      "Total rest period — typically 4–12 weeks depending on fracture severity",
+      "Doctor's signature and hospital stamp",
+    ],
+    benefits: [
+      "Multispeciality hospital formats appropriate for orthopaedic injury documentation",
+      "Editable diagnosis field — specify fracture site and severity",
+      "Extended rest period fields — enter 4, 6, 8, or 12 weeks easily",
+      "Suitable for UI testing of insurance claim portals and HR management systems",
+      "Download as PDF for insurance submission or court documentation demos",
+      "All generation happens locally — no patient data transmitted",
+    ],
+    faqs: [
+      {
+        q: "How long is a typical rest period for a leg fracture?",
+        a: "Rest period depends on the bone and fracture type. A simple closed tibia fracture typically requires 6–8 weeks non-weight bearing. A compound fracture or femur fracture may require 12–16 weeks or longer. The doctor will advise based on imaging and healing progress.",
+      },
+      {
+        q: "Do I need an X-ray report along with the medical certificate for a fracture?",
+        a: "For insurance claims and Workmen's Compensation, yes — the X-ray report is essential evidence. For employer sick leave purposes, the medical certificate alone is usually sufficient, though some employers may ask for supporting investigation reports for extended absences.",
+      },
+      {
+        q: "Can a general physician issue a fracture medical certificate?",
+        a: "Yes, an MBBS general practitioner can issue a fracture certificate if they have examined the patient and reviewed the imaging. However, for insurance claims or Workmen's Compensation cases, a certificate from an orthopaedic surgeon (MS Ortho) carries more weight.",
+      },
+      {
+        q: "Is a fracture certificate needed even if the fracture was treated abroad?",
+        a: "Yes. If you are claiming sick leave in India, your employer or institution needs a certificate from a registered Indian practitioner. You should have a treating doctor in India review your records and issue a certificate based on the foreign diagnosis and your current condition.",
+      },
+      {
+        q: "Can I claim Workmen's Compensation for a workplace leg fracture?",
+        a: "Yes. Under the Employees' Compensation Act, 1923, a workplace injury resulting in fracture entitles the worker to compensation. You need a medical certificate from a qualified doctor documenting the injury and its impact on work capacity. File through your employer or directly with the Labour Commissioner.",
+      },
+    ],
+    relatedPages: [
+      { title: "Medical Certificate for Leave", href: "/medical-certificate-for-leave" },
+      { title: "Sick Leave Medical Certificate", href: "/sick-leave-medical-certificate" },
+      { title: "Medical Certificate for Typhoid", href: "/medical-certificate-for-typhoid" },
+    ],
+    externalLinks: [
+      { label: "Employees' Compensation Act — Labour Ministry", href: "https://labour.gov.in/", description: "Government of India guidelines on workplace injury compensation, relevant for fracture-related claims" },
+      { label: "ESIC — Extended Sickness Benefit", href: "https://www.esic.gov.in/", description: "ESI Corporation extended sickness benefit for long-term conditions like fractures" },
+    ],
+  },
+  {
+    slug: "medical-certificate-for-headache",
+    title: "Medical Certificate for Headache",
+    metaTitle: "Medical Certificate for Headache — Free Generator India",
+    metaDescription: "Generate a medical certificate for headache or migraine. Authentic Indian clinic format, editable diagnosis and rest period, free PNG and PDF download.",
+    intro: "Generate a medical certificate for headache, migraine, or tension headache — a common reason for short-term sick leave. Authentic Indian clinic formats with editable fields, free download.",
+    ctaText: "Generate Headache Certificate",
+    templateId: "narayan-care",
+    whatIs: "A medical certificate for headache certifies that a patient was examined and found to be suffering from a headache disorder — such as migraine, tension-type headache, or cluster headache — requiring medical rest and, in some cases, specific treatment.",
+    whenUsed: "It is used when a recurring or severe headache condition causes the patient to miss work or college. Occasional mild headaches rarely warrant a certificate, but debilitating migraine attacks, post-head trauma headaches, or headaches associated with hypertension often do.",
+    whyNeeded: "Headache disorders, particularly migraine, are a leading cause of work disability in India. A medical certificate provides documented evidence to employers that the absence was medically necessary, protecting the employee's leave balance and employment status.",
+    useCases: [
+      "Employees missing work due to a severe migraine attack",
+      "Students absent from college or exams due to a headache episode",
+      "Patients with chronic migraine seeking documented leave for recurrent episodes",
+      "Post-concussion syndrome patients documenting headache as a work limitation",
+      "Hypertension patients where headache indicates a blood pressure episode",
+      "IT professionals with screen-induced tension headache requiring certified rest",
+      "Academic researchers or writers with prolonged headache from intense focus",
+      "Insurance pre-authorisation for neurologist consultation or medication",
+    ],
+    formatElements: [
+      "General practice or neurology clinic letterhead",
+      "Doctor's name with MBBS or DM (Neurology) qualification and registration",
+      "Date of consultation and clinical examination",
+      "Patient's full name, age, and gender",
+      "Diagnosis — Migraine, Tension-type headache, Cluster headache, etc.",
+      "Severity notation — frequency of attacks, duration, associated symptoms",
+      "Recommended rest period and any advice on light avoidance or screen restriction",
+      "Doctor's signature and clinic stamp",
+    ],
+    benefits: [
+      "Clinic formats appropriate for general medicine or neurology contexts",
+      "Editable diagnosis — specify migraine with/without aura, tension headache, etc.",
+      "Short rest period fields — enter 1, 2, or 3 days as the doctor advises",
+      "Useful for app UI/UX demos for health apps targeting migraine management",
+      "Download as PNG or PDF — suitable for both digital and print submission",
+      "All data stays in your browser — no health information transmitted",
+    ],
+    faqs: [
+      {
+        q: "Can I get a medical certificate for a headache for just one day?",
+        a: "Yes. A doctor can issue a certificate for a single day if they have examined you and the headache is severe enough to prevent work. A debilitating migraine attack — with nausea, vomiting, photophobia, and phonophobia — clearly warrants a day's medical rest.",
+      },
+      {
+        q: "Will my employer accept a certificate for headache as a valid reason for leave?",
+        a: "Yes. Migraine is a recognised neurological disorder and a valid medical reason for sick leave. Employers cannot discriminate against recognised medical conditions. If an employer routinely questions headache-related absences, it may constitute a hostile work environment.",
+      },
+      {
+        q: "What is the typical diagnosis written on a headache certificate?",
+        a: "Common diagnoses include: Migraine with aura, Migraine without aura, Tension-type headache, Cluster headache, or Post-traumatic headache. The doctor will diagnose based on symptom pattern, frequency, and associated features.",
+      },
+      {
+        q: "Do I need a neurologist or can a general practitioner issue this certificate?",
+        a: "A general practitioner can examine and certify headache conditions. A neurologist's certificate carries more clinical authority for complex or chronic migraine and may be requested by some employers or insurance companies for extended sick leave.",
+      },
+      {
+        q: "Can I get a certificate for chronic migraines covering multiple episodes?",
+        a: "Yes. A neurologist can issue a standing certificate for chronic migraine documenting the condition and the anticipated need for rest during acute episodes. This is useful for employers — it explains future absences without requiring a new certificate for every attack.",
+      },
+    ],
+    relatedPages: [
+      { title: "Medical Certificate for Office Leave", href: "/medical-certificate-for-office-leave" },
+      { title: "Sick Leave Medical Certificate", href: "/sick-leave-medical-certificate" },
+      { title: "Medical Certificate for Typhoid", href: "/medical-certificate-for-typhoid" },
+    ],
+    externalLinks: [
+      { label: "Migraine India — Patient Information", href: "https://www.mohfw.gov.in/", description: "Ministry of Health and Family Welfare resources on neurological conditions including migraine" },
+      { label: "National Medical Commission — Doctor Register", href: "https://www.nmc.org.in/", description: "Verify your treating doctor's registration before relying on their certificate" },
+    ],
+  },
+  {
+    slug: "medical-certificate-for-typhoid",
+    title: "Medical Certificate for Typhoid",
+    metaTitle: "Medical Certificate for Typhoid — Free Generator India",
+    metaDescription: "Generate a medical certificate for typhoid fever. Hospital format with diagnosis, isolation period, and rest recommendation. Free PNG and PDF download.",
+    intro: "Generate a medical certificate for typhoid fever (enteric fever) — an illness requiring extended medical rest and sometimes isolation. Authentic Indian hospital formats, editable fields, free download.",
+    ctaText: "Generate Typhoid Certificate",
+    templateId: "dpk-hospital",
+    whatIs: "A medical certificate for typhoid certifies that a patient has been diagnosed with typhoid fever (Salmonella typhi infection, also called enteric fever) and requires a specified period of medical rest. It may also document the need for dietary restrictions, antibiotic treatment, and — in some contexts — isolation.",
+    whenUsed: "This certificate is used when a patient with typhoid fever needs to take leave from work, school, or college during the illness and recovery period. It may also be required by employers to ensure the patient is non-contagious before returning to food-handling or healthcare roles.",
+    whyNeeded: "Typhoid typically requires 10–21 days of rest and antibiotic treatment. In food service, water supply, and healthcare sectors, an employee with typhoid must be certified disease-free (by stool culture) before returning to work, as they may transmit the disease to others. The medical certificate documents both the illness and the recovery clearance.",
+    useCases: [
+      "Employees in any sector taking extended sick leave for typhoid treatment",
+      "Food handlers and catering staff requiring a fitness-to-return certificate post-typhoid",
+      "Healthcare workers (nurses, doctors, attendants) requiring clearance before returning",
+      "School students absent for 2–4 weeks during typhoid treatment",
+      "College students applying for medical condonation of attendance during typhoid",
+      "Insurance companies processing hospitalisation claims for typhoid treatment",
+      "ESIC extended sickness benefit claim for prolonged typhoid illness",
+      "NRI patients travelling to India and requiring documentation of illness for foreign employer",
+    ],
+    formatElements: [
+      "Hospital letterhead — preferably general medicine or infectious disease department",
+      "Doctor's MBBS or MD (General Medicine) qualification and registration number",
+      "Date of initial diagnosis and confirmatory test results (Widal test, blood culture)",
+      "Patient's name, age, gender, and contact information",
+      "Diagnosis: Typhoid Fever / Enteric Fever (Salmonella typhi infection)",
+      "Recommended rest period — typically 14–21 days from diagnosis",
+      "Dietary advice — soft diet, no raw foods — noted if appropriate",
+      "Fitness-to-return statement for food handlers (after negative stool culture)",
+      "Doctor's signature and hospital stamp",
+    ],
+    benefits: [
+      "Hospital-grade formats appropriate for infectious disease documentation",
+      "Editable diagnosis — specify Typhoid Fever or Enteric Fever as required",
+      "Longer rest period fields — enter 14, 21, or 28-day rest periods easily",
+      "Useful for insurance portal UI testing, hospital management system demos",
+      "Generates specimens for training hospital staff on certificate documentation",
+      "Download as PDF — suitable for insurance pre-authorisation submissions",
+    ],
+    faqs: [
+      {
+        q: "How long does typhoid fever typically require a medical certificate for?",
+        a: "Typhoid usually requires 14–21 days of rest for uncomplicated cases, and up to 4–6 weeks for severe or relapsed cases. The doctor will specify the rest period based on clinical progress and the results of confirmatory tests.",
+      },
+      {
+        q: "Do I need a separate certificate to return to work after typhoid?",
+        a: "For most office jobs, no separate fitness certificate is needed — the original sick leave certificate covers the rest period, and you return at the end. However, food handlers, water supply workers, and healthcare workers are required by food safety and public health laws to obtain a clearance certificate (typically after a negative stool culture result).",
+      },
+      {
+        q: "Can typhoid be confirmed by a medical certificate alone, without test reports?",
+        a: "For sick leave purposes, the doctor's clinical assessment and certificate are sufficient. For insurance claims and hospitalisation reimbursement, the insurer will typically require the Widal test report, blood culture report, or typhoid IgM/IgG rapid test result alongside the certificate.",
+      },
+      {
+        q: "Is typhoid a notifiable disease in India? Does that affect the certificate?",
+        a: "Yes, typhoid (Enteric Fever) is a notifiable disease in several states under the Epidemic Diseases Act and state public health acts. Doctors are required to report confirmed cases to local health authorities. This does not change the nature of the sick leave certificate, but the doctor may note the notification in their records.",
+      },
+      {
+        q: "Can typhoid recur, and can I get a certificate for a relapse?",
+        a: "Yes, typhoid can relapse in 5–10% of cases, typically 2–3 weeks after the initial fever resolves. A relapse requires a fresh medical evaluation and a new certificate covering the relapse period. The total sick leave may therefore exceed the original estimate.",
+      },
+    ],
+    relatedPages: [
+      { title: "Medical Certificate for Leave", href: "/medical-certificate-for-leave" },
+      { title: "Sick Leave Medical Certificate", href: "/sick-leave-medical-certificate" },
+      { title: "Medical Certificate for Leg Fracture", href: "/medical-certificate-for-leg-fracture" },
+    ],
+    externalLinks: [
+      { label: "FSSAI — Food Handler Health Guidelines", href: "https://www.fssai.gov.in/", description: "Food Safety and Standards Authority of India — requirements for food handler medical fitness including typhoid clearance" },
+      { label: "ICMR — Typhoid Clinical Guidelines", href: "https://www.icmr.gov.in/", description: "Indian Council of Medical Research clinical guidance on typhoid management" },
+    ],
+  },
+  {
+    slug: "medical-certificate-with-stamp",
+    title: "Medical Certificate with Stamp",
+    metaTitle: "Medical Certificate with Stamp — Why It Matters & Free Generator",
+    metaDescription: "Understand why the doctor's stamp is essential on an Indian medical certificate. Generate authentic stamped certificate specimens free — PNG and PDF download.",
+    intro: "A medical certificate without a stamp is routinely rejected by Indian employers and institutions. Understand why the stamp matters, what it must contain, and generate authentic stamped specimens for educational or staging use.",
+    ctaText: "Generate Stamped Certificate",
+    templateId: "formal-cert",
+    whatIs: "A medical certificate with stamp refers to the standard Indian requirement that every medical certificate bear the official rubber stamp (or seal) of the issuing doctor's clinic or hospital, in addition to the doctor's signature. The stamp is treated as physical evidence of the certificate's institutional origin and authenticity.",
+    whenUsed: "Every medical certificate submitted to an employer, educational institution, government department, insurance company, or court in India is expected to have the doctor's stamp. Without it, the certificate will typically be questioned or outright rejected, regardless of the signature's authenticity.",
+    whyNeeded: "In Indian practice, the stamp serves as a proxy for institutional verification. Since most certificate recipients cannot independently verify a doctor's registration in real time, the physical stamp with the clinic name, doctor's name, registration number, and contact details provides visible assurance that the document comes from a legitimate source.",
+    useCases: [
+      "HR departments verifying that sick leave certificates meet documentation standards",
+      "Banks accepting medical certificates for insurance claim settlements",
+      "Courts and tribunals requiring stamped certificates as documentary evidence",
+      "Government departments checking compliance with CCS Leave Rule certificate requirements",
+      "Educational institutions requiring stamped certificates for attendance condonation",
+      "Insurance pre-authorisation requiring stamped certificates from treating doctors",
+      "Training HR staff on what a compliant stamped certificate looks like",
+      "UI/UX designers building digital certificate verification systems",
+    ],
+    formatElements: [
+      "Clinic or hospital rubber stamp showing: clinic name, address, phone number",
+      "Doctor's name as it appears on the Medical Council register",
+      "Registration number on the stamp (e.g. MH/12345/2018)",
+      "Degree/qualification printed on the stamp (MBBS, MD, etc.)",
+      "Stamp typically appears at the bottom right of the certificate, beside or under the signature",
+      "Red or blue ink stamp is both standard — blue is more common in North India, red in South India",
+      "Some government hospitals use an embossed seal rather than a rubber stamp",
+    ],
+    benefits: [
+      "Our specimens include authentic-looking stamp impressions in the right format",
+      "15+ stamped clinic and hospital certificate formats to choose from",
+      "Stamp includes clinic name, doctor's registration number, and contact",
+      "Useful for teaching HR staff what a genuine stamped certificate looks like",
+      "Useful for developers building certificate verification tools",
+      "Download as high-quality PNG or PDF — stamp is sharp and legible at print resolution",
+    ],
+    faqs: [
+      {
+        q: "What information should a doctor's stamp contain?",
+        a: "A standard Indian doctor's stamp should contain: the doctor's full name, qualifications (MBBS, MD, etc.), registration number from the Medical Council, clinic or hospital name, clinic address, and phone number. Some doctors also include consultation hours.",
+      },
+      {
+        q: "Is a doctor's signature alone sufficient without a stamp?",
+        a: "Legally, a signature from a registered practitioner is what confers validity. However, in practical terms, Indian employers, institutions, and insurance companies routinely reject certificates without a stamp. The stamp provides the institutional context that verifies the signature's source.",
+      },
+      {
+        q: "Can a telemedicine certificate have a stamp?",
+        a: "Yes. Telemedicine platforms generate certificates with a digital stamp embedded in the PDF. The digital stamp reproduces the clinic or platform's details. While it is not a physical rubber stamp, it serves the same function and is increasingly accepted by employers.",
+      },
+      {
+        q: "What colour should the stamp be on a medical certificate?",
+        a: "There is no statutory requirement for stamp colour in India. Blue and red are most common. Government hospital stamps are often blue with a seal-type border. Private clinic stamps are often red or blue ink. The colour does not affect validity.",
+      },
+      {
+        q: "What should I do if the stamp on my certificate is illegible?",
+        a: "Ask the doctor to re-stamp the certificate clearly, or request a new certificate. Employers and institutions need to be able to read the stamp's content — particularly the clinic name and registration number — to accept it.",
+      },
+      {
+        q: "Can a medical certificate be issued without a physical stamp if the doctor is new?",
+        a: "New doctors may not yet have a rubber stamp made. In this case, the doctor can handwrite their name, qualification, and registration number, and note that they are in the process of getting a stamp made. This is unusual but acceptable in some contexts. A new doctor should get their stamp made promptly.",
+      },
+    ],
+    relatedPages: [
+      { title: "What Is a Medical Certificate — Complete Guide", href: "/blog/what-is-medical-certificate" },
+      { title: "Who Can Issue a Medical Certificate in India", href: "/blog/who-can-issue-medical-certificate-india" },
+      { title: "Medical Certificate for Leave", href: "/medical-certificate-for-leave" },
+    ],
+    externalLinks: [
+      { label: "National Medical Commission — Ethical Guidelines", href: "https://www.nmc.org.in/", description: "NMC professional conduct guidelines relevant to certificate issuance requirements" },
+      { label: "MoHFW — Medical Documentation Standards", href: "https://www.mohfw.gov.in/", description: "Ministry of Health and Family Welfare health documentation standards" },
+    ],
+  },
+  {
+    slug: "student-medical-certificate-format",
+    title: "Student Medical Certificate Format",
+    metaTitle: "Student Medical Certificate Format — Free Generator India",
+    metaDescription: "Generate a student medical certificate for school or college absence, exam condonation, or attendance shortage. Indian hospital format, free PNG and PDF download.",
+    intro: "Generate an accurate student medical certificate in the format accepted by Indian schools, colleges, and universities. Customise student name, diagnosis, absence dates, and download free.",
+    ctaText: "Generate Student Certificate",
+    templateId: "pg-compact",
+    whatIs: "A student medical certificate is a medical certificate specifically issued in the context of a student's illness-related absence. It confirms to an educational institution that the student was medically unable to attend classes or examinations during a stated period, and is typically submitted to the school principal, college dean, or examination board.",
+    whenUsed: "It is required when a student misses classes, falls short of minimum attendance requirements, misses an internal or external examination, or needs to defer or retake an examination on medical grounds. It is also used for scholarship applications where medical grounds for poor performance need documentation.",
+    whyNeeded: "Universities and schools enforce attendance requirements — typically 75% in colleges under UGC guidelines. A medical certificate can provide condonation of attendance shortage, entitle the student to a supplementary examination, or prevent the student's academic record from being adversely impacted by illness.",
+    useCases: [
+      "Class 12 students absent during CBSE or state board practical examinations",
+      "College students with attendance below 75% applying for condonation on medical grounds",
+      "Engineering or medical students absent for internal assessments",
+      "Students applying for a medical re-examination under university ordinances",
+      "School students with extended illness during mid-term or final examinations",
+      "Scholarship applicants explaining academic performance affected by illness",
+      "Hostel students absent from institution for treatment at home",
+      "Research scholars whose thesis work was interrupted by health conditions",
+    ],
+    formatElements: [
+      "Government hospital or recognised clinic letterhead — some universities specify this",
+      "Doctor's MBBS qualification and State/NMC registration number",
+      "Student's full name (not employee name — the format should use 'student' context)",
+      "Age of student — important for paediatric vs adult certificate style",
+      "Date(s) of medical consultation",
+      "Diagnosis — clearly stated or described as 'medical condition' for sensitive cases",
+      "Period of illness — specific dates for which the student was medically unfit",
+      "Statement of fitness to resume studies (end date of recommended rest)",
+      "Doctor's signature and hospital/clinic stamp",
+    ],
+    benefits: [
+      "Student-context formatting — fields use student-appropriate language",
+      "Multiple hospital and clinic formats including government hospital styles",
+      "Editable absence period — match the specific exam or attendance dates",
+      "Download as PDF for physical submission to college examination office",
+      "Useful for student portal UI design and academic management system demos",
+      "Download as PNG for digital upload to college LMS or examination portal",
+    ],
+    faqs: [
+      {
+        q: "What is the minimum attendance required in Indian colleges and can a medical certificate help?",
+        a: "Under UGC guidelines, Indian colleges typically require 75% attendance. Students with less than 75% due to illness can apply for condonation with a valid medical certificate. Universities have discretion — most condone up to 10% additional absence on medical grounds, restoring the student's eligibility for examinations.",
+      },
+      {
+        q: "Does the student medical certificate need to come from a government hospital?",
+        a: "Requirements vary by institution. Many colleges accept certificates from any registered MBBS doctor. Some universities — particularly for formal examination condonation — require certificates from government hospitals or civil surgeons. Check your institution's examination regulations.",
+      },
+      {
+        q: "Can a student submit a medical certificate after returning to college?",
+        a: "Yes, retrospective submission is typically allowed within a reasonable time after the absence. Most institutions require submission within 7–14 days of returning. Very late submission may not be accepted. Check your institution's specific deadline.",
+      },
+      {
+        q: "Can a student get a medical certificate from their home doctor when studying in another city?",
+        a: "Yes. If the student was at home when ill, a certificate from their home city doctor is valid. The certificate should be on the doctor's official letterhead with a stamp. Some institutions may question certificates from a doctor in a different city if the student claims to have been ill at the institution's location.",
+      },
+      {
+        q: "Is a medical certificate sufficient to get a second chance at a missed examination?",
+        a: "It depends on the institution's rules. A medical certificate is necessary but may not be sufficient. Most universities require additional paperwork: a formal application, the certificate, and sometimes a medical board review. Some also have fixed windows for such applications. Act promptly after recovery.",
+      },
+      {
+        q: "Can a student medical certificate be used for NEET or JEE absence?",
+        a: "NTA (which conducts NEET and JEE) has strict re-examination policies. Generally, absence from NEET or JEE is not recoverable by medical certificate — candidates must attempt in the next cycle. For admit card issues or exam centre medical emergencies, contact NTA directly with documentation.",
+      },
+    ],
+    relatedPages: [
+      { title: "Medical Certificate for School Absence", href: "/medical-certificate-for-school-absence" },
+      { title: "What Is a Medical Certificate — Complete Guide", href: "/blog/what-is-medical-certificate" },
+      { title: "Medical Certificate for Leave", href: "/medical-certificate-for-leave" },
+    ],
+    externalLinks: [
+      { label: "UGC — Attendance and Examination Regulations", href: "https://www.ugc.gov.in/", description: "University Grants Commission guidelines on minimum attendance and medical condonation" },
+      { label: "CBSE — Student Medical Grounds Policy", href: "https://www.cbse.gov.in/", description: "CBSE guidelines on examinations and grace marks for students on medical grounds" },
+    ],
+  },
+];
+
+export function getLandingPage(slug: string): LandingPageConfig | undefined {
+  return LANDING_PAGES.find((p) => p.slug === slug);
+}

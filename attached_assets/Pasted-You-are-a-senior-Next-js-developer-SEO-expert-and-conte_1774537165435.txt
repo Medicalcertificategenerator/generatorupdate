@@ -1,0 +1,193 @@
+You are a senior Next.js developer, SEO expert, and content strategist.
+
+We are  upgrading a SEO content pages for:
+👉 medicalcertificategenerator.in
+
+---
+
+# 🎯 GOAL
+
+Create **high-quality SEO landing pages** that:
+
+* Target long-tail keywords
+* Avoid thin content
+* Follow EEAT principles
+* Integrate the existing generator tool smartly
+
+---
+
+# 🧩 PAGES TO CREATE
+
+Create pages for:
+
+1. Medical Certificate for Leave
+2. Sick Leave Medical Certificate
+3. Fitness Medical Certificate
+4. Medical Certificate for Office Leave
+5. Medical Certificate for School Absence
+6. Medical Certificate for Leg Fracture
+7. Medical Certificate for Headache
+8. Medical Certificate for Typhoid
+9. Medical Certificate with Stamp
+10. Student Medical Certificate Format
+
+---
+
+# 🧱 PAGE STRUCTURE (STRICT)
+
+Use proper semantic HTML
+---
+
+## STRUCTURE:
+
+### 1. HERO SECTION
+
+* H1 with keyword
+* Short intro
+* CTA button → "Generate Certificate"
+
+---
+
+### 2. INFORMATION SECTION
+
+* What is this certificate
+* When it is used
+* Why it is needed
+
+---
+
+### 3. USE CASES
+
+* Bullet points
+* Real-life scenarios
+
+---
+
+### 4. FORMAT EXPLANATION
+
+* Explain structure of certificate
+* Key elements
+
+---
+
+### 5. GENERATOR SECTION (IMPORTANT)
+
+Embed existing generator component
+
+## REQUIREMENTS:
+
+* Pre-fill form based on page keyword
+  Example:
+
+  * Headache → diagnosis prefilled
+  * Leave → rest days prefilled
+
+---
+
+### 6. BENEFITS SECTION
+
+* Why use this tool
+
+---
+
+### 7. FAQ SECTION
+
+* 4–6 questions
+* Structured for schema
+
+---
+
+### 8. INTERNAL LINKING
+
+Link to:
+
+* Other certificate pages
+* Main generator page
+* Blog (guides)
+
+---
+
+### 9. EXTERNAL LINKS
+
+Add 1–2 authority references:
+
+* Health organizations
+* General informational sources
+
+---
+
+# ✍️ CONTENT RULES
+
+* Minimum 1000–1500 words per page
+* No fluff
+* No repetition
+* Human-like writing
+* Clear and helpful
+
+---
+
+# 🧠 EEAT OPTIMIZATION
+
+Include:
+
+## Experience:
+
+* Practical explanation
+
+## Expertise:
+
+* Correct structure info
+
+## Authority:
+
+* Confident tone
+
+## Trust:
+
+* Disclaimer section
+
+---
+
+# ⚙️ TECHNICAL SEO
+
+* Add canonical tag (self-referencing)
+* Add meta title + description
+* Use proper heading hierarchy
+* Optimize images (alt text)
+
+---
+
+# 🧬 SCHEMA MARKUP
+
+Add:
+
+* FAQ schema
+* WebPage schema
+
+---
+
+# 🎨 UI REQUIREMENTS
+
+* Clean layout
+* Proper spacing
+* Mobile responsive
+* CTA buttons visible
+
+---
+
+# ❌ AVOID
+
+* Thin pages
+* Duplicate content
+* Keyword stuffing
+* Plain/basic UI
+
+---
+
+# 🎯 FINAL GOAL
+
+Create pages that:
+👉 Rank on Google
+👉 Bring traffic
+👉 Convert users into tool users
+👉 Strengthen main keyword authority

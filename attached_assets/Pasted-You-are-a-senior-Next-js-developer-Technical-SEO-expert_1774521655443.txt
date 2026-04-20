@@ -1,0 +1,229 @@
+You are a senior Next.js developer, Technical SEO expert, and performance optimization specialist.
+
+Work on the existing website:
+👉 medicalcertificategenerator.in
+
+Your goal is to fix and implement **advanced technical SEO, structured data, and performance improvements** to make the site fully optimized for search engines and better rankings.
+
+---
+
+# 🔗 PART 1 — CANONICAL URL FIX (CRITICAL)
+
+## ISSUE:
+
+Canonical URLs may not match actual page URLs.
+
+---
+
+## TASK:
+
+1. Ensure:
+   👉 Every page has a correct canonical tag
+
+2. Canonical URL must:
+
+* Exactly match the current page URL
+* Use HTTPS
+* Avoid duplicates (no trailing slash mismatch)
+
+3. Example:
+
+```html
+<link rel="canonical" href="https://medicalcertificategenerator.in/page-url" />
+```
+
+4. Implement dynamically in Next.js (Head component or metadata API)
+
+---
+
+# 🤖 PART 2 — ROBOTS.TXT + CRAWL OPTIMIZATION
+
+## TASK:
+
+### 1. Create / Fix robots.txt
+
+Include:
+
+* Allow important pages
+* Block unnecessary routes (if any)
+* Add sitemap URL
+
+Example:
+
+```
+User-agent: *
+Allow: /
+Sitemap: https://medicalcertificategenerator.in/sitemap.xml
+```
+
+---
+
+### 2. Crawl Optimization:
+
+* Remove duplicate pages
+* Fix broken links
+* Ensure proper internal linking
+* Optimize URL structure (clean, readable)
+
+---
+
+# ⚡ PART 3 — SPEED OPTIMIZATION
+
+## TASK:
+
+* Optimize images (use next/image)
+* Enable lazy loading
+* Reduce CLS (layout shifts)
+* Minimize JS bundle
+* Use proper caching
+* Optimize fonts (Google Fonts with display swap)
+
+---
+
+# 🧱 PART 4 — SEMANTIC HTML IMPROVEMENTS
+
+## REQUIREMENTS:
+
+Replace generic divs with semantic tags:
+
+* `<header>`
+* `<nav>`
+* `<main>`
+* `<section>`
+* `<article>`
+* `<footer>`
+
+Ensure:
+
+* Proper heading hierarchy (H1 → H2 → H3)
+* Accessibility improvements
+
+---
+
+# 🧠 PART 5 — STRUCTURED DATA (VERY IMPORTANT)
+
+Implement JSON-LD schema across site.
+
+---
+
+## 1. ORGANIZATION SCHEMA
+
+Include:
+
+* Name
+* Website URL
+* Logo
+* Social profiles
+
+---
+
+## 2. WEBSITE SCHEMA
+
+Add:
+
+* Site-level schema
+* SearchAction (important)
+
+Example:
+
+* Allow search directly from Google
+
+---
+
+## 3. FAQ SCHEMA
+
+For all FAQ sections:
+
+* Use FAQPage schema
+* Enable rich snippets
+
+---
+
+## 4. SITE NAVIGATION SCHEMA
+
+* Define main navigation links
+* Improve SERP structure
+
+---
+
+## 5. BUSINESS / COMPANY STRUCTURED DATA
+
+* Define as online tool/service
+* Add description
+* Add contact info (if available)
+
+---
+
+# 🔍 PART 6 — SEARCH FUNCTIONALITY
+
+## TASK:
+
+Add search bar in HEADER:
+
+* Allow users to search:
+
+  * Blog articles
+  * Templates
+
+* Features:
+
+  * Instant suggestions (optional)
+  * Redirect to search results page
+
+---
+
+# 🔗 PART 7 — SOCIAL MEDIA INTEGRATION
+
+## FOOTER ADD:
+
+Add "Follow Us" section with links:
+
+* Medium (https://medium.com/@zivenborceg)
+* X (Twitter) - (
+* Pinterest
+
+Ensure:
+
+* Icons + links
+* Open in new tab
+* SEO-friendly (rel="noopener noreferrer")
+
+---
+
+# 🧪 PART 8 — EXTRA SEO IMPROVEMENTS
+
+* Add sitemap.xml (auto-generated)
+* Ensure all pages are indexable
+* Fix duplicate meta tags
+* Add Open Graph + Twitter meta tags
+
+---
+
+# 📦 OUTPUT REQUIREMENTS
+
+Provide:
+
+1. Canonical implementation (Next.js code)
+2. robots.txt example
+3. Schema JSON-LD scripts
+4. Search bar component code
+5. Footer social links implementation
+6. Performance optimization suggestions
+7. Clean reusable code
+
+---
+
+# ❌ AVOID:
+
+* Duplicate canonical URLs
+* Missing schema
+* Non-semantic HTML
+* Poor performance practices
+
+---
+
+# 🎯 FINAL GOAL:
+
+Make this website:
+👉 Technically perfect, SEO-optimized, fast, structured, and ready for high rankings on Google.
+And Last action find and fix the error or bug on entire code/website
