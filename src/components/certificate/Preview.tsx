@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react";
+import { forwardRef } from "react";
 import { format } from "date-fns";
 import type { CertificateData } from "@/types/certificate";
 
@@ -119,7 +119,40 @@ function InkFilter() {
   );
 }
 
-export const CertificatePreview = React.memo(forwardRef<HTMLDivElement, PreviewProps>(
+// ─── Stable Watermark element (not a component, just conditional JSX) ────────
+function WatermarkOverlay({ show }: { show: boolean }) {
+  if (!show) return null;
+  return (
+    <div
+      style={{
+        position: "absolute",
+        inset: 0,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        pointerEvents: "none",
+        zIndex: 5,
+      }}
+    >
+      <span
+        style={{
+          fontSize: 120,
+          fontWeight: 900,
+          color: "rgba(200,0,0,0.055)",
+          transform: "rotate(-40deg)",
+          letterSpacing: 8,
+          fontFamily: "Arial Black, sans-serif",
+          userSelect: "none",
+          filter: "url(#hw-ink)",
+        }}
+      >
+        DEMO
+      </span>
+    </div>
+  );
+}
+
+export const CertificatePreview = forwardRef<HTMLDivElement, PreviewProps>(
   ({ data, templateId, hideWatermark = false }, ref) => {
     const fontFamily =
       data.font === "caveat"
@@ -144,62 +177,25 @@ export const CertificatePreview = React.memo(forwardRef<HTMLDivElement, PreviewP
       ? format(new Date(data.date), "dd MMMM yyyy")
       : "";
 
-    // Shorthand hw component using closure over current font/ink/size settings
-    const HW = ({
-      text,
+    // Shorthand helper – NOT a component, just a function that returns JSX.
+    // This avoids React treating it as a new component type on every render.
+    const hw = (
+      text: string,
       deg = 0,
-      size,
-      style = {},
-      className = "",
+      size?: number,
       bold = false,
-    }: {
-      text: string;
-      deg?: number;
-      size?: number;
-      style?: React.CSSProperties;
-      className?: string;
-      bold?: boolean;
-    }) => (
+    ) => (
       <HWText
         text={text}
         fontFamily={fontFamily}
         inkColor={inkColor}
         fontSize={size ?? fs}
         baseRot={deg}
-        style={{ fontWeight: bold ? 700 : 400, ...style }}
-        className={className}
+        style={{ fontWeight: bold ? 700 : 400 }}
       />
     );
 
-    const Watermark = () =>
-      data.watermark && !hideWatermark ? (
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            pointerEvents: "none",
-            zIndex: 5,
-          }}
-        >
-          <span
-            style={{
-              fontSize: 120,
-              fontWeight: 900,
-              color: "rgba(200,0,0,0.055)",
-              transform: "rotate(-40deg)",
-              letterSpacing: 8,
-              fontFamily: "Arial Black, sans-serif",
-              userSelect: "none",
-              filter: "url(#hw-ink)",
-            }}
-          >
-            DEMO
-          </span>
-        </div>
-      ) : null;
+    const showWatermark = data.watermark && !hideWatermark;
 
     // ─────────────────────────────────────────────
     // Template 1: Formal Medical Certificate
@@ -224,7 +220,7 @@ export const CertificatePreview = React.memo(forwardRef<HTMLDivElement, PreviewP
           }}
         >
           <InkFilter />
-          <Watermark />
+          <WatermarkOverlay show={showWatermark} />
           {/* Paper grain overlay */}
           <div style={{ position: "absolute", inset: 0, backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E\")", pointerEvents: "none", zIndex: 1 }} />
           <div style={{ position: "absolute", inset: 10, border: "1px solid #c9c4b8", pointerEvents: "none", zIndex: 3 }} />
@@ -244,7 +240,7 @@ export const CertificatePreview = React.memo(forwardRef<HTMLDivElement, PreviewP
             <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 14, fontSize: 14, color: "#333" }}>
               <span>Date:&nbsp;</span>
               <span style={{ borderBottom: "1px dashed #999", minWidth: 160, paddingLeft: 8 }}>
-                <HW text={formattedDateLong} deg={-0.4} size={14} />
+                {hw(formattedDateLong, -0.4, 14)}
               </span>
             </div>
             <p style={{ fontSize: 14, marginBottom: 12, color: "#333" }}>This is to certify that I have examined patient</p>
@@ -252,38 +248,38 @@ export const CertificatePreview = React.memo(forwardRef<HTMLDivElement, PreviewP
               <div style={{ display: "flex", flex: 1 }}>
                 <span style={{ fontSize: 14, color: "#333", whiteSpace: "nowrap" }}>Name:&nbsp;</span>
                 <span style={{ borderBottom: "1px dashed #999", flex: 1, paddingLeft: 4 }}>
-                  <HW text={data.patientName} deg={0.6} size={fs} />
+                  {hw(data.patientName, 0.6, fs)}
                 </span>
               </div>
               <div style={{ display: "flex", width: 110 }}>
                 <span style={{ fontSize: 14, color: "#333", whiteSpace: "nowrap" }}>Age:&nbsp;</span>
                 <span style={{ borderBottom: "1px dashed #999", flex: 1, paddingLeft: 4 }}>
-                  <HW text={data.age} deg={-0.8} size={fs} />
+                  {hw(data.age, -0.8, fs)}
                 </span>
               </div>
             </div>
             <div style={{ display: "flex", marginBottom: 10 }}>
               <span style={{ fontSize: 14, color: "#333", whiteSpace: "nowrap" }}>Gender:&nbsp;</span>
               <span style={{ borderBottom: "1px dashed #999", width: 140, paddingLeft: 4 }}>
-                <HW text={data.gender} deg={0.3} size={fs} />
+                {hw(data.gender, 0.3, fs)}
               </span>
             </div>
             <div style={{ display: "flex", marginBottom: 10 }}>
               <span style={{ fontSize: 14, color: "#333", whiteSpace: "nowrap" }}>Diagnosis:&nbsp;</span>
               <span style={{ borderBottom: "1px dashed #999", flex: 1, paddingLeft: 4 }}>
-                <HW text={data.diagnosis} deg={-0.3} size={fs} />
+                {hw(data.diagnosis, -0.3, fs)}
               </span>
             </div>
             <div style={{ display: "flex", marginBottom: 14 }}>
               <span style={{ fontSize: 14, color: "#333", whiteSpace: "nowrap" }}>Recommendations:&nbsp;</span>
               <span style={{ borderBottom: "1px dashed #999", flex: 1, paddingLeft: 4 }}>
-                <HW text={data.notes} deg={0.4} size={fs} />
+                {hw(data.notes, 0.4, fs)}
               </span>
             </div>
             <div style={{ fontSize: 14, color: "#333", marginBottom: 20, display: "flex", flexWrap: "wrap", gap: 4, alignItems: "flex-end" }}>
               <span>The patient is advised to rest for&nbsp;</span>
               <span style={{ borderBottom: "1px dashed #999", minWidth: 50, display: "inline-block", textAlign: "center" }}>
-                <HW text={data.restDays} deg={-0.6} size={fs} />
+                {hw(data.restDays, -0.6, fs)}
               </span>
               <span>&nbsp;days, starting from the date above.</span>
             </div>
@@ -317,7 +313,7 @@ export const CertificatePreview = React.memo(forwardRef<HTMLDivElement, PreviewP
       return (
         <div ref={ref} style={{ width: "100%", maxWidth: 680, margin: "0 auto", aspectRatio: "1 / 1.414", background: "#fff", position: "relative", overflow: "hidden", boxShadow: "0 4px 30px rgba(0,0,0,0.15)", fontFamily: "Arial, sans-serif", boxSizing: "border-box" }}>
           <InkFilter />
-          <Watermark />
+          <WatermarkOverlay show={showWatermark} />
           <div style={{ background: "#fff", borderBottom: "2px solid #8b1a1a", textAlign: "center", padding: "10px 16px 8px" }}>
             <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8 }}>
               <span style={{ color: "#8b1a1a", fontSize: 20, fontWeight: 900 }}>+</span>
@@ -339,17 +335,17 @@ export const CertificatePreview = React.memo(forwardRef<HTMLDivElement, PreviewP
             <div style={{ flex: 1, padding: "16px 20px", position: "relative" }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 12 }}>
                 <span style={{ fontFamily: "Georgia, serif", fontSize: 22, fontStyle: "italic", fontWeight: 900 }}>Rx</span>
-                <HW text={formattedDate} deg={-0.4} size={14} />
+                {hw(formattedDate, -0.4, 14)}
               </div>
-              <div style={{ marginBottom: 8 }}><HW text={data.patientName} deg={0.5} size={fs + 2} /></div>
-              <div style={{ marginBottom: 12 }}><HW text={`Age - ${data.age} / ${data.gender === "Male" ? "M" : "F"}`} deg={0.3} size={fs} /></div>
+              <div style={{ marginBottom: 8 }}>{hw(data.patientName, 0.5, fs + 2)}</div>
+              <div style={{ marginBottom: 12 }}>{hw(`Age - ${data.age} / ${data.gender === "Male" ? "M" : "F"}`, 0.3, fs)}</div>
               {data.diagnosis.split(/[,\n]/).filter(Boolean).map((line, i) => (
                 <div key={i} style={{ marginBottom: 6, paddingLeft: i > 0 ? 8 : 0 }}>
-                  <HW text={line.trim()} deg={i % 2 === 0 ? 0.4 : -0.5} size={fs} />
+                  {hw(line.trim(), i % 2 === 0 ? 0.4 : -0.5, fs)}
                 </div>
               ))}
-              {data.notes && <div style={{ marginTop: 6, marginBottom: 6 }}><HW text={data.notes} deg={0.3} size={fs} /></div>}
-              <div style={{ marginTop: 16, paddingLeft: 30 }}><HW text={`advice - Rest for ${data.restDays} days`} deg={-0.4} size={fs} /></div>
+              {data.notes && <div style={{ marginTop: 6, marginBottom: 6 }}>{hw(data.notes, 0.3, fs)}</div>}
+              <div style={{ marginTop: 16, paddingLeft: 30 }}>{hw(`advice - Rest for ${data.restDays} days`, -0.4, fs)}</div>
               <div style={{ position: "absolute", bottom: 10, left: 0, right: 0, borderTop: "1px solid #8b1a1a", padding: "5px 10px", textAlign: "center", fontSize: 8, color: "#8b1a1a", fontWeight: 600 }}>
                 परहेज :- दवा खाने के 10 मिनट पहले/बाद में कुछ नहीं खाना पीना है।
               </div>
@@ -366,7 +362,7 @@ export const CertificatePreview = React.memo(forwardRef<HTMLDivElement, PreviewP
       return (
         <div ref={ref} style={{ width: "100%", maxWidth: 680, margin: "0 auto", aspectRatio: "1 / 1.414", background: "#fff", position: "relative", overflow: "hidden", boxShadow: "0 4px 30px rgba(0,0,0,0.15)", fontFamily: "Arial, sans-serif", padding: "5% 7%", boxSizing: "border-box" }}>
           <InkFilter />
-          <Watermark />
+          <WatermarkOverlay show={showWatermark} />
           <div style={{ position: "relative", zIndex: 2, height: "100%", display: "flex", flexDirection: "column" }}>
             <div style={{ textAlign: "center", marginBottom: 16, paddingBottom: 12, borderBottom: "2px solid #c0392b" }}>
               <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 10, marginBottom: 4 }}>
@@ -378,17 +374,17 @@ export const CertificatePreview = React.memo(forwardRef<HTMLDivElement, PreviewP
             </div>
             <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 16 }}>
               <span style={{ fontFamily: "Georgia, serif", fontSize: 20, fontStyle: "italic", fontWeight: 900 }}>Rx</span>
-              <span style={{ fontSize: 13, color: "#555" }}>Date : <HW text={formattedDate} deg={-0.4} size={13} /></span>
+              <span style={{ fontSize: 13, color: "#555" }}>Date : {hw(formattedDate, -0.4, 13)}</span>
             </div>
-            <div style={{ marginBottom: 6 }}><HW text={data.patientName} deg={0.5} size={fs + 2} /></div>
-            <div style={{ marginBottom: 14 }}><HW text={`Age - ${data.age} / ${data.gender === "Male" ? "M" : "F"}`} deg={0.3} size={fs} /></div>
+            <div style={{ marginBottom: 6 }}>{hw(data.patientName, 0.5, fs + 2)}</div>
+            <div style={{ marginBottom: 14 }}>{hw(`Age - ${data.age} / ${data.gender === "Male" ? "M" : "F"}`, 0.3, fs)}</div>
             {[data.diagnosis, ...data.notes.split("\n")].filter(Boolean).map((line, i) => (
               <div key={i} style={{ marginBottom: 10, paddingLeft: i > 0 ? 12 : 0 }}>
-                <HW text={line.trim()} deg={i % 2 === 0 ? 0.4 : -0.4} size={fs} />
+                {hw(line.trim(), i % 2 === 0 ? 0.4 : -0.4, fs)}
               </div>
             ))}
-            <div style={{ marginTop: 18, paddingLeft: 20 }}><HW text={`R/d - ${data.restDays} Days`} deg={-0.5} size={fs} bold /></div>
-            <div style={{ marginTop: 12, paddingLeft: 20 }}><HW text={`Rest for ${data.restDays} Days`} deg={0.3} size={fs} /></div>
+            <div style={{ marginTop: 18, paddingLeft: 20 }}>{hw(`R/d - ${data.restDays} Days`, -0.5, fs, true)}</div>
+            <div style={{ marginTop: 12, paddingLeft: 20 }}>{hw(`Rest for ${data.restDays} Days`, 0.3, fs)}</div>
             <div style={{ marginTop: "auto", borderTop: "1px solid #ddd", paddingTop: 8 }}>
               <div style={{ background: "#8b1a1a", color: "#fff", padding: "4px 10px", borderRadius: 3, fontSize: 9, textAlign: "center" }}>
                 उपलब्ध सुविधायें | सभी प्रकार आपातकालीन सेवा 24 घंटे उपलब्ध है
@@ -406,7 +402,7 @@ export const CertificatePreview = React.memo(forwardRef<HTMLDivElement, PreviewP
       return (
         <div ref={ref} style={{ width: "100%", maxWidth: 680, margin: "0 auto", aspectRatio: "1 / 1.414", background: "#fffef8", position: "relative", overflow: "hidden", boxShadow: "0 4px 30px rgba(0,0,0,0.15)", fontFamily: "Georgia, serif", padding: "7%", boxSizing: "border-box" }}>
           <InkFilter />
-          <Watermark />
+          <WatermarkOverlay show={showWatermark} />
           <div style={{ border: "2px solid #8b1a1a", borderRadius: 4, padding: "5% 6%", height: "100%", boxSizing: "border-box", position: "relative", zIndex: 2 }}>
             <div style={{ textAlign: "center", marginBottom: 14 }}>
               <h1 style={{ fontSize: 20, fontWeight: 900, color: "#8b1a1a", margin: 0, letterSpacing: 1 }}>{data.hospitalName || "P.G. Multispeciality Hospital"}</h1>
@@ -416,22 +412,22 @@ export const CertificatePreview = React.memo(forwardRef<HTMLDivElement, PreviewP
             </div>
             <p style={{ fontSize: 13, lineHeight: 1.9, color: "#222" }}>
               This is certify that Mr./Mrs./Ku.{" "}
-              <HW text={data.patientName} deg={0.4} size={14} /> is/was advised rest from{" "}
-              <HW text={formattedDate} deg={-0.4} size={13} /> to{" "}
-              <HW text={`${data.restDays} Days`} deg={0.5} size={13} />. As he/she is/was suffering form.
+              {hw(data.patientName, 0.4, 14)} is/was advised rest from{" "}
+              {hw(formattedDate, -0.4, 13)} to{" "}
+              {hw(`${data.restDays} Days`, 0.5, 13)}. As he/she is/was suffering form.
             </p>
             <div style={{ marginTop: 14, marginBottom: 14 }}>
               {data.diagnosis.split(/[,\n]/).filter(Boolean).map((line, i) => (
                 <div key={i} style={{ marginBottom: 10 }}>
-                  <HW text={line.trim()} deg={i % 2 === 0 ? 0.4 : -0.4} size={fs} />
+                  {hw(line.trim(), i % 2 === 0 ? 0.4 : -0.4, fs)}
                 </div>
               ))}
-              <div style={{ marginTop: 8 }}><HW text={`Rest for ${data.restDays} Days`} deg={-0.5} size={fs} /></div>
+              <div style={{ marginTop: 8 }}>{hw(`Rest for ${data.restDays} Days`, -0.5, fs)}</div>
             </div>
             <div style={{ display: "flex", justifyContent: "space-between", marginTop: "auto", paddingTop: 20 }}>
               <div>
                 <span style={{ fontSize: 12, color: "#555" }}>DATE : </span>
-                <HW text={formattedDate} deg={-0.3} size={12} />
+                {hw(formattedDate, -0.3, 12)}
               </div>
               <div style={{ textAlign: "right" }}>
                 <div style={{ width: 160, borderBottom: "1px solid #555", marginBottom: 3 }} />
@@ -451,7 +447,7 @@ export const CertificatePreview = React.memo(forwardRef<HTMLDivElement, PreviewP
       return (
         <div ref={ref} style={{ width: "100%", maxWidth: 680, margin: "0 auto", aspectRatio: "1 / 1.414", background: "#fff", position: "relative", overflow: "hidden", boxShadow: "0 4px 30px rgba(0,0,0,0.15)", fontFamily: "Arial, sans-serif", boxSizing: "border-box" }}>
           <InkFilter />
-          <Watermark />
+          <WatermarkOverlay show={showWatermark} />
           <div style={{ padding: "12px 20px 10px", borderBottom: "2px solid #eee" }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
               <div>
@@ -466,22 +462,22 @@ export const CertificatePreview = React.memo(forwardRef<HTMLDivElement, PreviewP
             </div>
           </div>
           <div style={{ padding: "16px 24px", position: "relative", zIndex: 2 }}>
-            <div style={{ marginBottom: 8 }}><HW text={data.patientName} deg={0.5} size={fs + 2} /></div>
+            <div style={{ marginBottom: 8 }}>{hw(data.patientName, 0.5, fs + 2)}</div>
             <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 14 }}>
-              <HW text={`Age - ${data.age} Years`} deg={0.3} size={fs} />
-              <HW text={formattedDate} deg={-0.4} size={fs} />
+              {hw(`Age - ${data.age} Years`, 0.3, fs)}
+              {hw(formattedDate, -0.4, fs)}
             </div>
             <div style={{ fontFamily: "Georgia, serif", fontSize: 20, fontStyle: "italic", fontWeight: 900, marginBottom: 10 }}>Rx</div>
-            <div style={{ marginBottom: 8 }}><HW text={`c/o ${data.diagnosis}`} deg={0.3} size={fs} /></div>
-            <div style={{ marginBottom: 8, paddingLeft: 12 }}><HW text={data.notes} deg={-0.4} size={fs} /></div>
+            <div style={{ marginBottom: 8 }}>{hw(`c/o ${data.diagnosis}`, 0.3, fs)}</div>
+            <div style={{ marginBottom: 8, paddingLeft: 12 }}>{hw(data.notes, -0.4, fs)}</div>
             <div style={{ marginTop: 16 }}>
               {[`Tab ${data.doctorName.split(" ").pop() || "Lofat"} + BP`, `Tab Arowell – A2+BP`, `Tab Oroxan SM`, `Tab Servio. OO.B.`].map((med, i) => (
                 <div key={i} style={{ marginBottom: 8 }}>
-                  <HW text={med} deg={i % 2 === 0 ? 0.4 : -0.5} size={fs - 1} />
+                  {hw(med, i % 2 === 0 ? 0.4 : -0.5, fs - 1)}
                 </div>
               ))}
             </div>
-            <div style={{ marginTop: 16 }}><HW text={`${data.restDays} Days Rest`} deg={-0.4} size={fs} bold /></div>
+            <div style={{ marginTop: 16 }}>{hw(`${data.restDays} Days Rest`, -0.4, fs, true)}</div>
             <div style={{ position: "absolute", bottom: 40, right: 24, textAlign: "right" }}>
               <span style={{ fontFamily: '"Dancing Script", cursive', fontSize: 36, color: inkColor, opacity: 0.75, filter: "url(#hw-ink)" }}>
                 {data.doctorName.split(" ").pop()}
@@ -502,7 +498,7 @@ export const CertificatePreview = React.memo(forwardRef<HTMLDivElement, PreviewP
       return (
         <div ref={ref} style={{ width: "100%", maxWidth: 680, margin: "0 auto", aspectRatio: "1 / 1.414", background: "#fff", position: "relative", overflow: "hidden", boxShadow: "0 4px 30px rgba(0,0,0,0.15)", fontFamily: "Arial, sans-serif", boxSizing: "border-box" }}>
           <InkFilter />
-          <Watermark />
+          <WatermarkOverlay show={showWatermark} />
           <div style={{ background: "linear-gradient(135deg, #e91e8c, #d81b60)", padding: "10px 20px" }}>
             <h1 style={{ fontSize: 20, fontWeight: 900, color: "#fff", margin: 0 }}>{data.hospitalName || "Muskan Maternity & Children Hospital"}</h1>
             <p style={{ fontSize: 9, color: "rgba(255,255,255,0.85)", margin: "3px 0 0" }}>Pediatrician, Gynecologist And Obstetrician</p>
@@ -510,13 +506,13 @@ export const CertificatePreview = React.memo(forwardRef<HTMLDivElement, PreviewP
           <div style={{ padding: "14px 22px", position: "relative", zIndex: 2 }}>
             <div style={{ display: "flex", gap: 12, marginBottom: 8, fontSize: 13, alignItems: "center", flexWrap: "wrap" }}>
               <span style={{ color: "#555" }}>Name:</span>
-              <span style={{ borderBottom: "1px solid #ddd", flex: 1 }}><HW text={data.patientName} deg={0.4} size={fs} /></span>
+              <span style={{ borderBottom: "1px solid #ddd", flex: 1 }}>{hw(data.patientName, 0.4, fs)}</span>
               <span style={{ color: "#555" }}>Age:</span>
-              <HW text={data.age} deg={-0.4} size={fs} />
+              {hw(data.age, -0.4, fs)}
               <span style={{ color: "#555" }}>Sex:</span>
-              <HW text={data.gender === "Male" ? "M" : "F"} deg={0.3} size={fs} />
+              {hw(data.gender === "Male" ? "M" : "F", 0.3, fs)}
               <span style={{ color: "#555" }}>Date:</span>
-              <HW text={formattedDate} deg={-0.3} size={fs} />
+              {hw(formattedDate, -0.3, fs)}
             </div>
             <div style={{ display: "flex", gap: 8, alignItems: "flex-start", marginTop: 8, marginBottom: 10 }}>
               <div style={{ width: 30, height: 30, borderRadius: "50%", border: "2px solid #e91e8c", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
@@ -525,11 +521,11 @@ export const CertificatePreview = React.memo(forwardRef<HTMLDivElement, PreviewP
             </div>
             {[data.diagnosis, ...data.notes.split(/[\n,]/).filter(Boolean)].map((line, i) => (
               <div key={i} style={{ marginBottom: 10, paddingLeft: 10 }}>
-                <HW text={line.trim()} deg={i % 2 === 0 ? 0.4 : -0.5} size={fs} />
+                {hw(line.trim(), i % 2 === 0 ? 0.4 : -0.5, fs)}
               </div>
             ))}
             <div style={{ marginTop: 16, paddingLeft: 10 }}>
-              <HW text={`Prescribed ${data.restDays} days of strict recumbence`} deg={-0.3} size={fs} />
+              {hw(`Prescribed ${data.restDays} days of strict recumbence`, -0.3, fs)}
             </div>
           </div>
           <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, background: "linear-gradient(135deg, #e91e8c, #d81b60)", padding: "8px 20px" }}>
@@ -547,7 +543,7 @@ export const CertificatePreview = React.memo(forwardRef<HTMLDivElement, PreviewP
       return (
         <div ref={ref} style={{ width: "100%", maxWidth: 680, margin: "0 auto", aspectRatio: "1 / 1.414", background: "#fff", position: "relative", overflow: "hidden", boxShadow: "0 4px 30px rgba(0,0,0,0.15)", fontFamily: "Arial, sans-serif", padding: "5% 7%", boxSizing: "border-box" }}>
           <InkFilter />
-          <Watermark />
+          <WatermarkOverlay show={showWatermark} />
           <div style={{ display: "flex", gap: 12, alignItems: "flex-start", marginBottom: 14, paddingBottom: 12, borderBottom: "1px solid #ddd" }}>
             <div style={{ flex: 1 }}>
               <div style={{ fontSize: 10, color: "#444", marginBottom: 2 }}>{data.doctorName || "Dr. Palak Patel"}</div>
@@ -559,22 +555,22 @@ export const CertificatePreview = React.memo(forwardRef<HTMLDivElement, PreviewP
           </div>
           <div style={{ display: "flex", gap: 10, marginBottom: 6, fontSize: 13, alignItems: "flex-end" }}>
             <span style={{ color: "#555" }}>Name:</span>
-            <span style={{ borderBottom: "1px solid #ccc", flex: 1 }}><HW text={data.patientName} deg={0.5} size={fs} /></span>
+            <span style={{ borderBottom: "1px solid #ccc", flex: 1 }}>{hw(data.patientName, 0.5, fs)}</span>
             <span style={{ color: "#555" }}>Age:</span>
-            <HW text={data.age} deg={-0.4} size={fs} />
+            {hw(data.age, -0.4, fs)}
             <span style={{ color: "#555" }}>Sex:</span>
-            <HW text={data.gender === "Male" ? "M" : "F"} deg={0.3} size={fs} />
+            {hw(data.gender === "Male" ? "M" : "F", 0.3, fs)}
             <span style={{ color: "#555" }}>Date:</span>
-            <HW text={formattedDate} deg={-0.3} size={fs} />
+            {hw(formattedDate, -0.3, fs)}
           </div>
           <div style={{ fontFamily: "Georgia", fontSize: 16, fontStyle: "italic", fontWeight: 900, margin: "12px 0" }}>Rx</div>
           {[data.diagnosis, ...data.notes.split(/[\n,]/).filter(Boolean)].map((line, i) => (
             <div key={i} style={{ marginBottom: 10, paddingLeft: 8 }}>
-              <HW text={line.trim()} deg={i % 2 === 0 ? 0.4 : -0.5} size={fs} />
+              {hw(line.trim(), i % 2 === 0 ? 0.4 : -0.5, fs)}
             </div>
           ))}
           <div style={{ marginTop: 20, paddingLeft: 8 }}>
-            <HW text={`Prescribed ${data.restDays} days of strict recumbence`} deg={-0.3} size={fs} />
+            {hw(`Prescribed ${data.restDays} days of strict recumbence`, -0.3, fs)}
           </div>
           <div style={{ position: "absolute", bottom: 16, left: 0, right: 0, textAlign: "center", fontSize: 9, color: "#666", borderTop: "1px solid #ddd", paddingTop: 6 }}>
             Telephone No: {data.phone || "07624-292263"}
@@ -590,18 +586,18 @@ export const CertificatePreview = React.memo(forwardRef<HTMLDivElement, PreviewP
       return (
         <div ref={ref} style={{ width: "100%", maxWidth: 680, margin: "0 auto", aspectRatio: "1 / 1.414", background: "#fff", position: "relative", overflow: "hidden", boxShadow: "0 4px 30px rgba(0,0,0,0.15)", fontFamily: "Arial, sans-serif", padding: "5% 7%", boxSizing: "border-box" }}>
           <InkFilter />
-          <Watermark />
+          <WatermarkOverlay show={showWatermark} />
           <div style={{ textAlign: "center", marginBottom: 16, paddingBottom: 12, borderBottom: "2px solid #8b1a1a" }}>
             <h1 style={{ fontSize: 22, fontWeight: 900, color: "#1a1a1a", margin: 0, letterSpacing: 1 }}>{data.hospitalName || "A.N.K MULTISPECIALITY HOSPITAL"}</h1>
           </div>
           <div style={{ display: "flex", gap: 10, marginBottom: 8, fontSize: 13, alignItems: "flex-end", borderBottom: "1px solid #ddd", paddingBottom: 8 }}>
             <span style={{ color: "#555" }}>Name:</span>
-            <span style={{ flex: 1 }}><HW text={data.patientName} deg={0.5} size={fs} /></span>
+            <span style={{ flex: 1 }}>{hw(data.patientName, 0.5, fs)}</span>
           </div>
           <div style={{ display: "flex", gap: 12, marginBottom: 14, fontSize: 13, alignItems: "center" }}>
-            <span style={{ color: "#555" }}>Age:</span><HW text={data.age} deg={-0.4} size={fs} />
-            <span style={{ color: "#555" }}>Sex:</span><HW text={data.gender === "Male" ? "M" : "F"} deg={0.3} size={fs} />
-            <span style={{ color: "#555" }}>Date:</span><HW text={formattedDate} deg={-0.3} size={fs} />
+            <span style={{ color: "#555" }}>Age:</span>{hw(data.age, -0.4, fs)}
+            <span style={{ color: "#555" }}>Sex:</span>{hw(data.gender === "Male" ? "M" : "F", 0.3, fs)}
+            <span style={{ color: "#555" }}>Date:</span>{hw(formattedDate, -0.3, fs)}
           </div>
           <div style={{ display: "flex", gap: 14, marginBottom: 14 }}>
             <div style={{ width: 44, height: 44, borderRadius: "50%", border: "2px solid #8b1a1a", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
@@ -610,10 +606,10 @@ export const CertificatePreview = React.memo(forwardRef<HTMLDivElement, PreviewP
           </div>
           {[data.diagnosis, ...data.notes.split(/[\n,]/).filter(Boolean)].map((line, i) => (
             <div key={i} style={{ marginBottom: 10, paddingLeft: 14 }}>
-              <HW text={line.trim()} deg={i % 2 === 0 ? 0.4 : -0.5} size={fs} />
+              {hw(line.trim(), i % 2 === 0 ? 0.4 : -0.5, fs)}
             </div>
           ))}
-          <div style={{ marginTop: 20, paddingLeft: 14 }}><HW text={`Rest for ${data.restDays} days | avoid activities`} deg={-0.4} size={fs} /></div>
+          <div style={{ marginTop: 20, paddingLeft: 14 }}>{hw(`Rest for ${data.restDays} days | avoid activities`, -0.4, fs)}</div>
           <div style={{ position: "absolute", bottom: 16, left: "7%", right: "7%", borderTop: "1px solid #ddd", paddingTop: 6, fontSize: 9, color: "#555" }}>
             {data.address || "Wright Town"} | Telephone No: {data.phone || "07624-292263"}
           </div>
@@ -628,7 +624,7 @@ export const CertificatePreview = React.memo(forwardRef<HTMLDivElement, PreviewP
       return (
         <div ref={ref} style={{ width: "100%", maxWidth: 680, margin: "0 auto", aspectRatio: "1 / 1.414", background: "#fff", position: "relative", overflow: "hidden", boxShadow: "0 4px 30px rgba(0,0,0,0.15)", fontFamily: "Arial, sans-serif", boxSizing: "border-box" }}>
           <InkFilter />
-          <Watermark />
+          <WatermarkOverlay show={showWatermark} />
           <div style={{ background: "#f5c518", padding: "10px 20px", display: "flex", alignItems: "center", gap: 12 }}>
             <span style={{ fontSize: 22 }}>☤</span>
             <h1 style={{ fontSize: 20, fontWeight: 900, color: "#1a1a1a", margin: 0, textTransform: "uppercase", letterSpacing: 1 }}>{data.hospitalName || "Aditya Multispeciality Hospital"}</h1>
@@ -637,20 +633,20 @@ export const CertificatePreview = React.memo(forwardRef<HTMLDivElement, PreviewP
           <div style={{ padding: "16px 22px", position: "relative", zIndex: 2 }}>
             <div style={{ display: "flex", gap: 10, marginBottom: 6, fontSize: 13, alignItems: "flex-end" }}>
               <span style={{ color: "#555" }}>Name:</span>
-              <span style={{ borderBottom: "1px solid #ccc", flex: 1, paddingLeft: 4 }}><HW text={data.patientName} deg={0.5} size={fs} /></span>
+              <span style={{ borderBottom: "1px solid #ccc", flex: 1, paddingLeft: 4 }}>{hw(data.patientName, 0.5, fs)}</span>
             </div>
             <div style={{ display: "flex", gap: 12, marginBottom: 16, fontSize: 13, alignItems: "center" }}>
-              <span style={{ color: "#555" }}>Age:</span><HW text={data.age} deg={-0.4} size={fs} />
-              <span style={{ color: "#555" }}>Sex:</span><HW text={data.gender === "Male" ? "M" : "F"} deg={0.3} size={fs} />
-              <span style={{ color: "#555" }}>Date:</span><HW text={formattedDate} deg={-0.3} size={fs} />
+              <span style={{ color: "#555" }}>Age:</span>{hw(data.age, -0.4, fs)}
+              <span style={{ color: "#555" }}>Sex:</span>{hw(data.gender === "Male" ? "M" : "F", 0.3, fs)}
+              <span style={{ color: "#555" }}>Date:</span>{hw(formattedDate, -0.3, fs)}
             </div>
             <div style={{ fontFamily: "Georgia", fontSize: 18, fontStyle: "italic", fontWeight: 900, marginBottom: 14 }}>Rx</div>
             {[data.diagnosis, ...data.notes.split(/[\n,]/).filter(Boolean)].map((line, i) => (
               <div key={i} style={{ marginBottom: 10, paddingLeft: i > 0 ? 14 : 0 }}>
-                <HW text={line.trim()} deg={i % 2 === 0 ? 0.4 : -0.5} size={fs} />
+                {hw(line.trim(), i % 2 === 0 ? 0.4 : -0.5, fs)}
               </div>
             ))}
-            <div style={{ marginTop: 18 }}><HW text={`advice - Rest for ${data.restDays} days`} deg={-0.4} size={fs} /></div>
+            <div style={{ marginTop: 18 }}>{hw(`advice - Rest for ${data.restDays} days`, -0.4, fs)}</div>
           </div>
           <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, borderTop: "1px solid #ddd", padding: "6px 22px", fontSize: 9, color: "#444" }}>
             {data.address || "Sno. 45, 450 Vijay Nagar Road, Delhi"} | Telephone No: {data.phone || "07624-292263"}
@@ -666,7 +662,7 @@ export const CertificatePreview = React.memo(forwardRef<HTMLDivElement, PreviewP
       return (
         <div ref={ref} style={{ width: "100%", maxWidth: 680, margin: "0 auto", aspectRatio: "1 / 1.414", background: "#fff", position: "relative", overflow: "hidden", boxShadow: "0 4px 30px rgba(0,0,0,0.15)", fontFamily: "Arial, sans-serif", boxSizing: "border-box" }}>
           <InkFilter />
-          <Watermark />
+          <WatermarkOverlay show={showWatermark} />
           <div style={{ padding: "10px 20px", borderBottom: "2px solid #1a3a6b" }}>
             <h1 style={{ fontSize: 24, fontWeight: 900, color: "#1a3a6b", margin: 0 }}>{data.hospitalName || "D.P.K Hospital"}</h1>
             <p style={{ fontSize: 9, color: "#555", margin: "2px 0 0" }}>{data.address || "11 CHORD RD. OPP. VASANTH, VIJAY NAGAR"} | {data.phone || "07624-292263"}</p>
@@ -674,16 +670,16 @@ export const CertificatePreview = React.memo(forwardRef<HTMLDivElement, PreviewP
           <div style={{ display: "flex", height: "calc(100% - 60px)" }}>
             <div style={{ flex: 1, padding: "14px 18px", position: "relative", zIndex: 2 }}>
               <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 10 }}>
-                <div style={{ fontSize: 13 }}>Name: <HW text={data.patientName} deg={0.5} size={fs} /></div>
-                <HW text={formattedDate} deg={-0.3} size={13} />
+                <div style={{ fontSize: 13 }}>Name: {hw(data.patientName, 0.5, fs)}</div>
+                {hw(formattedDate, -0.3, 13)}
               </div>
               <div style={{ fontFamily: "Georgia", fontSize: 18, fontStyle: "italic", fontWeight: 900, margin: "8px 0 10px" }}>Rx</div>
               {[data.diagnosis, ...data.notes.split(/[\n,]/).filter(Boolean)].map((line, i) => (
                 <div key={i} style={{ marginBottom: 10, paddingLeft: i > 0 ? 12 : 0 }}>
-                  <HW text={line.trim()} deg={i % 2 === 0 ? 0.4 : -0.5} size={fs} />
+                  {hw(line.trim(), i % 2 === 0 ? 0.4 : -0.5, fs)}
                 </div>
               ))}
-              <div style={{ marginTop: 16 }}><HW text={`advice - Rest for ${data.restDays} days`} deg={-0.4} size={fs} /></div>
+              <div style={{ marginTop: 16 }}>{hw(`advice - Rest for ${data.restDays} days`, -0.4, fs)}</div>
               <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, borderTop: "2px solid #1a3a6b", padding: "6px 18px" }}>
                 <div style={{ fontSize: 11, fontWeight: 700, color: "#1a3a6b" }}>{data.hospitalName || "D.P.K Hospital"}</div>
                 <div style={{ fontSize: 9, color: "#555" }}>{data.doctorName || "DR. VIJAY KUMAR"} | {data.address || "CHORD RD. OPP. VASANTH, VIJAY NAGAR"}</div>
@@ -709,7 +705,7 @@ export const CertificatePreview = React.memo(forwardRef<HTMLDivElement, PreviewP
       return (
         <div ref={ref} style={{ width: "100%", maxWidth: 680, margin: "0 auto", aspectRatio: "1 / 1.414", background: "#fff", position: "relative", overflow: "hidden", boxShadow: "0 4px 30px rgba(0,0,0,0.15)", fontFamily: "Arial, sans-serif", padding: "5% 7%", boxSizing: "border-box" }}>
           <InkFilter />
-          <Watermark />
+          <WatermarkOverlay show={showWatermark} />
           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 16, paddingBottom: 12, borderBottom: "2px solid #1a1a1a" }}>
             <div>
               <h1 style={{ fontSize: 20, fontWeight: 900, color: "#1a1a1a", margin: 0 }}>{data.hospitalName || "Mishra Dental Clinic"}</h1>
@@ -721,8 +717,8 @@ export const CertificatePreview = React.memo(forwardRef<HTMLDivElement, PreviewP
             </div>
           </div>
           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 16 }}>
-            <HW text={formattedDate} deg={-0.4} size={13} />
-            <HW text={data.patientName} deg={0.5} size={14} />
+            {hw(formattedDate, -0.4, 13)}
+            {hw(data.patientName, 0.5, 14)}
           </div>
           <div style={{ fontFamily: "Georgia", fontSize: 16, fontStyle: "italic", marginBottom: 14 }}>Rx,</div>
           {[
@@ -734,14 +730,14 @@ export const CertificatePreview = React.memo(forwardRef<HTMLDivElement, PreviewP
               <div>
                 {group.meds.map((med, mi) => (
                   <div key={mi} style={{ marginBottom: 6 }}>
-                    <HW text={med} deg={mi % 2 === 0 ? 0.4 : -0.4} size={fs - 1} />
+                    {hw(med, mi % 2 === 0 ? 0.4 : -0.4, fs - 1)}
                   </div>
                 ))}
               </div>
             </div>
           ))}
-          <div style={{ marginTop: 14 }}><HW text={data.diagnosis} deg={0.3} size={fs} /></div>
-          <div style={{ marginTop: 10 }}><HW text={`Rest for ${data.restDays} days`} deg={-0.4} size={fs} /></div>
+          <div style={{ marginTop: 14 }}>{hw(data.diagnosis, 0.3, fs)}</div>
+          <div style={{ marginTop: 10 }}>{hw(`Rest for ${data.restDays} days`, -0.4, fs)}</div>
           <div style={{ position: "absolute", bottom: 40, right: "7%", textAlign: "right" }}>
             <span style={{ fontFamily: '"Dancing Script", cursive', fontSize: 38, color: inkColor, opacity: 0.75, filter: "url(#hw-ink)" }}>
               {data.doctorName.split(" ").pop()}
@@ -761,7 +757,7 @@ export const CertificatePreview = React.memo(forwardRef<HTMLDivElement, PreviewP
       return (
         <div ref={ref} style={{ width: "100%", maxWidth: 680, margin: "0 auto", aspectRatio: "1 / 1.414", background: "#fff", position: "relative", overflow: "hidden", boxShadow: "0 4px 30px rgba(0,0,0,0.15)", fontFamily: "Arial, sans-serif", boxSizing: "border-box" }}>
           <InkFilter />
-          <Watermark />
+          <WatermarkOverlay show={showWatermark} />
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "10px 18px", borderBottom: "2px solid #c0392b" }}>
             <h1 style={{ fontSize: 20, fontWeight: 900, color: "#c0392b", margin: 0 }}>{data.hospitalName || "Health First Clinic"}</h1>
             <span style={{ fontSize: 22 }}>☤</span>
@@ -779,22 +775,22 @@ export const CertificatePreview = React.memo(forwardRef<HTMLDivElement, PreviewP
             <div style={{ flex: 1, padding: "14px 16px", position: "relative", zIndex: 2 }}>
               <div style={{ display: "flex", gap: 8, marginBottom: 6, fontSize: 13, alignItems: "flex-end", flexWrap: "wrap" }}>
                 <span style={{ color: "#555" }}>Name</span>
-                <span style={{ borderBottom: "1px solid #ccc", flex: 1, minWidth: 80 }}><HW text={data.patientName} deg={0.5} size={fs} /></span>
-                <span style={{ color: "#555" }}>Age</span><HW text={data.age} deg={-0.4} size={fs} />
-                <span style={{ color: "#555" }}>Sex</span><HW text={data.gender === "Male" ? "M" : "F"} deg={0.3} size={fs} />
-                <span style={{ color: "#555" }}>Date</span><HW text={formattedDate} deg={-0.3} size={fs} />
+                <span style={{ borderBottom: "1px solid #ccc", flex: 1, minWidth: 80 }}>{hw(data.patientName, 0.5, fs)}</span>
+                <span style={{ color: "#555" }}>Age</span>{hw(data.age, -0.4, fs)}
+                <span style={{ color: "#555" }}>Sex</span>{hw(data.gender === "Male" ? "M" : "F", 0.3, fs)}
+                <span style={{ color: "#555" }}>Date</span>{hw(formattedDate, -0.3, fs)}
               </div>
               <div style={{ fontFamily: "Georgia", fontSize: 16, fontStyle: "italic", fontWeight: 900, margin: "10px 0 8px" }}>Rx</div>
-              <div style={{ marginBottom: 8 }}><HW text={`c/o ${data.diagnosis}`} deg={0.3} size={fs} /></div>
-              <div style={{ paddingLeft: 10, marginBottom: 8 }}><HW text={`• ${data.notes}`} deg={-0.4} size={fs} /></div>
+              <div style={{ marginBottom: 8 }}>{hw(`c/o ${data.diagnosis}`, 0.3, fs)}</div>
+              <div style={{ paddingLeft: 10, marginBottom: 8 }}>{hw(`• ${data.notes}`, -0.4, fs)}</div>
               <div style={{ marginTop: 14 }}>
                 {[`Tab ${data.doctorName.split(" ").pop() || "Lofat"} + BP`, `Tab Arowell – A2+BP`, `Tab Oroxan SM`, `Tab Servio. OO.B.`].map((med, i) => (
                   <div key={i} style={{ marginBottom: 8, paddingLeft: 10 }}>
-                    <HW text={med} deg={i % 2 === 0 ? 0.4 : -0.5} size={fs - 1} />
+                    {hw(med, i % 2 === 0 ? 0.4 : -0.5, fs - 1)}
                   </div>
                 ))}
               </div>
-              <div style={{ marginTop: 12 }}><HW text={`${data.restDays} Days Rest`} deg={-0.4} size={fs} /></div>
+              <div style={{ marginTop: 12 }}>{hw(`${data.restDays} Days Rest`, -0.4, fs)}</div>
               <div style={{ position: "absolute", bottom: 16, right: 16 }}>
                 <span style={{ fontFamily: '"Dancing Script", cursive', fontSize: 34, color: inkColor, opacity: 0.75, filter: "url(#hw-ink)" }}>
                   {data.doctorName.split(" ").pop()}
@@ -816,7 +812,7 @@ export const CertificatePreview = React.memo(forwardRef<HTMLDivElement, PreviewP
       return (
         <div ref={ref} style={{ width: "100%", maxWidth: 680, margin: "0 auto", aspectRatio: "1 / 1.414", background: "#fff", position: "relative", overflow: "hidden", boxShadow: "0 4px 30px rgba(0,0,0,0.15)", fontFamily: "Arial, sans-serif", boxSizing: "border-box" }}>
           <InkFilter />
-          <Watermark />
+          <WatermarkOverlay show={showWatermark} />
           <div style={{ padding: "10px 18px", borderBottom: "2px solid #1a3a8f", display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
             <div>
               <h1 style={{ fontSize: 20, fontWeight: 900, color: "#1a3a8f", margin: 0 }}>{data.hospitalName || "NARAYAN CARE CLINIC"}</h1>
@@ -833,16 +829,16 @@ export const CertificatePreview = React.memo(forwardRef<HTMLDivElement, PreviewP
           <div style={{ padding: "10px 18px" }}>
             <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 8, fontSize: 12 }}>
               <span style={{ color: "#555" }}>{data.patientName} ({data.age}y, {data.gender === "Male" ? "M" : "F"})</span>
-              <div style={{ color: "#555" }}>Date &amp; Time: <HW text={formattedDate} deg={-0.3} size={12} /></div>
+              <div style={{ color: "#555" }}>Date &amp; Time: {hw(formattedDate, -0.3, 12)}</div>
             </div>
             <div style={{ marginBottom: 8, background: "#f8f9fa", padding: "6px 10px", borderRadius: 4, fontSize: 11 }}>
-              <strong>Complaints:</strong> <HW text={data.diagnosis} deg={0.3} size={11} />
+              <strong>Complaints:</strong> {hw(data.diagnosis, 0.3, 11)}
             </div>
             <div style={{ marginBottom: 8, fontSize: 11 }}>
               <strong>Diagnosis:</strong> <span style={{ color: "#c0392b", fontWeight: 700 }}>{data.diagnosis.split(",")[0]}</span>
             </div>
             <div style={{ marginBottom: 12, fontSize: 11 }}>
-              <strong>Rest:</strong> <HW text={`${data.restDays} Days`} deg={-0.4} size={11} />
+              <strong>Rest:</strong> {hw(`${data.restDays} Days`, -0.4, 11)}
             </div>
             <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 10, marginBottom: 14 }}>
               <thead>
@@ -855,7 +851,7 @@ export const CertificatePreview = React.memo(forwardRef<HTMLDivElement, PreviewP
               <tbody>
                 {[["CAP. RABEMAC DSR", "1-0-0", "Before breakfast - Daily - 5 Days"], ["TAB. ONDEM MD 4MG", "1-1-1", "Before Food - Daily - 2 Days"], ["CAP. GUT+KRYPT", "1-0-1", "After Food - Daily - 5 Days"], ["TAB. LEVOCET M", "0-0-1", "After dinner - Daily - 5 Days"]].map(([med, dose, timing], i) => (
                   <tr key={i} style={{ background: i % 2 === 0 ? "#fff" : "#f5f8ff", borderBottom: "1px solid #e0e0e0" }}>
-                    <td style={{ padding: "5px 6px" }}><HW text={med} deg={0.3} size={9.5} /></td>
+                    <td style={{ padding: "5px 6px" }}>{hw(med, 0.3, 9.5)}</td>
                     <td style={{ padding: "5px 6px", textAlign: "center" }}>{dose}</td>
                     <td style={{ padding: "5px 6px" }}>{timing}</td>
                   </tr>
@@ -885,7 +881,7 @@ export const CertificatePreview = React.memo(forwardRef<HTMLDivElement, PreviewP
       return (
         <div ref={ref} style={{ width: "100%", maxWidth: 680, margin: "0 auto", aspectRatio: "1 / 1.414", background: "#fff", position: "relative", overflow: "hidden", boxShadow: "0 4px 30px rgba(0,0,0,0.15)", fontFamily: "Arial, sans-serif", boxSizing: "border-box" }}>
           <InkFilter />
-          <Watermark />
+          <WatermarkOverlay show={showWatermark} />
           <div style={{ padding: "10px 20px", borderBottom: "3px solid #c0392b" }}>
             <h1 style={{ fontSize: 26, fontWeight: 900, color: "#c0392b", margin: 0, letterSpacing: 1 }}>{data.hospitalName || "SANJIVINI"}</h1>
             <p style={{ fontSize: 11, color: "#555", margin: "2px 0 0" }}>Multi Speciality Hospital</p>
@@ -905,11 +901,11 @@ export const CertificatePreview = React.memo(forwardRef<HTMLDivElement, PreviewP
           <div style={{ padding: "10px 20px" }}>
             <div style={{ marginBottom: 8 }}>
               <strong style={{ fontSize: 11 }}>Complaints:</strong>
-              <div style={{ paddingLeft: 14, marginTop: 4 }}><HW text={data.diagnosis} deg={0.4} size={fs} /></div>
+              <div style={{ paddingLeft: 14, marginTop: 4 }}>{hw(data.diagnosis, 0.4, fs)}</div>
             </div>
             <div style={{ marginBottom: 8 }}>
               <strong style={{ fontSize: 11 }}>History: Clinical Evaluation —</strong>
-              <div style={{ paddingLeft: 14, marginTop: 4 }}><HW text={`Diagnosis: ${data.diagnosis.split(",")[0]}`} deg={-0.3} size={fs - 1} /></div>
+              <div style={{ paddingLeft: 14, marginTop: 4 }}>{hw(`Diagnosis: ${data.diagnosis.split(",")[0]}`, -0.3, fs - 1)}</div>
             </div>
             <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 9.5, marginBottom: 12 }}>
               <thead>
@@ -937,7 +933,7 @@ export const CertificatePreview = React.memo(forwardRef<HTMLDivElement, PreviewP
               <li>Rest for {data.restDays} days</li>
             </ul>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginTop: 14 }}>
-              <div style={{ fontSize: 10 }}><HW text="Follow Up Advice: 1m 2d" deg={0.4} size={10} /></div>
+              <div style={{ fontSize: 10 }}>{hw("Follow Up Advice: 1m 2d", 0.4, 10)}</div>
               <div style={{ textAlign: "right" }}>
                 <span style={{ fontFamily: '"Dancing Script", cursive', fontSize: 34, color: inkColor, opacity: 0.75, display: "block", filter: "url(#hw-ink)" }}>
                   {data.doctorName.split(" ").pop()}
@@ -960,26 +956,26 @@ export const CertificatePreview = React.memo(forwardRef<HTMLDivElement, PreviewP
       return (
         <div ref={ref} style={{ width: "100%", maxWidth: 680, margin: "0 auto", aspectRatio: "1 / 1.414", background: "#fff", position: "relative", overflow: "hidden", boxShadow: "0 4px 30px rgba(0,0,0,0.15)", fontFamily: "Arial, sans-serif", padding: "5% 8%", boxSizing: "border-box" }}>
           <InkFilter />
-          <Watermark />
+          <WatermarkOverlay show={showWatermark} />
           <div style={{ textAlign: "center", marginBottom: 16 }}>
             <h1 style={{ fontSize: 24, fontWeight: 900, color: "#1a1a1a", margin: 0 }}>{data.hospitalName || "ASTHA CLINIC"}</h1>
             <p style={{ fontSize: 10, color: "#555", margin: "2px 0 0" }}>{data.doctorName || "Dr. Arvind Kumar Sharma"} ({data.doctorDegree || "MBBS, MD"})</p>
             <div style={{ width: "100%", height: 2, background: "#1a1a1a", marginTop: 10 }} />
           </div>
           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 14, fontSize: 13 }}>
-            <div>Patient Name: <HW text={data.patientName} deg={0.5} size={fs} /></div>
+            <div>Patient Name: {hw(data.patientName, 0.5, fs)}</div>
             <div>{data.age}y, {data.gender === "Male" ? "M" : "F"}</div>
           </div>
           <div style={{ marginBottom: 10, display: "flex", gap: 6 }}>
             <span style={{ fontFamily: "Georgia", fontStyle: "italic", fontSize: 18, lineHeight: 1 }}>△</span>
-            <HW text={data.diagnosis} deg={0.4} size={fs + 1} />
+            {hw(data.diagnosis, 0.4, fs + 1)}
           </div>
           {data.notes.split(/[\n,]/).filter(Boolean).map((line, i) => (
             <div key={i} style={{ marginBottom: 8, paddingLeft: 18 }}>
-              <HW text={line.trim()} deg={i % 2 === 0 ? 0.4 : -0.5} size={fs} />
+              {hw(line.trim(), i % 2 === 0 ? 0.4 : -0.5, fs)}
             </div>
           ))}
-          <div style={{ marginTop: 16, paddingLeft: 18 }}><HW text={`${data.restDays} Days rest`} deg={-0.4} size={fs} /></div>
+          <div style={{ marginTop: 16, paddingLeft: 18 }}>{hw(`${data.restDays} Days rest`, -0.4, fs)}</div>
           <div style={{ position: "absolute", bottom: 50, right: "8%" }}>
             <span style={{ fontFamily: '"Dancing Script", cursive', fontSize: 40, color: inkColor, opacity: 0.75, filter: "url(#hw-ink)" }}>
               {data.doctorName.split(" ").pop()}
@@ -998,6 +994,6 @@ export const CertificatePreview = React.memo(forwardRef<HTMLDivElement, PreviewP
       </div>
     );
   }
-));
+);
 
 CertificatePreview.displayName = "CertificatePreview";
