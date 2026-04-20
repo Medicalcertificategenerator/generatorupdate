@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import React, { forwardRef } from "react";
 import { format } from "date-fns";
 import type { CertificateData } from "@/types/certificate";
 
@@ -119,7 +119,7 @@ function InkFilter() {
   );
 }
 
-export const CertificatePreview = forwardRef<HTMLDivElement, PreviewProps>(
+export const CertificatePreview = React.memo(forwardRef<HTMLDivElement, PreviewProps>(
   ({ data, templateId, hideWatermark = false }, ref) => {
     const fontFamily =
       data.font === "caveat"
@@ -998,6 +998,6 @@ export const CertificatePreview = forwardRef<HTMLDivElement, PreviewProps>(
       </div>
     );
   }
-);
+));
 
 CertificatePreview.displayName = "CertificatePreview";

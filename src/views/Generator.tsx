@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { format } from "date-fns";
@@ -83,6 +83,9 @@ export default function Generator() {
   const otherTemplates = TEMPLATES.filter((t) => t.id !== templateId).slice(0, 6);
 
   const [data, setData] = useState<CertificateData>(DEFAULT_DATA);
+  const [debouncedData, setDebouncedData] = useState<CertificateData>(DEFAULT_DATA);
+  const [previewScale, setPreviewScale] = useState(1);
+  const previewWrapperRef = useRef<HTMLDivElement>(null);
   const [isDownloadingPng, setIsDownloadingPng] = useState(false);
   const [isDownloadingPdf, setIsDownloadingPdf] = useState(false);
   const [isSharing, setIsSharing] = useState(false);
@@ -93,9 +96,46 @@ export default function Generator() {
   const { toast } = useToast();
 
   useEffect(() => {
-    setData((prev) => ({ ...prev, date: format(new Date(), "yyyy-MM-dd") }));
+    let initialData = { ...DEFAULT_DATA };
+    const today = format(new Date(), "yyyy-MM-dd");
+    try {
+      const draft = localStorage.getItem("certificate_draft");
+      if (draft) {
+        initialData = { ...initialData, ...JSON.parse(draft) };
+        localStorage.removeItem("certificate_draft"); // consume it
+      } else {
+        initialData.date = today;
+      }
+    } catch {
+      initialData.date = today;
+    }
+    
+    setData(initialData);
+    setDebouncedData(initialData);
     setShareUrl(window.location.href);
     setCanNativeShare(!!navigator.share);
+  }, []);
+
+  // Debounce the preview data to prevent lag during fast typing
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setDebouncedData(data);
+    }, 250);
+    return () => clearTimeout(timeout);
+  }, [data]);
+
+  // Handle responsive preview scaling for A4 aspect ratio preview
+  useEffect(() => {
+    if (!previewWrapperRef.current) return;
+    const observer = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        const { width } = entry.contentRect;
+        // Our base aspect ratio design is optimized for 680px max-width
+        setPreviewScale(Math.min(1, width / 680));
+      }
+    });
+    observer.observe(previewWrapperRef.current);
+    return () => observer.disconnect();
   }, []);
 
   const handleInputChange = (
@@ -411,9 +451,17 @@ export default function Generator() {
               <span className="text-xs font-medium text-muted-foreground">Live Preview</span>
             </div>
 
-            <m.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4 }} className="w-full max-w-[800px] flex-shrink-0">
-              <CertificatePreview ref={certificateRef} data={data} templateId={templateId} hideWatermark={false} />
+            <m.div 
+              initial={{ opacity: 0, scale: 0.95 }} 
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4 }} 
+              className="w-full max-w-[680px] mx-auto bg-transparent relative flex-shrink-0"
+              ref={previewWrapperRef}
+              style={{ aspectRatio: '1 / 1.414' }}
+            >
+              <div style={{ width: 680, transform: `scale(${previewScale})`, transformOrigin: "top left", position: "absolute", top: 0, left: 0 }}>
+                <CertificatePreview ref={certificateRef} data={debouncedData} templateId={templateId} hideWatermark={false} />
+              </div>
             </m.div>
           </div>
 

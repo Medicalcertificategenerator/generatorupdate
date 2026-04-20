@@ -33,6 +33,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { TEMPLATES } from "@/types/certificate";
 import { LANDING_PAGES } from "@/data/landingPages";
+import { HomeGenerator } from "@/components/home/HomeGenerator";
 
 const testimonials = [
   { name: "Rahul Gupta", role: "UI/UX Designer", text: "I needed placeholder documents for a healthcare app prototype. This generated realistic layouts perfectly—saved me hours of Photoshop work.", stars: 5 },
@@ -263,18 +264,18 @@ export default function Home() {
               </span>
             ))}
           </div>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <Link href="/generator/formal-cert">
-              <Button size="lg" className="gap-2 font-bold text-base shadow-lg shadow-primary/25 px-8 h-12">
-                Generate Certificate Now <ArrowRight className="w-4 h-4" />
-              </Button>
-            </Link>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-10">
             <a href="#templates">
               <Button size="lg" variant="outline" className="gap-2 font-semibold h-12 px-8">
                 Browse Templates
               </Button>
             </a>
           </div>
+          
+          <div className="w-full text-left mb-8">
+            <HomeGenerator />
+          </div>
+
           <p className="text-xs text-muted-foreground mt-4 max-w-lg mx-auto">
             ⚠️ For sample &amp; educational purposes only. Certificates generated here are not legally valid medical documents.{" "}
             <Link href="/disclaimer" className="underline underline-offset-2 hover:text-foreground transition-colors">Read disclaimer</Link>
