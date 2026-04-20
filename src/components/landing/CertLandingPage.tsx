@@ -50,9 +50,47 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
                 <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">{heading}</h2>
                 <div className="space-y-4">
                   {body.map((paragraph, i) => (
-                    <p key={i} className="text-muted-foreground leading-relaxed text-[15px] md:text-base">{paragraph}</p>
+                    <p 
+                      key={i} 
+                      className="text-muted-foreground leading-relaxed text-[15px] md:text-base"
+                      dangerouslySetInnerHTML={{ __html: paragraph }}
+                    />
                   ))}
                 </div>
+              </div>
+            ))}
+
+            {/* Extra Pillar Sections */}
+            {page.extraSections?.map((section, idx) => (
+              <div key={idx} className="prose prose-slate max-w-none dark:prose-invert pt-8 border-t border-border">
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">{section.heading}</h2>
+                <div className="space-y-4">
+                  {section.content.map((paragraph, i) => (
+                    <p 
+                      key={i} 
+                      className="text-muted-foreground leading-relaxed text-[15px] md:text-base"
+                      dangerouslySetInnerHTML={{ __html: paragraph }}
+                    />
+                  ))}
+                </div>
+                {section.subsections && (
+                  <div className="mt-10 grid gap-8">
+                    {section.subsections.map((sub, i) => (
+                      <div key={i} className="bg-muted/30 rounded-2xl p-6 md:p-8 border border-border/50">
+                        <h3 className="text-xl font-bold text-foreground mb-3">{sub.title}</h3>
+                        <div className="space-y-3">
+                          {sub.content.map((p, j) => (
+                            <p 
+                              key={j} 
+                              className="text-sm md:text-[15px] text-muted-foreground leading-relaxed"
+                              dangerouslySetInnerHTML={{ __html: p }}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
           </div>

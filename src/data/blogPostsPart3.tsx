@@ -15,7 +15,7 @@ export const BLOG_POSTS_PART3: BlogPostData[] = [
   // ─── ARTICLE 1 ──────────────────────────────────────────────────────────────
   {
     slug: "form-1a-medical-certificate-explained",
-    title: "Medical Certificate Form 1A Explained: Complete Guide for Driving Licence in India (2026)",
+    title: "Medical Certificate Form 1A Explained: Complete Guide for Driving Licence in India",
     metaDescription: "Everything you need to know about Medical Certificate Form 1A in India — what it is, who needs it, which doctor fills it, and how to get it for your driving licence application.",
     category: "Medical Certificates",
     date: "April 2026",
@@ -216,7 +216,7 @@ export const BLOG_POSTS_PART3: BlogPostData[] = [
   // ─── ARTICLE 2 ──────────────────────────────────────────────────────────────
   {
     slug: "medical-certificate-format-india",
-    title: "Medical Certificate Format in India: Complete Visual Guide with All Fields (2026)",
+    title: "Medical Certificate Format in India: Complete Visual Guide with All Fields",
     metaDescription: "A complete guide to the medical certificate format used in India — every field explained, standard phrasing, how different clinic formats vary, and what makes a certificate legally valid.",
     category: "Medical Certificates",
     date: "April 2026",
@@ -409,7 +409,7 @@ export const BLOG_POSTS_PART3: BlogPostData[] = [
   // ─── ARTICLE 3 ──────────────────────────────────────────────────────────────
   {
     slug: "emergency-medical-certificate-reimbursement",
-    title: "Emergency Medical Certificate for Reimbursement: Complete Guide (2026)",
+    title: "Emergency Medical Certificate for Reimbursement: Complete Guide",
     metaDescription: "How to get an emergency medical certificate for medical reimbursement in India — what documents are needed, which forms to fill, and how to file a successful reimbursement claim.",
     category: "Medical Certificates",
     date: "April 2026",
@@ -551,7 +551,7 @@ export const BLOG_POSTS_PART3: BlogPostData[] = [
   // ─── ARTICLE 4 ──────────────────────────────────────────────────────────────
   {
     slug: "medical-fitness-certificate-food-handlers",
-    title: "Medical Fitness Certificate for Food Handlers: What It Is and How to Get It (2026)",
+    title: "Medical Fitness Certificate for Food Handlers: What It Is and How to Get It",
     metaDescription: "Complete guide to medical fitness certificates for food handlers in India — why it's required, what tests are done, the legal basis under FSSAI, and how to get one quickly.",
     category: "Medical Certificates",
     date: "April 2026",

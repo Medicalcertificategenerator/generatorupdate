@@ -25,7 +25,7 @@ const CertImage = ({ src, alt, caption }: { src: string; alt: string; caption?: 
 export const BLOG_POSTS_PART2: BlogPostData[] = [
   {
     slug: "how-to-get-medical-certificate",
-    title: "How to Get a Medical Certificate in India — 2026 Complete Guide",
+    title: "How to Get a Medical Certificate in India — Complete Guide",
     metaDescription: "A step-by-step guide on how to get a medical certificate in India in 2026. Covers who to see, what to say, what the certificate must contain, and common mistakes to avoid.",
     category: "Medical Certificates",
     date: "March 2026",

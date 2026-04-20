@@ -15,7 +15,7 @@ export const BLOG_POSTS_PART4: BlogPostData[] = [
   // ─── ARTICLE 5 ──────────────────────────────────────────────────────────────
   {
     slug: "medical-certificate-maternity-leave",
-    title: "Medical Certificate for Maternity Leave: What You Need and How to Get It (2026)",
+    title: "Medical Certificate for Maternity Leave: What You Need and How to Get It",
     metaDescription: "A complete guide to medical certificates for maternity leave in India — what documents your employer needs, when to submit, your legal rights under the Maternity Benefit Act, and what the certificate must contain.",
     category: "Medical Certificates",
     date: "April 2026",
@@ -162,7 +162,7 @@ export const BLOG_POSTS_PART4: BlogPostData[] = [
   // ─── ARTICLE 6 ──────────────────────────────────────────────────────────────
   {
     slug: "medical-certificate-college-admission",
-    title: "Medical Certificate for College Admission: What It Is and How to Get It (2026)",
+    title: "Medical Certificate for College Admission: What It Is and How to Get It",
     metaDescription: "Complete guide to medical certificates required for college admission in India — what colleges ask for, which tests are included, and how to get your fitness certificate quickly.",
     category: "Medical Certificates",
     date: "April 2026",

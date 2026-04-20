@@ -15,7 +15,7 @@ export const BLOG_POSTS_PART5: BlogPostData[] = [
   // ─── ARTICLE 9 ──────────────────────────────────────────────────────────────
   {
     slug: "how-to-get-eligibility-certificate-mgr-medical-university",
-    title: "How to Get an Eligibility Certificate from MGR Medical University: Complete Guide (2026)",
+    title: "How to Get an Eligibility Certificate from MGR Medical University: Complete Guide",
     metaDescription: "Step-by-step guide to obtaining an eligibility certificate from The Tamil Nadu Dr. MGR Medical University for medical, dental, nursing, and allied health courses.",
     category: "Medical Certificates",
     date: "April 2026",
@@ -251,7 +251,7 @@ export const BLOG_POSTS_PART5: BlogPostData[] = [
   // ─── ARTICLE 11 ──────────────────────────────────────────────────────────────
   {
     slug: "commuted-leave-without-medical-certificate",
-    title: "Can You Take Commuted Leave Without a Medical Certificate? Rules Explained (2026)",
+    title: "Can You Take Commuted Leave Without a Medical Certificate? Rules Explained",
     metaDescription: "A clear guide to commuted leave rules in India — what commuted leave is, when a medical certificate is required, when it can be waived, and what government employees need to know.",
     category: "Medical Certificates",
     date: "April 2026",
@@ -393,18 +393,18 @@ export const BLOG_POSTS_PART5: BlogPostData[] = [
 
   // ─── ARTICLE 12 ──────────────────────────────────────────────────────────────
   {
-    slug: "ai-medical-certificate-generator-tools-2026",
-    title: "AI Medical Certificate Generator Tools: Top Free Options Reviewed (2026)",
-    metaDescription: "A comprehensive review of the best AI and online medical certificate generator tools available in 2026 — features, formats, use cases, and which one to choose for demos and testing.",
+    slug: "ai-medical-certificate-generator-tools",
+    title: "AI Medical Certificate Generator Tools: Top Free Options Reviewed",
+    metaDescription: "A comprehensive review of the best AI and online medical certificate generator tools available — features, formats, use cases, and which one to choose for demos and testing.",
     category: "Technology",
     date: "April 2026",
     readTime: "11 min read",
-    tags: ["AI Tools", "Medical Certificate Generator", "Online Tools", "Review", "2026"],
+    tags: ["AI Tools", "Medical Certificate Generator", "Online Tools", "Review"],
     author: "Ziven Borceg",
     content: (
       <div className="space-y-6 text-foreground/80 leading-relaxed">
         <p className="text-lg font-medium text-foreground">
-          Whether you're a developer building a healthcare app, an HR trainer creating mock documents, or a student studying medical administration, you might be looking for an AI-powered medical certificate generator. In 2026, several tools claim to do this — but they vary wildly in quality, features, and intended use. Here's an honest, no-fluff review.
+          Whether you're a developer building a healthcare app, an HR trainer creating mock documents, or a student studying medical administration, you might be looking for an AI-powered medical certificate generator. In the current landscape, several tools claim to do this — but they vary wildly in quality, features, and intended use. Here's an honest, no-fluff review.
         </p>
 
         <div className="bg-destructive/5 border border-destructive/20 rounded-xl p-4">
@@ -455,7 +455,7 @@ export const BLOG_POSTS_PART5: BlogPostData[] = [
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Top AI Medical Certificate Generator Tools in 2026</h2>
+          <h2 className="text-2xl font-bold text-foreground mb-3">Top AI Medical Certificate Generator Tools</h2>
 
           <div className="space-y-5 mt-4">
             <div className="bg-card border-2 border-primary/30 rounded-xl p-6">

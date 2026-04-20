@@ -31,6 +31,13 @@ export interface LandingPageConfig {
   faqs: { q: string; a: string }[];
   relatedPages: { title: string; href: string }[];
   externalLinks: { label: string; href: string; description: string }[];
+  
+  // New: For Pillar Page expansion
+  extraSections?: {
+    heading: string;
+    content: string[];
+    subsections?: { title: string; content: string[] }[];
+  }[];
 }
 
 export const LANDING_PAGES: LandingPageConfig[] = [
@@ -116,7 +123,7 @@ export const LANDING_PAGES: LandingPageConfig[] = [
     relatedPages: [
       { title: "Medical Certificate for Office Leave", href: "/medical-certificate-for-office-leave" },
       { title: "Sick Leave Medical Certificate", href: "/sick-leave-medical-certificate" },
-      { title: "Student Medical Certificate Format", href: "/student-medical-certificate-format" }
+      { title: "Student Medical Certificate", href: "/student-medical-certificate" }
     ],
     externalLinks: [
       { label: "CCS Leave Rules 1972", href: "https://dopt.gov.in/sites/default/files/ccsleave.pdf", description: "Official Dept. of Personnel mapping leave rules for central employees" }
@@ -126,87 +133,152 @@ export const LANDING_PAGES: LandingPageConfig[] = [
     slug: "sick-leave-medical-certificate",
     h1: "Generate Sick Leave Medical Certificate (Free PDF Format)",
     title: "Sick Leave Medical Certificate",
-    metaTitle: "Generate Sick Leave Medical Certificate (Free PDF + Instant Download India)",
-    metaDescription: "Create an authentic sick leave medical certificate for HR systems. Choose Indian hospital templates, edit rest periods, and download PDF instantly.",
-    intro: "Need dedicated documentation for paid sick leave or ESI claims? Generate a hyper-realistic sick leave certificate matching Indian clinic formats instantly—100% free.",
+    metaTitle: "Sick Leave Medical Certificate: Rules, Validity & Generator (India)",
+    metaDescription: "The ultimate guide to sick leave medical certificates in India. Learn about CCS leave rules, legal validity of online certificates, ESI claims, and generate authentic specimens for demo use.",
+    intro: "Whether you are an employee navigating workplace leave rules, an HR professional designing compliance portals, or a student researching medical documentation, this is the definitive guide to sick leave certificates in India. Understand your rights, the legal framework, and use our free tool to generate realistic specimens instantly.",
     ctaText: "Generate Sick Leave Certificate",
     templateId: "ishnavi-clinic",
     whatIsHeading: "What is a Formal Sick Leave Medical Certificate?",
     whatIs: [
-      "A sick leave medical certificate is tightly coupled with employee compensation frameworks. It is a formal declaration by a recognized medical practitioner that an employee is temporarily incapacitated due to illness, directly triggering their statutory or contractual sick leave entitlements.",
-      "While a general leave certificate might suffice for academic or personal matters, a sick leave certificate is subject to corporate verification, often scrutinizing the exact duration of the incapacity against company policy limits."
+      "A medical certificate for sick leave is a formal written document issued by a registered medical practitioner (RMP) that attests to a patient's medical unfitness for work or study for a specified period. It is not merely a note; it is a clinical declaration that has significant legal and financial implications for both employees and employers. If you need a specimen right away, you can use our <a href='/generator/ishnavi-clinic' class='text-primary font-bold hover:underline'>Sick Leave Certificate Generator</a>.",
+      "In India, a valid sick leave certificate must be issued by a doctor registered with the National Medical Commission (NMC) or a State Medical Council. While practitioners of AYUSH (Ayurveda, Homeopathy, etc.) can issue certificates within their scope, the acceptance of these by large private corporations or government departments often varies depending on internal HR policies.",
+      "The primary purpose of this document is to bridge the gap between a subjective claim of illness and the administrative requirement for objective, verifiable proof. It triggers the transition from 'Casual Leave' or 'Earned Leave' to 'Sick Leave' buckets, often protecting the employee from salary deductions (LOP) or disciplinary action for absence. For general leave requirements, see our <a href='/medical-certificate-for-leave' class='text-primary hover:underline'>General Medical Certificate guide</a>."
     ],
-    whenUsedHeading: "When is a Sick Leave Certificate Invoked?",
+    whenUsedHeading: "When is a Sick Leave Certificate Required?",
     whenUsed: [
-      "This document is mandatory when an employee exhausts their self-certified leave limit (typically 2-3 days) or when triggering specific paid sickness benefits under the Employees' State Insurance (ESI) scheme.",
-      "It operates as the critical bridge between the employee's absence and the payroll department, ensuring that the days off are deducted from the 'Sick Leave' bucket rather than 'Earned Leave' or resulting in unpaid docked days."
+      "In most Indian workplaces, a medical certificate is mandatory if the illness lasts for more than 2 or 3 consecutive working days. For shorter absences, many companies allow 'self-certification,' but this is a matter of company policy rather than statutory law.",
+      "Under the Central Civil Services (Leave) Rules, 1972, government employees are strictly required to submit a certificate for any sick leave exceeding three days. For private sector workers, the threshold is typically defined in the 'Shops and Establishments Act' of their respective state or within the individual's employment contract.",
+      "Beyond just absence, these certificates are critical for triggering Sickness Benefits under the Employees' State Insurance (ESI) scheme, where workers earning up to ₹21,000 can claim cash compensation for missed work days due to certified illness."
     ],
-    whyNeededHeading: "Protecting Payroll and Entitlements",
+    whyNeededHeading: "Protecting Payroll and Legal Rights",
     whyNeeded: [
-      "Strict sick leave documentation serves a dual purpose. For the employer, it mitigates leave abuse and validates payroll processing. For the employee, it legally protects their compensation rights and job security during vulnerable periods of genuine illness.",
-      "In India, the Factories Act and ESI regulations explicitly depend on standardized medical certification to release sickness cash benefits and mandate job-protection during recovery."
+      "For the employee, a genuine medical certificate is a legal shield. It protects job security during recovery and ensures that the period of absence is treated as 'on duty' for the purpose of seniority and sometimes even increments.",
+      "For the employer, strict documentation prevents leave abuse and ensures that payroll expenditures are supported by objective third-party verification. In industries like manufacturing (Factories Act), standardized medical records are mandatory for compliance audits and safety reporting.",
+      "Furthermore, in the event of a legal dispute regarding termination due to health reasons, the presence or absence of correctly filed medical certificates often becomes the primary evidence used by labour courts to determine the fairness of the employer's actions."
     ],
-    formatElementsHeading: "Critical Details for Sick Leave Approval",
+    formatElementsHeading: "Mandatory Fields for a Valid Certificate",
     formatElements: [
-      "Clear clinic letterhead verifying the medical institution's existence",
-      "Doctor's NMC-verified registration ID (Crucial for HR background checks)",
-      "Patient details exactly matching corporate payroll/HRMS profiles",
-      "Distinct 'Date of Examination' indicating when the physician was consulted",
-      "Specific diagnosis (though sensitive conditions can use generalized terms like 'viral illness')",
-      "The 'Rest Prescribed' block highlighting exact calendar absence dates",
-      "Official clinic stamp overlaid with the physician's signature"
+      "Full Name, Age, and Gender of the patient as per official records",
+      "Exact Date of Examination (must align with the start of the sick leave)",
+      "Doctor's Name and NMC/State Council Registration Number (The most critical field)",
+      "Hospital or Clinic Letterhead with a verifiable physical address",
+      "Nature of Illness (Diagnosis) – can be generalized to protect patient privacy (e.g., 'Viral Fever')",
+      "Clear recommendation for 'Rest for [X] number of days' or 'Unfit for duty from [Date] to [Date]'",
+      "Doctor's wet-ink signature or verified digital signature",
+      "Official rubber stamp of the doctor or healthcare institution"
     ],
-    howToGetHeading: "Navigating HR Sick Leave Rules",
+    howToGetHeading: "How to Obtain a Legitimate Certificate",
     howToGet: [
-      "Offline: A physical visit to an MBBS/MD doctor is the gold standard. For specific ESI benefits, the certificate must explicitly come from an ESI-empanelled Insurance Medical Officer (IMO).",
-      "Online Generator: Designing an HRMS portal or need to simulate sick-leave uploads for software testing? Use our generator to rapidly spin up variations of Indian clinic layouts and download high-res PDFs instantly."
+      "Physical Consultation: Visit any registered General Practitioner (GP) or a specialist (MD/MS). Be honest about your symptoms, as the doctor is legally responsible for the accuracy of the certificate. For ESI claims, you must specifically visit an Insurance Medical Officer (IMO) at an ESI dispensary.",
+      "Telemedicine: Since the 2020 Telemedicine Practice Guidelines, you can consult registered doctors via apps like Practo, Apollo 24/7, or MediBuddy. If the doctor determines you are unfit, they can issue a digitally signed PDF certificate which is legally valid under the IT Act, 2000.",
+      "Demo/Placeholder: If you are a developer testing an HR portal, a designer creating mockups, or an educator needing specimens, you can use our generator to create realistic placeholders. These are for demonstration only and must never be used for actual leave applications."
     ],
-    legalValidityHeading: "Statutory Validity and ESI Compliance",
+    legalValidityHeading: "Legal Framework: IT Act and ESI Rules",
     legalValidity: [
-      "A genuine sick leave certificate carries significant weight in labour disputes. Submitting forged documents to claim paid sick leave is an immediate terminable offense across the Indian corporate landscape.",
-      "The generated samples on this platform proudly bare DEMO limitations and must never be utilized to fraudulently claim sick pay or ESI benefits."
+      "The Information Technology Act, 2000, establishes that electronic documents signed with a valid digital signature have the same legal standing as paper-based documents. This applies to medical certificates issued by verified telemedicine platforms.",
+      "However, government employees (CCS Rules) are often required to consult an 'Authorised Medical Attendant' (AMA), which usually means a government doctor or a panel doctor. A private clinic certificate may require 'countersigning' by a Civil Surgeon for longer periods of leave.",
+      "Using or presenting a forged medical certificate to an employer is a serious criminal offense under the IPC (Section 420 for Cheating and Section 468 for Forgery). This can result in immediate termination without notice and criminal proceedings."
     ],
     useCases: [
-      "Software engineers triggering paid sick leave quotas in enterprise HRMS",
-      "Factory workers submitting documentation for ESI Sickness Benefit compensation",
-      "Contractual gig workers supporting dispute resolutions over missed shifts",
-      "HR compliance officers requiring dummy certificates for software staging"
+      "Private sector employees justifying absences to HR departments",
+      "Government employees filing for Commuted Leave or Half Pay Leave",
+      "Factory workers under the ESI scheme claiming sickness cash benefits",
+      "Software developers requiring realistic test data for HRMS/Payroll testing",
+      "Project managers creating training materials for leave policy compliance"
     ],
     benefits: [
-      "Corporate-aligned layouts mimicking real-world prescription pads",
-      "Total customization of sickness duration to match strict leave policies",
-      "Secure local processing generating 2x resolution PDFs natively",
-      "No logins required, keeping workflow simulation frictionless"
+      "15+ authentic Indian clinic formats (AI-simulated handwriting available)",
+      "Total customization of patient, doctor, and clinical data",
+      "Instant high-resolution PDF download – zero watermark",
+      "Zero data storage – all processing happens in your browser",
+      "Optimized for A4 printing and mobile-friendly preview"
     ],
     faqs: [
       {
-        q: "Is an ESI hospital certificate different from a private clinic's?",
-        a: "Yes. While private clinic certificates work for internal HR policies, claiming statutory ESI sickness benefits requires specialized certificates issued exclusively by ESI Insurance Medical Officers on designated forms."
+        q: "What is the maximum number of days a doctor can certify at once?",
+        a: "There is no strict legal 'maximum', but doctors typically certify rest based on clinical necessity. For common infections (viral fever), it is usually 3-5 days. For surgeries or severe conditions, it can be 14-30 days. Beyond 30 days, government departments often requires a Medical Board assessment."
       },
       {
-        q: "Does a telemedicine certificate work for HR sick leave?",
-        a: "Increasingly, yes. Under India's Telemedicine Practice Guidelines, digital certificates from verified platforms (like Practo or Apollo 24/7) hold parity with physical certificates, though traditional HR teams sometimes resist them."
+        q: "Are online medical certificates from platforms like Practo valid?",
+        a: "Yes. Under the Ministry of Health's Telemedicine Practice Guidelines (2020), certificates issued by registered doctors after a remote consultation are legally valid. However, some traditional HR policies might still prefer a physical stamp; it is always best to check your company's manual."
       },
       {
-        q: "What happens if I forget to submit the certificate within 3 days?",
-        a: "Most corporate policies mandate submission within an explicit window post-recovery. Delaying submission might lead to HR rejecting the sick leave claim, resulting in unpaid leave. Always communicate delays beforehand."
+        q: "Can a doctor issue a backdated medical certificate?",
+        a: "Backdating is legally and ethically discouraged. A certificate should ideally reflect the date the patient was examined. If the patient was ill for three days before visiting the doctor, the doctor may mention 'suffering since [Date]' but the certificate is typically dated on the day of issuance."
       },
       {
-        q: "Can HR call the clinic to verify my sick leave certificate?",
-        a: "Yes. HR departments frequently conduct background verifications on certificates supporting prolonged absences by calling the clinic number on the letterhead to confirm issuance."
+        q: "Can HR verify the authenticity of my medical certificate?",
+        a: "Yes. HR departments can (and often do) call the clinic or hospital listed on the letterhead to verify if a certificate with a specific ID or for a specific patient was indeed issued by them. Presenting a fake document is a terminable offense."
       },
       {
-        q: "What diagnosis is acceptable for standard sick leave?",
-        a: "HR simply requires proof of incapacity, not an intrusive medical history. Common acceptable terms include Viral Pharyngitis, Acute Gastroenteritis, or Severe Migraine."
+        q: "Do I need a certificate from a government hospital?",
+        a: "For most private sector jobs, a certificate from any registered MBBS doctor is sufficient. For government employees, certificates for extended leave should ideally come from a government hospital doctor or a panel physician."
+      },
+      {
+        q: "Is a prescription the same as a medical certificate?",
+        a: "No. A prescription instructs a pharmacist on medications. A medical certificate is a formal declaration to an employer or institution about your health status and unfitness for duty. HR typically will not accept a prescription as a leave justification."
+      },
+      {
+        q: "Can a dentist issue a sick leave certificate?",
+        a: "Yes, but only for dental-related absences (e.g., recovery from wisdom tooth extraction). A dentist cannot legally certify absence for a general illness like the flu."
       }
     ],
     relatedPages: [
-      { title: "Medical Certificate for Office Leave", href: "/medical-certificate-for-office-leave" },
-      { title: "Fitness Medical Certificate", href: "/fitness-medical-certificate" },
-      { title: "Medical Certificate for Leg Fracture", href: "/medical-certificate-for-leg-fracture" }
+      { title: "Medical Certificate for Fitness", href: "/fitness-medical-certificate" },
+      { title: "Student Medical Certificate", href: "/student-medical-certificate" },
+      { title: "Maternity Leave Certificate", href: "/blog/medical-certificate-maternity-leave" }
     ],
     externalLinks: [
-      { label: "ESIC Sickness Benefit Guidelines", href: "https://www.esic.gov.in/", description: "ESI Corporation metrics on sickness compensation claims." }
+      { label: "NMC India - Register of Doctors", href: "https://www.nmc.org.in/information-desk/indian-medical-register/", description: "Verify any doctor's registration status in India." },
+      { label: "CCS Leave Rules - PDF", href: "https://documents.doptcirculars.nic.in/D3/D03est/Leave_Rules_1972_updated_upto_2022.pdf", description: "Official Central Civil Services leave guidelines." }
+    ],
+    extraSections: [
+      {
+        heading: "Deep Dive: Leave Rules in India (Central & State Level)",
+        content: [
+          "Understanding the regulatory framework is essential for both employees and employers. In India, leave rules are not unified but rather fragmented across several statutes and service rules. Navigating this can be the difference between getting your leave approved or facing a salary deduction.",
+          "Below we break down the most common frameworks governing sick leave across the country."
+        ],
+        subsections: [
+          {
+            title: "Central Civil Services (CCS) Rules",
+            content: [
+              "For Central Government employees, the CCS Leave Rules 1972 provide the gold standard. Employees are entitled to 20 days of 'Half Pay Leave' every year, which can be 'commuted' into 10 days of full-pay 'Commuted Leave' on medical grounds.",
+              "Documentation: Rule 19 specifies that an employee must produce a medical certificate from an 'Authorised Medical Attendant' (AMA). If the employee is outside their station, a certificate from a government hospital doctor or a registered practitioner (if a government doctor is unavailable) is required.",
+              "Verification: The authority can refer the employee to a second medical opinion if they doubt the claim's validity."
+            ]
+          },
+          {
+            title: "State Government Service Rules",
+            content: [
+              "States like Maharashtra, Tamil Nadu, and Karnataka have their own variations. For instance, in Tamil Nadu, sick leave beyond 3 days almost always requires a certificate from a Government Medical Officer. In Maharashtra, medical certificates for gazetted officers are often subject to scrutiny by a Civil Surgeon for long-term absences."
+            ]
+          },
+          {
+            title: "Factories Act and Shops & Establishments",
+            content: [
+              "Private sector workers are governed by the Factories Act 1948 or state-specific Shops and Establishments Acts. Most state acts mandate at least 1 day of sick leave for every 20 days of work. While these acts are more flexible regarding the 'Authorised' doctor, they strongly empower employers to demand a certificate from a registered practitioner for absences exceeding two days."
+            ]
+          }
+        ]
+      },
+      {
+        heading: "The 'Fake Certificate' Crisis: Consequences and Ethics",
+        content: [
+          "A significant challenge in the Indian corporate space is the prevalence of fake or 'bought' medical certificates. Many online services claim to provide 'valid certificates with stamps' for a small fee without a consultation. This is a trap.",
+          "Using such a document is a form of document forgery and cheating. Employers increasingly use background verification (BGV) agencies that track down the clinic, check the NMC register, and verify the doctor's involvement. Discovery often leads to immediate termination and blacklisting in industry-wide HR databases (like NASSCOM's NSR)."
+        ]
+      },
+      {
+        heading: "Designing HRMS Systems: Real-World Implementation",
+        content: [
+          "For software developers and product managers building HRMS (Human Resource Management Systems), building a robust medical certificate upload workflow is critical. It's not just about the file upload; it's about the metadata.",
+          "Best practices for HRMS devs:",
+          "1. Fields: Capture the Doctor's Registration Number separately to allow for programmatic verification against NMC data APIs.",
+          "2. Validation: Ensure the 'Rest Start Date' and 'Rest End Date' fields are extracted (via OCR) and compared against the requested leave period in the database.",
+          "3. Testing: Use our generator to create a dataset of 5-10 different clinic formats to test your OCR engine's accuracy across various layouts and simulate real-world conditions."
+        ]
+      }
     ]
   },
   {
@@ -299,86 +371,116 @@ export const LANDING_PAGES: LandingPageConfig[] = [
     slug: "fitness-medical-certificate",
     h1: "Generate Fitness Medical Certificate (Free PDF Format India)",
     title: "Fitness Medical Certificate",
-    metaTitle: "Generate Fitness Medical Certificate (Free PDF + Instant Download India)",
-    metaDescription: "Generate an authentic fitness medical certificate in seconds. High-quality Indian templates tailored for post-recovery return and job joining.",
-    intro: "Need to prove medical capacity? Generate a highly authentic fitness certificate to declare readiness for duty, sports, or job on-boarding instantly.",
+    metaTitle: "Fitness Medical Certificate Guide: Jobs, Sports & Travel (India)",
+    metaDescription: "The definitive guide to medical fitness certificates in India. Learn about pre-employment health checks, Form 1A for driving, return-to-work rules, and generate sample formats.",
+    intro: "A medical fitness certificate is a critical document that bridges the gap between recovery and readiness. Whether you are joining a new job, returning from a major surgery, or preparing for a high-altitude trek like the Amarnath Yatra, this guide provides everything you need to know about fitness certification in India.",
     ctaText: "Generate Fitness Certificate",
     templateId: "health-first",
-    whatIsHeading: "Defining a Fitness Medical Certificate",
+    whatIsHeading: "What is a Formal Medical Fitness Certificate?",
     whatIs: [
-      "A Fitness Medical Certificate (often referred to as a fit-to-work or fit-for-duty certificate) serves as the inverse to a sick leave certificate. It is a formal declaration from a registered medical practitioner confirming that a patient is physically and psychologically stable enough to undertake specific responsibilities.",
-      "Rather than confirming incapacity, it unequivocally guarantees capacity. It forms a crucial risk-management document for organizations bringing individuals into physically demanding or organizationally critical roles."
+      "A medical fitness certificate (often called a 'Fit to Work' or 'Medical Clearance' certificate) is a formal declaration by a registered medical practitioner (RMP) that an individual is mentally and physically capable of performing specific tasks or duties without risk to themselves or others.",
+      "Unlike a sick leave certificate, which focuses on incapacity, a fitness certificate focuses on capacity. It is a proactive health declaration often required by HR departments, government bodies (like the RTO), or sporting organizations to mitigate liability and ensure safety.",
+      "In India, these are particularly prominent during 'Pre-employment Medical Checkups' (PEMC) where companies verify that a candidate's health is compatible with the nature of their upcoming role (e.g., ensuring a driver has perfect vision or a factory worker has no respiratory issues)."
     ],
-    whenUsedHeading: "When is Fitness Certification Deemed Mandatory?",
+    whenUsedHeading: "Key Scenarios for Fitness Certification",
     whenUsed: [
-      "This certificate frequently arises at highly transitional milestones: immediately prior to joining a new corporate or government role (pre-employment), when securing a driving licence via Form 1A, or immediately after a prolonged absence due to major surgery or serious infectious disease (like Typhoid).",
-      "Institutions organizing high-altitude treks or intensive athletic competitions universally require fitness certificates to waive liability."
+      "New Job Joining: Most Indian corporate and government jobs require a 'Fitness Certificate for Joining' as part of the onboarding documentation. This ensures the employee is fit to handle the rigours of the role.",
+      "Return to Work: After an extended period of sick leave (typically more than 14 days) or major surgery, HR policies under the Factories Act or company service rules mandate a fitness certificate to ensure the employee has fully recovered.",
+      "Driving License (Form 1A): Under the Motor Vehicles Act, applicants for a commercial driving license or those above 40 years old must submit a medical fitness certificate in Form 1A.",
+      "Adventure Sports & Pilgrimages: High-altitude activities like the Kedarnath or Amarnath Yatra, or participating in marathons and treks, universally require a 'Fitness to Trek' certificate to prevent altitude sickness-related emergencies."
     ],
-    whyNeededHeading: "Mitigating Institutional Risk",
+    whyNeededHeading: "Legal Necessity and Risk Mitigation",
     whyNeeded: [
-      "For employers and sporting institutions, the fitness certificate aggressively mitigates liability. It protects the employer from accusations of negligence should the employee suffer an adverse health event during strenuous duties.",
-      "Furthermore, for employees returning from extended sick leave, it provides absolute assurance to HR that their return will not exacerbate their condition or endanger colleagues (especially critical in food handling or factory environments)."
+      "For the Employer: It is a vital shield against negligence claims. If an employee with a pre-existing heart condition is assigned heavy physical labour and suffers an event, the lack of a fitness certificate can lead to massive legal liabilities for the company.",
+      "For the Employee: It provides psychological and legal assurance that they are not being forced back to work before they are ready. It also helps in securing insurance coverage for adventure activities.",
+      "For the Government: In contexts like the RTO (Driving Licenses) or Food Handling (FSSAI), fitness certificates protect public safety by ensuring that individuals in critical roles meet minimum health and vision standards."
     ],
-    formatElementsHeading: "Core Elements of a Fitness Certificate",
+    formatElementsHeading: "Essential Fields of a Valid Fitness Certificate",
     formatElements: [
-      "Authorized clinic or hospital letterhead",
-      "Explicit statement asserting the patient is 'Medically Fit'",
-      "Clear detailing of the exact scope of fitness (e.g., 'Fit to resume normal office duties' or 'Fit for high-altitude trekking')",
-      "Metrics check indicators (Blood pressure, vision scaling, pulse) if tailored for driving or heavy machinary",
-      "Doctor's credentials and verifying registration number",
-      "A prominent official stamp asserting institutional backing"
+      "Doctor's Name, Registration Number, and Official Stamp",
+      "Exact Statement of Fitness (e.g., 'Fit to Resume Duties' or 'Medically Fit for Onboarding')",
+      "Date of Medical Examination (Fitness is always current)",
+      "Physical Metrics (Optional but recommended): Height, Weight, Blood Pressure, Pulse",
+      "Vision Status (Especially for driving or safety-critical roles)",
+      "Specific mention of 'No Infectious Disease' (For food industry workers)",
+      "Identified 'Marks of Identification' (To prevent proxy examination)"
     ],
-    howToGetHeading: "Acquiring a Fitness Clearance",
+    howToGetHeading: "Standard Operating Procedure for Fitness Checks",
     howToGet: [
-      "Offline: In-person evaluation is notoriously strict for fitness certificates. The physician must actively measure vitals (vision, BP, physical mobility) before legally risking their licence to declare you fit. Telemedicine is almost never accepted for rigorous fitness clearances.",
-      "Online Generator: To simulate the UI application flows of a transportation or hiring portal requiring fitness documentation, our engine rapidly prototypes realistic PDF specimens utilizing strict Indian clinical parameters."
+      "Clinical Examination: Visit a registered GP or MD. For pre-employment, wait for the HR to provide a specific list of tests (usually Blood Sugar, Chest X-Ray, and ECG). The doctor will only issue the fitness certificate AFTER reviewing these reports.",
+      "Specialized Checks: For 'Form 1A' (Driving), you must visit a doctor authorized by the RTO or a CMO. For high-altitude treks, a 'Treadmill Test' (TMT) is often a prerequisite for the doctor to declare you fit.",
+      "Staging & Testing: If you are an HR analyst designing an onboarding portal or a developer testing a document verification system, use our <a href='/generator/health-first' class='text-primary font-bold hover:underline'>Fitness Certificate Generator</a> to create realistic specimens of fitness certificates to test your workflow. If you are returning from a long illness, you may also need a <a href='/sick-leave-medical-certificate' class='text-primary hover:underline'>Sick Leave Certificate</a> record."
     ],
-    legalValidityHeading: "The Weight of a Fitness Protocol",
+    legalValidityHeading: "Legal Framework: NMC and Factories Act",
     legalValidity: [
-      "Falsely claiming fitness can have catastrophic legal ramifications, particularly in aviation, heavy machinery operations, or commercial driving. A physician granting a false fitness certificate can lose their Medical Council standing.",
-      "Our system generates meticulously formatted, yet explicitly 'DEMO' watermarked files exclusively purposed for developmental mock-ups and educational scaffolding."
+      "The 'National Medical Commission (NMC) Code of Medical Ethics' mandates that a doctor must only certify fitness after a thorough clinical assessment. Issuing a fitness certificate without seeing the patient is a professional misconduct that can lead to license suspension.",
+      "Under the Factories Act, 1948, workers in 'Hazardous Operations' must be examined by a 'Certifying Surgeon' at least once every 12 months. A general private doctor's certificate might not suffice for these statutory industrial audits.",
+      "For telemedicine: While sick leave can often be handled via telemedicine, 'Fitness' usually requires physical vitals (BP, Auscultation, Vision) that cannot be accurately assessed remotely. Most Indian companies do not accept telemedicine-based fitness certificates."
     ],
     useCases: [
-      "Candidates completing pre-employment onboarding packages",
-      "Employees returning to the factory floor post-fracture recovery",
-      "Students preparing for intensive university athletics camps",
-      "Pilgrims requiring high-altitude fitness clearance (e.g., Amarnath Yatra)",
-      "Software developers staging document pipelines for HR portals"
+      "New hires submitting 'Joining Medicals' to private/government HRs",
+      "Commercial drivers renewing their licenses via RTO Form 1A",
+      "Employees returning to work after major surgeries or COVID-19 recovery",
+      "Trekkers applying for permits for high-altitude Himalayan expeditions",
+      "Software QA engineers testing HRMS onboarding modules with dummy data"
     ],
     benefits: [
-      "Nuanced templates isolating 'Fit-for-duty' styling against standard sick leave layouts",
-      "Total control over the explicit capacity statement (e.g. 'Fit to fly')",
-      "100% browser-side processing keeping simulation secure",
-      "Instant 2x density PNG and PDF exports"
+      "10+ specialized 'Fit-for-Duty' layouts mimicking Indian hospital pads",
+      "Ability to include 'Identification Marks' for authentic university/government use",
+      "Instant PDF generation with no data logging – maximum privacy",
+      "Available formats for Office Leave, Joining, and Post-Op recovery",
+      "Optimized for high-quality printing on standard letterhead paper"
     ],
     faqs: [
       {
-        q: "What is the difference between this and a sick leave certificate?",
-        a: "A sick leave certificate declares you unfit and requires rest. A fitness certificate declares you fully recovered and capable of fulfilling your duties safely."
+        q: "What is the difference between a 'Fitness' and an 'Unfitness' certificate?",
+        a: "A certificate of 'Unfitness' (Sick Leave) declares you cannot work due to illness. A certificate of 'Fitness' declares that the illness has passed and you are now safe to return to your normal routine."
       },
       {
-        q: "How long is a fitness certificate functionally valid?",
-        a: "Validity hinges on the organizational requirement. Pre-employment fitness certificates usually hold validity for 3 to 6 months prior to joining, whereas aviation or driving fitness checks require rigid periodic renewals."
+        q: "How long is a medical fitness certificate valid?",
+        a: "Generally, for job joining, a certificate is considered 'fresh' for 30 to 90 days. For the RTO (Driving License), it is valid for 6 months from the date of issue. For specific trek permits, it must often be issued within 15-30 days of the trek start date."
       },
       {
-        q: "Can I use telemedicine to get a fitness certificate?",
-        a: "Rarely. Because assessing fitness requires objective physical measurements (like sight, reflexes, and heart rate stability), companies and governments reject digital, telephonic fitness certifications."
+        q: "Can a dentist issue a general fitness certificate for joining a job?",
+        a: "No. A general fitness certificate must be issued by a registered medical practitioner (MBBS or higher). A dentist can only certify fitness for dental-related purposes."
       },
       {
-        q: "Do I need a fitness certificate after mild viral fever?",
-        a: "For standard office jobs missing 2-4 days, no. But if you suffered from a highly infectious illness (like Typhoid or Tuberculosis) or required surgery, HR categorically requires a fitness certificate before readmission."
+        q: "Does a fitness certificate need a round stamp or a name stamp?",
+        a: "Legally, the stamp must have the doctor's name and registration number. Most institutional HRs (like Banks or PSUs) prefer a round 'Hospital/Clinic Stamp' alongside the doctor's personal stamp for added authenticity."
       },
       {
-        q: "Does a general physician qualify for issuing fitness proofs?",
-        a: "Yes, an MBBS practitioner is authorized to issue general fitness proofs. However, highly specialized fields (like deep sea diving or commercial aviation) require specialized, board-certified medical assessors."
+        q: "Will my company verify my fitness certificate with the hospital?",
+        a: "Yes, especially in regulated industries like Pharma, Aviation, or Finance. Companies oftaen call the hospital landline to verify the certificate's serial number or the doctor's signature."
       }
     ],
     relatedPages: [
-      { title: "Medical Certificate for Leg Fracture", href: "/medical-certificate-for-leg-fracture" },
-      { title: "Medical Certificate vs Fitness Certificate", href: "/blog/medical-certificate-vs-fitness-certificate" }
+      { title: "Sick Leave Medical Certificate", href: "/sick-leave-medical-certificate" },
+      { title: "Student Medical Certificate", href: "/student-medical-certificate" },
+      { title: "Medical Certificate for Joining", href: "/blog/medical-certificate-for-joining-job" }
     ],
     externalLinks: [
-      { label: "Driving Licence Form 1A Fitness", href: "https://parivahan.gov.in/", description: "Parivahan rules governing medical fitness for commercial driving." }
+      { label: "NMC India Ethics Rules", href: "https://www.nmc.org.in/", description: "Professional standards for medical certification in India." },
+      { label: "FSSAI Health Certificate Form", href: "https://www.fssai.gov.in/", description: "Specialized fitness format for food industry workers." }
+    ],
+    extraSections: [
+      {
+        heading: "Deep Dive: The Pre-Employment Medical Checkup (PEMC)",
+        content: [
+          "In the Indian corporate world, the 'Onboarding Fitness Certificate' is often more than just a piece of paper. Leading IT firms and PSUs require a comprehensive 'Pre-employment Medical Checkup'.",
+          "What is usually checked:",
+          "1. Liver & Kidney Function: Via Blood Tests (LFT/KFT).",
+          "2. Respiratory Health: Via Chest X-Ray.",
+          "3. Vision & Color Blindness: Critical for roles in engineering or transport.",
+          "4. Chronic Conditions: Such as Diabetes or Hypertension.",
+          "The doctor summarizes these findings into a final 'Fitness Certificate' which confirms if the candidate is Fit, Unfit (rare), or 'Temproarily Unfit' (requiring short-term treatment)."
+        ]
+      },
+      {
+        heading: "Return-to-Work Post-Surgery: The HR Protocol",
+        content: [
+          "Employees returning from major surgeries (like Appendectomy, Fracture fixation, or Cardiac procedures) cannot simply walk back into the office. HR policies usually mandate that the surgeon must issue a 'Fitness Certificate' specifying if any accommodations are needed (e.g., 'Allowed to work but no climbing stairs' or 'Restricted to 4 hours of desk work initially')."
+        ]
+      }
     ]
   },
   {
@@ -458,7 +560,7 @@ export const LANDING_PAGES: LandingPageConfig[] = [
       }
     ],
     relatedPages: [
-      { title: "Student Medical Certificate Format", href: "/student-medical-certificate-format" },
+      { title: "Student Medical Certificate", href: "/student-medical-certificate" },
       { title: "Medical Certificate for Leave", href: "/medical-certificate-for-leave" }
     ],
     externalLinks: [
@@ -466,46 +568,56 @@ export const LANDING_PAGES: LandingPageConfig[] = [
     ]
   },
   {
-    slug: "student-medical-certificate-format",
-    h1: "Generate Student Medical Certificate Format (Free PDF)",
-    title: "Student Medical Certificate Format",
-    metaTitle: "Generate Student Medical Certificate Format (Free PDF + India Context)",
-    metaDescription: "Generate a student medical certificate for college absence or exam condonation. Produce authentic Indian hospital formats and download PDF instantly.",
-    intro: "Construct a highly authoritative medical certificate tailored for university-level academics. Justify missed semesters, exams, and attendance shortfalls seamlessly.",
+    slug: "student-medical-certificate",
+    h1: "Generate Student Medical Certificate (Sample Format for School/College)",
+    title: "Student Medical Certificate",
+    metaTitle: "Student Medical Certificate: College & School Absence Guide (India)",
+    metaDescription: "Comprehensive guide to student medical certificates in India. Learn rules for exam absence, university attendance condonation, and generate sample formats for educational use.",
+    intro: "Navigating medical absences in schools and universities requires precise documentation. Whether it is justifying a missed examination, applying for attendance condonation (shortage), or simple school leave, this guide covers everything students and parents need to know about medical certification in the Indian academic landscape.",
     ctaText: "Generate Student Certificate",
     templateId: "pg-compact",
-    whatIsHeading: "University-Level Academic Certification",
+    whatIsHeading: "What is a Student Medical Certificate?",
     whatIs: [
-      "A student medical certificate format is specifically calibrated for the stringent requirements of university deans and examination board controllers. It's heavier in academic context than a standard sick leave note.",
-      "This document objectively justifies an older student's absence from high-stakes environments—such as practical laboratory examinations, thesis defenses, or prolonged lecture blocks."
+      "A student medical certificate is a specific type of clinical documentation issued to certify a student's inability to attend classes, participate in physical education, or appear for examinations due to health reasons. In India, where attendance requirements are often strictly mandated by bodies like the UGC, AICTE, or BCI, this document is a vital academic survival tool.",
+      "While a simple leave note from a parent might suffice for primary wing students, higher secondary schools and colleges require certificates from registered medical practitioners (MBBS/MD) for any absence that impacts internal assessments or final examinations.",
+      "The certificate does not just state 'unwell'; it formally links a specific clinical condition to a specific period of academic absence, providing the institution with the legal basis to grant 'Condonation of Attendance' or conduct a 'Re-examination'."
     ],
-    whenUsedHeading: "Deployed for High-Stakes Waivers",
+    whenUsedHeading: "Critical Scenarios for Academic Certification",
     whenUsed: [
-      "University students leverage this formatting intensely towards the end of standard semesters, particularly when their aggregated attendance metrics fall below the stringent 75% thresholds dictated by UGC guidelines.",
-      "It is uniformly mandatory when petitioning the academic council for a 'make-up' examination after an unanticipated hospitalization prevented exam attendance."
+      "Exam Absence: In most Indian universities, a medical certificate is the ONLY way to justify missing a terminal or semester examination. Without it, the student is marked 'Absent' or 'Failed' and may have to wait a full year for a supplementary exam.",
+      "Attendance Shortage (Condonation): Boards like CBSE or Universities (Delhi University, Anna University, Mumbai University) typically require 75% attendance. If a student falls short due to illness, a formal medical certificate must be submitted to the head of the department to condone the shortage.",
+      "Physical Education (PE) Exemption: Students with chronic conditions (Asthma, Post-surgery) require a certificate to be exempted from rigorous physical training or sports activities.",
+      "Hostel Sick Leave: Residential schools and colleges require a certificate to admit students into the 'Sick Bay' or to allow them to return home for recovery."
     ],
-    whyNeededHeading: "Bypassing Academic Disqualification",
+    whyNeededHeading: "The Stakes: Protection Against Academic Loss",
     whyNeeded: [
-      "Higher education institutions are merciless regarding unexcused absenteeism. Without strict medical validation formatted precisely, students face automatic disqualification from semester testing or catastrophic grade reductions.",
-      "This specific certificate layout triggers established humanitarian and medical-compassion clauses within university ordinances, temporarily pausing academic punishment."
+      "For the student, this document protects their academic record and prevents 'year-loss'. It is the difference between being allowed to sit for an exam or being barred due to attendance rules.",
+      "For the parent, it provides a verifiable record of the child's health history that can be communicated to the school's medical board if needed.",
+      "For the institution, it provides a standard audit trail to ensure that attendance rules are applied fairly and that exemptions are not granted arbitrarily, protecting the institution's accreditation standards."
     ],
-    formatElementsHeading: "What Higher-Ed Scrutinizes",
+    formatElementsHeading: "What Every Student Certificate Must Contain",
     formatElements: [
-      "A highly professional letterhead—often favoring established multi-specialty hospitals over small clinics",
-      "Doctor's explicit credentials alongside verifiable registration codes",
-      "Explicit alignment of the illness severity with the sheer length of the missed academic block",
-      "Clear parameters outlining the total incapacity to engage in cognitive/academic labour",
-      "Legitimate clinic stamp and wet signature"
+      "Student's Full Name (matching the school/college ID)",
+      "Student's Age and Class/Roll Number/Register Number",
+      "Doctor's Registration Number and official stamp (Crucial for institutional verification)",
+      "Exact dates of absence (Matching the dates missed in the attendance register)",
+      "Diagnosis (e.g., 'Acute Viral Fever - Typhoid Suspected')",
+      "Recommendation for 'Rest' or 'Fitness' to rejoin classes",
+      "Parent's signature (for school-level certificates)",
+      "Clinic/Hospital address and contact number"
     ],
-    howToGetHeading: "Navigating University Demands",
+    howToGetHeading: "How to Secure an Academic Medical Certificate",
     howToGet: [
-      "Offline: In-person consultations are critical. Note that some government universities aggressively demand certificates solely from Government Hospitals or the university's Chief Medical Officer (CMO) rather than private practices.",
-      "Online Generator: Engineering a university intranet app? Swiftly spawn realistic test PDFs using our student-focused layouts to stress test your LMS upload functionality."
+      "Institutional Doctors: Many residential colleges have an on-campus doctor. A certificate from the campus health center is often the most easily accepted and verified.",
+      "Government Hospitals: For high-stakes examinations (Class 10/12 Boards), many schools mandate that the certificate must come from a Government Medical Officer or a Civil Surgeon from a District Hospital.",
+      "Private Practitioners: Routine absences are usually covered by certificates from any registered MBBS doctor. Always ensure the doctor's stamp is clearly visible. If you are a developer or student leader needing a placeholder, use our <a href='/generator/care-hospital' class='text-primary font-bold hover:underline'>Student Medical Certificate Generator</a>.",
+      "Software Testing: Building a student management portal or an EdTech app? Use our generator to create realistic student medical formats to test your document processing and validation workflows. For younger students, refer to our <a href='/medical-certificate-for-school-absence' class='text-primary hover:underline'>School Absence guide</a>."
     ],
-    legalValidityHeading: "University Council Verifications",
+    legalValidityHeading: "Verification and Institutional Rules",
     legalValidity: [
-      "University exam controllers routinely execute spot-checks on submitted medical forms. Falsifying this document to maliciously sidestep an examination constitutes severe academic fraud, commonly resulting in semester rustication.",
-      "Our platform constructs sample artifacts designed fundamentally for software debugging and academic concept demonstrations."
+      "Most universities have a 'Medical Board' or a Scrutiny Committee that reviews all medical certificates submitted for exam absence. They may cross-verify the doctor's registration number on the NMC/State Council website.",
+      "Under the 'National Medical Commission (NMC) Ethics Rules', a doctor is only permitted to issue a certificate AFTER a personal examination. Submitting a 'bought' certificate from an online agent can lead to the student's expulsion and criminal charges against the doctor.",
+      "For online/telemedicine certificates: Most modern EdTech platforms and liberal universities accept them, but many government-aided colleges still insist on a physical, stamped certificate. Always verify with your college controller of examinations."
     ],
     useCases: [
       "Engineering students mitigating attendance gaps before final vivas",
@@ -521,32 +633,46 @@ export const LANDING_PAGES: LandingPageConfig[] = [
     ],
     faqs: [
       {
-        q: "Why do some universities reject private clinic certificates?",
-        a: "Due to fears of forged sick leaves during exam seasons, strict government universities sometimes mandate that medical certificates be countersigned by a Government Medical Officer or their internal university clinic."
+        q: "Can I submit a medical certificate at the end of the semester for the whole term?",
+        a: "Generally no. Most universities require that a medical certificate be submitted within 3-7 days of the student resuming classes. Submitting all certificates at the end of the term is often seen as a sign of 'proxy' or 'fake' documentation and is usually rejected."
       },
       {
-        q: "Does UGC mandate attendance condonation for sickness?",
-        a: "Yes. UGC guidelines formally request universities to exercise compassionate condonation for attendance drops strictly correlating with certified medical incapacitation."
+        q: "What if I missed a board exam due to a medical emergency?",
+        a: "For Board Exams (10th/12th), you must immediately inform the Principal. A certificate from a Government District Hospital / Civil Surgeon is typically required, along with a formal application addressed to the Board Secretary. Rules vary between CBSE, ICSE, and State Boards."
       },
       {
-        q: "Can a student certificate excuse me from an entire semester?",
-        a: "Yes, but severe academic hiatuses (e.g., stopping a semester entirely) require deeply documented certificates, usually accompanied by discharge summaries from multi-specialty hospitals."
+        q: "Can a homeopathic (BHMS) or ayurvedic (BAMS) doctor issue my certificate?",
+        a: "They are registered practitioners and can issue certificates. However, some professional colleges (MBBS/Engineering) specifically mandate certificates from Allopathic (MBBS/MD) doctors for official condonation. Check your college prospectus/handbook."
       },
       {
-        q: "Will my thesis guide accept a digitally generated sample?",
-        a: "Obviously not for real academic grading. Our generated samples visually replicate real certificates explicitly for UX/UI testing of educational platforms."
+        q: "My college rejected my certificate because it didn't have a registration number. Is that legal?",
+        a: "Yes. A medical certificate without the doctor's registration number is not a legally valid document in India. The number is essential for the institution to verify the doctor's credentials."
       },
       {
-        q: "Is there an age limit for this certificate format?",
-        a: "No. The formatting scales effortlessly from 18-year-old undergraduates up through 35-year-old doctoral candidates requiring localized medical pauses."
+        q: "Is it okay to use a sample generator for my college leave?",
+        a: "No. The certificates generated by our tool (and any online generator) are 'Specimen Documents' intended for developers, designers, and educational demos. They have no legal validity. Always see a real doctor for actual academic needs."
       }
     ],
     relatedPages: [
-      { title: "Medical Certificate for School Absence", href: "/medical-certificate-for-school-absence" },
-      { title: "Sick Leave Medical Certificate", href: "/sick-leave-medical-certificate" }
+      { title: "Sick Leave Medical Certificate", href: "/sick-leave-medical-certificate" },
+      { title: "Medical Certificate for School Absence", href: "/blog/medical-certificate-for-school" },
+      { title: "Common Medical Certificate Formats", href: "/blog/medical-certificate-format-india" }
     ],
-    externalLinks: [
-      { label: "UGC Guidelines on Student Leave", href: "https://www.ugc.gov.in/", description: "Regulatory directives regarding university medical exemptions." }
+    extraSections: [
+      {
+        heading: "Attendance Condonation: How much shortage can be excused?",
+        content: [
+          "In India, the 75% attendance rule is ubiquitous. However, most university statutes (like those of Delhi University or VTU) allow the Head of Department or the Vice-Chancellor to condone a shortage of up to 10-15% on medical grounds.",
+          "This means if you have 65% attendance but have a valid medical certificate for the period of absence, you can be made eligible to sit for exams. This condonation is usually a one-time privilege per semester and requires the certificate to be submitted on time."
+        ]
+      },
+      {
+        heading: "The Role of the Civil Surgeon for Board Exams",
+        content: [
+          "For high-stakes academic events like the NEET, JEE, or Board Exams, normal private clinic certificates are often not enough. If a student needs a scribe or an exemption from a paper on medical grounds, the certificate must typically be issued or 'countersigned' by the District Civil Surgeon or a Medical Board at a Government Hospital.",
+          "This adds a layer of government verification to ensure that only genuine medical cases are granted these high-value academic exemptions."
+        ]
+      }
     ]
   },
   {
@@ -796,7 +922,7 @@ export const LANDING_PAGES: LandingPageConfig[] = [
     ],
     relatedPages: [
       { title: "Sick Leave Medical Certificate", href: "/sick-leave-medical-certificate" },
-      { title: "Student Medical Certificate Format", href: "/student-medical-certificate-format" }
+      { title: "Student Medical Certificate", href: "/student-medical-certificate" }
     ],
     externalLinks: [
       { label: "NCDC Guidelines on Typhoid", href: "https://ncdc.gov.in/", description: "National Centre for Disease Control protocols regarding enteric fever." }

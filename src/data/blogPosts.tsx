@@ -13,7 +13,7 @@ const InternalLink = ({ href, children }: { href: string; children: React.ReactN
 const BLOG_POSTS_PART1: BlogPostData[] = [
   {
     slug: "what-is-medical-certificate",
-    title: "What Is a Medical Certificate? Complete Guide for 2026",
+    title: "What Is a Medical Certificate? Complete Guide",
     metaDescription: "A complete guide to medical certificates in India — what they are, who can issue them, what they must contain, and how to obtain a legally valid one from a registered doctor.",
     category: "Medical Certificates",
     date: "March 2026",
@@ -123,7 +123,7 @@ const BLOG_POSTS_PART1: BlogPostData[] = [
   },
   {
     slug: "how-to-get-sick-leave-certificate",
-    title: "How to Get a Sick Leave Certificate from a Doctor in India (2026 Guide)",
+    title: "How to Get a Sick Leave Certificate from a Doctor in India",
     metaDescription: "Step-by-step guide to obtaining a genuine sick leave medical certificate in India — what to tell your doctor, what the certificate must include, and your legal rights as an employee.",
     category: "Sick Leave",
     date: "March 2026",
@@ -479,7 +479,7 @@ const op = 0.78 + hwRand(cc, i, 4) * 0.22;             // ink pressure`}</pre>
   },
   {
     slug: "is-online-medical-certificate-valid-india",
-    title: "Is an Online Medical Certificate Valid in India? 2026 Legal Guide",
+    title: "Is an Online Medical Certificate Valid in India?",
     metaDescription: "Is an online medical certificate legally valid in India? Learn what the law says about telemedicine certificates, e-signatures, employer acceptance, and when a digital certificate will — or won't — be accepted.",
     category: "Legal & Validity",
     date: "March 2026",
