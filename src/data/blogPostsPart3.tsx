@@ -1,8 +1,25 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { BlogPostData } from "./blogTypes";
 
 const InternalLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
   <Link href={href} className="text-primary font-medium hover:underline">{children}</Link>
+);
+
+const CertImage = ({ src, alt, caption }: { src: string; alt: string; caption?: string }) => (
+  <figure className="my-6">
+    <div className="relative w-full max-w-sm mx-auto">
+      <Image
+        src={src}
+        alt={alt}
+        width={400}
+        height={533}
+        className="rounded-xl border border-border shadow-lg mx-auto"
+        loading="lazy"
+      />
+    </div>
+    {caption && <figcaption className="text-center text-xs text-muted-foreground mt-2 italic">{caption}</figcaption>}
+  </figure>
 );
 
 const Disclaimer = () => (
