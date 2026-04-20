@@ -22,10 +22,6 @@ export async function generateMetadata({ params }: { params: Promise<{ templateI
     title: { absolute: title },
     description,
     alternates: { canonical: url },
-    robots: {
-      index: false,
-      follow: true,
-    },
     openGraph: {
       type: "website",
       url,

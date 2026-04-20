@@ -20,34 +20,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/editorial-guidelines/`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
   ];
 
-  const blogPages: MetadataRoute.Sitemap = BLOG_POSTS.filter(post => ![
-    "what-is-medical-certificate",
-    "how-to-get-sick-leave-certificate",
-    "rules-medical-certificate-leave-india",
-    "how-to-get-medical-certificate",
-    "how-to-get-medical-certificate-for-leave",
-    "medical-certificate-for-school",
-    "how-to-make-medical-certificate-for-college",
-    "what-is-medical-fitness-certificate",
-    "how-to-get-medical-fitness-certificate",
-    "medical-certificate-vs-fitness-certificate"
-  ].includes(post.slug)).map((post) => ({
+  const blogPages: MetadataRoute.Sitemap = BLOG_POSTS.map((post) => ({
     url: `${BASE_URL}/blog/${post.slug}/`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
     priority: 0.8,
   }));
 
-  const landingPageUrls: MetadataRoute.Sitemap = LANDING_PAGES.filter(page => ![
-    "medical-certificate-for-leave",
-    "medical-certificate-for-office-leave",
-    "medical-certificate-for-school-absence"
-  ].includes(page.slug)).map((page) => ({
-    url: `${BASE_URL}/${page.slug}/`,
+  const generatorPages: MetadataRoute.Sitemap = TEMPLATES.map((template) => ({
+    url: `${BASE_URL}/generator/${template.id}/`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
-    priority: 0.9,
+    priority: 0.85,
   }));
 
-  return [...staticPages, ...landingPageUrls, ...blogPages];
+  const landingPageUrls: MetadataRoute.Sitemap = LANDING_PAGES
+    .filter((page) => !page.noindex)
+    .map((page) => ({
+      url: `${BASE_URL}/${page.slug}/`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    }));
+
+  return [...staticPages, ...landingPageUrls, ...blogPages, ...generatorPages];
 }

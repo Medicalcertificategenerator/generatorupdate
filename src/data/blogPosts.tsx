@@ -13,7 +13,7 @@ const InternalLink = ({ href, children }: { href: string; children: React.ReactN
 const BLOG_POSTS_PART1: BlogPostData[] = [
   {
     slug: "what-is-medical-certificate",
-    title: "What Is a Medical Certificate? Complete Guide",
+    title: "What Is a Medical Certificate? Complete Guide for 2026",
     metaDescription: "A complete guide to medical certificates in India — what they are, who can issue them, what they must contain, and how to obtain a legally valid one from a registered doctor.",
     category: "Medical Certificates",
     date: "March 2026",
@@ -121,85 +121,7 @@ const BLOG_POSTS_PART1: BlogPostData[] = [
       </div>
     ),
   },
-  {
-    slug: "how-to-get-sick-leave-certificate",
-    title: "How to Get a Sick Leave Certificate from a Doctor in India",
-    metaDescription: "Step-by-step guide to obtaining a genuine sick leave medical certificate in India — what to tell your doctor, what the certificate must include, and your legal rights as an employee.",
-    category: "Sick Leave",
-    date: "March 2026",
-    readTime: "7 min read",
-    tags: ["Sick Leave", "India", "Workplace", "Legal"],
-    author: "Ziven Borceg",
-    content: (
-      <div className="space-y-6 text-foreground/80 leading-relaxed">
-        <p className="text-lg font-medium text-foreground">
-          Getting a sick leave certificate in India is a straightforward process when you are genuinely unwell — but knowing what the certificate must contain, your legal rights, and what employers can and cannot demand makes the entire process much smoother.
-        </p>
 
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">What Is a Sick Leave Certificate?</h2>
-          <p>A sick leave certificate is a formal document issued by a registered medical practitioner that certifies a patient's medical unfitness for work or study for a specified number of days. It is the standard documentation required by employers in India to approve paid medical leave.</p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Step-by-Step: How to Get a Sick Leave Certificate</h2>
-          <div className="space-y-5 mt-3">
-            {[
-              { step: "1", title: "Visit a Registered Doctor", desc: "Go to any registered medical practitioner — your family physician, a government hospital OPD, a private clinic, or a specialist." },
-              { step: "2", title: "Describe Your Symptoms Fully and Honestly", desc: "Tell the doctor exactly how you are feeling. The doctor's clinical assessment forms the basis of the certificate, and issuing a certificate without a genuine medical basis exposes both you and the doctor to legal risk." },
-              { step: "3", title: "Undergo the Examination", desc: "The doctor will examine you. Depending on your symptoms, they may check vital signs, order blood tests, or conduct other assessments. This examination is what makes the certificate valid." },
-              { step: "4", title: "Explicitly Request the Certificate", desc: "After the consultation, explicitly ask for a medical certificate specifying the number of rest days recommended. In busy clinics, doctors don't always issue one automatically." },
-              { step: "5", title: "Verify All Required Information", desc: "Check that the certificate includes: doctor's name and registration number, clinic name and address, your name/age/gender, date of examination, diagnosis, rest period, and doctor's signature and stamp." },
-            ].map(s => (
-              <div key={s.step} className="flex gap-4">
-                <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-black flex-shrink-0">{s.step}</div>
-                <div>
-                  <h3 className="font-bold text-foreground mb-1">{s.title}</h3>
-                  <p className="text-sm">{s.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Can You Get a Sick Leave Certificate Online?</h2>
-          <p>Yes. Following the Ministry of Health's Telemedicine Practice Guidelines (2020), registered doctors in India can conduct consultations via video or phone and issue sick leave certificates digitally. Reputable platforms include Practo, Apollo 24|7, and Tata Health (MediBuddy).</p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Your Legal Rights as an Employee</h2>
-          <ul className="list-disc list-inside space-y-2 ml-4 mt-3">
-            <li>The Factories Act, 1948 — provides for earned and sick leave for factory workers</li>
-            <li>State Shops and Establishments Acts — govern leave entitlements for commercial employees</li>
-            <li>Employee State Insurance (ESI) Act — sickness benefits for insured employees</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">About Sample Sick Leave Certificates</h2>
-          <p>If you need a realistic <strong>sample</strong> sick leave certificate for software testing, UI design, or prototyping, our <InternalLink href="/generator/formal-cert">Medical Certificate Generator</InternalLink> offers 15+ authentic Indian formats. All generated certificates are for demonstration only and must never be submitted as genuine — see our <InternalLink href="/terms">terms</InternalLink> and <InternalLink href="/disclaimer">disclaimer</InternalLink>.</p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Frequently Asked Questions</h2>
-          <div className="space-y-4 mt-3">
-            {[
-              { q: "How many days of sick leave can a doctor certify at once?", a: "There is no legal maximum. Simple infections typically result in 1–5 days. More serious conditions may require 7–14 days or longer." },
-              { q: "Can I get a sick leave certificate after recovering?", a: "A doctor can only certify dates on which they examined you. Retrospective certification is at the doctor's discretion and should be discussed honestly." },
-              { q: "Does a sick leave certificate guarantee paid leave?", a: "That depends on your employment contract, leave balance, and applicable state law." },
-              { q: "Can I use a telemedicine certificate for workplace sick leave?", a: "In most cases, yes. Telemedicine certificates are recognised under the 2020 Telemedicine Practice Guidelines. Check your HR policy for specifics." },
-            ].map(faq => (
-              <div key={faq.q} className="bg-muted/50 border border-border rounded-xl p-4">
-                <h3 className="font-bold text-sm mb-2 text-foreground">{faq.q}</h3>
-                <p className="text-sm">{faq.a}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-      </div>
-    ),
-  },
   {
     slug: "medical-certificate-vs-prescription",
     title: "Medical Certificate vs Prescription: Key Differences Explained",
@@ -334,54 +256,7 @@ const BLOG_POSTS_PART1: BlogPostData[] = [
       </div>
     ),
   },
-  {
-    slug: "medical-certificate-for-school",
-    title: "Medical Certificate for School Absence: A Parent's Complete Guide",
-    metaDescription: "What schools in India require for medical absence, how to get a valid certificate for your child, and your rights as a parent.",
-    category: "Sick Leave",
-    date: "January 2026",
-    readTime: "7 min read",
-    tags: ["School", "Students", "Parents"],
-    author: "Ziven Borceg",
-    content: (
-      <div className="space-y-6 text-foreground/80 leading-relaxed">
-        <p className="text-lg font-medium text-foreground">Schools and colleges across India increasingly require medical certificates for student absences. This guide helps parents and students understand what is required and their rights.</p>
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">When Schools Require a Medical Certificate</h2>
-          <ul className="list-disc list-inside space-y-2 ml-4 mt-3">
-            <li>Absence during examinations or practical assessments</li>
-            <li>Extended absence of 3 or more consecutive days</li>
-            <li>Application for re-examination on medical grounds</li>
-            <li>Attendance condonation at the university level</li>
-          </ul>
-        </section>
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">What the Certificate Must Include</h2>
-          <ul className="list-disc list-inside space-y-2 ml-4">
-            <li>Child's full name and age</li>
-            <li>Diagnosis and specific dates of recommended rest</li>
-            <li>Doctor's name, qualifications, and registration number</li>
-            <li>Clinic/hospital name, address, and official stamp</li>
-          </ul>
-        </section>
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Frequently Asked Questions</h2>
-          <div className="space-y-4">
-            {[
-              { q: "Can parents write a leave letter instead of a medical certificate?", a: "For short absences (1–2 days), many schools accept a parental letter. For exam-related absences, a genuine medical certificate is almost always required." },
-              { q: "What if my child was hospitalised?", a: "For hospitalisation, the discharge summary is strong supporting documentation alongside the medical certificate." },
-            ].map(faq => (
-              <div key={faq.q} className="bg-muted/50 border border-border rounded-xl p-4">
-                <h3 className="font-bold text-sm mb-2 text-foreground">{faq.q}</h3>
-                <p className="text-sm">{faq.a}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-        <p>Need a sample for a school project? Try our <InternalLink href="/generator/formal-cert">free generator</InternalLink>. Sample certificates are for demonstration only.</p>
-      </div>
-    ),
-  },
+
   {
     slug: "medical-certificate-ui-design",
     title: "Designing Realistic Medical Certificate UI for Apps: A Developer's Guide",
@@ -479,7 +354,7 @@ const op = 0.78 + hwRand(cc, i, 4) * 0.22;             // ink pressure`}</pre>
   },
   {
     slug: "is-online-medical-certificate-valid-india",
-    title: "Is an Online Medical Certificate Valid in India?",
+    title: "Is an Online Medical Certificate Valid in India? 2026 Legal Guide",
     metaDescription: "Is an online medical certificate legally valid in India? Learn what the law says about telemedicine certificates, e-signatures, employer acceptance, and when a digital certificate will — or won't — be accepted.",
     category: "Legal & Validity",
     date: "March 2026",
@@ -1002,136 +877,6 @@ const op = 0.78 + hwRand(cc, i, 4) * 0.22;             // ink pressure`}</pre>
         </section>
         <p className="mt-4">You can view the formats for both types of certificates in our <InternalLink href="/">medical certificate generator</InternalLink>, which includes fitness certificate templates alongside sick leave certificate formats.</p>
         <p className="text-sm text-muted-foreground border-l-4 border-border pl-4 italic mt-4">Disclaimer: This article is for informational purposes only. Specific requirements for fitness or medical certificates may vary by employer, institution, or applicable law.</p>
-      </div>
-    ),
-  },
-  {
-    slug: "how-doctors-create-medical-certificates",
-    title: "How Doctors Create Medical Certificates in India: The Full Process",
-    metaDescription: "An inside look at how doctors in India issue medical certificates — the consultation process, what information they must record, their legal liability, digital vs paper, and the ethics of certification.",
-    category: "Medical Certificates",
-    date: "March 2026",
-    readTime: "9 min read",
-    tags: ["Medical Certificate", "Doctor", "India", "Process", "Medical Ethics", "Documentation"],
-    author: "Ziven Borceg",
-    content: (
-      <div className="space-y-6 text-foreground/80 leading-relaxed">
-        <p className="text-lg font-medium text-foreground">
-          Most people who receive a medical certificate focus entirely on the end product — the printed document with the doctor's signature and stamp. What happens on the doctor's side to produce that certificate, and what professional and legal obligations does the doctor take on when they sign it? Understanding the process helps patients make legitimate requests, and helps employers understand what they are receiving.
-        </p>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Step 1: The Clinical Consultation</h2>
-          <p>A medical certificate can only be legitimately issued after a genuine clinical consultation. This is both an ethical requirement under the National Medical Commission's Professional Conduct, Etiquette and Ethics Regulations, and a practical necessity — the doctor must have some clinical basis for the statements made in the certificate.</p>
-          <p className="mt-3">In a standard sick leave consultation, the doctor:</p>
-          <ul className="list-disc list-inside space-y-2 ml-4 mt-3">
-            <li>Takes a detailed history of the presenting complaint — symptoms, onset, duration, severity</li>
-            <li>Performs a relevant physical examination — checking temperature, blood pressure, auscultating the chest for respiratory illness, checking for abdominal tenderness, etc.</li>
-            <li>Reviews any previous records the patient has brought</li>
-            <li>May order investigations — blood counts, urine test, X-ray — if indicated</li>
-            <li>Forms a clinical impression or diagnosis</li>
-            <li>Advises treatment and, where appropriate, a period of rest</li>
-          </ul>
-          <p className="mt-3">Only after this process does the doctor have the clinical basis for a certificate. A doctor who signs a certificate for a patient they have not examined is acting unethically and is potentially liable to disciplinary action by the NMC.</p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Step 2: Deciding the Period of Rest</h2>
-          <p>One of the most clinically and legally significant decisions the doctor makes is the period of rest to be recommended. This is not arbitrary. The doctor must consider:</p>
-          <ul className="list-disc list-inside space-y-2 ml-4 mt-3">
-            <li>The nature and severity of the illness</li>
-            <li>The patient's occupation and its physical or cognitive demands</li>
-            <li>The expected course of the illness or the post-procedure recovery</li>
-            <li>Any investigations pending that may change the prognosis</li>
-          </ul>
-          <p className="mt-3">A doctor who routinely issues certificates for longer periods than clinically justified — for example, giving 10 days' rest for a 2-day viral fever — is engaging in professional misconduct. This is a surprisingly common problem, and it is one reason some employers treat certificates with scepticism.</p>
-          <p className="mt-3">Conversely, a doctor who issues a certificate for fewer days than the patient genuinely requires — perhaps due to time pressure or social factors — may also be failing in their duty to the patient.</p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Step 3: Writing the Certificate</h2>
-          <p>In most Indian clinics and hospitals today, certificates are either handwritten on pre-printed letterhead pads or generated using clinic management software. The required content is:</p>
-          <ul className="list-disc list-inside space-y-2 ml-4 mt-3">
-            <li><strong>Date of examination</strong> — this must be the actual date the patient was seen, not a convenient future or past date</li>
-            <li><strong>Patient's name, age, and gender</strong></li>
-            <li><strong>Clinical finding or diagnosis</strong> — stated clearly but with appropriate discretion for sensitive conditions</li>
-            <li><strong>Period of recommended rest</strong> — specific dates are preferred; "for X days" is sometimes used but can cause ambiguity</li>
-            <li><strong>Doctor's name, qualifications, and registration number</strong></li>
-            <li><strong>Clinic or hospital name and address</strong></li>
-            <li><strong>Doctor's signature</strong></li>
-            <li><strong>Official stamp</strong> — in India, a rubber stamp with the clinic name, doctor's name, and registration number is standard</li>
-          </ul>
-          <p className="mt-3">The certificate should be legible. Handwritten certificates are still common in Indian practice, but illegibility can become a problem — an illegible certificate may be questioned by an employer, and cannot effectively convey the clinical information it is meant to document.</p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Step 4: Record Keeping</h2>
-          <p>Professional ethics and practical risk management require that the doctor maintain a record of every certificate issued. This means the consultation case notes, any investigation results, and typically a counterfoil or copy of the certificate should be kept in the patient's medical record.</p>
-          <p className="mt-3">This record-keeping serves several purposes:</p>
-          <ul className="list-disc list-inside space-y-2 ml-4 mt-3">
-            <li>If an employer queries the certificate, the doctor has documentation to support it</li>
-            <li>If a patient attempts to misuse or alter the certificate (changing dates or period of rest), the original record shows the actual certificate issued</li>
-            <li>If there is a medico-legal challenge or a complaint to the NMC, the doctor has evidence of a legitimate consultation</li>
-          </ul>
-          <p className="mt-3">The MCI/NMC Code of Ethics specifies that medical records should be maintained for a minimum period — typically 3 years for adults and until the age of majority for minors.</p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Digital Certificates: The Evolving Practice</h2>
-          <p>Increasingly, particularly in urban India and among telemedicine providers, medical certificates are generated digitally — either as PDFs from clinic management software or through telemedicine apps that have certificate-generation modules built in.</p>
-          <p className="mt-3">A digitally generated certificate is as valid as a handwritten one from a legal standpoint, provided it meets the content requirements and is signed by the doctor (even if the signature is a scanned or electronic reproduction). Some telemedicine platforms have begun using QR codes that link to a verification portal, allowing the recipient to confirm the certificate's authenticity.</p>
-          <p className="mt-3">Our <InternalLink href="/">medical certificate generator</InternalLink> tool demonstrates what authentic digital certificate formats look like across different clinical contexts — from government hospital formats to private clinic prescription pad styles — all produced as educational specimens clearly marked as such.</p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">The Doctor's Legal Liability When Issuing a Certificate</h2>
-          <p>Signing a medical certificate is a significant legal act. The doctor is making a specific declaration that is intended to be relied upon by third parties — employers, courts, insurance companies, and government departments.</p>
-          <p className="mt-3">A doctor who issues a false medical certificate — one that states something they know to be untrue — is liable to:</p>
-          <ul className="list-disc list-inside space-y-2 ml-4 mt-3">
-            <li>Disciplinary action by the NMC or State Medical Council, including suspension or erasure of registration</li>
-            <li>Criminal prosecution under Section 197 of the Indian Penal Code for issuing a false certificate (a cognisable offence)</li>
-            <li>Civil liability for fraud if a third party suffers loss as a result of relying on the false certificate</li>
-          </ul>
-          <p className="mt-3">This is why legitimate doctors exercise considerable care in what they certify. It also explains why a doctor may decline to issue a certificate that is not clinically supported, even if the patient presses them to do so.</p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Ethical Challenges in Certification Practice</h2>
-          <p>Doctors in India regularly face pressure from patients who want certificates for periods longer than clinically justified, certificates backdated to cover unauthorised absences, or certificates for conditions the patient does not have. This is a significant ethical challenge in everyday practice.</p>
-          <p className="mt-3">The NMC's guidance is clear: a doctor should only certify what they have genuinely found on examination. Where a patient's account cannot be verified by examination, the doctor should make this clear in the certificate language ("Patient states that…" rather than "Patient is suffering from…").</p>
-          <p className="mt-3">For context on the consequences of fraudulent certificates from the patient's side, see our article on <InternalLink href="/blog/fake-medical-certificate-consequences">the consequences of fake medical certificates in India</InternalLink>.</p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Frequently Asked Questions</h2>
-          <div className="space-y-4">
-            <div>
-              <h3 className="text-lg font-bold text-foreground">Can a doctor refuse to issue a medical certificate after seeing a patient?</h3>
-              <p>Yes. If the doctor's clinical assessment does not support the period of rest being requested, or if they believe the patient is exaggerating symptoms to obtain a certificate, they can decline. They should document their reasoning in the patient's records.</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-foreground">Can I ask my doctor to not mention the diagnosis on the certificate?</h3>
-              <p>For sensitive conditions (mental health, HIV, reproductive health), you can request that the certificate state only "medical condition requiring rest" without specifying the diagnosis. Most doctors will accommodate this. For routine illness, employers generally expect the diagnosis or at least a clinical category.</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-foreground">How long does it take a doctor to issue a medical certificate?</h3>
-              <p>After the consultation is complete, issuing the certificate itself takes only a few minutes in a well-equipped clinic. In government hospitals, there may be additional administrative steps — a certificate may need countersigning by a senior officer or department head, which can add time.</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-foreground">Can I get a medical certificate if I recovered before seeing the doctor?</h3>
-              <p>A doctor can issue a retrospective certificate if they can clinically determine that you were ill during the stated period — for example, if your current examination shows residual signs of the illness, or if you have investigation reports from that time. They should document their clinical reasoning carefully.</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-foreground">What is the charge for a medical certificate in India?</h3>
-              <p>There is no fixed rate. In government hospitals, certificates are often issued free or for a nominal registration fee. In private clinics, charges typically range from ₹50 to ₹500 or more depending on the doctor's level of practice, city, and the nature of the certificate. Specialised fitness certificates (driving, aviation) may cost significantly more.</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-foreground">Can two doctors issue certificates for the same illness period?</h3>
-              <p>Yes — for example, if you saw a GP initially and then a specialist. Both certificates for the same period of illness are generally valid. However, submitting two certificates for the same period to claim more leave than the individual certificates cover would be fraudulent.</p>
-            </div>
-          </div>
-        </section>
-        <p className="text-sm text-muted-foreground border-l-4 border-border pl-4 italic">Disclaimer: This article is intended for educational purposes. Specific rules governing the issuance of medical certificates may vary by state, employer, or applicable law. All certificates produced by Medical Certificate Generator are clearly marked as specimens for educational and demonstration use only.</p>
       </div>
     ),
   },

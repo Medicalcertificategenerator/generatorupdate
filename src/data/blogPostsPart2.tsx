@@ -26,7 +26,7 @@ export const BLOG_POSTS_PART2: BlogPostData[] = [
   {
     slug: "how-to-get-medical-certificate",
     title: "How to Get a Medical Certificate in India — Complete Guide",
-    metaDescription: "A step-by-step guide on how to get a medical certificate in India in 2026. Covers who to see, what to say, what the certificate must contain, and common mistakes to avoid.",
+    metaDescription: "A step-by-step guide on how to get a medical certificate in India. Covers who to see, what to say, what the certificate must contain, and common mistakes to avoid.",
     category: "Medical Certificates",
     date: "March 2026",
     readTime: "10 min read",
@@ -37,6 +37,17 @@ export const BLOG_POSTS_PART2: BlogPostData[] = [
         <p className="text-lg font-medium text-foreground">
           Getting a medical certificate sounds simple — visit a doctor, explain your illness, and walk out with a document. But many people end up with certificates that get rejected by their employer or institution. This guide walks you through every step of obtaining a valid medical certificate in India, from choosing the right doctor to what to do if your certificate is refused.
         </p>
+
+        <section>
+          <h2 className="text-2xl font-bold text-foreground mb-3">Understanding the Types of Medical Certificates</h2>
+          <p>The first step is knowing exactly what kind of certificate you are asking the doctor for. Doctors can provide various kinds of certificates, and picking the right one is essential.</p>
+          <ul className="list-disc list-inside space-y-1 ml-4 mt-3">
+            <li><strong>Sick Leave Certificate:</strong> Covers the days you were medically unfit for work. If you need a demo or mockup of this format, see our <InternalLink href="/medical-certificate-for-leave">leave certificate generator</InternalLink>.</li>
+            <li><strong>Fitness Certificate:</strong> Certifies that you are now fit to return to work. Highly requested when re-joining. You can view realistic specimens of this on our <InternalLink href="/fitness-medical-certificate">fitness medical certificate</InternalLink> generator.</li>
+            <li><strong>Form 1A / Driving Licence:</strong> Needs to certify visual acuity. We have a dedicated <InternalLink href="/form-1a-medical-certificate-for-driving-licence-online-generator">Form 1A generator</InternalLink> for RTO format demonstration.</li>
+            <li><strong>Student Leave Certificate:</strong> Used for exams and attendance. Need a demo? Check our <InternalLink href="/student-medical-certificate-format">student medical certificate</InternalLink> templates.</li>
+          </ul>
+        </section>
 
         <section>
           <h2 className="text-2xl font-bold text-foreground mb-3">Step 1: Decide Who to Visit</h2>
@@ -53,7 +64,7 @@ export const BLOG_POSTS_PART2: BlogPostData[] = [
         <section>
           <h2 className="text-2xl font-bold text-foreground mb-3">Step 2: Book Your Appointment Promptly</h2>
           <p>See the doctor during your illness — ideally on the first or second day. A doctor can only issue a certificate for dates on which they have clinical evidence of your condition. Waiting until after you recover limits what they can certify.</p>
-          <p className="mt-3">If you became ill on a weekend and could not access a doctor, go as soon as possible. A doctor can issue a certificate covering the weekend period if your symptoms are still clinically evident or if investigation results confirm the illness was present during that time.</p>
+          <p className="mt-3">If you became ill on a weekend and could not access a doctor, go as soon as possible. A doctor can issue a certificate covering the weekend period if your symptoms are still clinically evident or if investigation results confirm the illness was present during that time. Delaying your visit is the number one reason doctors refuse to certify past absences.</p>
         </section>
 
         <section>
@@ -66,8 +77,15 @@ export const BLOG_POSTS_PART2: BlogPostData[] = [
             <li>Whether you have had this condition before</li>
             <li>Any relevant medical history</li>
           </ul>
-          <p className="mt-3">Do not exaggerate or fabricate symptoms — this places the doctor in an impossible position and constitutes fraud if the certificate is later used officially.</p>
+          <p className="mt-3">Do not exaggerate or fabricate symptoms. A doctor's clinical assessment forms the basis of the certificate. Asking a doctor to state that you have a higher fever than you do, or a longer illness duration, is asking them to commit medical falsification which is a punishable offense under the National Medical Commission (NMC) guidelines.</p>
         </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-foreground mb-3">Can I Get a Medical Certificate for Leave Without Visiting a Doctor?</h2>
+          <p>No, not legally or ethically. In India, a medical practitioner must personally examine you either physically or via an approved telemedicine consultation before determining if rest is needed. Any doctor who issues a certificate for a patient they have not examined is committing professional misconduct.</p>
+          <p className="mt-3">However, telemedicine consultations have been legally valid since 2020. If you are too sick to visit a clinic, you can book an online consultation. See our guide on <InternalLink href="/blog/is-online-medical-certificate-valid-india">whether online certificates are valid in India</InternalLink> for exactly how employers view these certificates.</p>
+        </section>
+
 
         <section>
           <h2 className="text-2xl font-bold text-foreground mb-3">Step 4: Request the Certificate Explicitly</h2>
@@ -103,9 +121,15 @@ export const BLOG_POSTS_PART2: BlogPostData[] = [
         </section>
 
         <section>
+          <h2 className="text-2xl font-bold text-foreground mb-3">What Happens If You Submit a Fake Medical Certificate in India?</h2>
+          <p>Submitting a fake medical certificate (i.e., a forged document or one lacking a genuine examination and registration number) is considered document forgery under sections 463, 464, and 465 of the Indian Penal Code (IPC).</p>
+          <p className="mt-3">In the corporate sector, producing a fraudulent medical certificate is usually classified as severe misconduct and results in immediate termination of employment. Employers increasingly cross-check suspicious certificates by contacting the clinic directly or verifying the registration number against the NMC registry. For students, submitting a forged document to an examination board can lead to rustication or being debarred from exams entirely. <strong>Always insist on a genuine examination and a verifiable document.</strong></p>
+        </section>
+
+        <section>
           <h2 className="text-2xl font-bold text-foreground mb-3">Step 6: Submit Within the Required Timeframe</h2>
           <p>Most employers expect the certificate to be submitted within 2–3 working days of the end of the leave period. Government departments are stricter — some require submission before the leave ends (for planned medical leave) or on the day of return.</p>
-          <p className="mt-3">If you are submitting digitally, scan or photograph the certificate clearly. Both sides of the paper are rarely relevant, but ensure the stamp and signature are legible.</p>
+          <p className="mt-3">If you are submitting digitally, scan or photograph the certificate clearly. Both sides of the paper are rarely relevant, but ensure the stamp and signature are legible. Keep the physical original in a safe place, as HR departments may ask to inspect it months down the line.</p>
         </section>
 
         <section>
@@ -148,505 +172,7 @@ export const BLOG_POSTS_PART2: BlogPostData[] = [
       </div>
     ),
   },
-  {
-    slug: "how-to-get-medical-certificate-for-leave",
-    title: "How to Get a Medical Certificate for Leave: Step-by-Step Guide",
-    metaDescription: "How to get a medical certificate for leave from your employer or institution in India. Step-by-step guide covering government and private sector requirements, what the certificate must say, and how to avoid rejection.",
-    category: "Sick Leave",
-    date: "March 2026",
-    readTime: "8 min read",
-    tags: ["Medical Certificate", "Sick Leave", "India", "Leave", "HR"],
-    author: "Ziven Borceg",
-    content: (
-      <div className="space-y-6 text-foreground/80 leading-relaxed">
-        <p className="text-lg font-medium text-foreground">
-          Getting a medical certificate specifically for a leave application involves a few nuances beyond a general doctor's visit. Your employer or institution has specific expectations, and meeting them correctly on the first attempt saves you significant back-and-forth. This guide focuses specifically on leave-context medical certificates.
-        </p>
 
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Understand What Your Employer or Institution Requires</h2>
-          <p>Before your appointment, check your company's HR policy or your institution's rules. Key questions to answer:</p>
-          <ul className="list-disc list-inside space-y-1 ml-4 mt-3">
-            <li>How many days of sick leave can you take without a certificate?</li>
-            <li>Does the policy require a certificate from a government hospital, or any registered doctor?</li>
-            <li>Does the certificate need to state the specific diagnosis, or is "medical condition requiring rest" acceptable?</li>
-            <li>Is there a specific format or form required (some PSUs and government departments have their own forms)?</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">What the Certificate Must Clearly State for Leave Purposes</h2>
-          <p>A leave-context medical certificate has one primary function: convincing the HR department that the absence was medically necessary for a specific number of days. For this, it must contain:</p>
-          <ul className="list-disc list-inside space-y-2 ml-4 mt-3">
-            <li><strong>Exact leave dates</strong> — "The patient is advised rest from [start date] to [end date]" — not just "for 5 days"</li>
-            <li><strong>Diagnosis or nature of illness</strong> — specific enough to justify the rest period</li>
-            <li><strong>Doctor's registration number</strong> — critical for employer verification</li>
-            <li><strong>Clinic stamp</strong> — Indian employers almost universally require this</li>
-          </ul>
-        </section>
-
-        <CertImage
-          src="/images/medical-certificate-template-18_1774458762265.webp"
-          alt="Medical certificate for sick leave — Narayan Care Clinic format"
-          caption="Narayan Care Clinic format — clean private clinic certificate with all fields required for leave submission."
-        />
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Government vs Private Sector Leave Certificates</h2>
-          <p><strong>Private companies:</strong> Most accept certificates from any registered MBBS doctor. Telemedicine certificates are increasingly accepted. The certificate format is flexible as long as the required information is present.</p>
-          <p className="mt-3"><strong>Government employees (Central):</strong> The CCS Leave Rules require certificates from an "authorised medical attendant" — a doctor on the government's approved panel. For leave of more than 30 days, a medical board may be required. See our detailed guide on <InternalLink href="/blog/rules-medical-certificate-leave-india">medical certificate rules for leave in India</InternalLink>.</p>
-          <p className="mt-3"><strong>State government employees:</strong> Rules vary significantly. Tamil Nadu, Maharashtra, and Rajasthan have particularly strict requirements for longer sick leave periods.</p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">When to Submit the Certificate</h2>
-          <p>Timing matters. Most HR policies expect the certificate within 2–3 working days of your return to work. Submitting promptly avoids the leave being marked as Loss of Pay (LOP) in the interim.</p>
-          <p className="mt-3">For planned medical leave (scheduled surgery, etc.), inform HR in advance and submit the treating doctor's opinion letter if a full certificate cannot be issued before the leave begins. Submit the actual certificate on return.</p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Frequently Asked Questions</h2>
-          <div className="space-y-4">
-            <div>
-              <h3 className="text-lg font-bold text-foreground">Can I use a telemedicine certificate for leave?</h3>
-              <p>For most private employers, yes. See <InternalLink href="/blog/is-online-medical-certificate-valid-india">our guide on online certificate validity</InternalLink> for the full picture. Government departments may still require physical certificates.</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-foreground">What if my doctor wrote "for one week" instead of specific dates?</h3>
-              <p>Ask the doctor to rewrite with specific dates — it avoids ambiguity when your employer calculates the leave period and is standard HR practice to require this.</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-foreground">Can I apply for leave retroactively with a medical certificate?</h3>
-              <p>In most companies, yes — you take the leave first and submit the certificate on return. Some companies require advance notification even for sick leave; check your policy.</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-foreground">What if I recover before the rest period ends?</h3>
-              <p>You can return to work earlier than the certificate recommends. The certificate states the maximum recommended rest, not a mandatory period. Inform your manager and HR of early return.</p>
-            </div>
-          </div>
-        </section>
-
-        <p>Generate a specimen leave certificate for HR training or form testing at our <InternalLink href="/medical-certificate-for-leave">Medical Certificate for Leave</InternalLink> page.</p>
-        <p className="text-sm text-muted-foreground border-l-4 border-border pl-4 italic">Disclaimer: This guide is for informational purposes only. Your specific employer policy or applicable law may impose additional requirements.</p>
-      </div>
-    ),
-  },
-  {
-    slug: "how-to-get-medical-certificate-government-hospital",
-    title: "How to Get a Medical Certificate from a Government Hospital in India",
-    metaDescription: "Step-by-step guide to getting a medical certificate from a government hospital in India — which department to visit, what to ask for, how long it takes, and what to expect.",
-    category: "Medical Certificates",
-    date: "March 2026",
-    readTime: "9 min read",
-    tags: ["Government Hospital", "Medical Certificate", "India", "OPD", "How To"],
-    author: "Ziven Borceg",
-    content: (
-      <div className="space-y-6 text-foreground/80 leading-relaxed">
-        <p className="text-lg font-medium text-foreground">
-          A government hospital medical certificate carries more weight than a private clinic certificate in many contexts — particularly for government employees, students applying for attendance condonation, and anyone making insurance or legal claims. This guide covers the complete process of obtaining one.
-        </p>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Why a Government Hospital Certificate May Be Required</h2>
-          <p>Government hospital certificates are required in specific scenarios:</p>
-          <ul className="list-disc list-inside space-y-2 ml-4 mt-3">
-            <li>Central and state government employees taking sick leave under service rules</li>
-            <li>Students at universities that require government hospital certification for examination condonation</li>
-            <li>Workers' compensation and personal injury legal proceedings</li>
-            <li>Passport and visa applications in specific cases</li>
-            <li>Applications for disability certificates, caste validity, and similar government documents that require medico-legal certification</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Step 1: Go to the OPD Registration Desk</h2>
-          <p>At any government hospital, begin at the <strong>Outpatient Department (OPD) Registration counter</strong>. Bring:</p>
-          <ul className="list-disc list-inside space-y-1 ml-4 mt-3">
-            <li>Your government ID (Aadhaar, voter ID, etc.)</li>
-            <li>Any existing medical records or investigation reports relevant to your condition</li>
-            <li>A small registration fee — typically ₹10–₹50 at district hospitals</li>
-          </ul>
-          <p className="mt-3">At tertiary hospitals (AIIMS, PGI, Medical College hospitals), the process may involve an online appointment. Check the hospital's website before visiting.</p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Step 2: Visit the Relevant Specialist Department</h2>
-          <p>Your OPD card will direct you to the appropriate department. For a certificate for sick leave, you will typically visit the General Medicine department. If your condition is specialised, you may be directed to Orthopaedics, Cardiology, Neurology, Psychiatry, or another department.</p>
-          <p className="mt-3">Government hospitals are busy. Plan for a wait time of 2–4 hours in most district hospitals, and potentially longer at teaching hospitals. Arrive early in the morning when OPD attendance begins.</p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Step 3: The Consultation</h2>
-          <p>When you see the doctor, explain your symptoms clearly and ask explicitly for a medical certificate. Government doctors issue certificates frequently and will be familiar with the requirement. Specify:</p>
-          <ul className="list-disc list-inside space-y-1 ml-4 mt-3">
-            <li>That you are a government employee (if applicable — this may determine the format used)</li>
-            <li>The period of leave you are requesting</li>
-            <li>Any specific format required by your department</li>
-          </ul>
-        </section>
-
-        <CertImage
-          src="/images/medical-certificate-john-smith_1774458646754.png"
-          alt="Formal government hospital medical certificate format India"
-          caption="City General Hospital format — formal hospital medical certificate similar to what government hospitals issue."
-        />
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Step 4: Certificate Issuance and Counter-Signature</h2>
-          <p>At some government hospitals, the Medical Officer's certificate may need to be counter-signed by a senior officer — the Chief Medical Officer or Civil Surgeon — for certain applications. This is common for:</p>
-          <ul className="list-disc list-inside space-y-1 ml-4 mt-3">
-            <li>Sick leave exceeding 30 days under government service rules</li>
-            <li>Disability-related certification</li>
-            <li>Court or tribunal submissions</li>
-          </ul>
-          <p className="mt-3">The medical officer will advise you if counter-signature is needed and direct you to the appropriate senior officer. Build in additional time if counter-signature is required.</p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Step 5: Verify the Certificate</h2>
-          <p>Government hospital certificates typically bear an official hospital stamp (often with a round seal border) and the treating doctor's employee ID number alongside their registration number. Verify:</p>
-          <ul className="list-disc list-inside space-y-2 ml-4 mt-3">
-            <li>Hospital letterhead is correct (hospital name, department, address)</li>
-            <li>Doctor's name, designation, and hospital employee ID/registration number are present</li>
-            <li>Your name matches your official records exactly</li>
-            <li>Rest period dates are correctly stated</li>
-            <li>Hospital seal/stamp is clear and legible</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Frequently Asked Questions</h2>
-          <div className="space-y-4">
-            <div>
-              <h3 className="text-lg font-bold text-foreground">Do I need to be admitted (IPD) to get a certificate from a government hospital?</h3>
-              <p>No. OPD (outpatient) examination is sufficient for most sick leave certificates. Admission (IPD) is only required if your condition warrants it clinically.</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-foreground">How long does it take to get a medical certificate from a government hospital?</h3>
-              <p>Expect 3–6 hours for a routine OPD consultation and certificate at most district hospitals. At major teaching hospitals, the wait can be longer. Private certificate for the same condition would typically take 30–60 minutes.</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-foreground">Can I get a government hospital certificate for a pre-existing chronic condition?</h3>
-              <p>Yes. If your chronic condition is flaring and you need rest, you can visit the OPD of the relevant specialty and obtain a certificate for the current episode. Bring your previous records to speed up the consultation.</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-foreground">Is an AIIMS certificate more authoritative than a district hospital certificate?</h3>
-              <p>For medical purposes, both carry equal legal weight. However, for complex conditions requiring specialist assessment (disability boards, medical boards for extended sick leave), a certificate from a tertiary teaching hospital may be more readily accepted.</p>
-            </div>
-          </div>
-        </section>
-        <p className="text-sm text-muted-foreground border-l-4 border-border pl-4 italic">Disclaimer: Procedures vary across hospitals and states. Check with your specific hospital before visiting.</p>
-      </div>
-    ),
-  },
-  {
-    slug: "how-to-get-medical-fitness-certificate",
-    title: "How to Get a Medical Fitness Certificate in India — Complete Guide",
-    metaDescription: "Step-by-step guide on how to get a medical fitness certificate in India for job, driving, sports, or government service. Who to visit, what tests are done, and how long it takes.",
-    category: "Medical Certificates",
-    date: "March 2026",
-    readTime: "8 min read",
-    tags: ["Fitness Certificate", "Medical Fitness", "India", "Employment", "How To"],
-    author: "Ziven Borceg",
-    content: (
-      <div className="space-y-6 text-foreground/80 leading-relaxed">
-        <p className="text-lg font-medium text-foreground">
-          A medical fitness certificate — also called a fit-for-work or medical fitness certificate — is needed in a wide range of situations across India: joining a new job, applying for a driving licence, participating in competitive sports, or returning to work after illness. Here's the complete process for getting one.
-        </p>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">What Type of Fitness Certificate Do You Need?</h2>
-          <p>The process differs significantly depending on the purpose:</p>
-          <ul className="list-disc list-inside space-y-2 ml-4 mt-3">
-            <li><strong>Pre-employment medical</strong> — MBBS doctor examination, sometimes with basic tests (blood group, HB, vision, BP)</li>
-            <li><strong>Driving licence (Form 1A)</strong> — Must be from a registered MBBS doctor, includes vision test</li>
-            <li><strong>Government service / police / armed forces</strong> — Detailed medical board examination</li>
-            <li><strong>Sports fitness</strong> — Physician or sports medicine doctor examination</li>
-            <li><strong>Return to work after illness</strong> — Treating doctor or employer-approved physician</li>
-            <li><strong>Pilgrimage (Amarnath, Char Dham)</strong> — Specific state health department format</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Step 1: Identify the Required Format or Form</h2>
-          <p>Before visiting any doctor, check whether there is a specific form to be filled:</p>
-          <ul className="list-disc list-inside space-y-1 ml-4 mt-3">
-            <li>Driving licence → Form 1A (available at RTO or parivahan.gov.in)</li>
-            <li>Amarnath Yatra → Yatra Medical Certificate (form available from designated hospitals)</li>
-            <li>Employer's own form → Downloadable from company HR portal or provided in appointment letter</li>
-          </ul>
-          <p className="mt-3">If there is no prescribed form, a standard certificate on the doctor's letterhead is sufficient.</p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Step 2: Visit the Appropriate Doctor</h2>
-          <p>For most pre-employment and general fitness certificates, any registered MBBS doctor at a clinic or hospital is suitable. For specific certifications:</p>
-          <ul className="list-disc list-inside space-y-1 ml-4 mt-3">
-            <li><strong>Factory/industrial fitness</strong> → Certifying Surgeon approved under the Factories Act</li>
-            <li><strong>Aviation</strong> → DGCA-approved Aviation Medical Examiner</li>
-            <li><strong>Armed forces</strong> → Military medical board</li>
-          </ul>
-        </section>
-
-        <CertImage
-          src="/images/medical-certificate-template-17_1774458755469.webp"
-          alt="Medical fitness certificate sample — Health First Clinic India"
-          caption="Health First Clinic format — often used for pre-employment and sports fitness certificates."
-        />
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Step 3: Undergo the Physical Examination</h2>
-          <p>A fitness examination typically covers:</p>
-          <ul className="list-disc list-inside space-y-1 ml-4 mt-3">
-            <li>Blood pressure measurement</li>
-            <li>Vision test (distance and near vision, colour vision for driving and hazardous roles)</li>
-            <li>Height and weight (BMI calculation)</li>
-            <li>Cardiovascular examination (listening to heart and lungs)</li>
-            <li>Musculoskeletal assessment for physically demanding roles</li>
-            <li>Blood tests (haemoglobin, blood group) — may be required by some employers</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Step 4: Receive Your Certificate</h2>
-          <p>Once examination is complete, the doctor issues the certificate stating that you are fit for the specified purpose. The certificate must clearly state:</p>
-          <ul className="list-disc list-inside space-y-1 ml-4 mt-3">
-            <li>The specific purpose (e.g. "fit for employment as [role]" or "fit to drive a motor vehicle")</li>
-            <li>Any restrictions or conditions (e.g. corrective lenses required for driving)</li>
-            <li>The validity period</li>
-            <li>Doctor's name, qualifications, registration number, and stamp</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Frequently Asked Questions</h2>
-          <div className="space-y-4">
-            <div>
-              <h3 className="text-lg font-bold text-foreground">How long is a fitness certificate valid?</h3>
-              <p>Typically 6–12 months for employment. Driving licence fitness (Form 1A) validity depends on your age. Sports fitness certificates are usually valid for 6 months to 1 year per season. Check the specific requirement.</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-foreground">Can a doctor declare me unfit?</h3>
-              <p>Yes, if examination reveals conditions that contraindicate the activity or role. For employment, the employer must then consider reasonable accommodation under disability rights law before withdrawing an offer.</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-foreground">How much does a pre-employment medical certificate cost?</h3>
-              <p>₹200–₹600 at most private clinics. If blood tests are included, add ₹200–₹500. At government hospitals, the base examination may be free with only a registration fee.</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-foreground">Can I get a fitness certificate after recovering from serious illness?</h3>
-              <p>Yes. Once your treating doctor confirms recovery and gives clearance, they or an independent physician can issue a fitness certificate. For return to physically demanding work, a specific return-to-work fitness assessment is advised.</p>
-            </div>
-          </div>
-        </section>
-
-        <p>Also read: <InternalLink href="/blog/medical-certificate-vs-fitness-certificate">Medical Certificate vs Fitness Certificate — Key Differences</InternalLink></p>
-        <p className="text-sm text-muted-foreground border-l-4 border-border pl-4 italic">Disclaimer: Requirements vary by purpose, employer, and applicable law. Verify with your specific institution before proceeding.</p>
-      </div>
-    ),
-  },
-  {
-    slug: "how-to-make-medical-certificate-online",
-    title: "How to Make a Medical Certificate Online — Free Tool Guide",
-    metaDescription: "How to make a medical certificate online using a free generator. Step-by-step guide for creating realistic Indian medical certificate specimens for demos, mockups, and educational purposes.",
-    category: "Technology",
-    date: "March 2026",
-    readTime: "7 min read",
-    tags: ["Online", "Medical Certificate", "Generator", "Free", "India"],
-    author: "Ziven Borceg",
-    content: (
-      <div className="space-y-6 text-foreground/80 leading-relaxed">
-        <p className="text-lg font-medium text-foreground">
-          Whether you are an HR professional who needs specimen certificates for training, a developer building a health application, a designer creating mockups, or a student studying healthcare administration — creating a realistic Indian medical certificate online is straightforward with the right tool. This guide walks through the process step by step.
-        </p>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Who Legitimately Needs Online Certificate Generation?</h2>
-          <p>There are many entirely legitimate reasons to generate a realistic medical certificate specimen:</p>
-          <ul className="list-disc list-inside space-y-2 ml-4 mt-3">
-            <li><strong>HR managers</strong> training staff on how to identify valid vs invalid certificates</li>
-            <li><strong>Developers</strong> building health apps, HR portals, or document management systems who need realistic test data</li>
-            <li><strong>UI/UX designers</strong> creating mockups for insurance claim forms, medical leave portals, or health apps</li>
-            <li><strong>Educators</strong> teaching medical administration, healthcare law, or HR management</li>
-            <li><strong>Content creators</strong> and YouTubers creating educational content about medical documentation</li>
-          </ul>
-          <p className="mt-3"><strong>Important:</strong> Generated certificates are not legally valid medical documents. Using them to deceive any institution constitutes fraud.</p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Step 1: Go to the Generator</h2>
-          <p>Our <InternalLink href="/">Medical Certificate Generator</InternalLink> tool provides 15+ authentic Indian clinic and hospital certificate templates — all based on real-world Indian prescription pad formats. Navigate to the generator and choose a template that matches your requirements.</p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Step 2: Choose Your Template</h2>
-          <p>Templates include:</p>
-          <ul className="list-disc list-inside space-y-1 ml-4 mt-3">
-            <li>Formal government hospital formats (useful for sick leave and fitness certificate demos)</li>
-            <li>Private clinic formats (small single-doctor clinics, common in urban India)</li>
-            <li>Multispeciality hospital formats (larger hospitals with departments)</li>
-            <li>Maternity hospital formats (specialist care context)</li>
-            <li>Dental clinic formats</li>
-          </ul>
-        </section>
-
-        <CertImage
-          src="/images/medical-certificate-template-3_1774458661886.webp"
-          alt="P.G. Multispeciality Hospital medical certificate template"
-          caption="P.G. Multispeciality Hospital format — one of 15+ templates available in the generator."
-        />
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Step 3: Fill In the Details</h2>
-          <p>Use the live editor panel to fill in:</p>
-          <ul className="list-disc list-inside space-y-1 ml-4 mt-3">
-            <li>Patient name, age, and gender</li>
-            <li>Diagnosis or medical condition</li>
-            <li>Date of examination</li>
-            <li>Rest period (start and end dates)</li>
-            <li>Doctor's name and clinic details</li>
-            <li>Registration number (for authenticity in demos)</li>
-          </ul>
-          <p className="mt-3">The preview updates instantly as you type — you see exactly what the final certificate will look like before downloading.</p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Step 4: Download as PNG or PDF</h2>
-          <p>Once you are satisfied with the preview, click the download button to export as a high-resolution PNG (2× resolution for crisp output on retina displays) or PDF. The file is generated entirely in your browser — no data is uploaded to any server.</p>
-          <p className="mt-3">The DEMO watermark can be toggled on or off depending on your use case — leave it on for any document that could potentially be used outside of its intended staging context.</p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Frequently Asked Questions</h2>
-          <div className="space-y-4">
-            <div>
-              <h3 className="text-lg font-bold text-foreground">Is it illegal to generate a medical certificate online?</h3>
-              <p>Generating a specimen for educational, design, or development purposes is not illegal. Using a generated certificate to deceive an employer, institution, or government agency is fraud and carries criminal penalties under the IPC.</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-foreground">Does my data get stored when I use the generator?</h3>
-              <p>No. Medical Certificate Generator runs entirely in your browser. Nothing you enter is transmitted to or stored on any server.</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-foreground">Can I customise the clinic name and doctor details?</h3>
-              <p>Yes, all fields including the clinic name, doctor name, qualifications, and registration number are editable. This makes the tool useful for creating realistic-looking specimens for specific mockup scenarios.</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-foreground">What format does the certificate download in?</h3>
-              <p>Primary export is PNG at 2× resolution. PDF export is also available. The output is suitable for both print and digital use.</p>
-            </div>
-          </div>
-        </section>
-        <p className="text-sm text-muted-foreground border-l-4 border-border pl-4 italic">Disclaimer: Certificates generated by Medical Certificate Generator are for educational and demonstration use only. They are not legally valid medical documents.</p>
-      </div>
-    ),
-  },
-  {
-    slug: "how-to-write-medical-certificate",
-    title: "How to Write a Medical Certificate: Format, Structure, and Examples",
-    metaDescription: "A doctor's guide to writing a medical certificate in India — required elements, proper format, language to use, common mistakes to avoid, and the legal obligations of certification.",
-    category: "Medical Certificates",
-    date: "March 2026",
-    readTime: "10 min read",
-    tags: ["Write", "Medical Certificate", "Format", "Doctor", "India"],
-    author: "Ziven Borceg",
-    content: (
-      <div className="space-y-6 text-foreground/80 leading-relaxed">
-        <p className="text-lg font-medium text-foreground">
-          Writing a medical certificate is one of the most routine but legally significant tasks a doctor performs. The document must be accurate, clinically defensible, professionally formatted, and contain specific required elements. This guide covers what should and should not go into an Indian medical certificate.
-        </p>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">The Core Elements Every Medical Certificate Must Include</h2>
-          <p>A valid Indian medical certificate must contain all of the following:</p>
-          <ol className="list-decimal list-inside space-y-2 ml-4 mt-3">
-            <li><strong>Hospital/clinic name and address</strong> — printed on letterhead</li>
-            <li><strong>Date of issue</strong> — the actual date the certificate is written</li>
-            <li><strong>Date of examination</strong> — may differ from date of issue</li>
-            <li><strong>Patient's name, age, and gender</strong> — exactly as on their ID</li>
-            <li><strong>Clinical diagnosis</strong> — the medical condition, stated clearly</li>
-            <li><strong>Period of recommended rest</strong> — specific start and end dates</li>
-            <li><strong>The recommendation</strong> — "The patient is advised rest for X days"</li>
-            <li><strong>Doctor's name</strong> — full name as registered</li>
-            <li><strong>Doctor's qualifications</strong> — MBBS, MD, etc.</li>
-            <li><strong>Registration number</strong> — State Medical Council or NMC number</li>
-            <li><strong>Doctor's signature</strong> — handwritten or digital</li>
-            <li><strong>Clinic stamp</strong> — rubber stamp with clinic name, doctor name, registration, contact</li>
-          </ol>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Standard Language and Phrasing</h2>
-          <p>Medical certificates in India typically use a conventional phrasing structure. Here are accepted formats:</p>
-          <div className="bg-muted/40 rounded-xl p-4 font-mono text-sm border border-border mt-3">
-            <p><em>This is to certify that I have examined [Patient Name], Age [X] years, Gender [M/F], on [Date of Examination] and found him/her suffering from [Diagnosis].</em></p>
-            <p className="mt-2"><em>He/She is advised complete rest from [Start Date] to [End Date] (inclusive).</em></p>
-          </div>
-          <p className="mt-3">Variations on this format are acceptable, but this structure ensures all required elements are present. The diagnosis should be written using appropriate medical terminology — not lay language — while remaining legible.</p>
-        </section>
-
-        <CertImage
-          src="/images/Medical_Certificate_1774458640169.jpg"
-          alt="Handwritten style Indian medical certificate example"
-          caption="Example of an Indian-style medical certificate with handwritten elements and clinic stamp."
-        />
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">How to Handle Sensitive Diagnoses</h2>
-          <p>For conditions where the patient has requested confidentiality — psychiatric diagnoses, HIV/AIDS, reproductive health conditions — the certificate can use a more general statement:</p>
-          <div className="bg-muted/40 rounded-xl p-4 font-mono text-sm border border-border mt-3">
-            <p><em>...suffering from a medical condition requiring rest.</em></p>
-          </div>
-          <p className="mt-3">This is ethically appropriate and legally defensible. The doctor should document the full diagnosis in their case notes. Employers cannot legally demand more specific information about sensitive health conditions.</p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Common Mistakes in Medical Certificates</h2>
-          <ul className="list-disc list-inside space-y-2 ml-4">
-            <li><strong>Undated certificate</strong> — always include both examination date and issue date</li>
-            <li><strong>Vague rest period</strong> — "for a few days" or "for one week" is insufficient; use exact dates</li>
-            <li><strong>Missing registration number</strong> — recipients cannot verify a certificate without this</li>
-            <li><strong>Illegible handwriting</strong> — particularly problematic for the diagnosis, dates, and registration number</li>
-            <li><strong>No clinic stamp</strong> — almost universally required by Indian employers and institutions</li>
-            <li><strong>Wrong patient name</strong> — must match official ID exactly</li>
-            <li><strong>Clinically unjustified rest period</strong> — can result in NMC disciplinary action</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">The Doctor's Legal Obligations</h2>
-          <p>By signing a medical certificate, a doctor makes a declaration that carries legal weight. Under Section 197 of the Indian Penal Code, issuing a false medical certificate is a cognisable criminal offence. The doctor must:</p>
-          <ul className="list-disc list-inside space-y-1 ml-4 mt-3">
-            <li>Have actually examined the patient</li>
-            <li>Base the certificate on their genuine clinical findings</li>
-            <li>Maintain a copy of the certificate and examination records</li>
-            <li>Decline to certify conditions they have not examined or that are not clinically supported</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Frequently Asked Questions</h2>
-          <div className="space-y-4">
-            <div>
-              <h3 className="text-lg font-bold text-foreground">Can a certificate be written in a regional language?</h3>
-              <p>Yes, but most employers and institutions in India accept certificates in English or Hindi. A certificate written entirely in a regional language (e.g. Tamil, Bengali) may be harder for out-of-state employers to process. English is the standard for most formal purposes.</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-foreground">Can I write the certificate on plain paper if I don't have pre-printed letterhead?</h3>
-              <p>Technically yes — the physical format does not invalidate the certificate. However, using plain paper instead of letterhead significantly reduces the certificate's credibility with most recipients.</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-foreground">Should the certificate mention the patient's symptoms or only the diagnosis?</h3>
-              <p>The diagnosis (clinical impression) is what should be stated. Detailed symptom descriptions are for the medical records, not the certificate. However, for chronic or unusual conditions, a brief clinical note may strengthen the certificate.</p>
-            </div>
-          </div>
-        </section>
-
-        <p>Our <InternalLink href="/">medical certificate generator</InternalLink> produces specimen certificates that demonstrate correct format and language for educational purposes.</p>
-        <p className="text-sm text-muted-foreground border-l-4 border-border pl-4 italic">Disclaimer: This article provides general guidance for doctors and healthcare administrators. Specific obligations may vary by state and applicable medical council rules.</p>
-      </div>
-    ),
-  },
   {
     slug: "what-is-medical-fitness-certificate",
     title: "What Is a Medical Fitness Certificate? Complete Guide for India",
@@ -737,225 +263,6 @@ export const BLOG_POSTS_PART2: BlogPostData[] = [
 
         <p>Generate a specimen medical fitness certificate at our <InternalLink href="/fitness-medical-certificate">Fitness Medical Certificate page</InternalLink>.</p>
         <p className="text-sm text-muted-foreground border-l-4 border-border pl-4 italic">Disclaimer: This article is for informational purposes only. Requirements vary by purpose, employer, and applicable law.</p>
-      </div>
-    ),
-  },
-  {
-    slug: "how-to-fill-medical-certificate",
-    title: "How to Fill a Medical Certificate: Field-by-Field Guide with Examples",
-    metaDescription: "A complete field-by-field guide to filling in a medical certificate correctly in India. Covers every field a doctor must fill, common mistakes, and examples of correct phrasing.",
-    category: "Medical Certificates",
-    date: "March 2026",
-    readTime: "9 min read",
-    tags: ["Fill", "Medical Certificate", "Format", "India", "Doctor", "Guide"],
-    author: "Ziven Borceg",
-    content: (
-      <div className="space-y-6 text-foreground/80 leading-relaxed">
-        <p className="text-lg font-medium text-foreground">
-          Filling in a medical certificate correctly matters more than most doctors and patients realise. A certificate with any field missing or incorrectly completed is often rejected, causing significant inconvenience. This guide covers every field of a standard Indian medical certificate with examples of what correct entries look like.
-        </p>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">The Standard Indian Medical Certificate: Fields Explained</h2>
-          <p>While formats vary across clinics and hospitals, the standard Indian medical certificate contains these fields:</p>
-
-          <h3 className="text-xl font-bold text-foreground mb-2 mt-4">Field 1: Clinic/Hospital Header</h3>
-          <p>The pre-printed letterhead or manually written clinic details. Should include the clinic name, full address, phone number, and ideally the clinic registration number. Example: <em>Dr. A.K. Sharma's Clinic, 24 Civil Lines, Allahabad - 211001. Ph: 0532-XXXXXXX</em></p>
-
-          <h3 className="text-xl font-bold text-foreground mb-2 mt-4">Field 2: Date</h3>
-          <p>The date the certificate is being issued. This should be the same as (or close to) the examination date. Format should be: <em>22/03/2026</em> or <em>22 March 2026</em>. Do not use ambiguous formats like <em>03/22/26</em>.</p>
-
-          <h3 className="text-xl font-bold text-foreground mb-2 mt-4">Field 3: Patient Name</h3>
-          <p>Full legal name, matching the patient's Aadhaar or government ID. Example: <em>Rajesh Kumar Verma</em>. Do not use nicknames.</p>
-
-          <h3 className="text-xl font-bold text-foreground mb-2 mt-4">Field 4: Age and Gender</h3>
-          <p>State age in years: <em>32 years</em>. For children, use years and months: <em>8 years 4 months</em>. Gender: <em>Male / Female / Other</em>.</p>
-
-          <h3 className="text-xl font-bold text-foreground mb-2 mt-4">Field 5: Diagnosis</h3>
-          <p>This is the most medically important field. State the clinical diagnosis using accepted medical terminology. Examples:</p>
-          <ul className="list-disc list-inside space-y-1 ml-4 mt-2">
-            <li>Acute viral fever with myalgia</li>
-            <li>Upper respiratory tract infection</li>
-            <li>Migraine with aura</li>
-            <li>Closed fracture of right tibia (undisplaced)</li>
-            <li>Acute gastroenteritis</li>
-          </ul>
-          <p className="mt-2">For sensitive conditions: <em>Medical condition requiring rest</em></p>
-        </section>
-
-        <CertImage
-          src="/images/medical-certificate-template-2_1774458655373.webp"
-          alt="Medical certificate fields example — Janya Hospital format showing correct filling"
-          caption="Janya Hospital format showing all required fields correctly filled. Note the registration number and stamp."
-        />
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Continuing the Fields</h2>
-
-          <h3 className="text-xl font-bold text-foreground mb-2">Field 6: Rest Period</h3>
-          <p>This is the most common source of rejection. The rest period should state: <em>from [specific date] to [specific date], both days inclusive</em>. Never write just "for 3 days" — this is ambiguous. Correct example: <em>from 20 March 2026 to 22 March 2026, both days inclusive.</em></p>
-
-          <h3 className="text-xl font-bold text-foreground mb-2 mt-4">Field 7: Advice / Recommendation</h3>
-          <p>Standard phrasing: <em>The patient is advised complete rest at home during the above period and should avoid work/strenuous activity.</em> Some templates include space for dietary advice or follow-up instructions.</p>
-
-          <h3 className="text-xl font-bold text-foreground mb-2 mt-4">Field 8: Doctor's Name and Qualifications</h3>
-          <p>Example: <em>Dr. Anita Mehta, MBBS, MD (General Medicine)</em>. Qualifications should match what appears on the registration certificate.</p>
-
-          <h3 className="text-xl font-bold text-foreground mb-2 mt-4">Field 9: Registration Number</h3>
-          <p>The doctor's State Medical Council registration number. Example: <em>MH/87654/2015</em>. This is critical — without it, the certificate cannot be verified.</p>
-
-          <h3 className="text-xl font-bold text-foreground mb-2 mt-4">Field 10: Signature and Stamp</h3>
-          <p>The doctor's signature, followed by the clinic rubber stamp. The stamp should include: clinic name, doctor's name, registration number, and contact number.</p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Frequently Asked Questions</h2>
-          <div className="space-y-4">
-            <div>
-              <h3 className="text-lg font-bold text-foreground">What if I wrote the wrong date on the certificate?</h3>
-              <p>Cross out the error neatly, write the correction alongside, and initial the correction. Do not use correction fluid (whitener) on a medical certificate — it makes the document look tampered with and will likely be rejected.</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-foreground">Can the diagnosis field be left blank?</h3>
-              <p>No. A certificate without a diagnosis provides no clinical basis for the leave and will typically be rejected. If the patient requests confidentiality, use the general phrase "medical condition requiring rest."</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-foreground">Should the certificate be filled in the patient's presence?</h3>
-              <p>The examination must occur in the patient's presence. The certificate can be filled immediately after. In telemedicine, the consultation is remote but the certificate should be issued contemporaneously with the consultation.</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-foreground">Does the patient's address need to be on the certificate?</h3>
-              <p>Not mandatorily, but some employers' forms require it. If the certificate has space for it, filling it in reduces questions about the patient's identity.</p>
-            </div>
-          </div>
-        </section>
-
-        <p>To see what correctly filled certificates look like across different Indian formats, visit our <InternalLink href="/">certificate generator</InternalLink> — all 15+ templates demonstrate correct field placement and layout.</p>
-        <p className="text-sm text-muted-foreground border-l-4 border-border pl-4 italic">Disclaimer: This guide is for educational purposes only. Certificates generated by our tool are specimens for demonstration, not legally valid documents.</p>
-      </div>
-    ),
-  },
-  {
-    slug: "how-medical-certificate-looks-like",
-    title: "What Does a Medical Certificate Look Like in India? (With Examples)",
-    metaDescription: "See what a real Indian medical certificate looks like — hospital vs clinic formats, handwritten vs printed, stamps, signatures, and what makes them look authentic. With sample images.",
-    category: "Medical Certificates",
-    date: "March 2026",
-    readTime: "8 min read",
-    tags: ["Medical Certificate", "Sample", "Format", "India", "Examples"],
-    author: "Ziven Borceg",
-    content: (
-      <div className="space-y-6 text-foreground/80 leading-relaxed">
-        <p className="text-lg font-medium text-foreground">
-          Many people have heard of a medical certificate but have never actually seen one up close. What does it look like? How is it laid out? How do you know if one is genuine? This guide provides a detailed visual and structural walkthrough of real Indian medical certificate formats.
-        </p>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">The Basic Anatomy of an Indian Medical Certificate</h2>
-          <p>An Indian medical certificate, in its most common form, is a single A4 page (or half-page for simple sick leave certificates from small clinics). It is typically structured top to bottom as follows:</p>
-          <ol className="list-decimal list-inside space-y-2 ml-4 mt-3">
-            <li><strong>Header / Letterhead</strong> — clinic or hospital name, logo (if any), address, phone number, doctor's name and qualifications</li>
-            <li><strong>Title</strong> — "MEDICAL CERTIFICATE" printed prominently</li>
-            <li><strong>Body</strong> — The certification statement, patient details, diagnosis, and rest period recommendation</li>
-            <li><strong>Footer</strong> — Doctor's signature, printed name, qualifications, registration number, and rubber stamp</li>
-          </ol>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Government Hospital Certificate Format</h2>
-          <p>Government hospital certificates are typically more formal, printed on institutional letterhead, and may have multiple official stamps. Key characteristics:</p>
-          <ul className="list-disc list-inside space-y-1 ml-4 mt-3">
-            <li>Hospital name in bold at the top, often with department name below</li>
-            <li>Certificate number in the header (for records tracking)</li>
-            <li>More structured layout with labelled fields</li>
-            <li>Official government hospital stamp (often round, with the hospital's emblem)</li>
-            <li>Doctor's employee designation (e.g. "Medical Officer," "Senior Resident") alongside name</li>
-          </ul>
-        </section>
-
-        <CertImage
-          src="/images/medical-certificate-john-smith_1774458646754.png"
-          alt="Formal government hospital medical certificate India — City General Hospital"
-          caption="City General Hospital format — formal hospital style certificate with structured layout."
-        />
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Private Clinic Certificate Format</h2>
-          <p>Private clinic certificates in India vary enormously in visual style — from simple handwritten notes on a printed letterhead pad to digitally generated PDFs. Common characteristics:</p>
-          <ul className="list-disc list-inside space-y-1 ml-4 mt-3">
-            <li>Doctor's name and clinic name in a distinctive printed header (often with a red or blue colour theme)</li>
-            <li>Pre-printed text with blanks to fill in patient-specific information</li>
-            <li>Handwritten or typed patient details and diagnosis</li>
-            <li>Doctor's rubber stamp in blue or red ink at the bottom right</li>
-            <li>More varied layouts compared to government hospitals</li>
-          </ul>
-        </section>
-
-        <CertImage
-          src="/images/medical-certificate-template-4-new_1774458672933.webp"
-          alt="Private clinic medical certificate India — Ishnavi Clinic format"
-          caption="Ishnavi Clinic — typical private clinic certificate format used across urban India."
-        />
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Multispeciality Hospital Certificate Format</h2>
-          <p>Larger multispeciality hospitals issue more professionally formatted certificates. These often feature:</p>
-          <ul className="list-disc list-inside space-y-1 ml-4 mt-3">
-            <li>Hospital's full institutional branding (logo, colour scheme)</li>
-            <li>Department name below the hospital header</li>
-            <li>IP/OP number (inpatient/outpatient registration) for record tracking</li>
-            <li>Designation of the certifying doctor (e.g. Consultant — General Medicine)</li>
-          </ul>
-        </section>
-
-        <CertImage
-          src="/images/medical-certificate-template-7_1774458692266.webp"
-          alt="Multispeciality hospital medical certificate — A.N.K. Multispeciality format India"
-          caption="A.N.K. Multispeciality Hospital — larger hospital format with department branding."
-        />
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">The Handwriting Factor</h2>
-          <p>Most Indian medical certificates still contain handwritten elements — at minimum the diagnosis, rest period dates, and the signature are handwritten on a pre-printed template. This is why many patients struggle to read their own certificates. Key points about the handwriting:</p>
-          <ul className="list-disc list-inside space-y-1 ml-4 mt-3">
-            <li>The diagnosis is typically the hardest to read — ask the doctor to repeat it verbally</li>
-            <li>Dates must be legible — if you cannot read them, ask the doctor to rewrite</li>
-            <li>Registration numbers are printed on the stamp, not handwritten</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">How to Tell If a Certificate Looks Authentic</h2>
-          <p>From an employer's or institution's verification perspective, a legitimate certificate should:</p>
-          <ul className="list-disc list-inside space-y-2 ml-4">
-            <li>Have consistent formatting throughout — not a mix of mismatched fonts suggesting editing</li>
-            <li>Have a stamp that includes a registration number verifiable against the NMC register</li>
-            <li>Have a signature that looks natural (not printed or typed)</li>
-            <li>Have dates that are consistent with when the leave was taken</li>
-            <li>Be on a letterhead that matches a real, locatable clinic or hospital</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Frequently Asked Questions</h2>
-          <div className="space-y-4">
-            <div>
-              <h3 className="text-lg font-bold text-foreground">Can a medical certificate be on a half-page or small slip?</h3>
-              <p>Yes — small clinics often use half-A4 or even prescription-pad-sized slips. As long as all required fields are present, the size of the paper does not affect validity.</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-foreground">Does the certificate need to be printed, or can it be entirely handwritten?</h3>
-              <p>Entirely handwritten certificates are legally valid. Many older clinics still use notebooks or blank paper. However, a handwritten certificate without printed clinic details is more likely to be questioned.</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-bold text-foreground">What do the different coloured stamps mean?</h3>
-              <p>Nothing specifically — stamp ink colour (blue, red, green) is a cosmetic choice with no legal significance. Both red and blue stamps are valid.</p>
-            </div>
-          </div>
-        </section>
-
-        <p>You can see and compare 15+ authentic Indian medical certificate formats in our <InternalLink href="/">free medical certificate generator</InternalLink>.</p>
-        <p className="text-sm text-muted-foreground border-l-4 border-border pl-4 italic">Disclaimer: Images shown are educational specimens only. They are not real patient records.</p>
       </div>
     ),
   },
