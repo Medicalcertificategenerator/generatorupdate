@@ -33,7 +33,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { TEMPLATES } from "@/types/certificate";
 import { LANDING_PAGES } from "@/data/landingPages";
-import { HomeGenerator } from "@/components/home/HomeGenerator";
+import { HomeCertGenerator } from "@/components/home/HomeCertGenerator";
 
 const testimonials = [
   { name: "Rahul Gupta", role: "UI/UX Designer", text: "I needed placeholder documents for a healthcare app prototype. This generated realistic layouts perfectly—saved me hours of Photoshop work.", stars: 5 },
@@ -243,7 +243,7 @@ export default function Home() {
       <Navbar />
 
       {/* ── HERO ───────────────────────────────────────────────── */}
-      <section className="relative flex flex-col items-center justify-center px-4 pt-24 pb-20 text-center overflow-hidden">
+      <section className="relative flex flex-col items-center justify-center px-4 pt-24 pb-12 text-center overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-primary/6 via-background to-background" />
         <div className="absolute -z-10 top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/5 rounded-full blur-3xl" />
         <m.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }} className="max-w-3xl mx-auto">
@@ -257,30 +257,23 @@ export default function Home() {
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-6 leading-relaxed">
             Create a realistic medical certificate in seconds. Choose from 15+ authentic Indian hospital formats, edit details, and download PDF instantly. 100% free & customizable.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-2 mb-7 text-sm text-muted-foreground">
+          <div className="flex flex-wrap items-center justify-center gap-2 mb-4 text-sm text-muted-foreground">
             {["15+ authentic Indian formats", "Instant live preview", "Free PNG download", "Nothing uploaded to servers"].map((pt) => (
               <span key={pt} className="flex items-center gap-1.5 bg-muted/60 rounded-full px-3 py-1">
                 <CheckCircle className="w-3.5 h-3.5 text-green-500 flex-shrink-0" />{pt}
               </span>
             ))}
           </div>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-10">
-            <a href="#templates">
-              <Button size="lg" variant="outline" className="gap-2 font-semibold h-12 px-8">
-                Browse Templates
-              </Button>
-            </a>
-          </div>
-          
-          <div className="w-full text-left mb-8">
-            <HomeGenerator />
-          </div>
-
-          <p className="text-xs text-muted-foreground mt-4 max-w-lg mx-auto">
+          <p className="text-xs text-muted-foreground max-w-lg mx-auto">
             ⚠️ For sample &amp; educational purposes only. Certificates generated here are not legally valid medical documents.{" "}
             <Link href="/disclaimer" className="underline underline-offset-2 hover:text-foreground transition-colors">Read disclaimer</Link>
           </p>
         </m.div>
+      </section>
+
+      {/* ── INTERACTIVE GENERATOR ────────────────────────────────── */}
+      <section className="px-4 pb-16">
+        <HomeCertGenerator />
       </section>
 
       {/* ── ABOUT MEDICAL CERTIFICATES ─────────────────────────── */}
