@@ -26,6 +26,12 @@ function PinterestIcon() {
 }
 
 const footerLinks = {
+  "Generator Tools": [
+    { label: "All Generators", href: "/generator" },
+    { label: "Medical Exemption Certificate", href: "/medical-exemption-certificate" },
+    { label: "Sick Leave Certificate", href: "/generator/ishnavi-clinic" },
+    { label: "Fitness Certificate", href: "/generator/health-first" },
+  ],
   Legal: [
     { label: "Privacy Policy", href: "/privacy-policy" },
     { label: "Terms & Conditions", href: "/terms" },
@@ -96,7 +102,7 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="flex-1 grid grid-cols-2 sm:grid-cols-3 gap-8">
+          <div className="flex-1 grid grid-cols-2 sm:grid-cols-4 gap-8">
             {Object.entries(footerLinks).map(([group, links]) => (
               <div key={group}>
                 <h4 className="font-bold text-sm mb-3 text-foreground">{group}</h4>

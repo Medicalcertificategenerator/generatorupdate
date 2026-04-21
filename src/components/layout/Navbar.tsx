@@ -21,6 +21,9 @@ export function Navbar() {
           <Link href="/#templates" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors hidden sm:block">
             Templates
           </Link>
+          <Link href="/generator" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors hidden sm:block">
+            Generators
+          </Link>
           <Link href="/blog" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors hidden sm:block">
             Blog
           </Link>
