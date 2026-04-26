@@ -228,9 +228,9 @@ export const CertificatePreview = forwardRef<HTMLDivElement, PreviewProps>(
             <div style={{ textAlign: "center", borderBottom: "3px solid #1a2040", paddingBottom: 14, marginBottom: 18 }}>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 10 }}>
                 <span style={{ color: "#c0392b", fontSize: 32, fontWeight: 900 }}>+</span>
-                <h1 style={{ fontSize: 26, fontWeight: 900, color: "#1a2040", letterSpacing: 1, margin: 0, textTransform: "uppercase" }}>
+                <div style={{ fontSize: 26, fontWeight: 900, color: "#1a2040", letterSpacing: 1, margin: 0, textTransform: "uppercase" }}>
                   {data.hospitalName || "City General Hospital"}
-                </h1>
+                </div>
               </div>
               <p style={{ margin: "4px 0 0", fontSize: 10, letterSpacing: 3, color: "#555", textTransform: "uppercase" }}>Official Medical Documentation</p>
             </div>
@@ -317,7 +317,7 @@ export const CertificatePreview = forwardRef<HTMLDivElement, PreviewProps>(
           <div style={{ background: "#fff", borderBottom: "2px solid #8b1a1a", textAlign: "center", padding: "10px 16px 8px" }}>
             <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 8 }}>
               <span style={{ color: "#8b1a1a", fontSize: 20, fontWeight: 900 }}>+</span>
-              <h1 style={{ fontSize: 20, fontWeight: 900, color: "#8b1a1a", margin: 0 }}>{data.hospitalName || "पाण्डेय होम्यो दवाखाना"}</h1>
+              <div style={{ fontSize: 20, fontWeight: 900, color: "#8b1a1a", margin: 0 }}>{data.hospitalName || "पाण्डेय होम्यो दवाखाना"}</div>
               <span style={{ color: "#8b1a1a", fontSize: 20, fontWeight: 900 }}>+</span>
             </div>
             <div style={{ fontSize: 10, color: "#8b1a1a", marginTop: 4 }}>☤ डॉ. {data.doctorName || "हर्षित पाण्डेय"} — {data.doctorDegree || "BHMS, M.D."}</div>
@@ -367,7 +367,7 @@ export const CertificatePreview = forwardRef<HTMLDivElement, PreviewProps>(
             <div style={{ textAlign: "center", marginBottom: 16, paddingBottom: 12, borderBottom: "2px solid #c0392b" }}>
               <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: 10, marginBottom: 4 }}>
                 <span style={{ color: "#c0392b", fontSize: 22, fontWeight: 900 }}>+</span>
-                <h1 style={{ fontSize: 24, fontWeight: 900, color: "#333", margin: 0 }}>{data.hospitalName || "जन्या हास्पिटल"}</h1>
+                <div style={{ fontSize: 24, fontWeight: 900, color: "#333", margin: 0 }}>{data.hospitalName || "जन्या हास्पिटल"}</div>
                 <span style={{ color: "#c0392b", fontSize: 22, fontWeight: 900 }}>+</span>
               </div>
               <div style={{ fontSize: 10, color: "#555" }}>{data.address || "Vijay Nagar, Delhi"} | Tel: {data.phone || "07624-292263"}</div>
@@ -405,7 +405,7 @@ export const CertificatePreview = forwardRef<HTMLDivElement, PreviewProps>(
           <WatermarkOverlay show={showWatermark} />
           <div style={{ border: "2px solid #8b1a1a", borderRadius: 4, padding: "5% 6%", height: "100%", boxSizing: "border-box", position: "relative", zIndex: 2 }}>
             <div style={{ textAlign: "center", marginBottom: 14 }}>
-              <h1 style={{ fontSize: 20, fontWeight: 900, color: "#8b1a1a", margin: 0, letterSpacing: 1 }}>{data.hospitalName || "P.G. Multispeciality Hospital"}</h1>
+              <div style={{ fontSize: 20, fontWeight: 900, color: "#8b1a1a", margin: 0, letterSpacing: 1 }}>{data.hospitalName || "P.G. Multispeciality Hospital"}</div>
             </div>
             <div style={{ border: "1px solid #8b1a1a", padding: "4px 12px", textAlign: "center", marginBottom: 14, display: "inline-block", width: "100%", boxSizing: "border-box" }}>
               <span style={{ fontSize: 13, fontWeight: 700, color: "#8b1a1a", letterSpacing: 2 }}>MEDICAL CERTIFICATE</span>
@@ -451,7 +451,7 @@ export const CertificatePreview = forwardRef<HTMLDivElement, PreviewProps>(
           <div style={{ padding: "12px 20px 10px", borderBottom: "2px solid #eee" }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
               <div>
-                <h1 style={{ fontSize: 22, fontWeight: 900, color: "#1a1a5e", margin: 0 }}>{data.hospitalName || "Ishnavi Clinic"}</h1>
+                <div style={{ fontSize: 22, fontWeight: 900, color: "#1a1a5e", margin: 0 }}>{data.hospitalName || "Ishnavi Clinic"}</div>
                 <p style={{ fontSize: 9, color: "#666", margin: "3px 0 0" }}>Timings Morning: 9:30 am to 2:00 pm | Evening: 5:00 pm to 9:30 pm</p>
               </div>
               <div style={{ textAlign: "right", fontSize: 10, color: "#555" }}>
@@ -500,7 +500,7 @@ export const CertificatePreview = forwardRef<HTMLDivElement, PreviewProps>(
           <InkFilter />
           <WatermarkOverlay show={showWatermark} />
           <div style={{ background: "linear-gradient(135deg, #e91e8c, #d81b60)", padding: "10px 20px" }}>
-            <h1 style={{ fontSize: 20, fontWeight: 900, color: "#fff", margin: 0 }}>{data.hospitalName || "Muskan Maternity & Children Hospital"}</h1>
+            <div style={{ fontSize: 20, fontWeight: 900, color: "#fff", margin: 0 }}>{data.hospitalName || "Muskan Maternity & Children Hospital"}</div>
             <p style={{ fontSize: 9, color: "rgba(255,255,255,0.85)", margin: "3px 0 0" }}>Pediatrician, Gynecologist And Obstetrician</p>
           </div>
           <div style={{ padding: "14px 22px", position: "relative", zIndex: 2 }}>
@@ -550,7 +550,7 @@ export const CertificatePreview = forwardRef<HTMLDivElement, PreviewProps>(
               <div style={{ fontSize: 9, color: "#666" }}>Gynecologist And Obstetrician</div>
             </div>
             <div style={{ flex: 2, textAlign: "center" }}>
-              <h1 style={{ fontSize: 22, fontWeight: 900, color: "#e91e8c", margin: 0, letterSpacing: 1 }}>{data.hospitalName || "Palak Maternity Hospital"}</h1>
+              <div style={{ fontSize: 22, fontWeight: 900, color: "#e91e8c", margin: 0, letterSpacing: 1 }}>{data.hospitalName || "Palak Maternity Hospital"}</div>
             </div>
           </div>
           <div style={{ display: "flex", gap: 10, marginBottom: 6, fontSize: 13, alignItems: "flex-end" }}>
@@ -588,7 +588,7 @@ export const CertificatePreview = forwardRef<HTMLDivElement, PreviewProps>(
           <InkFilter />
           <WatermarkOverlay show={showWatermark} />
           <div style={{ textAlign: "center", marginBottom: 16, paddingBottom: 12, borderBottom: "2px solid #8b1a1a" }}>
-            <h1 style={{ fontSize: 22, fontWeight: 900, color: "#1a1a1a", margin: 0, letterSpacing: 1 }}>{data.hospitalName || "A.N.K MULTISPECIALITY HOSPITAL"}</h1>
+            <div style={{ fontSize: 22, fontWeight: 900, color: "#1a1a1a", margin: 0, letterSpacing: 1 }}>{data.hospitalName || "A.N.K MULTISPECIALITY HOSPITAL"}</div>
           </div>
           <div style={{ display: "flex", gap: 10, marginBottom: 8, fontSize: 13, alignItems: "flex-end", borderBottom: "1px solid #ddd", paddingBottom: 8 }}>
             <span style={{ color: "#555" }}>Name:</span>
@@ -627,7 +627,7 @@ export const CertificatePreview = forwardRef<HTMLDivElement, PreviewProps>(
           <WatermarkOverlay show={showWatermark} />
           <div style={{ background: "#f5c518", padding: "10px 20px", display: "flex", alignItems: "center", gap: 12 }}>
             <span style={{ fontSize: 22 }}>☤</span>
-            <h1 style={{ fontSize: 20, fontWeight: 900, color: "#1a1a1a", margin: 0, textTransform: "uppercase", letterSpacing: 1 }}>{data.hospitalName || "Aditya Multispeciality Hospital"}</h1>
+            <div style={{ fontSize: 20, fontWeight: 900, color: "#1a1a1a", margin: 0, textTransform: "uppercase", letterSpacing: 1 }}>{data.hospitalName || "Aditya Multispeciality Hospital"}</div>
           </div>
           <div style={{ height: 4, background: "#c8a200" }} />
           <div style={{ padding: "16px 22px", position: "relative", zIndex: 2 }}>
@@ -664,7 +664,7 @@ export const CertificatePreview = forwardRef<HTMLDivElement, PreviewProps>(
           <InkFilter />
           <WatermarkOverlay show={showWatermark} />
           <div style={{ padding: "10px 20px", borderBottom: "2px solid #1a3a6b" }}>
-            <h1 style={{ fontSize: 24, fontWeight: 900, color: "#1a3a6b", margin: 0 }}>{data.hospitalName || "D.P.K Hospital"}</h1>
+            <div style={{ fontSize: 24, fontWeight: 900, color: "#1a3a6b", margin: 0 }}>{data.hospitalName || "D.P.K Hospital"}</div>
             <p style={{ fontSize: 9, color: "#555", margin: "2px 0 0" }}>{data.address || "11 CHORD RD. OPP. VASANTH, VIJAY NAGAR"} | {data.phone || "07624-292263"}</p>
           </div>
           <div style={{ display: "flex", height: "calc(100% - 60px)" }}>
@@ -708,7 +708,7 @@ export const CertificatePreview = forwardRef<HTMLDivElement, PreviewProps>(
           <WatermarkOverlay show={showWatermark} />
           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 16, paddingBottom: 12, borderBottom: "2px solid #1a1a1a" }}>
             <div>
-              <h1 style={{ fontSize: 20, fontWeight: 900, color: "#1a1a1a", margin: 0 }}>{data.hospitalName || "Mishra Dental Clinic"}</h1>
+              <div style={{ fontSize: 20, fontWeight: 900, color: "#1a1a1a", margin: 0 }}>{data.hospitalName || "Mishra Dental Clinic"}</div>
               <p style={{ fontSize: 9, color: "#555", margin: "3px 0 0" }}>Smile Designing | Teeth Whitening | Dental Implants | General Dentistry</p>
             </div>
             <div style={{ textAlign: "right", fontSize: 9, color: "#444" }}>
@@ -759,7 +759,7 @@ export const CertificatePreview = forwardRef<HTMLDivElement, PreviewProps>(
           <InkFilter />
           <WatermarkOverlay show={showWatermark} />
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "10px 18px", borderBottom: "2px solid #c0392b" }}>
-            <h1 style={{ fontSize: 20, fontWeight: 900, color: "#c0392b", margin: 0 }}>{data.hospitalName || "Health First Clinic"}</h1>
+            <div style={{ fontSize: 20, fontWeight: 900, color: "#c0392b", margin: 0 }}>{data.hospitalName || "Health First Clinic"}</div>
             <span style={{ fontSize: 22 }}>☤</span>
             <div style={{ textAlign: "right", fontSize: 9, color: "#444" }}>
               <div>{data.doctorName || "Dr. Manoj Verma"} (MBBS, MD)</div>
@@ -815,7 +815,7 @@ export const CertificatePreview = forwardRef<HTMLDivElement, PreviewProps>(
           <WatermarkOverlay show={showWatermark} />
           <div style={{ padding: "10px 18px", borderBottom: "2px solid #1a3a8f", display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
             <div>
-              <h1 style={{ fontSize: 20, fontWeight: 900, color: "#1a3a8f", margin: 0 }}>{data.hospitalName || "NARAYAN CARE CLINIC"}</h1>
+              <div style={{ fontSize: 20, fontWeight: 900, color: "#1a3a8f", margin: 0 }}>{data.hospitalName || "NARAYAN CARE CLINIC"}</div>
               <p style={{ fontSize: 10, fontWeight: 700, color: "#333", margin: "2px 0 0" }}>{data.doctorName || "Dr. Arvind Mehra"}</p>
               <p style={{ fontSize: 9, color: "#555", margin: "1px 0 0" }}>{data.doctorDegree || "MBBS, D.N.B (General Medicine)"}</p>
             </div>
@@ -883,7 +883,7 @@ export const CertificatePreview = forwardRef<HTMLDivElement, PreviewProps>(
           <InkFilter />
           <WatermarkOverlay show={showWatermark} />
           <div style={{ padding: "10px 20px", borderBottom: "3px solid #c0392b" }}>
-            <h1 style={{ fontSize: 26, fontWeight: 900, color: "#c0392b", margin: 0, letterSpacing: 1 }}>{data.hospitalName || "SANJIVINI"}</h1>
+            <div style={{ fontSize: 26, fontWeight: 900, color: "#c0392b", margin: 0, letterSpacing: 1 }}>{data.hospitalName || "SANJIVINI"}</div>
             <p style={{ fontSize: 11, color: "#555", margin: "2px 0 0" }}>Multi Speciality Hospital</p>
           </div>
           <div style={{ display: "flex", gap: 16, padding: "12px 20px", borderBottom: "1px solid #eee" }}>
@@ -958,7 +958,7 @@ export const CertificatePreview = forwardRef<HTMLDivElement, PreviewProps>(
           <InkFilter />
           <WatermarkOverlay show={showWatermark} />
           <div style={{ textAlign: "center", marginBottom: 16 }}>
-            <h1 style={{ fontSize: 24, fontWeight: 900, color: "#1a1a1a", margin: 0 }}>{data.hospitalName || "ASTHA CLINIC"}</h1>
+            <div style={{ fontSize: 24, fontWeight: 900, color: "#1a1a1a", margin: 0 }}>{data.hospitalName || "ASTHA CLINIC"}</div>
             <p style={{ fontSize: 10, color: "#555", margin: "2px 0 0" }}>{data.doctorName || "Dr. Arvind Kumar Sharma"} ({data.doctorDegree || "MBBS, MD"})</p>
             <div style={{ width: "100%", height: 2, background: "#1a1a1a", marginTop: 10 }} />
           </div>

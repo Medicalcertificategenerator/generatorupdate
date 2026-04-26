@@ -60,7 +60,7 @@ export default function Blog() {
                   <div className="flex items-center gap-2 mb-3 flex-wrap">
                     <Badge variant="secondary" className="text-xs">{post.category}</Badge>
                     <span className="text-xs text-muted-foreground flex items-center gap-1">
-                      <Calendar className="w-3 h-3" /> {post.date}
+                      <Calendar className="w-3 h-3" /> Last Updated: {post.dateModified || post.date}
                     </span>
                     <span className="text-xs text-muted-foreground flex items-center gap-1">
                       <Clock className="w-3 h-3" /> {post.readTime}

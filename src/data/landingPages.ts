@@ -115,8 +115,8 @@ export const LANDING_PAGES: LandingPageConfig[] = [
       }
     ],
     relatedPages: [
-      { title: "Medical Certificate for Office Leave", href: "/medical-certificate-for-office-leave" },
-      { title: "Sick Leave Medical Certificate", href: "/sick-leave-medical-certificate" },
+      { title: "Medical Certificate for Office Leave", href: "/medical-certificate-for-leave" },
+      { title: "Sick Leave Medical Certificate", href: "/medical-certificate-for-leave" },
       { title: "Student Medical Certificate Format", href: "/student-medical-certificate-format" }
     ],
     externalLinks: [
@@ -288,8 +288,8 @@ export const LANDING_PAGES: LandingPageConfig[] = [
       }
     ],
     relatedPages: [
-      { title: "Medical Certificate for School Absence", href: "/medical-certificate-for-school-absence" },
-      { title: "Sick Leave Medical Certificate", href: "/sick-leave-medical-certificate" }
+      { title: "Medical Certificate for School Absence", href: "/student-medical-certificate-format" },
+      { title: "Sick Leave Medical Certificate", href: "/medical-certificate-for-leave" }
     ],
     externalLinks: [
       { label: "UGC Guidelines on Student Leave", href: "https://www.ugc.gov.in/", description: "Regulatory directives regarding university medical exemptions." }
@@ -459,8 +459,8 @@ export const LANDING_PAGES: LandingPageConfig[] = [
       }
     ],
     relatedPages: [
-      { title: "Sick Leave Medical Certificate", href: "/sick-leave-medical-certificate" },
-      { title: "Medical Certificate for Office Leave", href: "/medical-certificate-for-office-leave" }
+      { title: "Sick Leave Medical Certificate", href: "/medical-certificate-for-leave" },
+      { title: "Medical Certificate for Office Leave", href: "/medical-certificate-for-leave" }
     ],
     externalLinks: [
       { label: "NIMHANS Migraine Guidelines", href: "https://nimhans.ac.in/", description: "Neuro-psychiatric guidelines on migraine severity." }
@@ -544,7 +544,7 @@ export const LANDING_PAGES: LandingPageConfig[] = [
       }
     ],
     relatedPages: [
-      { title: "Sick Leave Medical Certificate", href: "/sick-leave-medical-certificate" },
+      { title: "Sick Leave Medical Certificate", href: "/medical-certificate-for-leave" },
       { title: "Student Medical Certificate Format", href: "/student-medical-certificate-format" }
     ],
     externalLinks: [
@@ -629,7 +629,7 @@ export const LANDING_PAGES: LandingPageConfig[] = [
       }
     ],
     relatedPages: [
-      { title: "Medical Certificate for Office Leave", href: "/medical-certificate-for-office-leave" },
+      { title: "Medical Certificate for Office Leave", href: "/medical-certificate-for-leave" },
       { title: "Fitness Medical Certificate", href: "/fitness-medical-certificate" }
     ],
     externalLinks: [

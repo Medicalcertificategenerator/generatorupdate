@@ -365,7 +365,7 @@ export const BLOG_POSTS_PART2: BlogPostData[] = [
           </div>
         </section>
 
-        <p>See <InternalLink href="/medical-certificate-for-school-absence">Medical Certificate for School Absence</InternalLink> and <InternalLink href="/student-medical-certificate-format">Student Medical Certificate Format</InternalLink> for specimen formats used in educational contexts.</p>
+        <p>See <InternalLink href="/student-medical-certificate-format">Medical Certificate for School Absence</InternalLink> and <InternalLink href="/student-medical-certificate-format">Student Medical Certificate Format</InternalLink> for specimen formats used in educational contexts.</p>
         <p className="text-sm text-muted-foreground border-l-4 border-border pl-4 italic">Disclaimer: College and university rules vary significantly. Always check your institution's specific ordinance before acting.</p>
       </div>
     ),

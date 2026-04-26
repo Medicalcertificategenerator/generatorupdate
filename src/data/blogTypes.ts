@@ -6,6 +6,9 @@ export interface BlogPostData {
   metaDescription: string;
   category: string;
   date: string;
+  dateModified?: string;
+  datePublishedIso?: string;
+  dateModifiedIso?: string;
   readTime: string;
   tags: string[];
   author: string;

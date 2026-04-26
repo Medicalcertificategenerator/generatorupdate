@@ -265,7 +265,7 @@ export const BLOG_POSTS_PART4: BlogPostData[] = [
         <section>
           <h2 className="text-2xl font-bold text-foreground mb-3">When to Use Our Medical Certificate Generator</h2>
           <p>If you're a student who wants to understand what the completed certificate should look like before visiting the doctor — or if you're building a college admission portal and need sample documents for testing — our <InternalLink href="/generator/formal-cert">Medical Certificate Generator</InternalLink> can generate realistic specimen certificates. These are for educational and demonstration use only.</p>
-          <p className="mt-3">Also read: <InternalLink href="/blog/medical-certificate-for-school">Medical Certificate for School Absence — A Complete Guide →</InternalLink></p>
+          <p className="mt-3">Also read: <InternalLink href="/student-medical-certificate-format">Medical Certificate for School Absence — A Complete Guide →</InternalLink></p>
         </section>
 
         <section>

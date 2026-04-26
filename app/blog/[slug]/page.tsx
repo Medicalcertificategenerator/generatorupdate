@@ -43,4 +43,35 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-export default BlogPost;
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = BLOG_POSTS.find((p) => p.slug === slug);
+  
+  if (!post) {
+    return <BlogPost />;
+  }
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.metaDescription,
+    author: {
+      "@type": "Person",
+      name: post.author,
+      url: `${BASE_URL}/author`
+    },
+    ...(post.datePublishedIso && { datePublished: post.datePublishedIso }),
+    ...(post.dateModifiedIso ? { dateModified: post.dateModifiedIso } : (post.datePublishedIso && { dateModified: post.datePublishedIso })),
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <BlogPost />
+    </>
+  );
+}

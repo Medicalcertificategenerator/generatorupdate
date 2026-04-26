@@ -1513,11 +1513,11 @@ export function MedicalExemptionView() {
             </h2>
             <ul className="space-y-3">
               {[
-                { title: "Sick Leave Medical Certificate", href: "/sick-leave-medical-certificate" },
+                { title: "Sick Leave Medical Certificate", href: "/medical-certificate-for-leave" },
                 { title: "Fitness Medical Certificate", href: "/fitness-medical-certificate" },
                 { title: "Medical Certificate for Leave", href: "/medical-certificate-for-leave" },
                 { title: "Student Medical Certificate Format", href: "/student-medical-certificate-format" },
-                { title: "Medical Certificate for Office Leave", href: "/medical-certificate-for-office-leave" },
+                { title: "Medical Certificate for Office Leave", href: "/medical-certificate-for-leave" },
               ].map((p) => (
                 <li key={p.href}>
                   <Link

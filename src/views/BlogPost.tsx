@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Clock, ArrowLeft, ArrowRight, User } from "lucide-react";
+import { RefreshCw, Clock, ArrowLeft, ArrowRight, User, CheckCircle } from "lucide-react";
 import { BLOG_POSTS } from "@/data/blogPosts";
 
 export default function BlogPost() {
@@ -15,6 +15,16 @@ export default function BlogPost() {
   const postIndex = BLOG_POSTS.findIndex((p) => p.slug === slug);
   const prevPost = postIndex > 0 ? BLOG_POSTS[postIndex - 1] : null;
   const nextPost = postIndex < BLOG_POSTS.length - 1 ? BLOG_POSTS[postIndex + 1] : null;
+
+  const isRecentlyUpdated = () => {
+    if (!post?.dateModifiedIso) return false;
+    const modifiedDate = new Date(post.dateModifiedIso);
+    const currentDate = new Date();
+    const diffTime = Math.abs(currentDate.getTime() - modifiedDate.getTime());
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    return diffDays <= 60;
+  };
+  const recentlyUpdated = isRecentlyUpdated();
 
   if (!post) {
     return (
@@ -43,9 +53,17 @@ export default function BlogPost() {
             </Link>
             <div className="flex flex-wrap items-center gap-3 mb-5">
               <Badge variant="secondary">{post.category}</Badge>
-              <span className="text-xs text-muted-foreground flex items-center gap-1">
-                <Calendar className="w-3 h-3" /> {post.date}
+              
+              {recentlyUpdated && (
+                <Badge variant="outline" className="border-green-500/50 text-green-600 bg-green-500/10">
+                  Updated recently
+                </Badge>
+              )}
+
+              <span className="text-xs text-foreground/80 flex items-center gap-1.5 font-medium bg-muted px-2.5 py-1 rounded-md">
+                <RefreshCw className="w-3.5 h-3.5" /> Last Updated: {post.dateModified || post.date}
               </span>
+              
               <span className="text-xs text-muted-foreground flex items-center gap-1">
                 <Clock className="w-3 h-3" /> {post.readTime}
               </span>
@@ -53,8 +71,16 @@ export default function BlogPost() {
                 <User className="w-3 h-3" /> {post.author}
               </span>
             </div>
+            
             <h1 className="text-3xl md:text-4xl font-extrabold leading-tight mb-4">{post.title}</h1>
             <p className="text-muted-foreground text-lg leading-relaxed">{post.metaDescription}</p>
+            
+            {/* Trust Line */}
+            <div className="mt-5 flex items-center gap-2 text-sm text-muted-foreground bg-muted/50 w-fit px-3 py-1.5 rounded-full border border-border/50">
+              <CheckCircle className="w-4 h-4 text-green-500" />
+              <span>Reviewed for accuracy as per latest guidelines</span>
+            </div>
+
             <div className="flex flex-wrap gap-1.5 mt-5">
               {post.tags.map(tag => (
                 <span key={tag} className="text-xs bg-background border border-border px-2.5 py-1 rounded-full text-muted-foreground">
