@@ -38,4 +38,50 @@ export async function generateMetadata({ params }: { params: Promise<{ templateI
   };
 }
 
-export default Generator;
+export default async function GeneratorPage({ params }: { params: Promise<{ templateId: string }> }) {
+  const { templateId } = await params;
+  const template = TEMPLATES.find((t) => t.id === templateId);
+
+  const faqSchema = template ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": `Is this ${template.name} format legally valid?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `While our generator uses authentic Indian hospital formats, the documents created here are sample templates meant for software testing, design mockups, and educational use. A real medical certificate must be signed and stamped by an NMC-registered doctor to be legally valid.`
+        }
+      },
+      {
+        "@type": "Question",
+        "name": `Can I use this for my office sick leave?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `No. Forging medical documents to deceive an employer is a serious offence under the Bharatiya Nyaya Sanhita (BNS). Always consult a registered medical practitioner if you need legitimate medical leave.`
+        }
+      },
+      {
+        "@type": "Question",
+        "name": `Are my details saved on your server?`,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": `No. All data entered into this generator is processed 100% locally in your web browser. We do not upload or store any of your patient or doctor information on our servers, ensuring complete data privacy.`
+        }
+      }
+    ]
+  } : null;
+
+  return (
+    <>
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+      <Generator />
+    </>
+  );
+}

@@ -18,6 +18,7 @@ import {
   Share2,
   FileImage,
   FileText,
+  Shield,
 } from "lucide-react";
 import {
   FaWhatsapp,
@@ -420,9 +421,15 @@ export default function Generator() {
         {/* ── RIGHT PANEL – PREVIEW + RELATED ──────────────────── */}
         <div className="flex-1 bg-muted/30 overflow-y-auto relative">
           <div className="p-4 md:p-8 lg:p-12 flex items-start justify-center">
-            <div className="absolute top-4 right-4 z-10 flex items-center gap-2 bg-background/80 backdrop-blur-sm px-3 py-1.5 rounded-full border shadow-sm">
-              <Eye className="w-4 h-4 text-primary" />
-              <span className="text-xs font-medium text-muted-foreground">Live Preview</span>
+            <div className="absolute top-4 right-4 z-10 flex flex-col items-end gap-2">
+              <div className="flex items-center gap-2 bg-background/80 backdrop-blur-sm px-3 py-1.5 rounded-full border shadow-sm">
+                <Eye className="w-4 h-4 text-primary" />
+                <span className="text-xs font-medium text-muted-foreground">Live Preview</span>
+              </div>
+              <div className="flex items-center gap-1.5 bg-emerald-500/10 text-emerald-600 px-3 py-1 rounded-full text-[10px] font-bold border border-emerald-500/20 shadow-sm backdrop-blur-sm">
+                 <Shield className="w-3 h-3" />
+                 Last Updated: April 2026 | Verified Format
+              </div>
             </div>
 
             <m.div 
@@ -463,6 +470,55 @@ export default function Generator() {
               </div>
             </div>
           </div>
+          
+          {/* SEO Content Block */}
+          {templateInfo && (
+            <div className="px-4 md:px-8 lg:px-12 pb-20 max-w-[800px] mx-auto">
+              <div className="bg-background border border-border rounded-xl p-6 md:p-8 shadow-sm">
+                <h2 className="text-2xl font-extrabold mb-4 border-b pb-2">How the {templateInfo.name} Generator Works</h2>
+                <div className="text-sm text-foreground/80 space-y-4 mb-8">
+                  <p>{templateInfo.description} Using this free tool, you can securely fill out patient details on the left panel, and they will instantly reflect on the certificate preview. Once completed, you can download a high-resolution PNG or print-ready PDF.</p>
+                  <p><strong>Steps to generate:</strong></p>
+                  <ol className="list-decimal ml-5 space-y-1">
+                    <li>Enter the patient's name, age, gender, and medical diagnosis.</li>
+                    <li>Specify the doctor's name, medical degree, and clinic information.</li>
+                    <li>Select a realistic handwriting font and ink color for authenticity.</li>
+                    <li>Click <strong>Download PDF</strong> to get your final document instantly.</li>
+                  </ol>
+                </div>
+
+                <h2 className="text-2xl font-extrabold mb-4 border-b pb-2">Common Use Cases in India</h2>
+                <div className="text-sm text-foreground/80 mb-8">
+                  <ul className="list-disc ml-5 space-y-2">
+                    <li><strong>Corporate Leave (HR):</strong> Submitting to your employer for sick leave approval (usually required for absences exceeding 2 days).</li>
+                    <li><strong>School/College Absence:</strong> Requesting attendance condonation from teachers or university administration.</li>
+                    <li><strong>Travel/Event Exemptions:</strong> Claiming refunds or exemptions for missed flights and exams due to verifiable medical reasons.</li>
+                  </ul>
+                </div>
+
+                <h2 className="text-2xl font-extrabold mb-4 border-b pb-2">Frequently Asked Questions</h2>
+                <div className="space-y-4 text-sm text-foreground/80 mb-8">
+                  <div>
+                    <h3 className="font-bold text-foreground text-base">Is this {templateInfo.name} format legally valid?</h3>
+                    <p className="mt-1">While our generator uses authentic Indian hospital formats, the documents created here are <strong>sample templates</strong> meant for software testing, design mockups, and educational use. A real medical certificate must be signed and stamped by an NMC-registered doctor to be legally valid.</p>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-foreground text-base">Can I use this for my office sick leave?</h3>
+                    <p className="mt-1">No. Forging medical documents to deceive an employer is a serious offence under the Bharatiya Nyaya Sanhita (BNS). Always consult a registered medical practitioner if you need legitimate medical leave. Read our <Link href="/blog/fake-medical-certificate-consequences" className="text-primary hover:underline">legal guide on the consequences</Link>.</p>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-foreground text-base">Are my details saved on your server?</h3>
+                    <p className="mt-1">No. All data entered into this generator is processed 100% locally in your web browser. We do not upload or store any of your patient or doctor information on our servers, ensuring complete data privacy.</p>
+                  </div>
+                </div>
+
+                <div className="bg-destructive/5 border-l-4 border-destructive p-4 rounded-r-lg text-xs text-foreground/70">
+                  <strong>Disclaimer:</strong> This tool is for educational and staging purposes only. Fraudulent use of generated documents is strictly prohibited.
+                </div>
+              </div>
+            </div>
+          )}
+
         </div>
 
       </main>

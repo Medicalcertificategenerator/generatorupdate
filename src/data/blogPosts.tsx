@@ -46,16 +46,33 @@ const BLOG_POSTS_PART1: BlogPostData[] = [
         </p>
 
         {/* Visual 1 Placement */}
-        <div className="bg-card border-2 border-dashed border-border rounded-xl p-8 text-center my-8">
-          <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-3">📝</span>
-          <p className="font-bold text-foreground">Visual 1: Medical Certificate Sample</p>
-          <p className="text-sm text-muted-foreground mt-1">[Instruction: Use existing template image and enhance with clean modern UI (white + blue/green medical theme)]</p>
+        <div className="bg-white text-black p-6 rounded-lg border border-gray-200 shadow-sm max-w-2xl mx-auto my-8 font-serif">
+          <div className="text-center border-b-2 border-gray-800 pb-4 mb-4">
+            <h3 className="text-xl font-bold uppercase tracking-wider">City Hospital & Research Center</h3>
+            <p className="text-sm">123 Health Avenue, New Delhi • Reg No: NMC-98765</p>
+          </div>
+          <h4 className="text-center font-bold text-lg underline mb-6">MEDICAL CERTIFICATE</h4>
+          <p className="mb-4"><strong>To Whom It May Concern,</strong></p>
+          <p className="mb-4 leading-relaxed">
+            This is to certify that I have examined Mr./Ms. <strong>[Patient Name]</strong>, aged <strong>[Age]</strong>, on <strong>[Date]</strong>.
+            The patient is suffering from <strong>[Diagnosis/Illness]</strong> and is advised absolute rest from <strong>[Start Date]</strong> to <strong>[End Date]</strong>.
+          </p>
+          <div className="flex justify-between mt-12">
+            <div className="text-center">
+              <div className="w-24 h-24 rounded-full border-2 border-blue-800 flex items-center justify-center opacity-70 rotate-[-10deg] text-blue-800 font-bold text-xs uppercase mb-2">Hospital<br/>Seal</div>
+            </div>
+            <div className="text-center">
+              <div className="border-b border-black w-40 mb-2"></div>
+              <p className="font-bold">Dr. A. Sharma</p>
+              <p className="text-xs">MBBS, MD (Medicine)</p>
+            </div>
+          </div>
         </div>
 
         <section>
           <h2 className="text-2xl font-bold text-foreground mb-3">Medical Certificate Format in India (Sample + Explanation)</h2>
           <p>
-            While there is no single "official" national design, every valid medical certificate format India uses must follow guidelines set by the National Medical Commission (NMC). A standard certificate contains three main sections:
+            While there is no single "official" national design, every valid medical certificate format India uses must follow guidelines set by the <a href="https://www.nmc.org.in/" target="_blank" rel="nofollow noopener noreferrer" className="text-primary hover:underline">National Medical Commission (NMC)</a>. A standard certificate contains three main sections:
           </p>
           <ul className="list-disc list-inside space-y-2 ml-4 mt-3">
             <li><strong>Header:</strong> Doctor’s full name, qualifications (e.g., MBBS, MD), NMC/State Council registration number, and clinic/hospital details.</li>
@@ -69,10 +86,33 @@ const BLOG_POSTS_PART1: BlogPostData[] = [
           <p>Depending on your scenario, you will need a specific type of certificate:</p>
           
           {/* Visual 4 Placement */}
-          <div className="bg-card border-2 border-dashed border-border rounded-xl p-8 text-center my-6">
-            <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-3">📊</span>
-            <p className="font-bold text-foreground">Visual 4: Comparison Table</p>
-            <p className="text-sm text-muted-foreground mt-1">[Instruction: Insert comparison table showing Types of Certificates (Sick Leave, Fitness, Disability) vs. Use Case]</p>
+          <div className="my-8 overflow-x-auto">
+            <table className="w-full border-collapse border border-border text-sm text-left">
+              <thead className="bg-primary/5">
+                <tr>
+                  <th className="p-4 border-b border-border font-bold">Certificate Type</th>
+                  <th className="p-4 border-b border-border font-bold">Primary Use Case</th>
+                  <th className="p-4 border-b border-border font-bold">Who Needs It?</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="p-4 border-b border-border bg-card"><strong>Sick Leave</strong></td>
+                  <td className="p-4 border-b border-border bg-card">To justify absence due to illness</td>
+                  <td className="p-4 border-b border-border bg-card">Employees, Students</td>
+                </tr>
+                <tr>
+                  <td className="p-4 border-b border-border bg-muted/30"><strong>Fitness</strong></td>
+                  <td className="p-4 border-b border-border bg-muted/30">To prove recovery and readiness</td>
+                  <td className="p-4 border-b border-border bg-muted/30">New Joinees, Returning Employees</td>
+                </tr>
+                <tr>
+                  <td className="p-4 border-b border-border bg-card"><strong>Disability</strong></td>
+                  <td className="p-4 border-b border-border bg-card">To claim government or tax benefits</td>
+                  <td className="p-4 border-b border-border bg-card">Individuals with permanent/temporary disabilities</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
 
           <h3 className="text-xl font-bold text-foreground mb-2 mt-4">1. Sick Leave Certificate India</h3>
@@ -83,10 +123,27 @@ const BLOG_POSTS_PART1: BlogPostData[] = [
         </section>
 
         {/* Visual 2 Placement */}
-        <div className="bg-card border-2 border-dashed border-border rounded-xl p-8 text-center my-8">
-          <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-3">📈</span>
-          <p className="font-bold text-foreground">Visual 2: Infographic</p>
-          <p className="text-sm text-muted-foreground mt-1">[Instruction: Infographic mapping the Uses of Medical Certificate (Office, School, Sarkari paperwork, Travel)]</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 my-8">
+          <div className="bg-primary/5 border border-primary/20 rounded-xl p-5 text-center hover:shadow-md transition-shadow">
+            <span className="text-3xl mb-3 block">🏢</span>
+            <h3 className="font-bold text-foreground">Office Leave</h3>
+            <p className="text-xs text-muted-foreground mt-2">Required by HR for sick leave exceeding 2-3 days.</p>
+          </div>
+          <div className="bg-primary/5 border border-primary/20 rounded-xl p-5 text-center hover:shadow-md transition-shadow">
+            <span className="text-3xl mb-3 block">🏫</span>
+            <h3 className="font-bold text-foreground">School/College</h3>
+            <p className="text-xs text-muted-foreground mt-2">To condone low attendance or miss examinations.</p>
+          </div>
+          <div className="bg-primary/5 border border-primary/20 rounded-xl p-5 text-center hover:shadow-md transition-shadow">
+            <span className="text-3xl mb-3 block">🏛️</span>
+            <h3 className="font-bold text-foreground">Govt / Sarkari</h3>
+            <p className="text-xs text-muted-foreground mt-2">For visa processing, driving licenses, or disability claims.</p>
+          </div>
+          <div className="bg-primary/5 border border-primary/20 rounded-xl p-5 text-center hover:shadow-md transition-shadow">
+            <span className="text-3xl mb-3 block">✈️</span>
+            <h3 className="font-bold text-foreground">Travel / Airlines</h3>
+            <p className="text-xs text-muted-foreground mt-2">To prove fitness to fly (e.g., late-stage pregnancy).</p>
+          </div>
         </div>
 
         <section>
@@ -94,10 +151,29 @@ const BLOG_POSTS_PART1: BlogPostData[] = [
           <p>Getting a certificate is straightforward if you follow the right process:</p>
           
           {/* Visual 3 Placement */}
-          <div className="bg-card border-2 border-dashed border-border rounded-xl p-8 text-center my-6">
-            <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-3">🔄</span>
-            <p className="font-bold text-foreground">Visual 3: Step-by-Step Flow</p>
-            <p className="text-sm text-muted-foreground mt-1">[Instruction: Visual flow graphic showing: Consult Doctor ➔ Examination ➔ Get Diagnosis ➔ Receive Stamped Certificate]</p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 my-8 opacity-90">
+            <div className="bg-card px-4 py-3 rounded-lg shadow-sm border border-border flex flex-col items-center text-center w-full sm:w-auto">
+              <span className="bg-primary/10 text-primary w-8 h-8 rounded-full flex items-center justify-center font-bold mb-2">1</span>
+              <span className="text-sm font-medium">Consult Doctor</span>
+            </div>
+            <span className="text-muted-foreground hidden sm:block">➔</span>
+            <span className="text-muted-foreground sm:hidden">⬇</span>
+            <div className="bg-card px-4 py-3 rounded-lg shadow-sm border border-border flex flex-col items-center text-center w-full sm:w-auto">
+              <span className="bg-primary/10 text-primary w-8 h-8 rounded-full flex items-center justify-center font-bold mb-2">2</span>
+              <span className="text-sm font-medium">Get Examined</span>
+            </div>
+            <span className="text-muted-foreground hidden sm:block">➔</span>
+            <span className="text-muted-foreground sm:hidden">⬇</span>
+            <div className="bg-card px-4 py-3 rounded-lg shadow-sm border border-border flex flex-col items-center text-center w-full sm:w-auto">
+              <span className="bg-primary/10 text-primary w-8 h-8 rounded-full flex items-center justify-center font-bold mb-2">3</span>
+              <span className="text-sm font-medium">Get Diagnosis</span>
+            </div>
+            <span className="text-muted-foreground hidden sm:block">➔</span>
+            <span className="text-muted-foreground sm:hidden">⬇</span>
+            <div className="bg-primary/5 border-primary/30 px-4 py-3 rounded-lg shadow-sm border flex flex-col items-center text-center w-full sm:w-auto">
+              <span className="bg-primary text-primary-foreground w-8 h-8 rounded-full flex items-center justify-center font-bold mb-2">4</span>
+              <span className="text-sm font-bold text-primary">Receive Stamped Cert</span>
+            </div>
           </div>
 
           <ol className="list-decimal list-inside space-y-3 ml-4 mt-3">
@@ -111,7 +187,7 @@ const BLOG_POSTS_PART1: BlogPostData[] = [
         <section>
           <h2 className="text-2xl font-bold text-foreground mb-3">Is Online Medical Certificate Valid in India?</h2>
           <p>
-            Yes, an online medical certificate India is legally valid, provided it strictly follows the <strong>Telemedicine Practice Guidelines 2020</strong>. The certificate must be issued by a registered doctor after a proper video or audio consultation. 
+            Yes, an online medical certificate India is legally valid, provided it strictly follows the <a href="https://www.mohfw.gov.in/pdf/TelemedicineINdiaGuidelines20March2020.pdf" target="_blank" rel="nofollow noopener noreferrer" className="text-primary hover:underline">Telemedicine Practice Guidelines 2020</a> issued by the Ministry of Health and Family Welfare. The certificate must be issued by a registered doctor after a proper video or audio consultation. 
           </p>
           <p className="mt-3">
             However, there is a catch: <strong>Employer discretion</strong>. While private tech companies and startups readily accept digital PDFs, traditional corporate HRs or government (sarkari) departments often demand a physical copy with a "wet ink" signature. Always check your company's HR policy first.
@@ -211,16 +287,43 @@ const BLOG_POSTS_PART1: BlogPostData[] = [
         </p>
 
         {/* Visual 1 Placement */}
-        <div className="bg-card border-2 border-dashed border-border rounded-xl p-8 text-center my-8">
-          <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-3">📝</span>
-          <p className="font-bold text-foreground">Visual 1: Side-by-Side Comparison Image</p>
-          <p className="text-sm text-muted-foreground mt-1">[Instruction: Show a Prescription sample next to a Medical Certificate sample. Use existing template for the certificate. Highlight the Rx vs "To Whom It May Concern". Clean UI white + blue/green theme.]</p>
+        <div className="grid md:grid-cols-2 gap-6 my-10">
+          <div className="bg-muted/30 border border-border p-6 rounded-xl relative">
+            <div className="absolute top-0 right-0 bg-destructive/10 text-destructive text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-xl">Not for Leave</div>
+            <h3 className="font-bold text-xl mb-4 flex items-center gap-2"><span className="text-2xl">💊</span> Prescription (Rx)</h3>
+            <div className="bg-white text-black p-4 rounded shadow-sm border border-gray-200 font-mono text-sm">
+              <p className="text-xl font-bold italic mb-2">Rx</p>
+              <ul className="space-y-2">
+                <li>1. Tab Paracetamol 650mg (1-0-1) x 3 days</li>
+                <li>2. Syp Cough Reliever (2 tsp night)</li>
+                <li>3. Tab Vitamin C (1 daily)</li>
+              </ul>
+              <p className="mt-4 border-t border-dashed border-gray-300 pt-2 text-xs italic">Review after 3 days.</p>
+            </div>
+          </div>
+          
+          <div className="bg-primary/5 border border-primary/20 p-6 rounded-xl relative">
+            <div className="absolute top-0 right-0 bg-emerald-500/10 text-emerald-600 text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-xl">Valid for Leave</div>
+            <h3 className="font-bold text-xl mb-4 flex items-center gap-2"><span className="text-2xl">📄</span> Medical Certificate</h3>
+            <div className="bg-white text-black p-4 rounded shadow-sm border border-gray-200 font-serif text-sm">
+              <p className="text-center font-bold underline mb-2">MEDICAL CERTIFICATE</p>
+              <p className="mb-2"><strong>To Whom It May Concern,</strong></p>
+              <p className="leading-relaxed">
+                This certifies that Mr. John Doe is suffering from Viral Fever and is advised strict bed rest for <strong>3 days</strong> from 10-Apr to 12-Apr.
+              </p>
+              <div className="mt-4 flex justify-end">
+                <div className="text-center border-t border-black pt-1 w-24">
+                  <p className="text-xs font-bold">Signature & Seal</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <section>
           <h2 className="text-2xl font-bold text-foreground mb-3">Doctor Prescription Meaning & Use</h2>
           <p>
-            A <strong>prescription</strong> (often marked with the symbol <strong>Rx</strong>) is a direct communication between a registered medical practitioner and a pharmacist. Its primary purpose is to authorize the dispensing of specific medications.
+            A <strong>prescription</strong> (often marked with the symbol <strong>Rx</strong>) is a direct communication between a registered medical practitioner and a pharmacist. According to the <a href="https://www.who.int/activities/promoting-rational-use-of-medicines" target="_blank" rel="nofollow noopener noreferrer" className="text-primary hover:underline">World Health Organization (WHO)</a> guidelines on the rational use of medicines, its primary purpose is to authorize the dispensing of specific treatments.
           </p>
           <p className="mt-3">
             While it proves you visited a doctor, it does not officially state that you are unfit for work. It lists tablet names, dosages, and timings. Most Indian corporate HR policies do not accept a prescription as a valid <strong>medical certificate for leave in India</strong> because it lacks a clear "advised rest period" and doesn't serve as a legal declaration of incapacity.
@@ -287,16 +390,27 @@ const BLOG_POSTS_PART1: BlogPostData[] = [
         </section>
 
         {/* Visual 2 Placement */}
-        <div className="bg-card border-2 border-dashed border-border rounded-xl p-8 text-center my-8">
-          <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-3">🏥</span>
-          <p className="font-bold text-foreground">Visual 2: Comparison Infographic</p>
-          <p className="text-sm text-muted-foreground mt-1">[Instruction: Infographic highlighting the table data above visually. Use 💊 for Prescription and 📄 for Certificate.]</p>
+        <div className="grid sm:grid-cols-2 gap-4 my-8">
+          <div className="bg-background border border-border p-5 rounded-xl flex items-start gap-4 shadow-sm">
+            <div className="bg-muted p-3 rounded-full text-2xl">💊</div>
+            <div>
+              <h4 className="font-bold text-foreground">Prescription</h4>
+              <p className="text-sm text-muted-foreground mt-1">Focuses on <strong>treatment</strong>. Lists medications, dosages, and instructions for the pharmacist or patient.</p>
+            </div>
+          </div>
+          <div className="bg-primary/5 border border-primary/20 p-5 rounded-xl flex items-start gap-4 shadow-sm">
+            <div className="bg-primary/10 p-3 rounded-full text-2xl text-primary">📄</div>
+            <div>
+              <h4 className="font-bold text-primary">Medical Certificate</h4>
+              <p className="text-sm text-foreground/80 mt-1">Focuses on <strong>capacity</strong>. A legal declaration to an employer/school confirming inability to perform duties.</p>
+            </div>
+          </div>
         </div>
 
         <section>
           <h2 className="text-2xl font-bold text-foreground mb-3">What Employers Actually Require in India</h2>
           <p>
-            When you call in sick for more than two consecutive days in India, the <strong>Factories Act, Shops and Establishments Act, and internal corporate HR policies</strong> generally require formal proof of illness.
+            When you call in sick for more than two consecutive days in India, the <a href="https://labour.gov.in/factories-act-1948" target="_blank" rel="nofollow noopener noreferrer" className="text-primary hover:underline">Factories Act, 1948</a>, state-specific Shops and Establishments Acts, and internal corporate HR policies generally require formal proof of illness.
           </p>
           <p className="mt-3">
             An HR manager looking at a prescription only sees that you went to a doctor and were given paracetamol. They cannot legally infer that you were too sick to sit at a desk. A medical certificate, on the other hand, explicitly states: <em>"Patient is suffering from viral fever and is advised strict bed rest for 3 days."</em> This removes the HR's liability and officially condones your absence.
@@ -304,10 +418,26 @@ const BLOG_POSTS_PART1: BlogPostData[] = [
         </section>
 
         {/* Visual 3 Placement */}
-        <div className="bg-card border-2 border-dashed border-border rounded-xl p-8 text-center my-8">
-          <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-3">🔄</span>
-          <p className="font-bold text-foreground">Visual 3: Flow Diagram - When to use which document?</p>
-          <p className="text-sm text-muted-foreground mt-1">[Instruction: Create a decision tree. E.g., "Need to buy meds?" ➔ Prescription. "Need HR approval for 3 days leave?" ➔ Medical Certificate.]</p>
+        <div className="bg-muted/30 border border-border p-6 rounded-2xl my-8">
+          <h3 className="font-bold text-center mb-6">Which Document Do You Need? (Decision Tree)</h3>
+          <div className="flex flex-col gap-4 max-w-md mx-auto">
+            
+            <div className="bg-card border border-border p-4 rounded-lg flex items-center justify-between shadow-sm">
+              <span className="text-sm font-medium">Do you need to buy restricted medicines?</span>
+              <span className="bg-muted text-foreground text-xs font-bold px-3 py-1 rounded">➔ Get Prescription 💊</span>
+            </div>
+            
+            <div className="bg-card border border-border p-4 rounded-lg flex items-center justify-between shadow-sm">
+              <span className="text-sm font-medium">Do you need to apply for sick leave?</span>
+              <span className="bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded">➔ Get Certificate 📄</span>
+            </div>
+            
+            <div className="bg-card border border-border p-4 rounded-lg flex items-center justify-between shadow-sm">
+              <span className="text-sm font-medium">Do you need to claim health insurance?</span>
+              <span className="bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded">➔ Get Both 💊 + 📄</span>
+            </div>
+            
+          </div>
         </div>
 
         <section>
@@ -400,7 +530,7 @@ const BLOG_POSTS_PART1: BlogPostData[] = [
 
         <section>
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">1. What Employers Can Legally Ask For</h2>
-          <p>In India, employment contracts and company policies (often governed by the Shops and Establishments Act of respective states) dictate the rules for sick leaves. While rules vary slightly between government and private sectors, employers generally have the right to request:</p>
+          <p>In India, employment contracts and company policies (often governed by the <a href="https://labour.gov.in/state-shops-and-establishments-acts" target="_blank" rel="nofollow noopener noreferrer" className="text-primary hover:underline">Shops and Establishments Act</a> of respective states) dictate the rules for sick leaves. While rules vary slightly between government and private sectors, employers generally have the right to request:</p>
           <ul className="list-disc list-inside space-y-2 ml-4 mt-4">
             <li><strong>Standard Medical Certificate:</strong> Issued by a registered practitioner, stating you were advised rest for a specific duration. See the <InternalLink href="/student-medical-certificate-format">Medical Certificate Format</InternalLink> for examples.</li>
             <li><strong>Fitness Certificate:</strong> A clearance document from your doctor stating you are medically fit to resume your duties, especially after prolonged illness or surgery.</li>
@@ -411,7 +541,7 @@ const BLOG_POSTS_PART1: BlogPostData[] = [
 
         <section>
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">2. What Employers Cannot Ask (Your Privacy Rights)</h2>
-          <p>Employee medical privacy is protected under Indian law, including the Right to Privacy (Article 21) and the Digital Personal Data Protection (DPDP) Act. Employers cross the legal line if they demand:</p>
+          <p>Employee medical privacy is protected under Indian law, including the Right to Privacy (Article 21) and the <a href="https://www.meity.gov.in/data-protection-framework" target="_blank" rel="nofollow noopener noreferrer" className="text-primary hover:underline">Digital Personal Data Protection (DPDP) Act, 2023</a>. Employers cross the legal line if they demand:</p>
           
           {/* VISUAL PLACEMENT: Comparison Table */}
           <div className="my-8 overflow-x-auto">
@@ -471,8 +601,7 @@ const BLOG_POSTS_PART1: BlogPostData[] = [
 
         {/* VISUAL PLACEMENT: Flowchart */}
         <section className="my-10 bg-primary/5 border border-primary/20 rounded-2xl p-6 text-center">
-          <p className="text-xs font-bold text-primary uppercase tracking-wider mb-4">[VISUAL PLACEMENT: FLOWCHART]</p>
-          <p className="text-muted-foreground text-sm italic mb-6">Designer Note: Render a clean 4-step horizontal flowchart tracking the sick leave process.</p>
+
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 opacity-80">
             <div className="bg-background px-4 py-3 rounded-lg shadow-sm border border-border flex items-center gap-2">
               <span className="bg-primary/10 text-primary w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs">1</span>
@@ -519,7 +648,7 @@ const BLOG_POSTS_PART1: BlogPostData[] = [
 
         {/* VISUAL PLACEMENT: Checklist */}
         <section className="my-10 bg-muted/50 border border-border rounded-2xl p-6 md:p-8">
-          <p className="text-xs font-bold text-primary uppercase tracking-wider mb-2">[VISUAL PLACEMENT: CHECKLIST UI]</p>
+
           <h2 className="text-xl font-bold mb-4 flex items-center gap-2"><span className="text-primary">📋</span> Employee Rights Summary (Pre-Submission Checklist)</h2>
           <div className="space-y-3">
             <label className="flex items-start gap-3 p-3 bg-background rounded-lg border border-border cursor-pointer hover:border-primary/50 transition-colors">
@@ -611,11 +740,11 @@ const BLOG_POSTS_PART1: BlogPostData[] = [
 
         <section>
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">1. The Criminal Laws Governing Fake Medical Certificates</h2>
-          <p>Many employees and students assume that downloading a fake template from the internet and submitting it for a 3-day sick leave is a "victimless crime." However, the Indian legal system treats document forgery extremely harshly. Whether governed by the older Indian Penal Code (IPC) or the newer Bharatiya Nyaya Sanhita (BNS), the consequences remain severe.</p>
+          <p>Many employees and students assume that downloading a fake template from the internet and submitting it for a 3-day sick leave is a "victimless crime." However, the Indian legal system treats document forgery extremely harshly. Whether governed by the older Indian Penal Code (IPC) or the newer <a href="https://www.indiacode.nic.in/handle/123456789/1362" target="_blank" rel="nofollow noopener noreferrer" className="text-primary hover:underline">Bharatiya Nyaya Sanhita (BNS)</a>, the consequences remain severe.</p>
           
           {/* VISUAL PLACEMENT: Law Summary Table */}
           <div className="my-8 overflow-x-auto">
-            <p className="text-xs font-bold text-primary uppercase tracking-wider mb-2">[VISUAL PLACEMENT: LAW SUMMARY TABLE]</p>
+
             <table className="w-full border-collapse border border-border text-sm text-left">
               <thead className="bg-destructive/5">
                 <tr>
@@ -666,7 +795,7 @@ const BLOG_POSTS_PART1: BlogPostData[] = [
 
         {/* VISUAL PLACEMENT: Warning Infographic / Alert */}
         <section className="my-10 bg-destructive/5 border border-destructive/20 rounded-2xl p-6 md:p-8 text-center">
-          <p className="text-xs font-bold text-destructive uppercase tracking-wider mb-2">[VISUAL PLACEMENT: WARNING INFOGRAPHIC]</p>
+
           <div className="flex justify-center mb-4">
             <span className="flex items-center justify-center w-16 h-16 bg-destructive/10 text-destructive rounded-full text-3xl">🛑</span>
           </div>
@@ -689,7 +818,7 @@ const BLOG_POSTS_PART1: BlogPostData[] = [
 
         {/* VISUAL PLACEMENT: Do vs Don't Checklist */}
         <section className="my-10 bg-muted/50 border border-border rounded-2xl p-6 md:p-8">
-          <p className="text-xs font-bold text-primary uppercase tracking-wider mb-2">[VISUAL PLACEMENT: DO VS DON'T CHECKLIST]</p>
+
           <h2 className="text-xl font-bold mb-5 flex items-center gap-2"><span className="text-primary">⚖️</span> Safer Alternatives: How to Do It Right</h2>
           
           <div className="grid md:grid-cols-2 gap-4">
