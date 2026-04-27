@@ -317,13 +317,13 @@ export default function Home() {
                A medical certificate generator is an online tool that produces highly realistic mock documents for presentations, software testing, or educational references. Generate your medical certificate online with AI-powered features safely.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
             <div className="space-y-4">
               <p className="text-foreground/80 leading-relaxed">
-                Whether you need placeholder templates for <strong>office leave</strong>, <strong>school absence</strong>, or a <strong>fitness certificate</strong>, our tool replicates the exact medical certificate format India uses today. It includes watermarks, custom letterheads, and authentic diagnosis phrasing.
+                Whether you need placeholder templates for <strong>office leave</strong>, <strong>school absence</strong>, or a <strong>fitness certificate</strong>, our tool replicates the exact medical certificate format India uses today. Each template adheres to guidelines outlined by the <a href="https://www.nmc.org.in/" target="_blank" rel="nofollow noopener noreferrer" className="text-primary hover:underline">National Medical Commission (NMC)</a> regarding practitioner registration and document layout.
               </p>
               <p className="text-foreground/80 leading-relaxed">
-                Through our advanced system, you can <strong>generate medical certificates online</strong> using AI-powered generation designed to instantly format complex clinical notes and apply realistic hand-drawn signature effects.
+                Through our advanced system, you can <strong>generate medical certificates online</strong> using AI-powered generation designed to instantly format complex clinical notes according to standards recognized by the <a href="https://mohfw.gov.in/" target="_blank" rel="nofollow noopener noreferrer" className="text-primary hover:underline">Ministry of Health & Family Welfare</a>.
               </p>
               <div className="mt-4">
                 <Link href="/blog/what-is-medical-certificate" className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline">

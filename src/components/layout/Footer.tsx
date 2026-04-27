@@ -125,6 +125,21 @@ export function Footer() {
           They are <strong>not legally valid</strong> medical documents. Any fraudulent use is strictly prohibited and the sole responsibility of the user.
         </div>
 
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-6 pb-6 border-t border-border/50">
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Authoritative Sources:</span>
+            <a href="https://www.nmc.org.in/" target="_blank" rel="nofollow noopener noreferrer" className="text-[11px] text-muted-foreground hover:text-primary transition-colors flex items-center gap-1">
+               National Medical Commission (NMC)
+            </a>
+            <a href="https://mohfw.gov.in/" target="_blank" rel="nofollow noopener noreferrer" className="text-[11px] text-muted-foreground hover:text-primary transition-colors flex items-center gap-1">
+               Ministry of Health & Family Welfare
+            </a>
+            <a href="https://www.who.int/" target="_blank" rel="nofollow noopener noreferrer" className="text-[11px] text-muted-foreground hover:text-primary transition-colors flex items-center gap-1">
+               World Health Organization (WHO)
+            </a>
+          </div>
+        </div>
+
         <div className="flex flex-col sm:flex-row justify-between items-center gap-2 pt-4 border-t border-border/50">
           <p className="text-xs text-muted-foreground" suppressHydrationWarning>© {new Date().getFullYear()} Medical Certificate Generator by Ziven Borceg. All rights reserved.</p>
           <div className="flex gap-4">
