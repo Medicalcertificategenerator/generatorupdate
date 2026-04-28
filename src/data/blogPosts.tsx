@@ -1815,131 +1815,153 @@ function getVariation(seed: string) {
     author: "Ziven Borceg",
     content: (
       <div className="space-y-8 text-foreground/80 leading-relaxed">
-        {/* AEO Featured Snippet */}
+        {/* AEO Featured Snippet Intro */}
         <div className="bg-primary/5 border-l-4 border-primary p-6 rounded-r-xl my-6">
           <h2 className="font-bold text-foreground text-lg mb-2">Medical Certificate vs Fitness Certificate: What is the difference?</h2>
           <p className="text-sm leading-relaxed">
-            In the Indian healthcare system, a <strong>medical certificate</strong> is a document of <em>incapacity</em>, certifying that a patient is unfit for work due to illness. Conversely, a <strong>fitness certificate</strong> is a document of <em>capacity</em>, certifying that a person is medically fit to perform a specific task (like joining a job, driving, or skydiving). While a medical certificate is used to justify absence, a fitness certificate is required for entry or return to duty.
+            The main difference is that a <strong>medical certificate</strong> is a document of <em>incapacity</em> used to justify sick leave when you are unfit for work. A <strong>fitness certificate</strong> is a document of <em>capacity</em>, proving you are healthy enough to perform a specific task, such as joining a new job, returning to work after surgery, or applying for a driving licence.
           </p>
         </div>
 
-        {/* Quick Comparison UI Block */}
-        <div className="bg-muted border border-border p-6 rounded-2xl my-8">
-          <h3 className="font-bold text-foreground mb-4">Quick Comparison: Sick Leave vs. Fitness</h3>
+        {/* In Short Summary Box */}
+        <div className="bg-muted border border-border p-6 rounded-2xl mb-8">
+          <h3 className="font-bold text-foreground mb-4">In Short: Which One Do You Need?</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
              <div className="p-4 bg-background border border-border rounded-xl">
                 <h4 className="font-bold text-xs text-primary uppercase mb-2">Medical Certificate</h4>
-                <ul className="text-[11px] space-y-1.5 text-muted-foreground">
-                   <li className="flex items-center gap-2 text-foreground"><CheckCircle className="w-3 h-3 text-green-500" /> Focus: Current Illness/Unfitness</li>
-                   <li>• Purpose: Justify absence from work</li>
-                   <li>• Content: Rest period, Diagnosis</li>
-                   <li>• Validity: Fixed date range</li>
+                <ul className="text-sm space-y-1.5 text-foreground/80">
+                   <li><CheckCircle className="w-4 h-4 text-green-500 inline mr-2" /> Used for <strong>Sick Leave</strong></li>
+                   <li><CheckCircle className="w-4 h-4 text-green-500 inline mr-2" /> Proves you are currently <strong>unwell</strong></li>
+                   <li><CheckCircle className="w-4 h-4 text-green-500 inline mr-2" /> Mentions exact rest dates (From/To)</li>
                 </ul>
              </div>
              <div className="p-4 bg-background border border-border rounded-xl">
                 <h4 className="font-bold text-xs text-primary uppercase mb-2">Fitness Certificate</h4>
-                <ul className="text-[11px] space-y-1.5 text-muted-foreground">
-                   <li className="flex items-center gap-2 text-foreground"><CheckCircle className="w-3 h-3 text-green-500" /> Focus: Current Health/Stability</li>
-                   <li>• Purpose: Proof of capability</li>
-                   <li>• Content: Vitals, Specific fitness clause</li>
-                   <li>• Validity: Often 6-12 months</li>
+                <ul className="text-sm space-y-1.5 text-foreground/80">
+                   <li><CheckCircle className="w-4 h-4 text-green-500 inline mr-2" /> Used for <strong>Joining or Returning</strong></li>
+                   <li><CheckCircle className="w-4 h-4 text-green-500 inline mr-2" /> Proves you are currently <strong>healthy</strong></li>
+                   <li><CheckCircle className="w-4 h-4 text-green-500 inline mr-2" /> Usually has a 6-12 month validity</li>
                 </ul>
              </div>
           </div>
         </div>
 
         <section>
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">1. The Return-to-Work Workflow</h2>
-          <p className="mb-8">
-            The most common point of confusion occurs when an employee returns after a major surgery or 30+ days of sick leave. In such cases, Indian labour laws (like the <strong>Factories Act 1948</strong>) often require the employee to present <em>both</em> documents.
+          <h2 className="text-2xl font-bold text-foreground mb-4">1. What Is a Medical Certificate?</h2>
+          <p className="mb-4">
+            A medical certificate (often called a sick note) is a legal document issued by a registered doctor confirming a patient’s medical diagnosis and recommending a period of rest. It is fundamentally an <InternalLink href="/blog/what-is-medical-certificate">excusatory document</InternalLink>—it excuses you from your normal duties.
           </p>
+          <p>
+            It is heavily utilized in corporate India to authorize sick leaves, process health insurance claims, and condone student absences.
+          </p>
+        </section>
 
-          {/* Premium UI Block: Workflow */}
-          <div className="bg-slate-900 text-slate-100 p-8 rounded-3xl relative overflow-hidden shadow-2xl my-10">
-             <div className="absolute top-0 right-0 p-4 opacity-10"><Activity className="w-24 h-24" /></div>
-             <h4 className="text-lg font-bold mb-6 text-center text-primary">The Employee Re-entry Lifecycle</h4>
-             <div className="flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
-                <div className="flex-1 text-center group">
-                   <div className="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-3 border border-slate-700 group-hover:border-primary group-hover:scale-110 transition-all">
-                      <span className="text-xs font-bold">01</span>
-                   </div>
-                   <p className="font-bold text-xs">Sick Note</p>
-                   <p className="text-[10px] text-slate-400 mt-1">Certifies incapacity at start of leave.</p>
-                </div>
-                <div className="text-slate-700 hidden md:block">→</div>
-                <div className="flex-1 text-center group">
-                   <div className="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-3 border border-slate-700 group-hover:border-primary group-hover:scale-110 transition-all">
-                      <span className="text-xs font-bold">02</span>
-                   </div>
-                   <p className="font-bold text-xs">Recovery</p>
-                   <p className="text-[10px] text-slate-400 mt-1">Medical treatment period completed.</p>
-                </div>
-                <div className="text-slate-700 hidden md:block">→</div>
-                <div className="flex-1 text-center group">
-                   <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-3 border border-primary/50 group-hover:scale-110 transition-all">
-                      <span className="text-xs font-bold text-primary">03</span>
-                   </div>
-                   <p className="font-bold text-xs text-primary">Fitness Cert</p>
-                   <p className="text-[10px] text-slate-400 mt-1">Doctor certifies fitness to resume specific role.</p>
-                </div>
+        <section>
+          <h2 className="text-2xl font-bold text-foreground mb-4 mt-8">2. What Is a Fitness Certificate?</h2>
+          <p className="mb-4">
+            A fitness certificate (or fit-to-work certificate) is a medical clearance document. It certifies that a person has been physically examined and found medically fit for a specific purpose. It is an <em>enabling document</em>—it gives you permission to proceed.
+          </p>
+          <p>
+            This document is critical in high-risk professions, government jobs, and transportation sectors to ensure public and workplace safety.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-foreground mb-6 mt-8">3. When Each Document Is Used (Scenarios)</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+             <div className="p-5 bg-card border border-border rounded-xl">
+                <h3 className="font-bold text-base mb-2">🤧 Sick Leave (Office/School)</h3>
+                <p className="text-sm">You need a <strong>Medical Certificate</strong>. HR needs to know how many days you need to recover.</p>
+             </div>
+             <div className="p-5 bg-card border border-border rounded-xl">
+                <h3 className="font-bold text-base mb-2">🤝 Joining a New Job</h3>
+                <p className="text-sm">You need a <strong>Fitness Certificate</strong> (Pre-employment medical) to prove you are capable of the role.</p>
+             </div>
+             <div className="p-5 bg-card border border-border rounded-xl">
+                <h3 className="font-bold text-base mb-2">🏥 Returning After Surgery</h3>
+                <p className="text-sm">You need a <strong>Fitness Certificate</strong> to prove your recovery is complete and you can resume work.</p>
+             </div>
+             <div className="p-5 bg-card border border-border rounded-xl">
+                <h3 className="font-bold text-base mb-2">🚗 Driving Licence (Form 1A)</h3>
+                <p className="text-sm">You need a <strong>Fitness Certificate</strong> to prove your vision and motor skills are adequate.</p>
+             </div>
+             <div className="p-5 bg-card border border-border rounded-xl">
+                <h3 className="font-bold text-base mb-2">🏃‍♂️ Sports / Marathons</h3>
+                <p className="text-sm">You need a <strong>Fitness Certificate</strong> ensuring your heart and vitals can handle extreme exertion.</p>
+             </div>
+             <div className="p-5 bg-card border border-border rounded-xl">
+                <h3 className="font-bold text-base mb-2">🏛️ Government Employment</h3>
+                <p className="text-sm">You need a strict <strong>Fitness Certificate</strong> signed by a Chief Medical Officer (CMO).</p>
+             </div>
+          </div>
+        </section>
+
+        {/* Decision Flowchart UI Block */}
+        <section className="my-10">
+          <h2 className="text-2xl font-bold text-foreground mb-6 text-center">Which Document Do I Need? (Decision Flow)</h2>
+          <div className="bg-slate-50 border border-slate-200 p-6 md:p-10 rounded-2xl flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 text-center shadow-inner">
+             <div className="flex-1 space-y-3">
+                <div className="w-16 h-16 bg-red-100 text-red-600 rounded-full flex items-center justify-center mx-auto mb-2"><Activity className="w-8 h-8" /></div>
+                <p className="font-bold">Are you currently sick and need leave?</p>
+                <div className="text-3xl text-slate-300">↓</div>
+                <div className="bg-red-600 text-white font-bold py-2 px-4 rounded-lg text-sm">Need: Medical Certificate</div>
+             </div>
+             <div className="hidden md:block w-px h-40 bg-slate-200"></div>
+             <div className="flex-1 space-y-3">
+                <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-2"><CheckCircle className="w-8 h-8" /></div>
+                <p className="font-bold">Are you healthy and joining/returning to work?</p>
+                <div className="text-3xl text-slate-300">↓</div>
+                <div className="bg-green-600 text-white font-bold py-2 px-4 rounded-lg text-sm">Need: Fitness Certificate</div>
              </div>
           </div>
         </section>
 
         <section>
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">2. Industry-Specific Fitness Requirements</h2>
-          <p className="mb-6">Not all fitness certificates are equal. In India, the standard depends entirely on the <em>risk profile</em> of the activity:</p>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-             <div className="p-5 bg-card border border-border rounded-xl">
-                <div className="bg-blue-50 p-2 rounded-lg text-blue-600 w-fit mb-3"><Car className="w-5 h-5" /></div>
-                <h4 className="font-bold text-sm mb-2">Driving (Form 1A)</h4>
-                <p className="text-xs text-muted-foreground leading-relaxed">Required for commercial licenses or personal license renewal for those over 40. Focuses on vision, hearing, and motor control.</p>
-             </div>
-             <div className="p-5 bg-card border border-border rounded-xl">
-                <div className="bg-orange-50 p-2 rounded-lg text-orange-600 w-fit mb-3"><Plane className="w-5 h-5" /></div>
-                <h4 className="font-bold text-sm mb-2">Aviation (DGCA)</h4>
-                <p className="text-xs text-muted-foreground leading-relaxed">Class 1, 2, or 3 medicals. Must be issued by a DGCA-empanelled Aviation Medical Examiner (AME).</p>
-             </div>
-             <div className="p-5 bg-card border border-border rounded-xl">
-                <div className="bg-red-50 p-2 rounded-lg text-red-600 w-fit mb-3"><Briefcase className="w-5 h-5" /></div>
-                <h4 className="font-bold text-sm mb-2">Hazardous Industry</h4>
-                <p className="text-xs text-muted-foreground leading-relaxed">Under the Factories Act, workers in chemical or mining industries must be certified by a "Certifying Surgeon."</p>
-             </div>
-          </div>
-        </section>
-
-        <section>
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">3. Detailed Content Matrix</h2>
+          <h2 className="text-2xl font-bold text-foreground mb-6">4. Full Comparison Table</h2>
           <div className="overflow-x-auto border border-border rounded-2xl shadow-sm">
             <table className="w-full text-sm text-left border-collapse">
               <thead className="bg-muted/50">
                 <tr>
-                  <th className="p-4 border-b border-border">Data Point</th>
-                  <th className="p-4 border-b border-border font-bold">Medical Certificate (Sick)</th>
-                  <th className="p-4 border-b border-border font-bold">Fitness Certificate</th>
+                  <th className="p-4 border-b border-border">Feature</th>
+                  <th className="p-4 border-b border-border font-bold text-primary">Medical Certificate</th>
+                  <th className="p-4 border-b border-border font-bold text-emerald-600">Fitness Certificate</th>
                 </tr>
               </thead>
               <tbody>
                 <tr className="hover:bg-muted/10 transition-colors">
-                  <td className="p-4 border-b border-border font-semibold">Diagnosis</td>
-                  <td className="p-4 border-b border-border">Mandatory (can be general)</td>
-                  <td className="p-4 border-b border-border">Usually not required</td>
+                  <td className="p-4 border-b border-border font-semibold">Purpose</td>
+                  <td className="p-4 border-b border-border">To justify absence/illness</td>
+                  <td className="p-4 border-b border-border">To prove capability/health</td>
                 </tr>
                 <tr className="bg-muted/5 hover:bg-muted/10 transition-colors">
-                  <td className="p-4 border-b border-border font-semibold">Vitals (BP/Pulse)</td>
-                  <td className="p-4 border-b border-border">Optional</td>
-                  <td className="p-4 border-b border-border font-bold">Mandatory</td>
+                  <td className="p-4 border-b border-border font-semibold">When Used</td>
+                  <td className="p-4 border-b border-border">Start of sick leave</td>
+                  <td className="p-4 border-b border-border">Joining a job / Returning to work</td>
                 </tr>
                 <tr className="hover:bg-muted/10 transition-colors">
-                  <td className="p-4 border-b border-border font-semibold">Period of Leave</td>
-                  <td className="p-4 border-b border-border font-bold text-primary">Required (From/To)</td>
-                  <td className="p-4 border-b border-border text-muted-foreground">Not Applicable</td>
+                  <td className="p-4 border-b border-border font-semibold">What it Proves</td>
+                  <td className="p-4 border-b border-border">Incapacity (Unfit)</td>
+                  <td className="p-4 border-b border-border">Capacity (Fit)</td>
                 </tr>
                 <tr className="bg-muted/5 hover:bg-muted/10 transition-colors">
-                  <td className="p-4 border-b border-border font-semibold">Purpose</td>
-                  <td className="p-4 border-b border-border">Excusatory (Excuse from work)</td>
-                  <td className="p-4 border-b border-border font-bold text-primary">Enabling (Permit to work)</td>
+                  <td className="p-4 border-b border-border font-semibold">Issued By</td>
+                  <td className="p-4 border-b border-border">Treating Doctor (<InternalLink href="/blog/who-can-issue-medical-certificate-india">Who can issue?</InternalLink>)</td>
+                  <td className="p-4 border-b border-border">Panel Doctor / Treating Doctor</td>
+                </tr>
+                <tr className="hover:bg-muted/10 transition-colors">
+                  <td className="p-4 border-b border-border font-semibold">Required Details</td>
+                  <td className="p-4 border-b border-border">Diagnosis & Rest Dates</td>
+                  <td className="p-4 border-b border-border">Vitals, Vision, Specific capability</td>
+                </tr>
+                <tr className="bg-muted/5 hover:bg-muted/10 transition-colors">
+                  <td className="p-4 border-b border-border font-semibold">Validity</td>
+                  <td className="p-4 border-b border-border">Exact dates of illness</td>
+                  <td className="p-4 border-b border-border">Usually 6-12 months</td>
+                </tr>
+                <tr className="hover:bg-muted/10 transition-colors">
+                  <td className="p-4 border-b border-border font-semibold">Common Acceptance</td>
+                  <td className="p-4 border-b border-border">Standard HR / Schools</td>
+                  <td className="p-4 border-b border-border">HR / Govt / RTO / DGCA</td>
                 </tr>
               </tbody>
             </table>
@@ -1947,19 +1969,98 @@ function getVariation(seed: string) {
         </section>
 
         <section>
+          <h2 className="text-2xl font-bold text-foreground mb-4 mt-8">5. What Must Each Document Include?</h2>
+          <p className="mb-4">Both documents must legally contain the doctor's name, clinic address, signature, stamp, and Registration Number (NMC/State Medical Council). However, the body content differs significantly.</p>
+          <ul className="list-disc pl-6 space-y-2 mb-6 text-sm">
+            <li><strong>Medical Certificate:</strong> Must state "suffering from [Diagnosis]" and "advised rest from [Date] to [Date]".</li>
+            <li><strong>Fitness Certificate:</strong> Must state "examined on [Date]" and "found physically and mentally fit to resume duties/join [Role]". It often includes recorded vitals like BP and pulse.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-foreground mb-4 mt-8">6. Who Can Issue Each Type?</h2>
+          <p className="mb-4">Any registered MBBS, MD, or recognized AYUSH practitioner can issue a standard sick leave medical certificate within their scope of practice. However, fitness certificates often have stricter rules:</p>
+          <ul className="list-disc pl-6 space-y-2 mb-6 text-sm">
+            <li><strong>Govt Jobs:</strong> Only a Chief Medical Officer (CMO) or government-appointed medical board.</li>
+            <li><strong>Aviation/Marine:</strong> DGCA or specific maritime empanelled doctors.</li>
+            <li><strong>Driving:</strong> Registered MBBS doctors (AYUSH usually cannot issue Form 1A).</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-foreground mb-4 mt-8">7. The Return-to-Work Scenario</h2>
+          <p className="mb-4">
+            Under <InternalLink href="/blog/rules-medical-certificate-leave-india">Indian HR policies</InternalLink> and the Factories Act, returning from an extended medical leave (usually 15-30+ days) requires a two-step documentation process:
+          </p>
+          
+          {/* Return to work visual block */}
+          <div className="flex flex-col md:flex-row items-stretch gap-4 my-6">
+             <div className="flex-1 border border-red-200 bg-red-50 p-5 rounded-xl relative">
+                <div className="absolute top-0 right-0 bg-red-200 text-red-800 text-[10px] font-bold px-2 py-1 rounded-bl-lg">DAY 1</div>
+                <h4 className="font-bold text-red-800 mb-2">Step 1: The Sick Note</h4>
+                <p className="text-sm text-red-900/80">Submitted when you fall ill to inform HR you are incapacitated and require leave.</p>
+             </div>
+             <div className="flex-1 border border-green-200 bg-green-50 p-5 rounded-xl relative">
+                <div className="absolute top-0 right-0 bg-green-200 text-green-800 text-[10px] font-bold px-2 py-1 rounded-bl-lg">DAY 30</div>
+                <h4 className="font-bold text-green-800 mb-2">Step 2: The Fitness Cert</h4>
+                <p className="text-sm text-green-900/80">Submitted on your first day back, proving to the employer that you are legally healthy enough to resume work.</p>
+             </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-foreground mb-4 mt-8">8. Validity and Expiry Differences</h2>
+          <p className="mb-4">
+             A medical certificate doesn't "expire" in the traditional sense; its validity is tied exactly to the dates written on it (e.g., rest from Oct 1 to Oct 5). 
+          </p>
+          <p className="mb-6">
+             A fitness certificate, however, represents a snapshot of health. A pre-employment fitness certificate is usually valid for <strong>6 to 12 months</strong>. If you delay joining beyond that, you must undergo a fresh medical examination.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-2xl font-bold text-foreground mb-4 mt-8">9. Common Mistakes People Make</h2>
+          <ul className="space-y-3 text-sm">
+             <li className="flex items-start gap-2">
+                <XCircle className="w-4 h-4 text-destructive flex-shrink-0 mt-0.5" /> 
+                <span>Submitting a prescription instead of a medical certificate for leave.</span>
+             </li>
+             <li className="flex items-start gap-2">
+                <XCircle className="w-4 h-4 text-destructive flex-shrink-0 mt-0.5" /> 
+                <span>Bringing a sick leave certificate on the first day of joining a new job (HR needs a fitness certificate).</span>
+             </li>
+             <li className="flex items-start gap-2">
+                <XCircle className="w-4 h-4 text-destructive flex-shrink-0 mt-0.5" /> 
+                <span>Assuming a homeopathic doctor can sign a Driving Licence fitness form.</span>
+             </li>
+          </ul>
+        </section>
+
+        {/* Checklist UI Block */}
+        <section className="my-10">
+          <div className="bg-primary text-primary-foreground p-6 md:p-8 rounded-2xl shadow-lg">
+             <h3 className="font-bold text-xl mb-4 flex items-center gap-2"><ShieldCheck className="w-6 h-6" /> Before Submitting Your Certificate, Check This:</h3>
+             <ul className="space-y-3">
+                <li className="flex items-center gap-3 bg-white/10 p-3 rounded-lg"><div className="w-5 h-5 rounded-full border-2 border-white/50 flex-shrink-0"></div> Is the doctor's NMC / State Registration Number visible?</li>
+                <li className="flex items-center gap-3 bg-white/10 p-3 rounded-lg"><div className="w-5 h-5 rounded-full border-2 border-white/50 flex-shrink-0"></div> Does it have an official clinic stamp / seal?</li>
+                <li className="flex items-center gap-3 bg-white/10 p-3 rounded-lg"><div className="w-5 h-5 rounded-full border-2 border-white/50 flex-shrink-0"></div> Are the dates (from and to) clearly written without overwriting?</li>
+                <li className="flex items-center gap-3 bg-white/10 p-3 rounded-lg"><div className="w-5 h-5 rounded-full border-2 border-white/50 flex-shrink-0"></div> Is the doctor's signature present (wet ink or valid digital signature)?</li>
+             </ul>
+          </div>
+        </section>
+
+        <section>
           <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">Frequently Asked Questions</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {[
-              { q: "Can a homeopathic doctor issue a fitness certificate?", a: "Registered AYUSH practitioners can issue fitness certificates for general sports or private school entry, but NOT for specialized legal purposes like a Driving License (Form 1A) or Aviation medicals." },
-              { q: "Is a medical certificate valid for joining a new job?", a: "No. For a new job, HR requires a 'Pre-employment Medical Fitness Certificate' which confirms you are healthy enough for the role, not that you are currently sick." },
-              { q: "Does a fitness certificate have an expiry date?", a: "Yes. Most fitness certificates are valid for 6 months (for sports/travel) or 1 year (for government service). Aviation and defense medicals have their own strict expiry cycles." },
-              { q: "Can the same doctor sign both certificates?", a: "Absolutely. Your family physician can sign your sick note on Day 1 and your fitness-to-resume note on Day 10 once you recover." },
-              { q: "What should I do if HR rejects my medical certificate?", a: "Check if you have submitted a 'Fitness Certificate' by mistake when you actually needed a 'Sick Leave Certificate.' Ensure the doctor's registration number is visible." },
-              { q: "What is a 'Fit-to-Fly' certificate?", a: "It is a specialized fitness certificate required by airlines for pregnant passengers or those with chronic respiratory issues to ensure cabin pressure won't affect their health." },
-              { q: "Is a vision test mandatory for a fitness certificate?", a: "Only if the certificate is for driving, aviation, or high-precision industrial work. For general office joining, it is usually not mandatory." },
-              { q: "Can I get a fitness certificate online?", a: "Yes, for general purposes, you can use telemedicine. However, specialized fitness (Defense/Aviation) requires an in-person physical assessment." },
-              { q: "What is a second medical opinion?", a: "If HR doubts your fitness certificate, they can legally ask you to be examined by their own company-panel doctor for a second opinion." },
-              { q: "Can I use a generator for fitness certificates?", a: "For developer mockups or UI design, yes. Use our <InternalLink href='/generator/fitness-cert'>Fitness Template</InternalLink>. But never use it for official legal submissions." }
+              { q: "Can one certificate be used as both?", a: "Yes. A doctor can issue a 'Medical and Fitness Certificate' combining both, stating you were ill from Date A to Date B, and are now fit to resume work from Date C." },
+              { q: "Does a fitness certificate expire?", a: "Yes. Most pre-employment or general fitness certificates are valid for 6 to 12 months. Aviation and defense medicals have strict cyclical expiry dates." },
+              { q: "Is a fitness certificate required for every new job?", a: "Not every private job requires it. However, it is mandatory for government jobs, public sector undertakings, and hazardous industries (factories, mining)." },
+              { q: "Can the same doctor issue both?", a: "Absolutely. Your treating physician who issued the sick note on Day 1 can issue the fitness certificate on Day 10 once you recover." },
+              { q: "What is the difference in leave vs joining cases?", a: "For leave, you submit a medical certificate (proving unfitness). For joining a new company, you submit a fitness certificate (proving health capability)." },
+              { q: "Can a homeopathic doctor issue a fitness certificate?", a: "Registered AYUSH practitioners can issue fitness certificates for general sports or private school entry, but NOT for specialized legal purposes like a Driving License (Form 1A)." },
+              { q: "Is an online medical certificate valid?", a: "Yes, under the <InternalLink href='/blog/is-online-medical-certificate-valid-india'>Telemedicine Guidelines 2020</InternalLink>, certificates issued after an online video consultation are legally valid." },
+              { q: "What if HR rejects my medical certificate?", a: "Verify if you submitted the correct document type. A prescription is not a medical certificate. Ensure the NMC registration number and clinic stamp are clearly visible." }
             ].map((faq, idx) => (
               <div key={idx} className="bg-card border border-border rounded-xl p-5 hover:bg-muted/30 transition-all">
                 <h3 className="font-bold text-sm mb-2 text-foreground flex items-start gap-2">
@@ -1971,10 +2072,23 @@ function getVariation(seed: string) {
           </div>
         </section>
 
-        <section className="bg-primary/5 border border-primary/20 rounded-2xl p-6 mt-12">
-          <h2 className="text-lg font-bold text-primary mb-3">Resource for Developers & Product Managers</h2>
-          <p className="text-sm leading-relaxed mb-4">
-            Designing a healthcare management system or an HR portal? It is critical to differentiate between <strong>Excusatory Documents</strong> (Sick Leave) and <strong>Enabling Documents</strong> (Fitness). Ensure your database schema accounts for the 'Valid Until' date for fitness certificates, which is not applicable to sick notes. Use our <InternalLink href="/generator" className="text-primary font-bold hover:underline underline-offset-4">Interactive UI Generator</InternalLink> to export high-fidelity PDF mockups for both workflows.
+        {/* References Section */}
+        <section className="bg-muted/30 border border-border rounded-2xl p-6 mt-12">
+          <h2 className="text-lg font-bold text-foreground mb-3 flex items-center gap-2">
+            <BookOpen className="w-5 h-5 text-primary" /> Authoritative Sources & References
+          </h2>
+          <ul className="list-disc pl-5 space-y-2 text-sm text-muted-foreground">
+             <li><a href="https://www.nmc.org.in/" target="_blank" rel="nofollow noopener noreferrer" className="hover:text-primary transition-colors">National Medical Commission (NMC) - Practitioner Guidelines</a></li>
+             <li><a href="https://labour.gov.in/policies/factories-act-1948" target="_blank" rel="nofollow noopener noreferrer" className="hover:text-primary transition-colors">Ministry of Labour & Employment - The Factories Act, 1948 (Fitness to Work)</a></li>
+             <li><a href="https://parivahan.gov.in/" target="_blank" rel="nofollow noopener noreferrer" className="hover:text-primary transition-colors">Parivahan Sewa - Form 1A Medical Fitness Certificate Rules</a></li>
+          </ul>
+        </section>
+
+        {/* Disclaimer */}
+        <section className="bg-destructive/5 border border-destructive/20 rounded-xl p-5 mt-8">
+          <p className="text-xs text-foreground/80 leading-relaxed flex items-start gap-2">
+             <ShieldAlert className="w-4 h-4 text-destructive flex-shrink-0 mt-0.5" />
+             <span><strong>Disclaimer:</strong> This content is for informational purposes only and not legal or medical advice. Employer policies and institutional laws vary. Obtaining or presenting a fraudulent medical document is a punishable offence under the Bharatiya Nyaya Sanhita (BNS). If you are building a healthcare app, use our <InternalLink href="/generator" className="text-primary underline">UI generator</InternalLink> strictly for testing placeholder data.</span>
           </p>
         </section>
       </div>

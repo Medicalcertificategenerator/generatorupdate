@@ -658,7 +658,35 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── AUTHORITATIVE REFERENCES (E-E-A-T) ───────────────────── */}
+      <section className="px-4 py-20 bg-muted/30 border-y border-border">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <Shield className="w-5 h-5 text-primary" />
+            <h2 className="text-xl font-bold uppercase tracking-widest text-foreground/70">Authoritative Medical Resources</h2>
+          </div>
+          <p className="text-sm text-muted-foreground mb-10 max-w-2xl mx-auto">
+            Our content and templates are designed in alignment with guidelines provided by leading healthcare authorities in India and globally. For official medical standards, always refer to these primary sources:
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <a href="https://www.nmc.org.in/" target="_blank" rel="nofollow noopener noreferrer" className="p-4 bg-background border border-border rounded-xl hover:shadow-md transition-shadow group">
+              <p className="font-bold text-sm mb-1 group-hover:text-primary transition-colors">National Medical Commission</p>
+              <p className="text-[10px] text-muted-foreground">Official standards for Indian Medical Practitioners (NMC)</p>
+            </a>
+            <a href="https://www.mohfw.gov.in/" target="_blank" rel="nofollow noopener noreferrer" className="p-4 bg-background border border-border rounded-xl hover:shadow-md transition-shadow group">
+              <p className="font-bold text-sm mb-1 group-hover:text-primary transition-colors">Ministry of Health (MoHFW)</p>
+              <p className="text-[10px] text-muted-foreground">Central health regulations and Telemedicine guidelines India</p>
+            </a>
+            <a href="https://www.who.int/" target="_blank" rel="nofollow noopener noreferrer" className="p-4 bg-background border border-border rounded-xl hover:shadow-md transition-shadow group">
+              <p className="font-bold text-sm mb-1 group-hover:text-primary transition-colors">World Health Organization</p>
+              <p className="text-[10px] text-muted-foreground">Global public health standards and certification norms</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* ── COMPREHENSIVE FAQs ───────────────────────────────── */}
+
       <section className="px-4 py-20 bg-muted/30">
         <div className="max-w-3xl mx-auto space-y-8">
           <div className="text-center mb-10">
