@@ -54,3 +54,7 @@ artifacts/medical-cert-gen/.next/
 /junk
 *.log
 .replit*
+
+# Dev-time working folders — never commit
+attached_assets/
+scratch/
