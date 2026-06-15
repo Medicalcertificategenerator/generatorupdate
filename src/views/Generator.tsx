@@ -40,6 +40,7 @@ const CertificatePreview = dynamic(
   }
 );
 import { TEMPLATES } from "@/types/certificate";
+import { AdSlot } from "@/components/ads/AdSlot";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -202,10 +203,13 @@ export default function Generator() {
     <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
 
-      <main className="flex-1 flex flex-col md:flex-row overflow-hidden h-[calc(100vh-64px)]">
+      <main className="flex-1 flex flex-col overflow-hidden h-[calc(100vh-64px)]">
+        {/* ── AD UNIT 7 — Above the heading / tool ── */}
+        <AdSlot adClient="ca-pub-6410539899255473" adSlot="5661760482" className="my-4 md:my-6 max-w-3xl mx-auto px-4 w-full shrink-0" />
 
-        {/* ── LEFT PANEL – CONTROLS ──────────────────────────── */}
-        <div className="w-full md:w-[450px] lg:w-[500px] border-r border-border bg-card flex flex-col z-10 shadow-xl shadow-black/5 shrink-0">
+        <div className="flex-1 flex flex-col md:flex-row overflow-hidden">
+          {/* ── LEFT PANEL – CONTROLS ──────────────────────────── */}
+          <div className="w-full md:w-[450px] lg:w-[500px] border-r border-border bg-card flex flex-col z-10 shadow-xl shadow-black/5 shrink-0">
           <div className="p-4 border-b border-border flex items-center justify-between bg-muted/30">
             <div className="flex items-center gap-2">
               <Link href="/">
@@ -442,6 +446,9 @@ export default function Generator() {
             </m.div>
           </div>
 
+          {/* ── AD UNIT 8 — After the result/preview ── */}
+          <AdSlot adClient="ca-pub-6410539899255473" adSlot="3187935539" className="max-w-[680px] mx-auto mt-8 mb-4 px-4" />
+
           {/* Related Templates */}
           <div className="px-4 md:px-8 lg:px-12 pb-12">
             <div className="max-w-[800px] mx-auto">
@@ -520,7 +527,7 @@ export default function Generator() {
           )}
 
         </div>
-
+        </div>
       </main>
     </div>
   );

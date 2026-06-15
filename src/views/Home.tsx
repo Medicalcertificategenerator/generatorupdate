@@ -532,6 +532,9 @@ export default function Home() {
         </m.div>
       </section>
 
+      {/* ── AD UNIT 7 — Above the tool/heading ── */}
+      <AdSlot adClient="ca-pub-6410539899255473" adSlot="5661760482" className="my-4 md:my-6" />
+
       {/* ── 2. INTERACTIVE GENERATOR ────────────────────────────── */}
       <section className="px-4 pb-16">
         <HomeCertGenerator />
