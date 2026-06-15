@@ -36,20 +36,50 @@ export function AdSlot({
   }, []);
 
   return (
-    <div className={`ad-slot my-6 md:my-10 flex flex-col items-center ${className}`}>
-      <span className="text-[10px] uppercase tracking-wider text-muted-foreground/50 mb-1">
-        Advertisement
-      </span>
-      <ins
-        ref={insRef}
-        className="adsbygoogle"
-        style={{ display: "block", width: "100%" }}
-        data-ad-client={adClient}
-        data-ad-format={layout ? "fluid" : format}
-        data-ad-layout={layout}
-        data-full-width-responsive={fullWidthResponsive ? "true" : "false"}
-        data-ad-slot={adSlot}
-      />
+    /* Outer wrapper: full width, vertically spaced */
+    <div className={`ad-slot-wrapper w-full my-6 md:my-10 ${className}`}>
+      {/* Inner container: centred, max-width matches site content column */}
+      <div
+        style={{
+          width: "100%",
+          maxWidth: "900px",
+          margin: "0 auto",
+          textAlign: "center",
+        }}
+      >
+        {/* Label */}
+        <span
+          style={{
+            display: "block",
+            fontSize: "10px",
+            textTransform: "uppercase",
+            letterSpacing: "0.08em",
+            opacity: 0.45,
+            marginBottom: "4px",
+            textAlign: "center",
+          }}
+        >
+          Advertisement
+        </span>
+
+        {/* AdSense unit — display:block + text-align:center is the canonical
+            AdSense recommendation for responsive centred ads */}
+        <ins
+          ref={insRef}
+          className="adsbygoogle"
+          style={{
+            display: "block",
+            textAlign: "center",
+            width: "100%",
+            minWidth: 0,
+          }}
+          data-ad-client={adClient}
+          data-ad-format={layout ? "fluid" : format}
+          data-ad-layout={layout}
+          data-full-width-responsive={fullWidthResponsive ? "true" : "false"}
+          data-ad-slot={adSlot}
+        />
+      </div>
     </div>
   );
 }
