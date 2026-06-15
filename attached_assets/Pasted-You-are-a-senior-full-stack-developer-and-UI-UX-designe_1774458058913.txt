@@ -1,0 +1,278 @@
+You are a senior full-stack developer and UI/UX designer.
+
+Build a complete production-ready website named:
+
+👉 **medicalcertificategenerator.in**
+
+Tech Stack:
+
+* Next.js (App Router)
+* TypeScript
+* Tailwind CSS
+* Modern UI/UX (SaaS-level quality)
+
+---
+
+# 🎯 PROJECT GOAL
+
+Create a **premium Medical Certificate Generator web app** where users can:
+
+1. Choose from **ready-made realistic templates**
+2. Fill details in a form
+3. See **live certificate preview**
+4. Edit/customize
+5. Download certificate as image
+
+The output must look **realistic like handwritten doctor certificates**, not like a basic form.
+
+---
+
+# 🏠 HOMEPAGE
+
+## Sections:
+
+### 1. HERO SECTION
+
+* Title: "Medical Certificate Generator"
+* Subtitle: "Create realistic medical certificates in seconds"
+* CTA Button: "Create Now"
+* Background: soft gradient / medical theme
+
+---
+
+### 2. READY-MADE TEMPLATES SECTION
+
+Title:
+👉 "Ready-Made Medical Certificate Templates"
+
+## UI:
+
+* Grid layout:
+
+  * 3 columns (desktop)
+  * 2 (tablet)
+  * 1 (mobile)
+
+## Each Card:
+
+* Certificate preview image
+* Rounded corners + shadow
+* Hover animation (scale + shadow)
+* Button: "Use Template"
+
+## On Click:
+
+Navigate to:
+👉 `/generator/[templateId]`
+
+---
+
+### 3. FEATURES SECTION
+
+Show:
+
+* Realistic handwritten output
+* One-click download
+* Editable templates
+* Multiple styles
+
+---
+
+### 4. DISCLAIMER SECTION
+
+Add clear disclaimer:
+
+* Not legally valid
+* For demo/educational use only
+
+---
+
+# 🧩 TEMPLATE SYSTEM
+
+Create a JSON-based template system:
+
+Each template includes:
+
+* id
+* name
+* previewImage
+* backgroundImage
+* textPositions (x, y coordinates)
+* fontStyle
+* layoutType
+
+---
+
+# 🧾 GENERATOR PAGE
+
+Route:
+👉 `/generator/[id]`
+
+---
+
+## LAYOUT:
+
+Split screen:
+
+LEFT → Form
+RIGHT → Live Preview
+
+---
+
+## 📝 FORM INPUTS:
+
+* Date (date picker)
+* Patient Name
+* Age
+* Gender (dropdown)
+* Diagnosis / Prescription (textarea)
+* Additional Notes
+* Rest Days
+* Doctor Name
+* Hospital Name
+
+---
+
+## 🎨 CUSTOMIZATION:
+
+* Handwriting font selector (3–4 fonts)
+* Ink color:
+
+  * Blue
+  * Black
+  * Light blue
+* Text size adjust
+* Toggle:
+
+  * Watermark ON/OFF
+  * Signature style
+
+---
+
+## 👁️ LIVE PREVIEW:
+
+* Show actual certificate background image
+* Overlay text using absolute positioning
+* Make it look REAL:
+
+### Realism Enhancements:
+
+* Slight rotation (-1deg to +1deg)
+* Imperfect alignment
+* Slight vertical offsets
+* Handwritten font
+* Line spacing variations
+
+---
+
+## 📄 OUTPUT LOOK:
+
+Must feel like:
+
+* Scanned paper
+* Natural writing
+* Not perfectly aligned
+* Slight tilt
+
+---
+
+## 🔘 ACTION BUTTONS:
+
+* Download Certificate
+* Edit Again
+* Reset Form
+
+---
+
+## 📥 DOWNLOAD SYSTEM:
+
+* Convert preview div → image
+* Use:
+  👉 html-to-image or dom-to-image
+* Export high quality PNG
+
+---
+
+## 🔐 WATERMARK LOGIC:
+
+* Show watermark on preview
+* Remove watermark on download
+
+---
+
+# 🧠 UX REQUIREMENTS:
+
+* Prefill demo data
+* Smooth transitions
+* Loading skeletons
+* Mobile responsive
+* Clean typography
+* Premium spacing
+
+---
+
+# 🧱 COMPONENT STRUCTURE:
+
+/components
+
+* Navbar.tsx
+* Hero.tsx
+* TemplateGrid.tsx
+* TemplateCard.tsx
+* GeneratorForm.tsx
+* CertificatePreview.tsx
+* Toolbar.tsx
+
+---
+
+# 🎨 DESIGN STYLE:
+
+* Minimal + modern SaaS
+* Soft shadows
+* Rounded cards
+* Clean layout
+* No clutter
+
+---
+
+# 🧪 EXTRA REALISM:
+
+* Add slight noise/grain overlay
+* Simulate pen pressure using font-weight variation
+* Random tiny misalignment for each line
+
+---
+
+# 📦 OUTPUT REQUIREMENTS:
+
+Provide:
+
+1. Full Next.js project structure
+2. All components code
+3. Tailwind styling
+4. Template JSON examples
+5. Download logic
+6. State management (useState or Zustand)
+7. Clean reusable architecture
+
+---
+
+# ❌ DO NOT:
+
+* Use basic/plain UI
+* Make it look like a school project
+* Ignore responsiveness
+* Use perfectly aligned text (must look natural)
+
+---
+
+# 🧠 THINK LIKE:
+
+You are building a real product like:
+👉 Canva + Document Generator SaaS
+
+---
+
+# FINAL GOAL:
+
+A clean, realistic, professional medical certificate generator that looks and feels real and modern.

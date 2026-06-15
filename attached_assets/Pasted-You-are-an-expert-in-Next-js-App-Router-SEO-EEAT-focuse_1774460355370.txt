@@ -1,0 +1,326 @@
+You are an expert in:
+
+* Next.js (App Router)
+* SEO (EEAT focused)
+* Conversion-focused UI/UX
+* Content strategy for ranking websites
+*medical background
+
+You are upgrading a complete website:
+
+👉 medicalcertificategenerator.in
+
+This is NOT just a tool — it must be a **high-quality, SEO-optimized authority website**.
+
+---
+Add : good but handwriting is not realistics, it noot looks like a doctor handwritting.  And try to Enhance realism. Make output indistinguishable from a real scanned certificate.
+# 🎯 MAIN GOAL
+
+1. Build a **premium homepage**
+2. Add **high-value SEO sections**
+3. Create **all important pages**
+4. Ensure **EEAT compliance**
+5. Avoid thin content
+6. Make site look trustworthy & rankable
+
+---
+
+# 🏠 HOMEPAGE STRUCTURE (VERY IMPORTANT)
+
+Design must be modern, clean, SaaS-level.
+
+---
+
+## 1. HERO SECTION
+
+Modify title:
+
+👉 "AI Medical Certificate Generator – Create Realistic Certificates in Seconds"
+
+Subtext:
+
+* Generate handwritten-style certificates instantly
+* Easy, fast, and customizable
+
+CTA:
+👉 "Create Certificate Now"
+
+---
+
+## 2. READY-MADE TEMPLATES
+
+(Already defined earlier — keep same but improve UI)
+
+---
+
+## 3. TRUST / SOCIAL PROOF SECTION
+
+Title:
+👉 "Trusted by Thousands of Users"
+
+Add:
+
+* Customer testimonials (3–6 cards)
+* Name + short feedback
+* Star rating UI
+
+---
+
+## 4. BENEFITS SECTION
+
+Title (improve wording):
+👉 "Why Use Our Medical Certificate Generator?"
+
+Include:
+
+* Saves time
+* Easy to use
+* Realistic output
+* No design skills needed
+
+---
+
+## 5. HOW IT WORKS
+
+Title:
+👉 "How Our Medical Certificate Generator Works"
+
+Steps (icons + UI cards):
+
+1. Choose template
+2. Enter details
+3. Preview certificate
+4. Download instantly
+
+---
+
+## 6. FEATURES SECTION
+
+Title (improved):
+👉 "Powerful Features of Our Medical Certificate Generator"
+
+Include:
+
+* Handwritten-style output
+* Multiple templates
+* Live preview
+* One-click download
+* Customization options
+
+---
+
+## 7. AI SECTION
+
+Title:
+👉 "Generate Medical Certificates in Seconds with AI"
+
+Explain:
+
+* Smart generation
+* Realistic formatting
+* Automated layout
+
+---
+
+## 8. RESPONSIBLE USE POLICY
+
+Title:
+👉 "Responsible Use of This Tool"
+
+Content:
+
+* Educational/demo purpose
+* Not legally valid
+* No misuse allowed
+
+---
+
+## 9. ADDITIONAL VALUE SECTION
+
+Title:
+👉 "Why Choose Our Tool Over Others?"
+
+Add:
+
+* Simplicity
+* Speed
+* Realism
+* Free access
+
+---
+
+## 10. CONCLUSION SECTION
+
+Title:
+👉 "Create Your Medical Certificate Instantly"
+
+CTA button again
+
+---
+
+# 🧾 FOOTER (IMPORTANT)
+
+Add:
+
+Text:
+👉 "Hello, my name is Ziven Borceg. Welcome to my website medicalcertificategenerator.in. Our Medical Certificate Generator is an online platform where you can generate a handwritten medical certificate with just one click."
+
+---
+
+## Footer Links:
+
+* Privacy Policy
+* Terms and Conditions
+* Disclaimer
+* DMCA
+* Contact Us
+* About Us
+* Author Page
+* Shipping / Delivery
+* Blog
+
+---
+
+# 📄 IMPORTANT PAGES (CREATE ALL)
+
+Each page must be:
+
+* SEO optimized
+* 800–1500 words minimum
+* Structured with headings (H1, H2, H3)
+* No thin content
+* Add internal linking
+
+---
+
+## 1. ABOUT US
+
+* Who created the tool
+* Mission
+* Transparency
+
+---
+
+## 2. CONTACT US
+
+* Form
+* Email
+* Support info
+
+---
+
+## 3. PRIVACY POLICY
+
+* Data usage
+* Cookies
+* User privacy
+
+---
+
+## 4. TERMS & CONDITIONS
+
+* Usage rules
+* Restrictions
+
+---
+
+## 5. DISCLAIMER
+
+* Not legal
+* Not medical advice
+
+---
+
+## 6. DMCA
+
+* Copyright policy
+* Reporting method
+
+---
+
+## 7. AUTHOR PAGE
+
+* About Ziven Borceg
+* Expertise
+* Authority signals
+
+---
+
+## 8. SHIPPING / DELIVERY
+
+(clarify digital product only)
+
+---
+
+## 9. BLOG SYSTEM
+
+Create blog section:
+
+* SEO articles
+* Categories:
+
+  * Medical certificates
+  * Sick leave guides
+  * Workplace documentation
+
+---
+
+# ✍️ CONTENT REQUIREMENTS (EEAT)
+
+Every page must include:
+
+## E-E-A-T:
+
+* Experience → real use explanation
+* Expertise → detailed info
+* Authoritativeness → strong tone
+* Trust → disclaimers + clarity
+
+---
+
+## SEO RULES:
+
+* Use keywords naturally
+* Avoid keyword stuffing
+* Add internal linking
+* Add FAQ sections
+* Use schema-ready structure
+
+---
+
+## AVOID:
+
+* Thin content
+* Generic text
+* AI-like boring writing
+
+---
+
+# 🎨 DESIGN RULES
+
+* Modern SaaS UI
+* Clean typography
+* Good spacing
+* Mobile responsive
+* Section separation
+
+---
+
+# 📦 OUTPUT
+
+Provide:
+
+1. Full homepage components
+2. All page content (SEO optimized)
+3. Footer implementation
+4. Blog structure
+5. Clean UI code (Next.js + Tailwind)
+
+---
+
+# FINAL NOTE
+
+This website must look like a **real, trustworthy, SEO-optimized product**, not just a simple tool.
+
+Think like:
+👉 Startup + SaaS + Content Authority Website

@@ -1,0 +1,267 @@
+You are a senior SEO content strategist, Next.js developer, and EEAT optimization expert.
+
+Work on the website:
+👉 medicalcertificategenerator.in
+
+Your task is to improve **content quality, SEO structure, internal linking, editorial transparency, and brand storytelling** across the website.
+
+---
+
+# 🧠 PART 1 — CONTENT DEPTH IMPROVEMENT (ALL BLOG ARTICLES)
+
+## TASK:
+
+For EVERY blog article, ensure:
+
+### ✅ CONTENT QUALITY:
+
+* Minimum **1000–1500 words**
+* No fluff or repetition
+* Clear, real-world explanations
+* Practical and helpful information
+
+---
+
+## 📌 STRUCTURE:
+
+Each article must include:
+
+* Strong H1 (keyword optimized)
+* Introduction (problem + solution)
+* Detailed sections (H2, H3)
+* Step-by-step explanations (where applicable)
+* Use cases
+* Mistakes to avoid (optional but recommended)
+
+---
+
+## ❓ FAQ SECTION (MANDATORY):
+
+* Add **4–6 FAQs per article**
+* Questions must be relevant and helpful
+* Answers should be clear and concise
+
+---
+
+# 🔗 PART 2 — INTERNAL & EXTERNAL LINKING
+
+## INTERNAL LINKS:
+
+Each article must include:
+
+* **3–5 internal links**
+* Link to:
+
+  * Generator pages
+  * Related blog articles
+* Use **optimized anchor text** (not generic like “click here”)
+---
+#  IMAGE OPTIMIZATION (VERY IMPORTANT)
+
+## TASK:
+
+For every blog article:
+
+### ADD:
+
+* 2–3 relevant images
+
+---
+
+## IMAGE TYPES:
+
+* Medical certificate samples
+* Format examples
+* Medical/doctor-related visuals
+
+---
+
+## SEO OPTIMIZATION:
+
+For each image:
+
+* Use descriptive file name
+  Example:
+  👉 medical-certificate-format-example.png
+
+* Add ALT text
+  Example:
+  👉 "medical certificate for leave sample format"
+---
+
+## EXTERNAL LINKS:
+
+Each article must include:
+
+* **1–3 high-authority sources**
+* Examples:
+
+  * Health-related informational websites
+  * General knowledge references
+
+---
+
+# 🔍 PART 3 — SEARCH INTENT OPTIMIZATION
+
+## TASK:
+
+Improve content to match user intent:
+
+* Informational → explain clearly
+* Navigational → guide users
+* Transactional → add CTA
+
+---
+
+## ADD CTA:
+
+👉 "Generate Medical Certificate Now"
+
+Place:
+
+* Mid content
+* End of article
+---
+
+## PERFORMANCE:
+
+* Use Next.js Image component
+* Optimize size
+* Lazy load images
+
+---
+
+# 🧾 PART 5 — EDITORIAL GUIDELINES PAGE
+
+## CREATE NEW PAGE:
+
+👉 `/editorial-guidelines`
+
+Add link in FOOTER.
+
+---
+
+## CONTENT MUST INCLUDE:
+
+### 1. How Content is Verified
+
+* Explain review process
+* Content is based on research and structured knowledge
+
+---
+
+### 2. Sources We Use
+
+* General informational sources
+* Publicly available references
+
+---
+
+### 3. Content Updates
+
+* Regular updates
+* Keeping information accurate and relevant
+
+---
+
+### 4. Responsible Content Policy
+
+* Educational purpose only
+* No misleading or harmful intent
+
+---
+
+
+# 🧑‍💼 PART 6 — ABOUT PAGE ENHANCEMENT
+
+Update About page with new sections:
+
+---
+
+## SECTION 1:
+
+### "How Did This Idea Come to Me?"
+
+Rewrite professionally:
+
+* The idea came during a casual conversation among friends
+* While traveling to Manali, one friend received a work-related call
+* During a light-hearted discussion, the idea of creating a medical certificate generator came up
+* What started as a joke turned into a real project
+
+---
+
+## SECTION 2:
+
+### "What Makes This Platform Unique?"
+
+Include:
+
+* Simple and user-friendly tool
+* Realistic certificate format
+* Focus on educational/demo use
+* Built with user needs in mind
+
+---
+
+## TONE:
+
+* Personal but professional
+* Trust-building
+* Authentic storytelling
+
+---
+
+# 🧱 PART 7 — EEAT OPTIMIZATION
+
+Ensure across all pages:
+
+## Experience:
+
+* Real explanations
+* Practical scenarios
+
+## Expertise:
+
+* Structured information
+
+## Authoritativeness:
+
+* Confident tone
+
+## Trust:
+
+* Disclaimer
+* Transparency
+* Editorial page
+
+---
+
+# ⚡ FINAL OUTPUT REQUIREMENTS:
+
+Provide:
+
+1. Updated blog article structure
+2. Internal + external linking examples
+3. Image implementation
+4. Editorial Guidelines page content
+5. Updated About page sections
+6. SEO improvements
+
+---
+
+# ❌ AVOID:
+
+* Thin content
+* Keyword stuffing
+* Generic AI writing
+* Missing images or links
+
+---
+
+# 🎯 FINAL GOAL:
+
+Transform the website into:
+
+👉 A high-quality, trustworthy, SEO-optimized authority website
+with strong content depth, transparency, and user value.
