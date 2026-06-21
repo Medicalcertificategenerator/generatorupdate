@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "next dev -H 0.0.0.0 -p ${PORT:-3000}",
-    "build": "next build",
+    "build": "opennextjs-cloudflare build",
+    "next-build": "next build",
     "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
     "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
     "typecheck": "tsc -p tsconfig.json --noEmit",
