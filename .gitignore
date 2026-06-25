@@ -48,7 +48,6 @@ Thumbs.db
 .cache/
 .local/
 .next/
-.open-next/
 artifacts/medical-cert-gen/.next/
 
 # Required excludes
@@ -59,3 +58,11 @@ artifacts/medical-cert-gen/.next/
 # Dev-time working folders — never commit
 attached_assets/
 scratch/
+
+# OpenNext
+.open-next
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
