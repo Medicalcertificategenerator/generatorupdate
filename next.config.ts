@@ -12,6 +12,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  output: "standalone",
   ...(replitDomain
     ? {
         allowedDevOrigins: [replitDomain, `*.${replitDomain}`],
