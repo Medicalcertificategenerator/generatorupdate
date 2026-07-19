@@ -7,7 +7,6 @@ import { Footer } from "@/components/layout/Footer";
 import { Badge } from "@/components/ui/badge";
 import { RefreshCw, Clock, ArrowLeft, ArrowRight, User, CheckCircle, Stethoscope } from "lucide-react";
 import { BLOG_POSTS } from "@/data/blogPosts";
-import { AdSlot } from "@/components/ads/AdSlot";
 
 export default function BlogPost() {
   const params = useParams<{ slug: string }>();
@@ -103,12 +102,6 @@ export default function BlogPost() {
 
         {/* Article body */}
         <article className="max-w-3xl mx-auto px-4 py-12">
-          {/* AD UNIT 5 — In-article (top of every blog post body) */}
-          <AdSlot
-            adClient="ca-pub-6410539899255473"
-            adSlot="4528978928"
-            layout="in-article"
-          />
           {post.content}
 
           {/* Mid / End CTA — appears automatically in every article */}
@@ -192,12 +185,6 @@ export default function BlogPost() {
         <div className="bg-muted/30 border-t border-border">
           <div className="max-w-3xl mx-auto px-4 py-12">
             <h2 className="text-xl font-bold mb-6">More from the Blog</h2>
-            {/* AD UNIT 6 — Multiplex (recirculation, before related posts grid) */}
-            <AdSlot
-              adClient="ca-pub-6410539899255473"
-              adSlot="3610251563"
-              layout="autorelaxed"
-            />
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {BLOG_POSTS.filter(p => p.slug !== slug).slice(0, 4).map(p => (
                 <Link key={p.slug} href={`/blog/${p.slug}`}>

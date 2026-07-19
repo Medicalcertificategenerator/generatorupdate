@@ -18,7 +18,6 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { TEMPLATES } from "@/types/certificate";
 import type { LandingPageConfig } from "@/data/landingPages";
-import { AdSlot } from "@/components/ads/AdSlot";
 
 // Source badge colour mapping
 const SOURCE_COLORS: Record<string, string> = {
@@ -76,13 +75,6 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
                     ))}
                   </div>
                 </div>
-                {idx === 1 && (
-                  <AdSlot
-                    adClient="ca-pub-6410539899255473"
-                    adSlot="3446955839"
-                    layout="in-article"
-                  />
-                )}
               </React.Fragment>
             ))}
           </div>
@@ -190,12 +182,6 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
           </div>
         </section>
 
-        {/* AD UNIT 3 — In-article (after FAQ section) */}
-        <AdSlot
-          adClient="ca-pub-6410539899255473"
-          adSlot="4413428858"
-          layout="in-article"
-        />
 
         {/* ═══════════════════════════════════════════════════════
             SECTION A: What People Are Asking Online (forumInsights)
@@ -544,12 +530,6 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
           </div>
         </section>
 
-        {/* AD UNIT 6 — Multiplex (after Related Templates section) */}
-        <AdSlot
-          adClient="ca-pub-6410539899255473"
-          adSlot="3610251563"
-          layout="autorelaxed"
-        />
 
         {/* DISCLAIMER */}
         <div className="max-w-5xl mx-auto px-4 pb-12 pt-6">

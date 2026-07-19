@@ -39,7 +39,6 @@ import { TEMPLATES } from "@/types/certificate";
 import { LANDING_PAGES } from "@/data/landingPages";
 import { HomeCertGenerator } from "@/components/home/HomeCertGenerator";
 import { HomeInfoSection } from "@/components/home/HomeInfoSection";
-import { AdSlot } from "@/components/ads/AdSlot";
 
 const testimonials = [
   { name: "Rahul Gupta", role: "UI/UX Designer", text: "I needed placeholder documents for a healthcare app prototype. This generated realistic layouts perfectly—saved me hours of Photoshop work.", stars: 5 },
@@ -532,8 +531,6 @@ export default function Home() {
         </m.div>
       </section>
 
-      {/* ── AD UNIT 7 — Above the tool/heading ── */}
-      <AdSlot adClient="ca-pub-6410539899255473" adSlot="5661760482" className="my-4 md:my-6" />
 
       {/* ── 2. INTERACTIVE GENERATOR ────────────────────────────── */}
       <section className="px-4 pb-16">
@@ -587,8 +584,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── AD UNIT 1 — Display Responsive (after About section) ── */}
-      <AdSlot adClient="ca-pub-6410539899255473" adSlot="9948826561" />
 
       {/* ── 4. TEMPLATES GRID ──────────────────────────────────── */}
       <section id="templates" className="px-4 py-20">
@@ -756,8 +751,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── AD UNIT 2 — Display Responsive (after Who Uses This section) ── */}
-      <AdSlot adClient="ca-pub-6410539899255473" adSlot="2325445857" />
 
       {/* ── 8. DISCLAIMER SECTION ────────────────────────────────── */}
       <section className="px-4 py-16 bg-destructive/5 border-y border-destructive/15">
@@ -850,8 +843,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── AD UNIT 3 — In-article (after FAQ accordion section) ── */}
-      <AdSlot adClient="ca-pub-6410539899255473" adSlot="4413428858" layout="in-article" />
 
       {/* ── 11. FINAL CTA SECTION ───────────────────────────────── */}
       <section className="px-4 py-20 bg-background text-center">
@@ -918,9 +909,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* ── AD UNIT 6 — Multiplex (after Other Certificate Guides section) ── */}
-      <AdSlot adClient="ca-pub-6410539899255473" adSlot="3610251563" layout="autorelaxed" />
 
       {/* ── 13. INFO SECTION & FOOTER ───────────────────────────── */}
       <HomeInfoSection />

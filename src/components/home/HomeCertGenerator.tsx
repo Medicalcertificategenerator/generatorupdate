@@ -23,7 +23,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
-import { AdSlot } from "@/components/ads/AdSlot";
 import {
   Select,
   SelectContent,
@@ -799,8 +798,6 @@ export function HomeCertGenerator() {
         </div>
       </div>
 
-      {/* ── AD UNIT 8 — After the result/preview ── */}
-      <AdSlot adClient="ca-pub-6410539899255473" adSlot="3187935539" className="max-w-[680px] mx-auto mt-8 mb-4" />
 
       {/* ── Certificate History ──────────────────────────────── */}
       <div className="max-w-6xl mx-auto mt-12 bg-teal-50/50 border border-teal-100 rounded-2xl p-6">

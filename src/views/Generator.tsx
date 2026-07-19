@@ -40,7 +40,6 @@ const CertificatePreview = dynamic(
   }
 );
 import { TEMPLATES } from "@/types/certificate";
-import { AdSlot } from "@/components/ads/AdSlot";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -204,8 +203,6 @@ export default function Generator() {
       <Navbar />
 
       <main className="flex-1 flex flex-col overflow-hidden h-[calc(100vh-64px)]">
-        {/* ── AD UNIT 7 — Above the heading / tool ── */}
-        <AdSlot adClient="ca-pub-6410539899255473" adSlot="5661760482" className="my-4 md:my-6 max-w-3xl mx-auto px-4 w-full shrink-0" />
 
         <div className="flex-1 flex flex-col md:flex-row overflow-hidden">
           {/* ── LEFT PANEL – CONTROLS ──────────────────────────── */}
@@ -446,8 +443,6 @@ export default function Generator() {
             </m.div>
           </div>
 
-          {/* ── AD UNIT 8 — After the result/preview ── */}
-          <AdSlot adClient="ca-pub-6410539899255473" adSlot="3187935539" className="max-w-[680px] mx-auto mt-8 mb-4 px-4" />
 
           {/* Related Templates */}
           <div className="px-4 md:px-8 lg:px-12 pb-12">
