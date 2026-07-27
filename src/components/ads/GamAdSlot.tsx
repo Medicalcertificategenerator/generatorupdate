@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export interface GamAdSlotProps {
   /**
@@ -15,7 +15,6 @@ export interface GamAdSlotProps {
   /**
    * Size mapping passed to googletag.defineSlot.
    * Accepts an array of [width, height] pairs or the string "fluid".
-   * Default covers the most common IAB display sizes.
    */
   sizes?: GamSize;
   /** Reserve vertical space before the ad loads to eliminate CLS. */
@@ -32,100 +31,132 @@ export interface GamAdSlotProps {
  */
 type GamSize = ([number, number] | "fluid")[];
 
-// Declare the global googletag namespace so TypeScript is happy.
-// The actual object is injected by the GPT script loaded in layout.tsx.
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   interface Window { googletag: any; }
 }
 
-const DEFAULT_SIZES: GamSize = [
-  [728, 90],
-  [300, 250],
-  [336, 280],
-  [250, 250],
-  "fluid",
-];
-
 export function GamAdSlot({
   divId,
   adUnitPath = "/23289090478/display",
-  sizes = DEFAULT_SIZES,
+  sizes,
   minHeight = 280,
   className = "",
-  showLabel = true,
+  showLabel = false,
 }: GamAdSlotProps) {
-  // Keep a ref to the slot so we can destroy only this slot on unmount.
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const slotRef = useRef<any>(null);
+  const [isEmpty, setIsEmpty] = useState(false);
+  const [isRendered, setIsRendered] = useState(false);
 
   useEffect(() => {
-    // googletag.cmd is a queue — safe to push even before gpt.js has loaded.
+    setIsEmpty(false);
+    setIsRendered(false);
+
     window.googletag = window.googletag || { cmd: [] };
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let renderListener: any = null;
 
     window.googletag.cmd.push(() => {
       try {
-        // defineSlot returns null if the div doesn't exist in the DOM yet or
-        // if a slot with this ID has already been defined (navigation race).
-        // Guard both cases.
-        const slot = window.googletag.defineSlot(adUnitPath, sizes, divId);
+        const gt = window.googletag;
+        if (!gt || !gt.defineSlot) return;
+
+        // Responsive size mapping:
+        // Desktop (>= 1024px): 728x90, 970x90, 300x250, 336x280, fluid
+        // Tablet (>= 768px): 728x90, 300x250, 336x280, fluid
+        // Mobile (< 768px): 300x250, 320x100, 320x50, 336x280, fluid (No 728x90, 970x90, 1024x768 on mobile)
+        const mapping = gt.sizeMapping()
+          .addSize([1024, 0], [[728, 90], [970, 90], [300, 250], [336, 280], "fluid"])
+          .addSize([768, 0], [[728, 90], [300, 250], [336, 280], "fluid"])
+          .addSize([0, 0], [[300, 250], [320, 100], [320, 50], [336, 280], "fluid"])
+          .build();
+
+        const slotSizes = sizes || [
+          [728, 90],
+          [970, 90],
+          [300, 250],
+          [336, 280],
+          [320, 100],
+          [320, 50],
+          "fluid",
+        ];
+
+        const slot = gt.defineSlot(adUnitPath, slotSizes, divId);
         if (!slot) return;
 
-        slot.addService(window.googletag.pubads());
+        slot.defineSizeMapping(mapping);
+        slot.setCollapseEmptyDiv(true, true);
+        slot.addService(gt.pubads());
         slotRef.current = slot;
 
-        // display() tells GPT to fetch and render this specific slot.
-        // enableServices() is called once globally in the layout init script;
-        // calling it again here is a no-op after the first call, but we still
-        // guard it so isolated testing doesn't break.
-        window.googletag.display(divId);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        renderListener = (event: any) => {
+          if (event.slot === slot) {
+            setIsRendered(true);
+            if (event.isEmpty) {
+              setIsEmpty(true);
+            } else {
+              setIsEmpty(false);
+            }
+          }
+        };
+
+        gt.pubads().addEventListener("slotRenderEnded", renderListener);
+
+        // Display element
+        gt.display(divId);
+
+        // Force GAM refresh to ensure dynamic React slot fetches creative
+        gt.pubads().refresh([slot]);
       } catch (err) {
         console.warn("[GamAdSlot] defineSlot error for", divId, err);
       }
     });
 
     return () => {
-      // Destroy only this slot so other slots on the page are unaffected.
       window.googletag?.cmd?.push(() => {
         try {
-          if (slotRef.current) {
-            window.googletag.destroySlots([slotRef.current]);
+          const gt = window.googletag;
+          if (renderListener && gt?.pubads) {
+            gt.pubads().removeEventListener("slotRenderEnded", renderListener);
+          }
+          if (slotRef.current && gt?.destroySlots) {
+            gt.destroySlots([slotRef.current]);
             slotRef.current = null;
           }
         } catch {
-          // Ignore cleanup errors (e.g. GPT already unloaded).
+          // Ignore cleanup errors
         }
       });
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [divId, adUnitPath]); // sizes intentionally omitted – arrays are new refs every render
+  }, [divId, adUnitPath]);
+
+  if (isEmpty) {
+    return null;
+  }
 
   return (
     <div
-      className={`my-8 flex flex-col items-center justify-center w-full overflow-hidden ${className}`}
-      style={{ minHeight }}
+      className={`my-8 flex flex-col items-center justify-center w-full overflow-hidden transition-all duration-300 ${className}`}
+      style={{ minHeight: isRendered ? undefined : minHeight }}
     >
       {showLabel && (
         <span className="text-[10px] uppercase tracking-widest text-muted-foreground/40 mb-1 font-mono select-none">
           Advertisement
         </span>
       )}
-      {/*
-        The id MUST exactly match divId.
-        min-height is set inline (not via class) so it's present before GPT JS
-        runs — this is what prevents CLS. Once GPT renders, the ad content
-        fills the container naturally.
-      */}
       <div
         id={divId}
+        className="w-full flex items-center justify-center max-w-full overflow-hidden"
         style={{
           minWidth: 250,
-          minHeight,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
+          minHeight: isRendered ? undefined : minHeight,
         }}
       />
     </div>
   );
 }
+

@@ -181,6 +181,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Script id="gpt-init" strategy="afterInteractive">
           {`window.googletag = window.googletag || { cmd: [] };
           window.googletag.cmd.push(function() {
+            window.googletag.pubads().collapseEmptyDivs(true);
             window.googletag.pubads().enableSingleRequest();
             window.googletag.enableServices();
           });`}
