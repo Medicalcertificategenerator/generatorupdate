@@ -182,7 +182,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {`window.googletag = window.googletag || { cmd: [] };
           window.googletag.cmd.push(function() {
             window.googletag.pubads().enableSingleRequest();
-            window.googletag.pubads().disableInitialLoad();
             window.googletag.enableServices();
           });`}
         </Script>
