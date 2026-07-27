@@ -16,6 +16,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { GamAdSlot } from "@/components/ads/GamAdSlot";
 import { TEMPLATES } from "@/types/certificate";
 import type { LandingPageConfig } from "@/data/landingPages";
 
@@ -56,6 +57,11 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
           </div>
         </section>
 
+        {/* Ad Placement 1: Below Hero */}
+        <div className="max-w-4xl mx-auto px-4">
+          <GamAdSlot slotId="div-gpt-ad-1785160436458-0" />
+        </div>
+
         {/* DEEP CONTENT SECTIONS */}
         <section className="py-14 px-4">
           <div className="max-w-4xl mx-auto space-y-12">
@@ -79,6 +85,11 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
             ))}
           </div>
         </section>
+
+        {/* Ad Placement 2: Between Content Sections & Use Cases */}
+        <div className="max-w-4xl mx-auto px-4">
+          <GamAdSlot slotId="div-gpt-ad-1785160579530-0" />
+        </div>
 
         {/* USE CASES */}
         <section className="py-14 px-4 bg-muted/40 border-y border-border">
@@ -126,6 +137,11 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
           </div>
         </section>
 
+        {/* Ad Placement 3: After Format Elements */}
+        <div className="max-w-4xl mx-auto px-4">
+          <GamAdSlot slotId="div-gpt-ad-1785161218129-0" />
+        </div>
+
         {/* GENERATOR CTA */}
         <section className="py-16 px-4 bg-primary text-primary-foreground">
           <div className="max-w-3xl mx-auto text-center">
@@ -161,6 +177,11 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
             </div>
           </div>
         </section>
+
+        {/* Ad Placement 4: Before FAQ */}
+        <div className="max-w-4xl mx-auto px-4">
+          <GamAdSlot slotId="div-gpt-ad-1785161287141-0" />
+        </div>
 
         {/* FAQ */}
         <section className="py-14 px-4 bg-muted/40 border-y border-border">
@@ -530,6 +551,11 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
           </div>
         </section>
 
+
+        {/* Ad Placement 5: Before Footer */}
+        <div className="max-w-4xl mx-auto px-4">
+          <GamAdSlot slotId="div-gpt-ad-1785160436458-0-land5" />
+        </div>
 
         {/* DISCLAIMER */}
         <div className="max-w-5xl mx-auto px-4 pb-12 pt-6">

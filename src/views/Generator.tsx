@@ -57,6 +57,7 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useToast } from "@/hooks/use-toast";
 import { Badge } from "@/components/ui/badge";
+import { GamAdSlot } from "@/components/ads/GamAdSlot";
 
 const DEFAULT_DATA: CertificateData = {
   patientName: "Raj Chourasiya",
@@ -445,7 +446,7 @@ export default function Generator() {
 
 
           {/* Related Templates */}
-          <div className="px-4 md:px-8 lg:px-12 pb-12">
+          <div className="px-4 md:px-8 lg:px-12 pb-8">
             <div className="max-w-[800px] mx-auto">
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-lg font-bold">Try Other Templates</h2>
@@ -471,6 +472,11 @@ export default function Generator() {
                 ))}
               </div>
             </div>
+          </div>
+
+          {/* Ad Placement 1: Below Related Templates */}
+          <div className="max-w-[800px] mx-auto px-4">
+            <GamAdSlot slotId="div-gpt-ad-1785160436458-0" />
           </div>
           
           {/* SEO Content Block */}
@@ -518,9 +524,16 @@ export default function Generator() {
                   <strong>Disclaimer:</strong> This tool is for educational and staging purposes only. Fraudulent use of generated documents is strictly prohibited.
                 </div>
               </div>
+
+              {/* Ad Placement 2: Inside SEO block */}
+              <GamAdSlot slotId="div-gpt-ad-1785160579530-0" />
             </div>
           )}
 
+          {/* Ad Placement 3: Bottom of Generator Page */}
+          <div className="max-w-[800px] mx-auto px-4 pb-16">
+            <GamAdSlot slotId="div-gpt-ad-1785161218129-0" />
+          </div>
         </div>
         </div>
       </main>

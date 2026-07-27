@@ -3,6 +3,8 @@ import Script from "next/script";
 import { DM_Sans, Outfit, Caveat, Dancing_Script, Kalam } from "next/font/google";
 import { Providers } from "@/components/layout/Providers";
 import { CookieConsent } from "@/components/layout/CookieConsent";
+import { GamStickyAd } from "@/components/ads/GamStickyAd";
+import { GamInterstitialAd } from "@/components/ads/GamInterstitialAd";
 import "@/index.css";
 
 const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-sans" });
@@ -170,6 +172,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${dmSans.variable} ${outfit.variable} ${caveat.variable} ${dancingScript.variable} ${kalam.variable} antialiased`}>
+        <Script
+          strategy="afterInteractive"
+          src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+          crossOrigin="anonymous"
+        />
         <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-C6359RT200" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
@@ -198,6 +205,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <Providers>{children}</Providers>
         <CookieConsent />
+        <GamStickyAd />
+        <GamInterstitialAd />
       </body>
     </html>
   );
