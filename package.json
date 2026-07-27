@@ -76,6 +76,7 @@
     "@opennextjs/cloudflare": "^1.19.11",
     "@tailwindcss/postcss": "^4.2.2",
     "@tailwindcss/typography": "^0.5.15",
+    "@types/google-publisher-tag": "^1.20260720.0",
     "@types/node": "^25.3.3",
     "@types/pg": "^8.18.0",
     "@types/react": "^19.2.0",

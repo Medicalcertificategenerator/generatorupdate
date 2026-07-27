@@ -172,7 +172,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${dmSans.variable} ${outfit.variable} ${caveat.variable} ${dancingScript.variable} ${kalam.variable} antialiased`}>
+        {/*
+          GPT initialisation — order matters:
+          1. Init the cmd queue synchronously so components can push before gpt.js loads.
+          2. Load gpt.js afterInteractive (non-blocking).
+          3. enableServices() once after the library is ready — NOT per ad slot.
+        */}
+        <Script id="gpt-init" strategy="afterInteractive">
+          {`window.googletag = window.googletag || { cmd: [] };
+          window.googletag.cmd.push(function() {
+            window.googletag.pubads().enableSingleRequest();
+            window.googletag.pubads().disableInitialLoad();
+            window.googletag.enableServices();
+          });`}
+        </Script>
         <Script
+          async
           strategy="afterInteractive"
           src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
           crossOrigin="anonymous"

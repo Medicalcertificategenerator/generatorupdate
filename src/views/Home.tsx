@@ -534,7 +534,7 @@ export default function Home() {
 
       {/* Ad Placement 1: Below Hero / After Intro */}
       <div className="max-w-4xl mx-auto px-4">
-        <GamAdSlot slotId="div-gpt-ad-1785160436458-0" />
+        <GamAdSlot divId="div-gpt-ad-1785160436458-home1" />
       </div>
 
 
@@ -545,7 +545,7 @@ export default function Home() {
 
       {/* Ad Placement 2: After Live Generator / Before About */}
       <div className="max-w-4xl mx-auto px-4">
-        <GamAdSlot slotId="div-gpt-ad-1785160579530-0" />
+        <GamAdSlot divId="div-gpt-ad-1785160579530-home2" />
       </div>
 
       {/* ── 3. ABOUT MEDICAL CERTIFICATES ───────────────────────── */}
@@ -636,7 +636,7 @@ export default function Home() {
 
       {/* Ad Placement 3: 30-40% Scroll / After Templates Grid */}
       <div className="max-w-4xl mx-auto px-4">
-        <GamAdSlot slotId="div-gpt-ad-1785161218129-0" />
+        <GamAdSlot divId="div-gpt-ad-1785161218129-home3" />
       </div>
 
       {/* ── 5. LANDING PAGES SECTION ───────────────────────────── */}
@@ -682,7 +682,7 @@ export default function Home() {
 
       {/* Ad Placement 4: Middle 50% Scroll / After Landing Pages */}
       <div className="max-w-4xl mx-auto px-4">
-        <GamAdSlot slotId="div-gpt-ad-1785161287141-0" />
+        <GamAdSlot divId="div-gpt-ad-1785161287141-home4" />
       </div>
 
       {/* ── 6. HOW IT WORKS ────────────────────────────────────── */}
@@ -774,7 +774,7 @@ export default function Home() {
 
       {/* Ad Placement 5: 70% Scroll / After Who Uses */}
       <div className="max-w-4xl mx-auto px-4">
-        <GamAdSlot slotId="div-gpt-ad-1785160436458-0-home5" />
+        <GamAdSlot divId="div-gpt-ad-1785160436458-home5" />
       </div>
 
 
@@ -830,7 +830,7 @@ export default function Home() {
 
       {/* Ad Placement 6: Before FAQs Section */}
       <div className="max-w-4xl mx-auto px-4">
-        <GamAdSlot slotId="div-gpt-ad-1785160579530-0-home6" />
+        <GamAdSlot divId="div-gpt-ad-1785160579530-home6" />
       </div>
 
       {/* ── 10. UPGRADED FAQS ACCORDION SECTION ───────────────────── */}
@@ -943,7 +943,7 @@ export default function Home() {
 
       {/* Ad Placement 7: Before Footer / End of Content */}
       <div className="max-w-4xl mx-auto px-4">
-        <GamAdSlot slotId="div-gpt-ad-1785161218129-0-home7" />
+        <GamAdSlot divId="div-gpt-ad-1785161218129-home7" />
       </div>
 
       {/* ── 13. INFO SECTION & FOOTER ───────────────────────────── */}

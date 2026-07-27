@@ -59,7 +59,7 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
 
         {/* Ad Placement 1: Below Hero */}
         <div className="max-w-4xl mx-auto px-4">
-          <GamAdSlot slotId="div-gpt-ad-1785160436458-0" />
+          <GamAdSlot divId="div-gpt-ad-1785160436458-land1" />
         </div>
 
         {/* DEEP CONTENT SECTIONS */}
@@ -88,7 +88,7 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
 
         {/* Ad Placement 2: Between Content Sections & Use Cases */}
         <div className="max-w-4xl mx-auto px-4">
-          <GamAdSlot slotId="div-gpt-ad-1785160579530-0" />
+          <GamAdSlot divId="div-gpt-ad-1785160579530-land2" />
         </div>
 
         {/* USE CASES */}
@@ -139,7 +139,7 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
 
         {/* Ad Placement 3: After Format Elements */}
         <div className="max-w-4xl mx-auto px-4">
-          <GamAdSlot slotId="div-gpt-ad-1785161218129-0" />
+          <GamAdSlot divId="div-gpt-ad-1785161218129-land3" />
         </div>
 
         {/* GENERATOR CTA */}
@@ -180,7 +180,7 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
 
         {/* Ad Placement 4: Before FAQ */}
         <div className="max-w-4xl mx-auto px-4">
-          <GamAdSlot slotId="div-gpt-ad-1785161287141-0" />
+          <GamAdSlot divId="div-gpt-ad-1785161287141-land4" />
         </div>
 
         {/* FAQ */}
@@ -554,7 +554,7 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
 
         {/* Ad Placement 5: Before Footer */}
         <div className="max-w-4xl mx-auto px-4">
-          <GamAdSlot slotId="div-gpt-ad-1785160436458-0-land5" />
+          <GamAdSlot divId="div-gpt-ad-1785160436458-land5" />
         </div>
 
         {/* DISCLAIMER */}

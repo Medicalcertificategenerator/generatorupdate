@@ -476,7 +476,7 @@ export default function Generator() {
 
           {/* Ad Placement 1: Below Related Templates */}
           <div className="max-w-[800px] mx-auto px-4">
-            <GamAdSlot slotId="div-gpt-ad-1785160436458-0" />
+            <GamAdSlot divId="div-gpt-ad-1785160436458-gen1" />
           </div>
           
           {/* SEO Content Block */}
@@ -526,13 +526,13 @@ export default function Generator() {
               </div>
 
               {/* Ad Placement 2: Inside SEO block */}
-              <GamAdSlot slotId="div-gpt-ad-1785160579530-0" />
+              <GamAdSlot divId="div-gpt-ad-1785160579530-gen2" />
             </div>
           )}
 
           {/* Ad Placement 3: Bottom of Generator Page */}
           <div className="max-w-[800px] mx-auto px-4 pb-16">
-            <GamAdSlot slotId="div-gpt-ad-1785161218129-0" />
+            <GamAdSlot divId="div-gpt-ad-1785161218129-gen3" />
           </div>
         </div>
         </div>

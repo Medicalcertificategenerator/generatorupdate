@@ -100,22 +100,22 @@ export default function BlogPost() {
             </div>
 
             {/* Ad Placement 1: Below Article Header */}
-            <GamAdSlot slotId="div-gpt-ad-1785160436458-0" />
+            <GamAdSlot divId="div-gpt-ad-1785160436458-blog1" />
           </div>
         </div>
 
         {/* Article body */}
         <article className="max-w-3xl mx-auto px-4 py-12">
           {/* Ad Placement 2: Top of Article Content */}
-          <GamAdSlot slotId="div-gpt-ad-1785160579530-0" />
+          <GamAdSlot divId="div-gpt-ad-1785160579530-blog2" />
 
           {post.content}
 
           {/* Ad Placement 3: Mid-Article Content */}
-          <GamAdSlot slotId="div-gpt-ad-1785161218129-0" />
+          <GamAdSlot divId="div-gpt-ad-1785161218129-blog3" />
 
           {/* Ad Placement 4: Before Free Tool CTA Box */}
-          <GamAdSlot slotId="div-gpt-ad-1785161287141-0" />
+          <GamAdSlot divId="div-gpt-ad-1785161287141-blog4" />
 
           {/* Mid / End CTA — appears automatically in every article */}
           <div className="my-10 rounded-2xl overflow-hidden border border-primary/20 bg-gradient-to-br from-primary/5 to-primary/10">
@@ -174,7 +174,7 @@ export default function BlogPost() {
 
         {/* Ad Placement 5: After Author Bio / Before Related Articles */}
         <div className="max-w-3xl mx-auto px-4">
-          <GamAdSlot slotId="div-gpt-ad-1785160436458-0-blog5" />
+          <GamAdSlot divId="div-gpt-ad-1785160436458-blog5" />
         </div>
 
         {/* Prev / Next navigation */}

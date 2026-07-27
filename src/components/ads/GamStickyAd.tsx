@@ -1,81 +1,106 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { X } from "lucide-react";
 
+/**
+ * GamStickyAd — Bottom-docked sticky/anchor ad unit.
+ *
+ * Uses googletag.defineOutOfPageSlot with the BOTTOM_ANCHOR format so GAM
+ * handles the sticky positioning natively (the way Google requires for
+ * anchor ads). This means we do NOT render our own fixed <div>; GAM injects
+ * its own iframe/layer into the page.
+ *
+ * If the network/line-item doesn't have a bottom-anchor creative, GAM will
+ * silently not render — which is fine (no layout impact).
+ *
+ * The dismiss button hides this React component so destroySlots() is called
+ * and the GAM anchor layer is removed from the page.
+ *
+ * Mounted once globally in app/layout.tsx.
+ */
 export function GamStickyAd() {
-  const [isVisible, setIsVisible] = useState(true);
+  const [dismissed, setDismissed] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const slotRef = useRef<any>(null);
 
   useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const win = window as any;
-    win.googletag = win.googletag || { cmd: [] };
+    if (dismissed) return;
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    let slotObj: any = null;
+    window.googletag = window.googletag || { cmd: [] };
 
-    win.googletag.cmd.push(() => {
-      if (!win.googletag) return;
-
+    window.googletag.cmd.push(() => {
       try {
-        slotObj = win.googletag.defineSlot(
+        const gt = window.googletag;
+
+        // defineOutOfPageSlot with BOTTOM_ANCHOR is how GAM anchor ads work.
+        // It returns null when the format is not supported (e.g. on amp pages
+        // or in environments where anchor ads are not allowed) — guard that.
+        const slot = gt.defineOutOfPageSlot(
           "/23289090478/sticky",
-          [
-            [320, 100],
-            [300, 100],
-            [300, 50],
-            [320, 50],
-          ],
-          "div-gpt-ad-1785160866108-0"
+          gt.enums.OutOfPageFormat.BOTTOM_ANCHOR
         );
 
-        if (slotObj && typeof slotObj.addService === "function") {
-          slotObj.addService(win.googletag.pubads());
+        if (!slot) {
+          // Anchor format not supported in this context — bail silently.
+          return;
         }
-        win.googletag.pubads().enableSingleRequest();
-        win.googletag.enableServices();
-        win.googletag.display("div-gpt-ad-1785160866108-0");
+
+        slot.addService(gt.pubads());
+        slotRef.current = slot;
+        gt.display(slot);
       } catch (err) {
-        console.warn("GAM StickyAd error:", err);
+        console.warn("[GamStickyAd] Error defining anchor slot:", err);
       }
     });
 
     return () => {
-      if (win.googletag && slotObj) {
-        win.googletag.cmd.push(() => {
-          try {
-            win.googletag?.destroySlots([slotObj]);
-          } catch {
-            // ignore cleanup errors
+      window.googletag?.cmd?.push(() => {
+        try {
+          if (slotRef.current) {
+            window.googletag.destroySlots([slotRef.current]);
+            slotRef.current = null;
           }
-        });
-      }
+        } catch {
+          // Ignore cleanup errors.
+        }
+      });
     };
-  }, []);
+  }, [dismissed]);
 
-  if (!isVisible) return null;
+  if (dismissed) return null;
 
+  /**
+   * We render a minimal dismiss button above the GAM-injected anchor layer.
+   * GAM's BOTTOM_ANCHOR already positions itself at the bottom — we just need
+   * a dismiss control overlaid on top of it so users can close it.
+   *
+   * z-index is 39 (below modals at 50+, above normal content).
+   */
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 flex flex-col items-center justify-center pointer-events-none pb-1 sm:pb-2">
-      <div className="pointer-events-auto relative flex flex-col items-center bg-background/95 backdrop-blur-md border border-border/80 rounded-t-xl shadow-2xl px-3 py-1.5 max-w-[340px] sm:max-w-[400px]">
-        <div className="w-full flex items-center justify-between gap-2 mb-1 border-b border-border/40 pb-0.5 px-1">
-          <span className="text-[9px] uppercase tracking-wider text-muted-foreground/60 font-mono font-medium">
-            ADVERTISEMENT
-          </span>
-          <button
-            onClick={() => setIsVisible(false)}
-            aria-label="Close advertisement"
-            className="text-muted-foreground hover:text-foreground hover:bg-muted/80 rounded-full p-0.5 transition-colors"
-          >
-            <X className="w-3.5 h-3.5" />
-          </button>
-        </div>
-        <div
-          id="div-gpt-ad-1785160866108-0"
-          className="flex items-center justify-center min-w-[300px] min-h-[50px] overflow-hidden"
-          style={{ minWidth: "300px", minHeight: "50px" }}
-        />
-      </div>
-    </div>
+    <button
+      onClick={() => setDismissed(true)}
+      aria-label="Close sticky advertisement"
+      title="Close advertisement"
+      style={{
+        position: "fixed",
+        bottom: "calc(env(safe-area-inset-bottom, 0px) + 56px)",
+        right: 12,
+        zIndex: 39,
+        background: "hsl(var(--background) / 0.9)",
+        border: "1px solid hsl(var(--border))",
+        borderRadius: "50%",
+        width: 28,
+        height: 28,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        cursor: "pointer",
+        backdropFilter: "blur(4px)",
+        boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
+      }}
+    >
+      <X style={{ width: 14, height: 14 }} />
+    </button>
   );
 }

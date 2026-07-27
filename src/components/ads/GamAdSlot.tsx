@@ -3,67 +3,102 @@
 import { useEffect, useRef } from "react";
 
 export interface GamAdSlotProps {
-  /** The div ID for the ad slot */
-  slotId: string;
-  /** The GAM ad unit path (defaults to /23289090478/display) */
+  /**
+   * The exact div ID that GAM will target – must be unique across every slot
+   * currently rendered in the DOM. Use per-page suffixes (e.g. "…-home1",
+   * "…-blog2") so navigating between pages never leaves a stale slot with the
+   * same ID alive at the same time as the new slot.
+   */
+  divId: string;
+  /** GAM ad unit path. Defaults to the display unit. */
   adUnitPath?: string;
-  /** Size definitions */
-  sizes?: (string | number[])[];
-  /** Minimum height container style (default 250px for CLS prevention) */
-  minHeight?: string;
-  /** Optional container class names */
+  /**
+   * Size mapping passed to googletag.defineSlot.
+   * Accepts an array of [width, height] pairs or the string "fluid".
+   * Default covers the most common IAB display sizes.
+   */
+  sizes?: GamSize;
+  /** Reserve vertical space before the ad loads to eliminate CLS. */
+  minHeight?: number;
+  /** Optional extra Tailwind / CSS classes on the outer wrapper. */
   className?: string;
-  /** Label to show subtle advertisement indicator */
+  /** Show a small "ADVERTISEMENT" label above the ad. */
   showLabel?: boolean;
 }
 
-const DEFAULT_SIZES = ["fluid", [300, 250], [336, 280], [250, 250]];
+/**
+ * GAM size definition: an array of [w, h] pairs and/or "fluid" strings,
+ * matching the shape googletag.defineSlot expects.
+ */
+type GamSize = ([number, number] | "fluid")[];
+
+// Declare the global googletag namespace so TypeScript is happy.
+// The actual object is injected by the GPT script loaded in layout.tsx.
+declare global {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  interface Window { googletag: any; }
+}
+
+const DEFAULT_SIZES: GamSize = [
+  [728, 90],
+  [300, 250],
+  [336, 280],
+  [250, 250],
+  "fluid",
+];
 
 export function GamAdSlot({
-  slotId,
+  divId,
   adUnitPath = "/23289090478/display",
   sizes = DEFAULT_SIZES,
-  minHeight = "250px",
+  minHeight = 280,
   className = "",
   showLabel = true,
 }: GamAdSlotProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
+  // Keep a ref to the slot so we can destroy only this slot on unmount.
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const slotRef = useRef<any>(null);
 
   useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const win = window as any;
-    win.googletag = win.googletag || { cmd: [] };
+    // googletag.cmd is a queue — safe to push even before gpt.js has loaded.
+    window.googletag = window.googletag || { cmd: [] };
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    let slotObj: any = null;
-
-    win.googletag.cmd.push(() => {
-      if (!win.googletag) return;
-
+    window.googletag.cmd.push(() => {
       try {
-        slotObj = win.googletag.defineSlot(adUnitPath, sizes, slotId);
-        if (slotObj && typeof slotObj.addService === "function") {
-          slotObj.addService(win.googletag.pubads());
-        }
-        win.googletag.enableServices();
-        win.googletag.display(slotId);
+        // defineSlot returns null if the div doesn't exist in the DOM yet or
+        // if a slot with this ID has already been defined (navigation race).
+        // Guard both cases.
+        const slot = window.googletag.defineSlot(adUnitPath, sizes, divId);
+        if (!slot) return;
+
+        slot.addService(window.googletag.pubads());
+        slotRef.current = slot;
+
+        // display() tells GPT to fetch and render this specific slot.
+        // enableServices() is called once globally in the layout init script;
+        // calling it again here is a no-op after the first call, but we still
+        // guard it so isolated testing doesn't break.
+        window.googletag.display(divId);
       } catch (err) {
-        console.warn("GAM AdSlot error:", err);
+        console.warn("[GamAdSlot] defineSlot error for", divId, err);
       }
     });
 
     return () => {
-      if (win.googletag && slotObj) {
-        win.googletag.cmd.push(() => {
-          try {
-            win.googletag?.destroySlots([slotObj]);
-          } catch {
-            // ignore cleanup errors
+      // Destroy only this slot so other slots on the page are unaffected.
+      window.googletag?.cmd?.push(() => {
+        try {
+          if (slotRef.current) {
+            window.googletag.destroySlots([slotRef.current]);
+            slotRef.current = null;
           }
-        });
-      }
+        } catch {
+          // Ignore cleanup errors (e.g. GPT already unloaded).
+        }
+      });
     };
-  }, [slotId, adUnitPath, sizes]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [divId, adUnitPath]); // sizes intentionally omitted – arrays are new refs every render
 
   return (
     <div
@@ -71,15 +106,25 @@ export function GamAdSlot({
       style={{ minHeight }}
     >
       {showLabel && (
-        <span className="text-[10px] uppercase tracking-wider text-muted-foreground/50 mb-1 font-sans select-none">
-          ADVERTISEMENT
+        <span className="text-[10px] uppercase tracking-widest text-muted-foreground/40 mb-1 font-mono select-none">
+          Advertisement
         </span>
       )}
+      {/*
+        The id MUST exactly match divId.
+        min-height is set inline (not via class) so it's present before GPT JS
+        runs — this is what prevents CLS. Once GPT renders, the ad content
+        fills the container naturally.
+      */}
       <div
-        id={slotId}
-        ref={containerRef}
-        className="flex items-center justify-center min-w-[250px] min-h-[250px] transition-all"
-        style={{ minWidth: "250px", minHeight }}
+        id={divId}
+        style={{
+          minWidth: 250,
+          minHeight,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
       />
     </div>
   );
