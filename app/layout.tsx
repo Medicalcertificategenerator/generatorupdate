@@ -178,6 +178,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           2. Load gpt.js afterInteractive (non-blocking).
           3. enableServices() once after the library is ready — NOT per ad slot.
         */}
+        {/* GPT library must load first so the cmd queue flushed by gpt-init
+            has a real googletag object to execute against. */}
+        <Script
+          strategy="afterInteractive"
+          src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+          crossOrigin="anonymous"
+        />
         <Script id="gpt-init" strategy="afterInteractive">
           {`window.googletag = window.googletag || { cmd: [] };
           window.googletag.cmd.push(function() {
@@ -187,12 +194,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             window.googletag.enableServices();
           });`}
         </Script>
-        <Script
-          async
-          strategy="afterInteractive"
-          src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
-          crossOrigin="anonymous"
-        />
         <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-C6359RT200" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`

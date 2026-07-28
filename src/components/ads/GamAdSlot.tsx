@@ -36,21 +36,26 @@ declare global {
   interface Window { googletag: any; }
 }
 
-// Centralized slot refresh queue for GPT microtask batching.
-// Aggregates multiple dynamic React slots mounting within 50ms into a single
-// unified googletag.pubads().refresh([s1, s2, ...]) SRA request.
+// ---------------------------------------------------------------------------
+// Global microtask batch refresh queue.
+// Aggregates multiple React slots mounting within 50ms into a single SRA
+// googletag.pubads().refresh([...]) call.
+// IMPORTANT: We track slot IDs so that destroyed slots can be removed before
+// the timer fires — preventing refresh() on a destroyed slot which causes
+// isEmpty=true and collapses the container.
+// ---------------------------------------------------------------------------
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-let refreshQueue: any[] = [];
+const refreshQueue = new Map<string, any>(); // divId → slot
 let refreshTimer: ReturnType<typeof setTimeout> | null = null;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-function queueSlotForRefresh(slot: any) {
-  refreshQueue.push(slot);
+function queueSlotForRefresh(divId: string, slot: any) {
+  refreshQueue.set(divId, slot);
   if (refreshTimer) clearTimeout(refreshTimer);
   refreshTimer = setTimeout(() => {
-    if (window.googletag?.pubads && refreshQueue.length > 0) {
-      const slotsToRefresh = [...refreshQueue];
-      refreshQueue = [];
+    if (window.googletag?.pubads && refreshQueue.size > 0) {
+      const slotsToRefresh = [...refreshQueue.values()];
+      refreshQueue.clear();
       try {
         window.googletag.pubads().refresh(slotsToRefresh);
       } catch (err) {
@@ -58,6 +63,10 @@ function queueSlotForRefresh(slot: any) {
       }
     }
   }, 50);
+}
+
+function removeFromRefreshQueue(divId: string) {
+  refreshQueue.delete(divId);
 }
 
 export function GamAdSlot({
@@ -89,15 +98,15 @@ export function GamAdSlot({
 
         // Responsive size mapping:
         // Desktop (>= 1024px): 728x90, 970x90, 300x250, 336x280, fluid
-        // Tablet (>= 768px): 728x90, 300x250, 336x280, fluid
-        // Mobile (< 768px): 300x250, 320x100, 320x50, 336x280, fluid (No 728x90, 970x90, 1024x768 on mobile)
+        // Tablet (>= 768px):   728x90, 300x250, 336x280, fluid
+        // Mobile (< 768px):    300x250, 320x100, 320x50, 336x280, fluid
         const mapping = gt.sizeMapping()
           .addSize([1024, 0], [[728, 90], [970, 90], [300, 250], [336, 280], "fluid"])
           .addSize([768, 0], [[728, 90], [300, 250], [336, 280], "fluid"])
           .addSize([0, 0], [[300, 250], [320, 100], [320, 50], [336, 280], "fluid"])
           .build();
 
-        const slotSizes = sizes || [
+        const slotSizes: GamSize = sizes || [
           [728, 90],
           [970, 90],
           [300, 250],
@@ -119,27 +128,27 @@ export function GamAdSlot({
         renderListener = (event: any) => {
           if (event.slot === slot) {
             setIsRendered(true);
-            if (event.isEmpty) {
-              setIsEmpty(true);
-            } else {
-              setIsEmpty(false);
-            }
+            setIsEmpty(!!event.isEmpty);
           }
         };
 
         gt.pubads().addEventListener("slotRenderEnded", renderListener);
 
-        // Display element
+        // Register div with GPT (disableInitialLoad() means this won't fetch yet)
         gt.display(divId);
 
-        // Queue slot for batched GPT refresh
-        queueSlotForRefresh(slot);
+        // Queue for batched SRA refresh – keyed by divId so cleanup can cancel
+        queueSlotForRefresh(divId, slot);
       } catch (err) {
         console.warn("[GamAdSlot] defineSlot error for", divId, err);
       }
     });
 
     return () => {
+      // Remove from the pending refresh queue immediately so we never call
+      // refresh() on a slot that has already been destroyed.
+      removeFromRefreshQueue(divId);
+
       window.googletag?.cmd?.push(() => {
         try {
           const gt = window.googletag;
@@ -182,5 +191,3 @@ export function GamAdSlot({
     </div>
   );
 }
-
-

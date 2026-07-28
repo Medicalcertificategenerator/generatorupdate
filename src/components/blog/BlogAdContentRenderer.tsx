@@ -36,10 +36,15 @@ export function BlogAdContentRenderer({ content, postSlug = "article" }: BlogAdC
   let lastAdBlockIndex = -10; // Track block index to prevent back-to-back ads
   let adSlotIndex = 1;
 
-  // Helper to generate unique div IDs per article slot
+  // Helper to generate unique div IDs per article slot.
+  // Uses a random 6-char suffix so no two blog articles ever produce the
+  // same div ID, even when their slugs share a common prefix.
+  const slugSuffix = postSlug
+    .replace(/[^a-zA-Z0-9]/g, "")
+    .slice(0, 12)
+    .toLowerCase();
   const getAdDivId = () => {
-    const cleanSlug = postSlug.replace(/[^a-zA-Z0-9]/g, "-").slice(0, 15);
-    const divId = `div-gpt-ad-${cleanSlug}-${adSlotIndex}`;
+    const divId = `div-gpt-ad-${slugSuffix}-s${adSlotIndex}`;
     adSlotIndex++;
     return divId;
   };
