@@ -191,7 +191,7 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
               {page.faqs.map((faq, i) => (
                 <details key={i} className="group border border-border rounded-xl bg-card overflow-hidden">
                   <summary className="flex items-center justify-between gap-3 px-5 py-4 cursor-pointer font-semibold text-sm list-none select-none">
-                    {faq.q}
+                    <h3 className="font-semibold text-sm leading-snug flex-1">{faq.q}</h3>
                     <span className="text-primary text-lg group-open:rotate-45 transition-transform flex-shrink-0">+</span>
                   </summary>
                   <div className="px-5 pb-4 text-sm text-muted-foreground leading-relaxed border-t border-border pt-3">
