@@ -57,9 +57,9 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
           </div>
         </section>
 
-        {/* Ad Placement 1: Below Hero */}
+        {/* Ad Placement 1: Immediately After H1 / Landing Title */}
         <div className="max-w-4xl mx-auto px-4">
-          <GamAdSlot divId="div-gpt-ad-1785160436458-land1" />
+          <GamAdSlot divId="div-gpt-ad-1785198863577-0" minHeight={250} />
         </div>
 
         {/* DEEP CONTENT SECTIONS */}

@@ -532,9 +532,9 @@ export default function Home() {
         </m.div>
       </section>
 
-      {/* Ad Placement 1: Below Hero / After Intro */}
+      {/* Ad Placement 1: Immediately After H1 / Hero Title */}
       <div className="max-w-4xl mx-auto px-4">
-        <GamAdSlot divId="div-gpt-ad-1785160436458-home1" />
+        <GamAdSlot divId="div-gpt-ad-1785198863577-0" minHeight={250} />
       </div>
 
 

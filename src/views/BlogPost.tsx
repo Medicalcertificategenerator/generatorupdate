@@ -100,8 +100,8 @@ export default function BlogPost() {
               ))}
             </div>
 
-            {/* Ad Placement 1: Below Article Header */}
-            <GamAdSlot divId="div-gpt-ad-1785160436458-blog1" />
+            {/* Ad Placement 1: Immediately After H1 / Article Title */}
+            <GamAdSlot divId="div-gpt-ad-1785198863577-0" minHeight={250} />
           </div>
         </div>
 
