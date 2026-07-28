@@ -1,22 +1,29 @@
-# Agent Authentication & Policy — Medical Certificate Generator
+# Auth.md - Agent Registration Instructions
 
-## Agent Access Overview
+## Overview
+Medical Certificate Generator (`medicalcertificategenerator.co.in`) supports autonomous AI agents, WebMCP browser extensions, and LLM clients with both public zero-authentication access and token-based agent registration.
 
-Medical Certificate Generator (`medicalcertificategenerator.co.in`) provides public, zero-authentication access for autonomous AI agents, WebMCP browser extensions, and LLM search agents.
+## Agent Registration
+AI agents can register programmatically using the OAuth 2.0 Dynamic Client Registration protocol:
+- **Registration Endpoint**: `https://medicalcertificategenerator.co.in/auth/agent-register`
+- **Supported Identity Types**: `autonomous_agent`, `user_delegated_agent`
+- **Credential Types**: `bearer_token`, `none`
 
-### Public Zero-Auth Tier
-- **Templates & Formats**: Public read-only access to all certificate layouts, clinic formats, and guidelines (`/.well-known/agent-skills/index.json`).
-- **Health & Diagnostics**: `/api/healthz` is freely accessible.
-- **Search & Eligibility**: `/search` and `/ayushman-bharat-eligibility-checker` do not require registration or API keys.
+## Authentication Methods
+- **Zero-Auth Tier**: Default public access for read-only browsing, template discovery, and search.
+- **Bearer Token**: Include HTTP header `Authorization: Bearer <token>` for agent-authenticated API operations.
 
-### Authentication Metadata
+## Discovery Endpoints
 - **OAuth Authorization Server**: `/.well-known/oauth-authorization-server`
 - **OAuth Protected Resource**: `/.well-known/oauth-protected-resource`
 - **OpenID Configuration**: `/.well-known/openid-configuration`
 - **MCP Server Card**: `/.well-known/mcp/server-card.json`
+- **API Catalog**: `/.well-known/api-catalog`
+- **Agent Skills Index**: `/.well-known/agent-skills/index.json`
 
-### Agent Registration Instructions
-If an agent requires dedicated session tokens or rate-limit extension:
-1. Fetch OAuth authorization server configuration at `/.well-known/oauth-authorization-server`.
-2. Submit agent registration payload to `register_uri` (`/auth/agent-register`).
-3. Include HTTP header `Authorization: Bearer <token>` on protected endpoints.
+## Public Endpoints (Zero-Auth)
+- `GET /` — Homepage and generator interfaces
+- `GET /api/healthz` — System status
+- `GET /generator` — Certificate templates
+- `GET /search` — Medical format search engine
+- `GET /ayushman-bharat-eligibility-checker` — Public scheme checker
