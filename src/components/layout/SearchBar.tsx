@@ -95,7 +95,7 @@ export function SearchBar() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search templates, articles…"
-              className="w-56 md:w-72 pl-9 pr-9 py-1.5 text-sm rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/30"
+              className="w-40 sm:w-56 md:w-72 pl-9 pr-9 py-1.5 text-sm rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/30"
               aria-label="Search"
               autoComplete="off"
             />
