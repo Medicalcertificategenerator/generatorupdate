@@ -1,0 +1,64 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Medical Certificate Generator API",
+    "description": "Public API for medical certificate template discovery, health check, and eligibility tools",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://medicalcertificategenerator.co.in"
+    }
+  ],
+  "paths": {
+    "/api/healthz": {
+      "get": {
+        "summary": "Health check endpoint",
+        "operationId": "getHealth",
+        "responses": {
+          "200": {
+            "description": "Service healthy",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": { "type": "string", "example": "ok" }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "x-payment-info": {
+          "intent": "charge",
+          "method": "free",
+          "amount": 0,
+          "currency": "INR"
+        }
+      }
+    },
+    "/api/mcp": {
+      "post": {
+        "summary": "MCP JSON-RPC transport endpoint",
+        "operationId": "handleMcp",
+        "responses": {
+          "200": {
+            "description": "MCP response",
+            "content": {
+              "application/json": {
+                "schema": { "type": "object" }
+              }
+            }
+          }
+        },
+        "x-payment-info": {
+          "intent": "session",
+          "method": "free",
+          "amount": 0,
+          "currency": "INR"
+        }
+      }
+    }
+  }
+}

@@ -164,6 +164,8 @@ const siteNavSchema = {
 
 
 
+import { WebMcpProvider } from "@/components/WebMcpProvider";
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -216,7 +218,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteNavSchema) }}
         />
 
-        <Providers>{children}</Providers>
+        <Providers>
+          <WebMcpProvider />
+          {children}
+        </Providers>
         <CookieConsent />
         <AdManager />
       </body>

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://agentskills.io/schema/v0.2.0/skills-index.json",
+  "skills": [
+    {
+      "name": "medical-certificate-generator",
+      "type": "utility",
+      "description": "Generate handwritten-style medical certificates and formats for Indian clinics and hospitals",
+      "url": "https://medicalcertificategenerator.co.in/generator",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "ayushman-eligibility-checker",
+      "type": "checker",
+      "description": "Interactive checker for Ayushman Bharat Pradhan Mantri Jan Arogya Yojana (PM-JAY) eligibility",
+      "url": "https://medicalcertificategenerator.co.in/ayushman-bharat-eligibility-checker",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "medical-format-search",
+      "type": "search",
+      "description": "Search medical leave formats, fitness certificates, and doctor prescription templates",
+      "url": "https://medicalcertificategenerator.co.in/search",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

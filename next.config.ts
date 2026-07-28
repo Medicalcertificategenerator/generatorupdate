@@ -44,6 +44,19 @@ const nextConfig: NextConfig = {
       { source: '/blog/ai-medical-certificate-generator-tools-2026', destination: '/blog/ai-medical-certificate-generator-tools', permanent: true },
     ];
   },
+  async headers() {
+    return [
+      {
+        source: '/:path*',
+        headers: [
+          {
+            key: 'Link',
+            value: '</.well-known/api-catalog>; rel="api-catalog", </.well-known/agent-skills/index.json>; rel="agent-skills", </.well-known/mcp/server-card.json>; rel="mcp-server-card", </auth.md>; rel="authorizations-documentation"',
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;

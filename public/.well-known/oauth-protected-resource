@@ -1,0 +1,13 @@
+{
+  "resource": "https://medicalcertificategenerator.co.in",
+  "authorization_servers": [
+    "https://medicalcertificategenerator.co.in"
+  ],
+  "scopes_supported": [
+    "public:read",
+    "generator:create"
+  ],
+  "bearer_methods_supported": [
+    "header"
+  ]
+}

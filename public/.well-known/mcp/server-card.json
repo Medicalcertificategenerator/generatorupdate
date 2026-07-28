@@ -1,0 +1,43 @@
+{
+  "$schema": "https://modelcontextprotocol.io/schemas/server-card/v1.json",
+  "serverInfo": {
+    "name": "Medical Certificate Generator MCP Server",
+    "version": "1.0.0",
+    "description": "Exposes medical certificate template generation, search, and health policy checkers to AI models and agents"
+  },
+  "transport": {
+    "type": "http",
+    "endpoint": "https://medicalcertificategenerator.co.in/api/mcp"
+  },
+  "capabilities": {
+    "tools": [
+      {
+        "name": "list_templates",
+        "description": "List all available medical certificate formats and clinic templates",
+        "parameters": {}
+      },
+      {
+        "name": "search_formats",
+        "description": "Search medical leave certificates, fitness certificates, and doctor prescription templates",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "query": { "type": "string", "description": "Search query keyword" }
+          },
+          "required": ["query"]
+        }
+      },
+      {
+        "name": "check_ayushman_eligibility",
+        "description": "Check PM-JAY Ayushman Bharat eligibility criteria",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "category": { "type": "string" },
+            "state": { "type": "string" }
+          }
+        }
+      }
+    ]
+  }
+}

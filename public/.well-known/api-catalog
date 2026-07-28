@@ -1,0 +1,22 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://medicalcertificategenerator.co.in/api/healthz",
+      "status": [
+        { "href": "https://medicalcertificategenerator.co.in/api/healthz" }
+      ],
+      "service-desc": [
+        { "href": "https://medicalcertificategenerator.co.in/openapi.json", "type": "application/json" }
+      ],
+      "service-doc": [
+        { "href": "https://medicalcertificategenerator.co.in/about", "type": "text/html" }
+      ]
+    },
+    {
+      "anchor": "https://medicalcertificategenerator.co.in/generator",
+      "service-doc": [
+        { "href": "https://medicalcertificategenerator.co.in/editorial-guidelines", "type": "text/html" }
+      ]
+    }
+  ]
+}
