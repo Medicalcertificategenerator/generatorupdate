@@ -499,8 +499,6 @@ export default function Generator() {
                   </ol>
                 </div>
 
-                <GamAdSlot divId="div-gpt-ad-1785160579530-gen-seo2" className="my-4" />
-
                 <h2 className="text-2xl font-extrabold mb-4 border-b pb-2">Common Use Cases in India</h2>
                 <div className="text-sm text-foreground/80 mb-8">
                   <ul className="list-disc ml-5 space-y-2">

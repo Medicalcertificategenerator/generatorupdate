@@ -53,16 +53,31 @@ function queueSlotForRefresh(divId: string, slot: any) {
   refreshQueue.set(divId, slot);
   if (refreshTimer) clearTimeout(refreshTimer);
   refreshTimer = setTimeout(() => {
-    if (window.googletag?.pubads && refreshQueue.size > 0) {
-      const slotsToRefresh = [...refreshQueue.values()];
-      refreshQueue.clear();
-      try {
-        window.googletag.pubads().refresh(slotsToRefresh);
-      } catch (err) {
-        console.warn("[GamAdSlot] Batch refresh error:", err);
-      }
-    }
+    flushRefreshQueue();
   }, 50);
+}
+
+function flushRefreshQueue(retryCount = 0) {
+  if (refreshQueue.size === 0) return;
+
+  if (!window.googletag?.pubads) {
+    // gpt.js not ready yet — retry shortly instead of silently dropping.
+    if (retryCount < 5) {
+      setTimeout(() => flushRefreshQueue(retryCount + 1), 100);
+    } else {
+      console.warn("[GamAdSlot] googletag.pubads never became ready — dropping queued refresh.");
+      refreshQueue.clear();
+    }
+    return;
+  }
+
+  const slotsToRefresh = [...refreshQueue.values()];
+  refreshQueue.clear();
+  try {
+    window.googletag.pubads().refresh(slotsToRefresh);
+  } catch (err) {
+    console.warn("[GamAdSlot] Batch refresh error:", err);
+  }
 }
 
 function removeFromRefreshQueue(divId: string) {
@@ -175,6 +190,7 @@ export function GamAdSlot({
     <div
       className={`my-6 md:my-8 flex flex-col items-center justify-center w-full overflow-hidden transition-all duration-300 ${className}`}
       style={{ minHeight: isRendered ? undefined : minHeight }}
+      data-ad-status={isRendered ? (isEmpty ? "no-fill" : "filled") : "pending"}
     >
       {showLabel && (
         <span className="text-[10px] uppercase tracking-widest text-muted-foreground/40 mb-1 font-mono select-none">

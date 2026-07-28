@@ -680,11 +680,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Ad Placement 4: Middle 50% Scroll / After Landing Pages */}
-      <div className="max-w-4xl mx-auto px-4">
-        <GamAdSlot divId="div-gpt-ad-1785161287141-home4" />
-      </div>
-
       {/* ── 6. HOW IT WORKS ────────────────────────────────────── */}
       <section className="px-4 py-20 bg-muted/10 border-y border-border/50">
         <div className="max-w-5xl mx-auto">
