@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
+import { HandwritingFonts } from "@/components/layout/HandwritingFonts";
 import { format } from "date-fns";
 import { m } from "framer-motion";
 import {
@@ -200,7 +201,8 @@ export default function Generator() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
+    <HandwritingFonts>
+      <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
 
       <main className="flex-1 flex flex-col overflow-hidden h-[calc(100vh-64px)]">
@@ -544,5 +546,6 @@ export default function Generator() {
         </div>
       </main>
     </div>
+    </HandwritingFonts>
   );
 }

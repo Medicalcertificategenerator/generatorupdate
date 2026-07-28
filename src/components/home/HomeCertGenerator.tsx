@@ -3,6 +3,7 @@
 import { useState, useCallback, useRef, useEffect } from "react";
 import { format } from "date-fns";
 import Link from "next/link";
+import { HandwritingFonts } from "@/components/layout/HandwritingFonts";
 import {
   Heart,
   Sparkles,
@@ -566,7 +567,8 @@ export function HomeCertGenerator() {
   const currentDesc = CERT_TYPES.find((t) => t.id === certType)?.desc || "";
 
   return (
-    <section className="w-full" id="generator">
+    <HandwritingFonts>
+      <section className="w-full" id="generator">
       {/* ── Heading ──────────────────────────────────────────── */}
       <div className="text-center mb-6">
         <p className="text-xs font-bold uppercase tracking-[3px] text-teal-600 mb-2">Choose Template</p>
@@ -860,5 +862,6 @@ export function HomeCertGenerator() {
         )}
       </div>
     </section>
+    </HandwritingFonts>
   );
 }

@@ -1,6 +1,8 @@
 import { Metadata } from "next";
 import Author from "@/views/Author";
 
+export const revalidate = 86400;
+
 export const metadata: Metadata = {
   title: "Author — Ziven Borceg",
   description: "Ziven Borceg is a software developer and healthcare technology enthusiast who built Medical Certificate Generator — a free medical certificate generator for developers and educators.",

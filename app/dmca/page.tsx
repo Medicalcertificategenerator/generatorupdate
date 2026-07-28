@@ -1,6 +1,8 @@
 import { Metadata } from "next";
 import DMCA from "@/views/DMCA";
 
+export const revalidate = 86400;
+
 export const metadata: Metadata = {
   title: "DMCA Policy",
   description: "DMCA copyright policy for Medical Certificate Generator. Report copyright infringement and learn how we handle takedown requests.",

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, FileText, Sparkles, Shield, CheckCircle } from "lucide-react";
+
+export const revalidate = 86400;
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Navbar } from "@/components/layout/Navbar";
@@ -214,11 +217,12 @@ export default function GeneratorIndexPage() {
               <Link key={tmpl.id} href={`/generator/${tmpl.id}`}>
                 <div className="group bg-card border border-border rounded-xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-200 cursor-pointer">
                   <div className="relative aspect-[3/4] overflow-hidden bg-muted">
-                    <img
+                    <Image
                       src={tmpl.previewImage}
                       alt={`${tmpl.name} medical certificate template`}
                       className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
-                      loading="lazy"
+                      width={300}
+                      height={400}
                     />
                     <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-200 flex items-end justify-center pb-3">
                       <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-primary text-primary-foreground text-xs font-bold px-3 py-1.5 rounded-full shadow">

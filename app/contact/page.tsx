@@ -1,6 +1,8 @@
 import { Metadata } from "next";
 import Contact from "@/views/Contact";
 
+export const revalidate = 86400;
+
 export const metadata: Metadata = {
   title: "Contact Us",
   description: "Get in touch with the Medical Certificate Generator team. We are happy to answer questions about our medical certificate generator tool.",

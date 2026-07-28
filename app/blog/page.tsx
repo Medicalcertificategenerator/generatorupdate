@@ -1,6 +1,8 @@
 import { Metadata } from "next";
 import Blog from "@/views/Blog";
 
+export const revalidate = 86400;
+
 export const metadata: Metadata = {
   title: "Blog — Medical Certificate Tips & Guides | Medical Certificate Generator",
   description: "Expert guides on medical certificates in India — formats, legal requirements, how to get sick leave certificates, and more. Written by Ziven Borceg.",

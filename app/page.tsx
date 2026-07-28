@@ -1,6 +1,8 @@
 import Home from "@/views/Home";
 import type { Metadata } from "next";
 
+export const revalidate = 86400;
+
 export const metadata: Metadata = {
   title: "Medical Certificate Generator — Free Handwritten Style PDF & PNG (India)",
   description: "Generate realistic Indian medical certificates instantly. 15+ hospital and clinic templates, handwritten style, free PDF and PNG download. No signup required.",

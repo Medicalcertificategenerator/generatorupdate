@@ -1,17 +1,16 @@
 import type { NextConfig } from "next";
+import path from "path";
 
 const replitDomain = process.env.REPLIT_DEV_DOMAIN;
 const isProd = process.env.NODE_ENV === "production";
 
 const nextConfig: NextConfig = {
+  outputFileTracingRoot: path.join(__dirname),
   ...(isProd
     ? {
         trailingSlash: true,
       }
     : {}),
-  images: {
-    unoptimized: true,
-  },
   output: "standalone",
   ...(replitDomain
     ? {

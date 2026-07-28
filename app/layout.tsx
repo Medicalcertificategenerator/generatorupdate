@@ -1,17 +1,13 @@
 import type { Metadata, Viewport } from "next";
 import Script from "next/script";
-import { DM_Sans, Outfit, Caveat, Dancing_Script, Kalam } from "next/font/google";
+import { DM_Sans, Outfit } from "next/font/google";
 import { Providers } from "@/components/layout/Providers";
 import { CookieConsent } from "@/components/layout/CookieConsent";
-import { GamStickyAd } from "@/components/ads/GamStickyAd";
-import { GamInterstitialAd } from "@/components/ads/GamInterstitialAd";
+import { AdManager } from "@/components/ads/AdManager";
 import "@/index.css";
 
 const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-sans" });
 const outfit = Outfit({ subsets: ["latin"], variable: "--font-display" });
-const caveat = Caveat({ subsets: ["latin"], variable: "--font-caveat" });
-const dancingScript = Dancing_Script({ subsets: ["latin"], variable: "--font-dancing" });
-const kalam = Kalam({ weight: ["300", "400", "700"], subsets: ["latin"], variable: "--font-kalam" });
 
 export const BASE_URL = "https://medicalcertificategenerator.co.in";
 
@@ -171,7 +167,7 @@ const siteNavSchema = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${dmSans.variable} ${outfit.variable} ${caveat.variable} ${dancingScript.variable} ${kalam.variable} antialiased`}>
+      <body className={`${dmSans.variable} ${outfit.variable} antialiased`}>
         {/*
           GPT initialisation — order matters:
           1. Init the cmd queue synchronously so components can push before gpt.js loads.
@@ -222,8 +218,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <Providers>{children}</Providers>
         <CookieConsent />
-        <GamStickyAd />
-        <GamInterstitialAd />
+        <AdManager />
       </body>
     </html>
   );

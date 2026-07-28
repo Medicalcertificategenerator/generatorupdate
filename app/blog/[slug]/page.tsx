@@ -2,6 +2,8 @@ import { Metadata } from "next";
 import BlogPost from "@/views/BlogPost";
 import { BLOG_POSTS } from "@/data/blogPosts";
 
+export const revalidate = 86400;
+
 const BASE_URL = "https://medicalcertificategenerator.co.in";
 
 export function generateStaticParams() {

@@ -2,6 +2,7 @@
 
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { Search, FileText, Stethoscope, ArrowLeft } from "lucide-react";
 import { BLOG_POSTS } from "@/data/blogPosts";
 import { TEMPLATES } from "@/types/certificate";
@@ -67,11 +68,10 @@ export default function SearchView() {
                   href={`/generator/${t.id}`}
                   className="flex gap-4 p-4 rounded-xl border border-border bg-card hover:shadow-md hover:border-primary/30 transition-all"
                 >
-                  <img
+                  <Image
                     src={t.previewImage}
                     alt={t.name}
                     className="w-16 h-20 object-cover object-top rounded-lg border border-border flex-shrink-0"
-                    loading="lazy"
                     width={64}
                     height={80}
                   />

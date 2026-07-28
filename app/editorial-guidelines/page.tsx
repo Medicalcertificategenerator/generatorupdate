@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import EditorialGuidelines from "@/views/EditorialGuidelines";
 
+export const revalidate = 86400;
+
 export const metadata: Metadata = {
   title: "Editorial Guidelines | Medical Certificate Generator",
   description: "Learn how Medical Certificate Generator researches, verifies, and updates content. Our editorial guidelines cover our review process, sources, update schedule, and responsible content policy.",

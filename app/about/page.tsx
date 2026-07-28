@@ -1,6 +1,8 @@
 import { Metadata } from "next";
 import About from "@/views/About";
 
+export const revalidate = 86400;
+
 export const metadata: Metadata = {
   title: "About Medical Certificate Generator — Free Indian Certificate Tool by Ziven Borceg",
   description: "Learn about Medical Certificate Generator — a free medical certificate generator built by Ziven Borceg for developers, educators, and designers who need realistic sample documents.",

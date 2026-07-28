@@ -1,6 +1,8 @@
 import { Metadata } from "next";
 import PrivacyPolicy from "@/views/PrivacyPolicy";
 
+export const revalidate = 86400;
+
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "Medical Certificate Generator privacy policy — how we handle your data (spoiler: we don't collect any). All certificate generation happens locally in your browser.",

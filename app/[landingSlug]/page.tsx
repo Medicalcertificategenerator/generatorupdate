@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { LANDING_PAGES, getLandingPage } from "@/data/landingPages";
 import { CertLandingPage } from "@/components/landing/CertLandingPage";
 
+export const revalidate = 86400;
+
 const BASE_URL = "https://medicalcertificategenerator.co.in";
 
 export async function generateStaticParams() {
