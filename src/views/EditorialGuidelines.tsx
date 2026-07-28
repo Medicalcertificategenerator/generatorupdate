@@ -95,6 +95,7 @@ const sections = [
     content: (
       <div className="space-y-6 text-foreground/80 leading-relaxed relative pl-4 border-l-2 border-primary/20 ml-2">
         {[
+          { date: "July 2026", text: "Updated all certificate templates to July 2026 verified format standards." },
           { date: "May 2026", text: "Updated all articles to reflect Bharatiya Nyaya Sanhita (BNS) 2023 replacing old IPC provisions on document fraud." },
           { date: "May 2026", text: "Added state-wise employer certificate requirements and validation protocols across 4 major articles." },
           { date: "April 2026", text: "Verified National Medical Commission (NMC) registration requirement references against the NMC Act 2019." },
