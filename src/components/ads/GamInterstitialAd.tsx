@@ -57,6 +57,11 @@ export function GamInterstitialAd() {
         // Calling display() here registers the slot for future eligibility
         // checks. GAM decides when (and if) to actually show it.
         gt.display(slot);
+
+        // disableInitialLoad() is set globally in layout.tsx, so display()
+        // alone will NOT fetch a creative — we must explicitly refresh()
+        // to make the slot eligible for GAM's interstitial trigger logic.
+        gt.pubads().refresh([slot]);
       } catch (err) {
         console.warn("[GamInterstitialAd] Error defining interstitial slot:", err);
       }

@@ -49,6 +49,10 @@ export function GamStickyAd() {
         slot.addService(gt.pubads());
         slotRef.current = slot;
         gt.display(slot);
+
+        // disableInitialLoad() is set globally in layout.tsx, so display()
+        // alone will NOT fetch a creative — we must explicitly refresh().
+        gt.pubads().refresh([slot]);
       } catch (err) {
         console.warn("[GamStickyAd] Error defining anchor slot:", err);
       }
