@@ -474,7 +474,7 @@ export default function Generator() {
             </div>
           </div>
 
-          {/* Ad Placement 1: Below Related Templates */}
+          {/* Ad Placement: Below Related Templates */}
           <div className="max-w-[800px] mx-auto px-4">
             <GamAdSlot divId="div-gpt-ad-1785160436458-gen1" />
           </div>
@@ -483,6 +483,8 @@ export default function Generator() {
           {templateInfo && (
             <div className="px-4 md:px-8 lg:px-12 pb-20 max-w-[800px] mx-auto">
               <div className="bg-background border border-border rounded-xl p-6 md:p-8 shadow-sm">
+                <GamAdSlot divId="div-gpt-ad-1785160436458-gen-seo1" className="my-4" />
+                
                 <h2 className="text-2xl font-extrabold mb-4 border-b pb-2">How the {templateInfo.name} Generator Works</h2>
                 <div className="text-sm text-foreground/80 space-y-4 mb-8">
                   <p>{templateInfo.description} Using this free tool, you can securely fill out patient details on the left panel, and they will instantly reflect on the certificate preview. Once completed, you can download a high-resolution PNG or print-ready PDF.</p>
@@ -495,6 +497,8 @@ export default function Generator() {
                   </ol>
                 </div>
 
+                <GamAdSlot divId="div-gpt-ad-1785160579530-gen-seo2" className="my-4" />
+
                 <h2 className="text-2xl font-extrabold mb-4 border-b pb-2">Common Use Cases in India</h2>
                 <div className="text-sm text-foreground/80 mb-8">
                   <ul className="list-disc ml-5 space-y-2">
@@ -503,6 +507,8 @@ export default function Generator() {
                     <li><strong>Travel/Event Exemptions:</strong> Claiming refunds or exemptions for missed flights and exams due to verifiable medical reasons.</li>
                   </ul>
                 </div>
+
+                <GamAdSlot divId="div-gpt-ad-1785161218129-gen-seo3" className="my-4" />
 
                 <h2 className="text-2xl font-extrabold mb-4 border-b pb-2">Frequently Asked Questions</h2>
                 <div className="space-y-4 text-sm text-foreground/80 mb-8">
@@ -525,12 +531,12 @@ export default function Generator() {
                 </div>
               </div>
 
-              {/* Ad Placement 2: Inside SEO block */}
+              {/* Ad Placement: Inside SEO block */}
               <GamAdSlot divId="div-gpt-ad-1785160579530-gen2" />
             </div>
           )}
 
-          {/* Ad Placement 3: Bottom of Generator Page */}
+          {/* Ad Placement: Bottom of Generator Page */}
           <div className="max-w-[800px] mx-auto px-4 pb-16">
             <GamAdSlot divId="div-gpt-ad-1785161218129-gen3" />
           </div>

@@ -36,6 +36,30 @@ declare global {
   interface Window { googletag: any; }
 }
 
+// Centralized slot refresh queue for GPT microtask batching.
+// Aggregates multiple dynamic React slots mounting within 50ms into a single
+// unified googletag.pubads().refresh([s1, s2, ...]) SRA request.
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+let refreshQueue: any[] = [];
+let refreshTimer: ReturnType<typeof setTimeout> | null = null;
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function queueSlotForRefresh(slot: any) {
+  refreshQueue.push(slot);
+  if (refreshTimer) clearTimeout(refreshTimer);
+  refreshTimer = setTimeout(() => {
+    if (window.googletag?.pubads && refreshQueue.length > 0) {
+      const slotsToRefresh = [...refreshQueue];
+      refreshQueue = [];
+      try {
+        window.googletag.pubads().refresh(slotsToRefresh);
+      } catch (err) {
+        console.warn("[GamAdSlot] Batch refresh error:", err);
+      }
+    }
+  }, 50);
+}
+
 export function GamAdSlot({
   divId,
   adUnitPath = "/23289090478/display",
@@ -108,8 +132,8 @@ export function GamAdSlot({
         // Display element
         gt.display(divId);
 
-        // Force GAM refresh to ensure dynamic React slot fetches creative
-        gt.pubads().refresh([slot]);
+        // Queue slot for batched GPT refresh
+        queueSlotForRefresh(slot);
       } catch (err) {
         console.warn("[GamAdSlot] defineSlot error for", divId, err);
       }
@@ -140,7 +164,7 @@ export function GamAdSlot({
 
   return (
     <div
-      className={`my-8 flex flex-col items-center justify-center w-full overflow-hidden transition-all duration-300 ${className}`}
+      className={`my-6 md:my-8 flex flex-col items-center justify-center w-full overflow-hidden transition-all duration-300 ${className}`}
       style={{ minHeight: isRendered ? undefined : minHeight }}
     >
       {showLabel && (
@@ -159,4 +183,5 @@ export function GamAdSlot({
     </div>
   );
 }
+
 
