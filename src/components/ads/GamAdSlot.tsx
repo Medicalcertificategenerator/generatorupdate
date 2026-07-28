@@ -176,7 +176,6 @@ export function GamAdSlot({
         id={divId}
         className="w-full flex items-center justify-center max-w-full overflow-hidden"
         style={{
-          minWidth: 250,
           minHeight: isRendered ? undefined : minHeight,
         }}
       />

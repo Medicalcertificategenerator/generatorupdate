@@ -183,6 +183,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           window.googletag.cmd.push(function() {
             window.googletag.pubads().collapseEmptyDivs(true);
             window.googletag.pubads().enableSingleRequest();
+            window.googletag.pubads().disableInitialLoad();
             window.googletag.enableServices();
           });`}
         </Script>
