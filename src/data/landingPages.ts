@@ -75,59 +75,60 @@ export const LANDING_PAGES: LandingPageConfig[] = [
     slug: "medical-certificate-for-leave",
     h1: "Generate Medical Certificate for Leave Instantly (Free PDF)",
     title: "Medical Certificate for Leave",
-    metaTitle: "Generate Medical Certificate for Leave (Free PDF + Instant Download + India Format)",
-    metaDescription: "Generate a medical certificate for leave in seconds. Choose realistic Indian clinic formats, edit diagnosis details, and download PDF instantly. 100% free.",
-    intro: "Need a compliant medical certificate to support your leave application? Generate a highly realistic, fully customisable certificate based on authentic Indian hospital formats in seconds.",
+    metaTitle: "Medical Leave Certificate PDF Download: Format for Employees & Students (Free Generator)",
+    metaDescription: "Generate a medical certificate for leave in seconds. Download free PDF formats for employees and students, edit diagnosis details, and get instant clinic-ready forms.",
+    intro: "Need a compliant medical certificate for leave? Generate a realistic medical leave certificate PDF download format for employees and students in seconds — based on authentic Indian clinic & hospital layouts.",
     ctaText: "Generate Leave Certificate",
     templateId: "formal-cert",
 
     whatIsHeading: "What is a General Medical Certificate for Leave?",
     whatIs: [
-      "A medical certificate for leave (बीमारी की छुट्टी का प्रमाण पत्र) is a foundational document issued by a registered medical practitioner. It formally certifies that a patient is medically unfit to attend their regular duties—whether at work, college, or school—for a specified period due to an underlying health condition.",
-      "Unlike casual leave requests, which rely purely on goodwill, a medical certificate transforms an absence from a subjective claim into an objective, medically supported fact. In the Indian context, it typically bridges the gap between an employee's sudden illness and the administrative requirement for verifiable documentation.",
+      "A medical certificate for leave (also referred to as a medical certificate for sick leave or बीमारी की छुट्टी का प्रमाण पत्र) is a foundational document issued by a registered medical practitioner. It formally certifies that a patient is medically unfit to attend their regular duties—whether at work, college, or school—for a specified period due to an underlying health condition.",
+      "Unlike casual leave requests, which rely purely on goodwill, a medical certificate transforms an absence from a subjective claim into an objective, medically supported fact. In the Indian context, it typically bridges the gap between an employee's or student's sudden illness and administrative requirements for verifiable documentation.",
     ],
     whenUsedHeading: "When is this Certificate Required?",
     whenUsed: [
-      "This document is universally utilised across corporate, educational, and government sectors whenever an individual requires an authorised medical absence. Most HR policies and university guidelines mandate its submission if an absence extends beyond two or three consecutive days.",
-      "It is frequently submitted upon returning to the office or school, though modern remote workflows increasingly require digital submission (via PDF) mid-absence to formally trigger paid sick leave provisions under the Factories Act 1948 or the Shops and Establishments Act applicable in states like Maharashtra, Karnataka, and Delhi.",
+      "This document is universally utilised across corporate offices, private employees, government sectors, schools, and universities whenever an individual requires an authorised medical absence. Most corporate HR policies for private employees and university guidelines mandate a medical certificate for student leave if an absence extends beyond 2 or 3 consecutive days.",
+      "For central government employees, leave rules under CCS Leave Rules 1972 require a formal medical certificate for government employees from an empanelled medical officer. College students submitting a medical certificate for college leave or school leave must present the document to the principal or administrative office upon returning to clear attendance condonation requirements under UGC guidelines.",
     ],
     whyNeededHeading: "Why is a Medical Certificate Crucial?",
     whyNeeded: [
-      "Employers and academic institutions require verifiable proof to differentiate genuine illness from unauthorised absenteeism (truancy). Without this specific certification, accumulated leave may be marked as Loss of Pay (LOP), or it may trigger disciplinary proceedings.",
-      "It also creates a paper trail protecting the employee or student. Under various Indian labour frameworks, a documented medical leave safeguards against arbitrary termination, while in colleges, it becomes the basis for attendance condonation under UGC guidelines.",
+      "Employers and academic institutions require verifiable proof to differentiate genuine illness from unauthorised absenteeism. Without this specific certification, accumulated leave may be marked as Loss of Pay (LOP), or trigger disciplinary action.",
+      "It also creates a paper trail protecting the employee or student. For private employees, a documented sick leave note safeguards against arbitrary termination, while for students, a student medical certificate for leave enables attendance waiver for exam eligibility.",
     ],
-    formatElementsHeading: "What Details are Included?",
+    formatElementsHeading: "What Details are Included in a Medical Certificate Format?",
     formatElements: [
       "Doctor's full name, MBBS qualifications, and NMC/State Council registration number",
       "Authentic Hospital or clinic letterhead with verifiable contact details",
       "Patient's identifying parameters (Full name, age, and gender)",
       "Strict chronological markers (Date of examination vs. Date of onset)",
-      "Clinical diagnosis or descriptive reason for the leave required",
+      "Clinical diagnosis or descriptive reason for the medical leave required",
       "Exact recommended rest period clearly demarcated with start and end dates",
       "Doctor's physical signature accompanied by the official clinic stamp or seal",
+      "Handwritten medical certificate template styling options for authentic staging",
     ],
-    howToGetHeading: "How to Obtain a Leave Certificate",
+    howToGetHeading: "How to Obtain a Medical Certificate for Sick Leave",
     howToGet: [
-      "Offline: Visit any registered MBBS or MD practitioner at a private clinic or government primary health centre. After a clinical evaluation of your symptoms, request a written certificate that explicitly notes the rest days required.",
-      "Online Generator: For staging, HR UI testing, or educational simulations, you can use our generator above. Simply select an authentic Indian clinic template, fill out the diagnosis parameters, and instantly download a realistic PDF representation. (Note: These are sample documents only).",
+      "Offline Clinical Visit: Visit any registered MBBS or MD practitioner at a private clinic or government hospital. After a clinical assessment, request a written leave certificate detailing the required rest period.",
+      "Online Sample Generator: For staging, HR UI testing, or educational simulations, you can use our generator above. Select an authentic Indian clinic template, fill out the diagnosis parameters, and instantly access a medical certificate pdf download preview. (Note: These are sample documents only).",
     ],
     legalValidityHeading: "Legal and Validity Clarification",
     legalValidity: [
       "A medical certificate is only legally binding for sick leave approval if issued by an actively registered medical practitioner following an actual clinical assessment.",
-      "Our free generator creates incredibly realistic sample documents strictly for demonstration, software testing, and educational reference. Producing a generated sample to deceive an employer constitutes fraud under Indian law.",
+      "Our free generator creates realistic sample documents strictly for demonstration, software testing, and educational reference. Producing a generated sample to deceive an employer constitutes fraud under Indian law.",
     ],
     useCases: [
-      "Corporate employees applying for standard sick leave quotas",
-      "Government staff submitting leave requests under CCS Leave Rules",
-      "School students requiring documentation for extended absences",
-      "Freelancers needing formal documentation for missed client deliverables",
-      "Travelers explaining missed flights to ticketing authorities",
+      "Medical leave certificate for private employees applying for sick leave quotas",
+      "Central government employees submitting leave requests under CCS Leave Rules",
+      "School & college students submitting a medical certificate for student leave to clear attendance condonation",
+      "Freelancers needing formal documentation for missed client deliverables or project deadlines",
+      "Submitting a medical leave certificate from employer for insurance claim reimbursements",
     ],
     benefits: [
-      "Instant PDF download with zero registration hurdles",
-      "15+ authentic Indian format styles supporting hyper-realistic staging",
-      "Complete local browser execution (your inputted data is never stored)",
-      "Handwriting simulation fonts for maximum realism",
+      "Instant medical certificate pdf download with zero signup or registration",
+      "15+ authentic Indian clinic & hospital format styles for realistic staging",
+      "Handwritten medical certificate template options using realistic script fonts",
+      "100% local browser execution — inputted data is never stored on servers",
     ],
     faqs: [
       {
@@ -139,8 +140,8 @@ export const LANDING_PAGES: LandingPageConfig[] = [
         a: "There is no standard limit. A medical certificate must cover precisely the number of rest days clinically recommended by the doctor—ranging from 2 days for viral fever to several months for complex surgeries.",
       },
       {
-        q: "Do I need a certificate for a single day of sick leave?",
-        a: "Typically, corporate HR policies allow 1 to 2 days of self-certified sick leave without formal documentation. However, certain government protocols strictly require medical proof from day one. You should verify your internal company handbook.",
+        q: "Is a medical certificate required for 1 or 2 days of sick leave?",
+        a: "Most corporate HR policies allow 1 to 2 days of self-certified sick leave without formal documentation. However, if your absence extends to 3 consecutive days, or if you work under strict government protocols (like CCS Leave Rules), a medical certificate for sick leave becomes mandatory from day one or two. Always check your company handbook.",
       },
       {
         q: "Does this template include the doctor's stamp?",
@@ -149,6 +150,50 @@ export const LANDING_PAGES: LandingPageConfig[] = [
       {
         q: "Can a doctor backdate a leave certificate?",
         a: "A doctor can issue a certificate retroactively only if they have clinical evidence confirming you were ill during that past period. Blatant backdating without examination is considered unethical and potentially fraudulent.",
+      },
+      {
+        q: "How to fill out a medical certificate for leave?",
+        a: "To fill out a medical certificate for leave, a doctor enters the clinic letterhead, patient name, age, examination date, diagnosis, and recommended rest dates. For full details on the exact parameters required, see the 'What Details are Included' section above. You can also view a pre-filled medical certificate format sample using our generator.",
+      },
+      {
+        q: "How to get a medical certificate for sick leave?",
+        a: "To get an official medical certificate for sick leave from a doctor, visit a registered MBBS practitioner or government health center for a physical assessment. The doctor evaluates your illness and writes a signed leave certificate. If you only need a sample template for HR testing or personal reference, you can generate a free leave certificate PDF instantly on our website.",
+      },
+      {
+        q: "How to write a medical certificate (doctor's perspective)",
+        a: "When a doctor writes a medical certificate for sick leave, they state the patient's name, examination date, clinical diagnosis, and required rest duration (e.g., 'advised rest for 3 days from [Start Date] to [End Date]'). The doctor must complete the form by signing, stamping, and adding their medical council registration number.",
+      },
+      {
+        q: "How to generate, make, or download a medical certificate online?",
+        a: "You can easily make and download a medical certificate PDF for demonstration or mockup purposes using our free online generator above. Select an Indian clinic format, customize the patient and doctor details, and click 'Generate Leave Certificate' to download your instant PDF or PNG copy.",
+      },
+      {
+        q: "How many days is a medical certificate valid for?",
+        a: "The validity of a medical certificate refers to its shelf-life for submission. Most corporate HR departments and universities require a leave certificate to be submitted within 3 to 7 days of returning to work. For pre-employment or fitness certificates, validity is typically 30 to 90 days. This is separate from the rest period granted by the doctor (covered in 'How many days of leave is standard' above).",
+      },
+      {
+        q: "How many sick leave days are allowed without a medical certificate?",
+        a: "In India, under the Factories Act and standard corporate leave policies, employees can take up to 2 or 3 consecutive sick days without a doctor's certificate. For longer absences, HR departments mandate a valid medical certificate to approve paid sick leave and prevent loss of pay (LOP).",
+      },
+      {
+        q: "How to apply for or take medical leave?",
+        a: "To apply for medical leave at work or college, notify your supervisor or HR by email as soon as you fall ill. Consult a registered doctor to receive a medical leave certificate. Upon returning to work (or via digital submission), attach the signed certificate to your internal HR portal (e.g., Keka, Darwinbox, or Zoho People) to formalize your paid sick leave request.",
+      },
+      {
+        q: "What does a medical certificate for leave look like?",
+        a: "A standard medical leave certificate features a clinic letterhead at the top, patient details in the middle, a clear diagnosis and rest duration, followed by the doctor's signature, registration number, and official seal at the bottom. You can view realistic sample previews of authentic Indian clinic formats directly on our generator page above.",
+      },
+      {
+        q: "How to get a medical unfit certificate?",
+        a: "A 'medical unfit certificate' is simply another name for a medical certificate for leave. It explicitly certifies that a patient is temporarily 'medically unfit for duty.' You obtain it from a registered medical practitioner after a health examination confirms you need rest for recovery.",
+      },
+      {
+        q: "Can a BAMS doctor issue a medical certificate in India?",
+        a: "Yes. Practitioners holding BAMS, BHMS, or BUMS degrees registered with their state AYUSH medical councils are legally authorized to issue medical certificates under Indian law. However, some private corporate HR policies specifically request certificates from MBBS/allopathic doctors. If you need a fitness clearance instead of a leave note, see our /fitness-medical-certificate/ guide.",
+      },
+      {
+        q: "How many days can a doctor certify at once on a medical certificate?",
+        a: "There is no fixed legal limit on how many days a doctor can grant at once—it depends entirely on clinical judgment and diagnosis severity. A doctor may grant 2–3 days for acute viral fever, 1–2 weeks for severe typhoid or jaundice, or several months for major surgical recovery.",
       },
     ],
     relatedPages: [
@@ -243,12 +288,22 @@ export const LANDING_PAGES: LandingPageConfig[] = [
         rule:
           "Tamil Nadu Shops Act rules allow employers to require a second opinion medical examination at company expense for sick leaves exceeding 10 consecutive days.",
       },
+      {
+        state: "Rajasthan",
+        rule:
+          "Under Rajasthan state service rules, medical certificates for sick leave beyond 7 days must be issued by a government medical officer or empanelled hospital doctor.",
+      },
+      {
+        state: "Uttar Pradesh",
+        rule:
+          "Uttar Pradesh government employees submitting a medical certificate for leave must attach Form 1B countersigned by a District Chief Medical Officer (CMO) for leaves exceeding 14 days.",
+      },
     ],
 
     employerInsights: [
       "HR departments flag certificates where the examination date falls on a Sunday or public holiday — ensure the date is a working day.",
       "Large MNCs increasingly cross-reference certificates against telemedicine platform records — only use legitimate platforms like Practo or Apollo 24|7.",
-      "Certificates from doctors who share a surname with the employee are flagged as potentially fraudulent in fraud-aware HR systems.",
+      "Certificates submitted for health insurance claims or employer disability reimbursements undergo strict auditing — ensure diagnosis and rest period dates match claim forms.",
       "The trend in 2025: HR software platforms (Darwinbox, Keka, Zoho People) now have certificate verification workflows that auto-flag missing fields.",
     ],
 
@@ -280,6 +335,9 @@ export const LANDING_PAGES: LandingPageConfig[] = [
       "doctor se certificate kaise le",
       "medical certificate format Hindi",
       "bimar hone par certificate",
+      "மருத்துவ விடுப்பு சான்றிதழ்",
+      "vaidyakiya praman patra in marathi",
+      "स्वास्थ्य प्रमाण पत्र फार्म pdf उत्तर प्रदेश",
     ],
   },
 
