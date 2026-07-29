@@ -28,28 +28,43 @@ export const BLOG_POSTS_PART2: BlogPostData[] = [
     featuredImage: "/images/blog/how-to-get-medical-certificate/featured.webp",
     featuredImageAlt: "Step-by-step flowchart showing 4 steps to get a medical certificate",
     images: [
-      { src: "/images/blog/how-to-get-medical-certificate/content-1.webp", alt: "Indian patient at a doctor's clinic being examined", caption: "A registered medical practitioner must conduct a physical checkup before issuing a certificate" },
-      { src: "/images/blog/how-to-get-medical-certificate/content-2.webp", alt: "Medical certificate being handed from doctor to patient at clinic counter", caption: "The doctor hands over the signed and stamped medical certificate to the recovered patient" }
+      { src: "/images/blog/how-to-get-medical-certificate/content-1.webp", alt: "Doctor examining patient for medical certificate photo and physical evaluation", caption: "A registered medical practitioner must conduct a physical checkup before issuing a certificate" },
+      { src: "/images/blog/how-to-get-medical-certificate/content-2.webp", alt: "Doctor handing over signed medical certificate sample image to patient at clinic", caption: "The doctor hands over the signed and stamped medical certificate to the recovered patient" }
     ],
-    title: "How to Get a Medical Certificate in India — Complete Guide",
-    metaDescription: "A step-by-step guide on how to get a medical certificate in India. Covers who to see, what to say, what the certificate must contain, and common mistakes to avoid.",
+    title: "How to Get a Medical Certificate Online (Govt Hospital & Clinic Guide)",
+    metaDescription: "Learn how to get a medical certificate Online & Offline Process — from a government hospital or private clinic. Covers documents to bring, likely cost, and turnaround time.",
     category: "Medical Certificates",
     date: "March 2026",
     dateModified: "May 2026",
     datePublishedIso: "2026-03-01",
     dateModifiedIso: "2026-05-01",
     readTime: "10 min read",
-    tags: ["How To", "Medical Certificate", "India", "Doctor", "Guide"],
+    tags: ["How To", "Medical Certificate", "India", "Doctor", "Guide", "Government Hospital"],
     author: "Ziven Borceg",
+    faqSchema: [
+      { question: "Can I get a medical certificate from a doctor I haven't visited before?", answer: "Yes. You don't need an existing patient relationship. Any registered doctor who examines you can issue a certificate. However, some doctors at specialist hospitals may refer you to a general physician for certification purposes." },
+      { question: "What if I am too sick to visit a doctor?", answer: "In severe cases, you or a family member can call a doctor for a home visit. Increasingly, telemedicine apps also allow remote consultation and certificate issuance. See our guide on whether online certificates are valid in India." },
+      { question: "How much does a medical certificate cost?", answer: "Costs vary widely. Government hospital certificates are often free or cost ₹10–₹100 in OPD registration fees. Private clinic certificates typically cost ₹100–₹500. Some specialists charge more for certificates requiring detailed clinical notes." },
+      { question: "What documents do I need to bring to get a medical certificate?", answer: "You should carry a valid photo ID (Aadhaar, Voter ID, or Driving Licence), any past medical records or diagnostic reports related to your current illness, and — if required by your employer or institution — your employee ID or student ID card." },
+      { question: "How long does it take to get a medical certificate?", answer: "In most cases, you can get a medical certificate on the same day during a standard OPD or clinic consultation. However, if the doctor requires blood tests, X-rays, or specialized investigations before confirming diagnosis or fitness, it may take 24 to 48 hours until results arrive." },
+      { question: "Can I get a medical certificate without visiting the clinic?", answer: "Not through legitimate means. A doctor must have examined you (in person or via a genuine telemedicine consultation) before issuing a certificate. Any certificate issued without examination is unethical and potentially fraudulent." },
+      { question: "What should I do if my employer refuses a valid certificate?", answer: "Ask for the refusal reason in writing. If the refusal seems arbitrary, raise a formal HR grievance. As a last resort, file a complaint with the relevant Labour Commissioner." }
+    ],
     content: (
       <div className="space-y-6 text-foreground/80 leading-relaxed">
         <p className="text-lg font-medium text-foreground">
           Getting a medical certificate sounds simple — visit a doctor, explain your illness, and walk out with a document. But many people end up with certificates that get rejected by their employer or institution. This guide walks you through every step of obtaining a valid medical certificate in India, from choosing the right doctor to what to do if your certificate is refused.
         </p>
 
+        <div className="bg-primary/5 p-4 rounded-xl border border-primary/20 text-sm">
+          <p>
+            <strong>Looking for specific answers?</strong> Read our guides on <InternalLink href="/blog/what-is-medical-certificate">What is a Medical Certificate</InternalLink> for a complete definition and format breakdown, or <InternalLink href="/blog/who-can-issue-medical-certificate-india">Who Can Issue a Medical Certificate in India</InternalLink> to verify if your doctor is legally authorized to sign.
+          </p>
+        </div>
+
         <section>
           <h2 className="text-2xl font-bold text-foreground mb-3">Understanding the Types of Medical Certificates</h2>
-          <p>The first step is knowing exactly what kind of certificate you are asking the doctor for. Doctors can provide various kinds of certificates, and picking the right one is essential.</p>
+          <p>The first step is knowing exactly what kind of certificate you are asking the doctor for. Doctors can provide various kinds of certificates, and picking the right one is essential. Requirements and formats can vary depending on your purpose (job joining, college admission, JOSAA counselling, visa processing, or driving licence) — always check the specific requesting institution's format guidelines before your appointment.</p>
           <ul className="list-disc list-inside space-y-1 ml-4 mt-3">
             <li><strong>Sick Leave Certificate:</strong> Covers the days you were medically unfit for work. If you need a demo or mockup of this format, see our <InternalLink href="/medical-certificate-for-leave">leave certificate generator</InternalLink>.</li>
             <li><strong>Fitness Certificate:</strong> Certifies that you are now fit to return to work. Highly requested when re-joining. You can view realistic specimens of this on our <InternalLink href="/fitness-medical-certificate">fitness medical certificate</InternalLink> generator.</li>
@@ -67,7 +82,44 @@ export const BLOG_POSTS_PART2: BlogPostData[] = [
             <li>Eye-related conditions → Ophthalmologist</li>
             <li>Dental conditions → Registered dentist (for dental illness only)</li>
           </ul>
-          <p className="mt-3">If you are a government employee, check whether your department requires an "authorised medical attendant" — typically a doctor empanelled with your department or a government hospital. The right doctor from the start avoids certificate rejection later.</p>
+          <p className="mt-3">If you are a government employee, check whether your department requires an "authorised medical attendant" — typically a doctor empanelled with your department or a government hospital. To confirm which doctors are authorized, read our detailed guide on <InternalLink href="/blog/who-can-issue-medical-certificate-india">who can issue a medical certificate in India</InternalLink>.</p>
+        </section>
+
+        {/* 3a. New Section: Getting a Certificate from a Government Hospital & Online Portals */}
+        <section className="bg-muted/40 border border-border rounded-xl p-6 md:p-8 my-8">
+          <h2 className="text-2xl font-bold text-foreground mb-4">Getting a Medical Certificate from a Government Hospital (Offline & Online)</h2>
+          <p>
+            If you need a medical certificate from a government hospital (Primary Health Centre / CHC / District Civil Hospital), the process is straightforward but requires following hospital protocols.
+          </p>
+          
+          <div className="space-y-4 mt-4 text-sm">
+            <div className="bg-card border border-border p-4 rounded-lg">
+              <h3 className="font-bold text-foreground text-base mb-1">🏛️ Offline Government Hospital Process (Step-by-Step):</h3>
+              <ol className="list-decimal list-inside space-y-2 ml-2 mt-2">
+                <li><strong>OPD Slip Counter:</strong> Visit your nearest District Hospital or PHC in the morning. Pay the nominal OPD registration fee (typically ₹10 to ₹50 depending on the state).</li>
+                <li><strong>Doctor Consultation:</strong> Proceed to the General Medicine OPD department and present your symptoms to the Medical Officer.</li>
+                <li><strong>Examination & Testing:</strong> The doctor will conduct a physical checkup. If necessary, they will order routine lab tests (blood test, X-ray) available at the hospital.</li>
+                <li><strong>Certificate Request:</strong> Ask the attending Government Medical Officer for a medical sick leave or fitness certificate.</li>
+                <li><strong>CMO Countersignature (If Required):</strong> For extended government employee leave or official administrative requests, take the certificate to the Chief Medical Officer (CMO) or Superintendent office for countersignature and hospital seal.</li>
+              </ol>
+            </div>
+
+            <div className="bg-card border border-border p-4 rounded-lg">
+              <h3 className="font-bold text-foreground text-base mb-1">🌐 Online Government Hospital Process (e-Sanjeevani & ORS):</h3>
+              <p>
+                You can also access government medical consultations online without standing in physical queues:
+              </p>
+              <ul className="list-disc list-inside space-y-2 ml-2 mt-2">
+                <li><strong>eSanjeevani Portal (esanjeevani.mohfw.gov.in):</strong> The Ministry of Health & Family Welfare operates India's official National Teleconsultation Service. Register using your mobile number, select your state OPD, consult with a government doctor via video, and receive a digitally signed e-prescription/certificate with QR verification.</li>
+                <li><strong>ORS Online Registration System (ors.gov.in):</strong> Use the ORS portal or ABHA (Ayushman Bharat Health Account) app to book an online appointment at AIIMS, Safdarjung, or state civil hospitals, bypassing physical OPD queue registration.</li>
+                <li><strong>State Health Portals:</strong> States like Rajasthan (e-Health) and Uttar Pradesh (e-Swasthya) operate state-specific portal workflows for hospital token registration and online medical verification.</li>
+              </ul>
+            </div>
+            
+            <p className="text-xs text-muted-foreground italic">
+              Note: While government hospital certificates carry maximum authority, OPD queue times can take 1–3 hours compared to private clinics. Plan your visit early in the day.
+            </p>
+          </div>
         </section>
 
         <section>
@@ -95,7 +147,6 @@ export const BLOG_POSTS_PART2: BlogPostData[] = [
           <p className="mt-3">However, telemedicine consultations have been legally valid since 2020. If you are too sick to visit a clinic, you can book an online consultation. See our guide on <InternalLink href="/blog/is-online-medical-certificate-valid-india">whether online certificates are valid in India</InternalLink> for exactly how employers view these certificates.</p>
         </section>
 
-
         <section>
           <h2 className="text-2xl font-bold text-foreground mb-3">Step 4: Request the Certificate Explicitly</h2>
           <p>Many doctors in India do not proactively offer a certificate — you need to ask for one. After the examination is complete, say: <em>"Doctor, I need a medical certificate for sick leave. I will be submitting it to my employer."</em></p>
@@ -109,8 +160,8 @@ export const BLOG_POSTS_PART2: BlogPostData[] = [
 
         <CertImage
           src="/images/medical-certificate-john-smith_1774458646754.png"
-          alt="Sample medical certificate from City General Hospital showing standard Indian format"
-          caption="Sample Medical Certificate — City General Hospital format. All fields including registration number and stamp must be present."
+          alt="Sample medical certificate photo from City General Hospital showing standard Indian format"
+          caption="Sample Medical Certificate photo — City General Hospital format. All fields including registration number and stamp must be present."
         />
 
         <section>
@@ -146,13 +197,27 @@ export const BLOG_POSTS_PART2: BlogPostData[] = [
           <p>Wondering what a real Indian medical certificate looks like? Our <InternalLink href="/">medical certificate generator</InternalLink> provides 15+ authentic clinic and hospital formats. Below is a sample from a private clinic format:</p>
           <CertImage
             src="/images/medical-certificate-template-4-new_1774458672933.webp"
-            alt="Medical certificate template from Ishnavi Clinic — private clinic format India"
+            alt="Medical certificate sample image from Ishnavi Clinic — private clinic format India"
             caption="Ishnavi Clinic format — typical private clinic medical certificate used across urban India."
           />
         </section>
 
+        {/* 3d. Standalone Hindi/Hinglish Mini-Section */}
+        <section className="bg-primary/5 border border-primary/20 rounded-xl p-6 my-8">
+          <h2 className="text-xl font-bold text-foreground mb-3">🇮🇳 हिंदी मार्गदर्शन: मेडिकल सर्टिफिकेट कैसे बनता है?</h2>
+          <p className="text-sm leading-relaxed">
+            <strong>मेडिकल सर्टिफिकेट कैसे बनता है?</strong> भारत में मेडिकल सर्टिफिकेट बनवाने के लिए आपको किसी पंजीकृत डॉक्टर (NMC या State Medical Council Registered RMP) से जांच करानी होती है।
+          </p>
+          <p className="text-sm leading-relaxed mt-2">
+            <strong>सरकारी अस्पताल से कैसे बनाएं:</strong> अपने नजदीकी जिला अस्पताल या PHC में ₹10–₹50 का OPD पर्चा बनवाएं, संबंधित विभाग के डॉक्टर से जांच कराएं और मेडिकल लीव/फिटनेस सर्टिफिकेट मांगें। 
+          </p>
+          <p className="text-sm leading-relaxed mt-2">
+            <strong>ऑनलाइन तरीका:</strong> आप सरकार के <strong>e-Sanjeevani</strong> (esanjeevani.mohfw.gov.in) पोर्टल या प्रामाणिक टेलीमेडिसिन ऐप का उपयोग करके घर बैठे डॉक्टर परामर्श ले सकते हैं। डॉक्टर की मुहर (stamp) और NMC रजिस्ट्रेशन नंबर अवश्य चेक करें।
+          </p>
+        </section>
+
         <section>
-          <h2 className="text-2xl font-bold text-foreground mb-3">Frequently Asked Questions</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">Frequently Asked Questions</h2>
           <div className="space-y-4">
             <div>
               <h3 className="text-lg font-bold text-foreground">Can I get a medical certificate from a doctor I haven't visited before?</h3>
@@ -164,7 +229,15 @@ export const BLOG_POSTS_PART2: BlogPostData[] = [
             </div>
             <div>
               <h3 className="text-lg font-bold text-foreground">How much does a medical certificate cost?</h3>
-              <p>Costs vary widely. Government hospital certificates are often free or cost ₹50–₹100 in registration fees. Private clinic certificates typically cost ₹100–₹500. Some specialists charge more for certificates requiring detailed clinical notes.</p>
+              <p>Costs vary widely. Government hospital certificates are often free or cost ₹10–₹100 in registration fees. Private clinic certificates typically cost ₹100–₹500. Some specialists charge more for certificates requiring detailed clinical notes.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-foreground">What documents do I need to bring to get a medical certificate?</h3>
+              <p>You should carry a valid photo ID (Aadhaar, Voter ID, or Driving Licence), any past medical records or diagnostic reports related to your current illness, and — if required by your employer or institution — your employee ID or student ID card.</p>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-foreground">How long does it take to get a medical certificate?</h3>
+              <p>In most cases, you can get a medical certificate on the same day during a standard OPD or clinic consultation. However, if the doctor requires blood tests, X-rays, or specialized investigations before confirming diagnosis or fitness, it may take 24 to 48 hours until results arrive.</p>
             </div>
             <div>
               <h3 className="text-lg font-bold text-foreground">Can I get a medical certificate without visiting the clinic?</h3>
