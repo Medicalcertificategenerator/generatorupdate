@@ -115,12 +115,6 @@ export function GamAdSlot({
         // Desktop (>= 1024px): 728x90, 970x90, 300x250, 336x280, fluid
         // Tablet (>= 768px):   728x90, 300x250, 336x280, fluid
         // Mobile (< 768px):    300x250, 320x100, 320x50, 336x280, fluid
-        const mapping = gt.sizeMapping()
-          .addSize([1024, 0], [[728, 90], [970, 90], [300, 250], [336, 280], "fluid"])
-          .addSize([768, 0], [[728, 90], [300, 250], [336, 280], "fluid"])
-          .addSize([0, 0], [[300, 250], [320, 100], [320, 50], [336, 280], "fluid"])
-          .build();
-
         const slotSizes: GamSize = sizes || [
           [728, 90],
           [970, 90],
@@ -134,7 +128,19 @@ export function GamAdSlot({
         const slot = gt.defineSlot(adUnitPath, slotSizes, divId);
         if (!slot) return;
 
-        slot.defineSizeMapping(mapping);
+        // Only apply the responsive breakpoint mapping when the caller is
+        // using the default multi-size slot. Fixed single-size slots (the
+        // new rectangle/box units) must request exactly what was configured
+        // in Ad Manager at every breakpoint.
+        if (!sizes) {
+          const mapping = gt.sizeMapping()
+            .addSize([1024, 0], [[728, 90], [970, 90], [300, 250], [336, 280], "fluid"])
+            .addSize([768, 0], [[728, 90], [300, 250], [336, 280], "fluid"])
+            .addSize([0, 0], [[300, 250], [320, 100], [320, 50], [336, 280], "fluid"])
+            .build();
+          slot.defineSizeMapping(mapping);
+        }
+
         slot.setCollapseEmptyDiv(true, true);
         slot.addService(gt.pubads());
         slotRef.current = slot;

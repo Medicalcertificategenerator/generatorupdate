@@ -503,6 +503,16 @@ export default function Home() {
 
       <Navbar />
 
+      {/* New: Ad Placement 0 — Before Title (Hero H1) */}
+      <div className="max-w-[336px] mx-auto px-4 pt-4">
+        <GamAdSlot
+          divId="div-gpt-ad-1785317166968-0"
+          adUnitPath="/23289090478/display-rectangle"
+          sizes={[[336, 280]]}
+          minHeight={280}
+        />
+      </div>
+
       {/* ── 1. HERO SECTION ───────────────────────────────────── */}
       <section className="relative flex flex-col items-center justify-center px-4 pt-24 pb-12 text-center overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-primary/6 via-background to-background" />
@@ -701,6 +711,16 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* New: Ad Placement — Inside Content (mid-page) */}
+      <div className="max-w-[336px] mx-auto px-4 my-2">
+        <GamAdSlot
+          divId="div-gpt-ad-1785317380773-0"
+          adUnitPath="/23289090478/displayads2"
+          sizes={[[336, 280]]}
+          minHeight={280}
+        />
+      </div>
 
       {/* ── 7. WHO USES THIS GENERATOR ──────────────────────────── */}
       <section className="px-4 py-20">
