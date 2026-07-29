@@ -104,6 +104,9 @@ export function OBCNonCreamyLayer() {
             <p className="text-base md:text-lg font-semibold text-foreground leading-relaxed">
               A <strong>Non-Creamy Layer (NCL) certificate</strong> is an official government document certifying that an OBC (Other Backward Class) individual's family income is <strong>below ₹8 lakh per year</strong>, making them eligible for OBC reservation benefits (27% quota) in central government jobs, central educational institutions (like IITs, IIMs, AIIMS), and central government welfare schemes.
             </p>
+            <p className="text-xs md:text-sm text-foreground/80 mt-3 leading-relaxed border-t border-border/50 pt-3">
+              <strong>NCL Full Form & Meaning:</strong> <strong>NCL full form is Non-Creamy Layer.</strong> In Indian government reservation rules, <strong>OBC NCL means</strong> an applicant belongs to an OBC category and meets the economic criterion (family income ≤ ₹8 lakh/year), distinguishing them from the wealthy "Creamy Layer" category.
+            </p>
             <div className="mt-4 pt-4 border-t border-border flex items-center justify-between text-xs text-muted-foreground">
               <span>Authority: Ministry of Social Justice and Empowerment (MSJE)</span>
               <span className="bg-muted px-2.5 py-1 rounded-full text-foreground/80 font-mono text-[10px]">
@@ -749,11 +752,9 @@ export function OBCNonCreamyLayer() {
                     <span>{item.q}</span>
                     {isOpen ? <ChevronUp className="w-4 h-4 text-primary shrink-0" /> : <ChevronDown className="w-4 h-4 text-muted-foreground shrink-0" />}
                   </button>
-                  {isOpen && (
-                    <div className="px-5 pb-5 text-xs md:text-sm text-foreground/80 leading-relaxed border-t border-border/40 pt-4">
-                      {item.a}
-                    </div>
-                  )}
+                  <div className={`px-5 pb-5 text-xs md:text-sm text-foreground/80 leading-relaxed border-t border-border/40 pt-4 ${isOpen ? "block" : "hidden"}`}>
+                    {item.a}
+                  </div>
                 </div>
               );
             })}
@@ -818,11 +819,9 @@ export function OBCNonCreamyLayer() {
                     <span>{faq.q}</span>
                     {isOpen ? <ChevronUp className="w-4 h-4 text-primary shrink-0" /> : <ChevronDown className="w-4 h-4 text-muted-foreground shrink-0" />}
                   </button>
-                  {isOpen && (
-                    <div className="px-5 pb-5 text-xs md:text-sm text-foreground/80 leading-relaxed border-t border-border/40 pt-4">
-                      {faq.a}
-                    </div>
-                  )}
+                  <div className={`px-5 pb-5 text-xs md:text-sm text-foreground/80 leading-relaxed border-t border-border/40 pt-4 ${isOpen ? "block" : "hidden"}`}>
+                    {faq.a}
+                  </div>
                 </div>
               );
             })}
