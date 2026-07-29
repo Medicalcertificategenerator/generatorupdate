@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 
 export interface GamAdSlotProps {
   /**
@@ -92,6 +93,7 @@ export function GamAdSlot({
   className = "",
   showLabel = false,
 }: GamAdSlotProps) {
+  const pathname = usePathname();
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const slotRef = useRef<any>(null);
   const [isEmpty, setIsEmpty] = useState(false);
@@ -185,8 +187,7 @@ export function GamAdSlot({
         }
       });
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [divId, adUnitPath]);
+  }, [divId, adUnitPath, pathname]);
 
   if (isEmpty) {
     return null;
