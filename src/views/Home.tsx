@@ -39,7 +39,7 @@ import { TEMPLATES } from "@/types/certificate";
 import { LANDING_PAGES } from "@/data/landingPages";
 import { HomeCertGenerator } from "@/components/home/HomeCertGenerator";
 import { HomeInfoSection } from "@/components/home/HomeInfoSection";
-import { GamAdSlot } from "@/components/ads/GamAdSlot";
+import { AdSenseSlot } from "@/components/ads/AdSenseSlot";
 
 const testimonials = [
   { name: "Rahul Gupta", role: "UI/UX Designer", text: "I needed placeholder documents for a healthcare app prototype. This generated realistic layouts perfectly—saved me hours of Photoshop work.", stars: 5 },
@@ -503,16 +503,6 @@ export default function Home() {
 
       <Navbar />
 
-      {/* New: Ad Placement 0 — Before Title (Hero H1) */}
-      <div className="max-w-[336px] mx-auto px-4 pt-4">
-        <GamAdSlot
-          divId="div-gpt-ad-1785317166968-0"
-          adUnitPath="/23289090478/display-rectangle"
-          sizes={[[336, 280]]}
-          minHeight={280}
-        />
-      </div>
-
       {/* ── 1. HERO SECTION ───────────────────────────────────── */}
       <section className="relative flex flex-col items-center justify-center px-4 pt-24 pb-12 text-center overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-primary/6 via-background to-background" />
@@ -542,20 +532,19 @@ export default function Home() {
         </m.div>
       </section>
 
-      {/* Ad Placement 1: Immediately After H1 / Hero Title */}
+      {/* Ads 1: Below Hero H1 */}
       <div className="max-w-4xl mx-auto px-4">
-        <GamAdSlot divId="div-gpt-ad-1785198863577-home0" minHeight={250} />
+        <AdSenseSlot slot="2199471669" />
       </div>
-
 
       {/* ── 2. INTERACTIVE GENERATOR ────────────────────────────── */}
       <section className="px-4 pb-16">
         <HomeCertGenerator />
       </section>
 
-      {/* Ad Placement 2: After Live Generator / Before About */}
+      {/* Ads 4: Before What is a Medical Certificate Generator? heading */}
       <div className="max-w-4xl mx-auto px-4">
-        <GamAdSlot divId="div-gpt-ad-1785160579530-home2" />
+        <AdSenseSlot slot="7615449878" />
       </div>
 
       {/* ── 3. ABOUT MEDICAL CERTIFICATES ───────────────────────── */}
@@ -563,6 +552,8 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10 pt-16">
             <h2 className="text-3xl font-extrabold tracking-tight mb-3">What is a Medical Certificate Generator?</h2>
+            {/* Ads 2: Just after first H2 */}
+            <AdSenseSlot slot="2508914694" className="my-4" />
             <p className="text-muted-foreground max-w-2xl mx-auto">
                A medical certificate generator is an online tool that produces highly realistic mock documents for presentations, software testing, or educational references. Generate your medical certificate online with AI-powered features safely.
             </p>
@@ -644,9 +635,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Ad Placement 3: 30-40% Scroll / After Templates Grid */}
+      {/* Ads 3: After templates grid / before landing pages */}
       <div className="max-w-4xl mx-auto px-4">
-        <GamAdSlot divId="div-gpt-ad-1785161218129-home3" />
+        <AdSenseSlot slot="9311674928" />
       </div>
 
       {/* ── 5. LANDING PAGES SECTION ───────────────────────────── */}
@@ -711,16 +702,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* New: Ad Placement — Inside Content (mid-page) */}
-      <div className="max-w-[336px] mx-auto px-4 my-2">
-        <GamAdSlot
-          divId="div-gpt-ad-1785317380773-0"
-          adUnitPath="/23289090478/displayads2"
-          sizes={[[336, 280]]}
-          minHeight={280}
-        />
-      </div>
 
       {/* ── 7. WHO USES THIS GENERATOR ──────────────────────────── */}
       <section className="px-4 py-20">
@@ -787,12 +768,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Ad Placement 5: 70% Scroll / After Who Uses */}
-      <div className="max-w-4xl mx-auto px-4">
-        <GamAdSlot divId="div-gpt-ad-1785160436458-home5" />
-      </div>
-
-
       {/* ── 8. DISCLAIMER SECTION ────────────────────────────────── */}
       <section className="px-4 py-16 bg-destructive/5 border-y border-destructive/15">
         <div className="max-w-3xl mx-auto text-center space-y-4">
@@ -842,11 +817,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Ad Placement 6: Before FAQs Section */}
-      <div className="max-w-4xl mx-auto px-4">
-        <GamAdSlot divId="div-gpt-ad-1785160579530-home6" />
-      </div>
 
       {/* ── 10. UPGRADED FAQS ACCORDION SECTION ───────────────────── */}
       <section className="px-4 py-20 bg-muted/10">
@@ -956,9 +926,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Ad Placement 7: Before Footer / End of Content */}
+      {/* Ads 5: End of content */}
       <div className="max-w-4xl mx-auto px-4">
-        <GamAdSlot divId="div-gpt-ad-1785161218129-home7" />
+        <AdSenseSlot slot="6302368208" format="autorelaxed" />
       </div>
 
       {/* ── 13. INFO SECTION & FOOTER ───────────────────────────── */}

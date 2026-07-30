@@ -7,7 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Badge } from "@/components/ui/badge";
 import { RefreshCw, Clock, ArrowLeft, ArrowRight, User, CheckCircle, Stethoscope } from "lucide-react";
 import { BLOG_POSTS } from "@/data/blogPosts";
-import { GamAdSlot } from "@/components/ads/GamAdSlot";
+import { AdSenseSlot } from "@/components/ads/AdSenseSlot";
 import { BlogAdContentRenderer } from "@/components/blog/BlogAdContentRenderer";
 
 export default function BlogPost() {
@@ -100,14 +100,14 @@ export default function BlogPost() {
               ))}
             </div>
 
-            {/* Ad Placement 1: Immediately After H1 / Article Title */}
-            <GamAdSlot divId="div-gpt-ad-1785198863577-blog0" minHeight={250} />
+            {/* Ads 1: Below title / H1 */}
+            <AdSenseSlot slot="2199471669" className="my-6" />
           </div>
         </div>
 
         {/* Article body */}
         <article className="max-w-3xl mx-auto px-4 py-8 md:py-12">
-          <BlogAdContentRenderer content={post.content} postSlug={post.slug} />
+          <BlogAdContentRenderer content={post.content} />
 
           {/* Mid / End CTA — appears automatically in every article */}
           <div className="my-10 rounded-2xl overflow-hidden border border-primary/20 bg-gradient-to-br from-primary/5 to-primary/10">
@@ -162,11 +162,6 @@ export default function BlogPost() {
               </div>
             </div>
           )}
-        </div>
-
-        {/* Ad Placement 5: After Author Bio / Before Related Articles */}
-        <div className="max-w-3xl mx-auto px-4">
-          <GamAdSlot divId="div-gpt-ad-1785160436458-blog5" />
         </div>
 
         {/* Prev / Next navigation */}

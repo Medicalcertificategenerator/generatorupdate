@@ -17,7 +17,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { GamAdSlot } from "@/components/ads/GamAdSlot";
+import { AdSenseSlot } from "@/components/ads/AdSenseSlot";
 import { TEMPLATES } from "@/types/certificate";
 import type { LandingPageConfig } from "@/data/landingPages";
 
@@ -58,9 +58,9 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
           </div>
         </section>
 
-        {/* Ad Placement 1: Immediately After H1 / Landing Title */}
+        {/* Ads 1: Below title / H1 */}
         <div className="max-w-4xl mx-auto px-4">
-          <GamAdSlot divId="div-gpt-ad-1785198863577-land0" minHeight={250} />
+          <AdSenseSlot slot="2199471669" />
         </div>
 
         {/* DEEP CONTENT SECTIONS */}
@@ -87,13 +87,13 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
           </div>
         </section>
 
-        {/* Ad Placement 2: Between Content Sections & Use Cases */}
+        {/* Ads 2: After 3-4 paragraphs / between Content and Use Cases */}
         <div className="max-w-4xl mx-auto px-4">
-          <GamAdSlot divId="div-gpt-ad-1785160579530-land2" />
+          <AdSenseSlot slot="2508914694" />
         </div>
 
-        {/* USE CASES */}
-        <section className="py-14 px-4 bg-muted/40 border-y border-border">
+      {/* USE CASES */}
+      <section className="py-14 px-4 bg-muted/40 border-y border-border">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-2xl font-bold mb-8">Real-World Use Cases</h2>
             <ul className="grid sm:grid-cols-2 gap-3">
@@ -137,11 +137,6 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
           </div>
         </section>
 
-        {/* Ad Placement 3: After Format Elements */}
-        <div className="max-w-4xl mx-auto px-4">
-          <GamAdSlot divId="div-gpt-ad-1785161218129-land3" />
-        </div>
-
         {/* GENERATOR CTA */}
         <section className="py-16 px-4 bg-primary text-primary-foreground">
           <div className="max-w-3xl mx-auto text-center">
@@ -163,6 +158,11 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
           </div>
         </section>
 
+        {/* Ads 3: After Format/CTA section */}
+        <div className="max-w-4xl mx-auto px-4">
+          <AdSenseSlot slot="9311674928" />
+        </div>
+
         {/* BENEFITS */}
         <section className="py-14 px-4">
           <div className="max-w-5xl mx-auto">
@@ -178,9 +178,9 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
           </div>
         </section>
 
-        {/* Ad Placement 4: Before FAQ */}
+        {/* Ads 4: Before FAQ */}
         <div className="max-w-4xl mx-auto px-4">
-          <GamAdSlot divId="div-gpt-ad-1785161287141-land4" />
+          <AdSenseSlot slot="7615449878" />
         </div>
 
         {/* FAQ */}
@@ -552,10 +552,9 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
           </div>
         </section>
 
-
-        {/* Ad Placement 5: Before Footer */}
+        {/* Ads 5: End of content */}
         <div className="max-w-4xl mx-auto px-4">
-          <GamAdSlot divId="div-gpt-ad-1785160436458-land5" />
+          <AdSenseSlot slot="6302368208" format="autorelaxed" />
         </div>
 
         {/* DISCLAIMER */}

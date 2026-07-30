@@ -58,7 +58,7 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useToast } from "@/hooks/use-toast";
 import { Badge } from "@/components/ui/badge";
-import { GamAdSlot } from "@/components/ads/GamAdSlot";
+import { AdSenseSlot } from "@/components/ads/AdSenseSlot";
 
 const DEFAULT_DATA: CertificateData = {
   patientName: "Raj Chourasiya",
@@ -380,6 +380,9 @@ export default function Generator() {
 
           {/* Download + Share footer */}
           <div className="p-4 border-t border-border bg-card space-y-2">
+            {/* Ads 2: Before first button that appears */}
+            <AdSenseSlot slot="2508914694" className="my-1" />
+
             {/* Download row */}
             <div className="flex gap-2">
               <Button className="flex-1 h-11 font-semibold shadow-lg shadow-primary/20" onClick={handleDownloadPng} disabled={isDownloadingPng || isDownloadingPdf}>
@@ -391,6 +394,9 @@ export default function Generator() {
                 {isDownloadingPdf ? "Generating…" : "Download PDF"}
               </Button>
             </div>
+
+            {/* Ads 3: Below first button that shows */}
+            <AdSenseSlot slot="9311674928" className="my-1" />
 
             {/* Share row */}
             <div className="flex items-center gap-1.5">
@@ -476,23 +482,10 @@ export default function Generator() {
             </div>
           </div>
 
-          {/* Ad Placement: Below Related Templates */}
-          <div className="max-w-[800px] mx-auto px-4">
-            <GamAdSlot divId="div-gpt-ad-1785160436458-gen1" />
-          </div>
-          
           {/* SEO Content Block */}
           {templateInfo && (
             <div className="px-4 md:px-8 lg:px-12 pb-20 max-w-[800px] mx-auto">
               <div className="bg-background border border-border rounded-xl p-6 md:p-8 shadow-sm">
-                <GamAdSlot
-                  divId="div-gpt-ad-1785317310768-0"
-                  adUnitPath="/23289090478/displayads"
-                  sizes={[[336, 280]]}
-                  minHeight={280}
-                  className="my-4"
-                />
-                
                 <h2 className="text-2xl font-extrabold mb-4 border-b pb-2">How the {templateInfo.name} Generator Works</h2>
                 <div className="text-sm text-foreground/80 space-y-4 mb-8">
                   <p>{templateInfo.description} Using this free tool, you can securely fill out patient details on the left panel, and they will instantly reflect on the certificate preview. Once completed, you can download a high-resolution PNG or print-ready PDF.</p>
@@ -514,17 +507,8 @@ export default function Generator() {
                   </ul>
                 </div>
 
-                {/* New: Ad Placement — Inside SEO Content */}
-                <div className="max-w-[300px] mx-auto my-4">
-                  <GamAdSlot
-                    divId="div-gpt-ad-1785317479294-0"
-                    adUnitPath="/23289090478/displayads3"
-                    sizes={[[300, 250]]}
-                    minHeight={250}
-                  />
-                </div>
-
-                <GamAdSlot divId="div-gpt-ad-1785161218129-gen-seo3" className="my-4" />
+                {/* Ads 4: Gap of 3-4 paragraphs after button / before FAQ */}
+                <AdSenseSlot slot="7615449878" className="my-6" />
 
                 <h2 className="text-2xl font-extrabold mb-4 border-b pb-2">Frequently Asked Questions</h2>
                 <div className="space-y-4 text-sm text-foreground/80 mb-8">
@@ -547,15 +531,10 @@ export default function Generator() {
                 </div>
               </div>
 
-              {/* Ad Placement: Inside SEO block */}
-              <GamAdSlot divId="div-gpt-ad-1785160579530-gen2" />
+              {/* Ads 5: End of content */}
+              <AdSenseSlot slot="6302368208" format="autorelaxed" className="my-8" />
             </div>
           )}
-
-          {/* Ad Placement: Bottom of Generator Page */}
-          <div className="max-w-[800px] mx-auto px-4 pb-16">
-            <GamAdSlot divId="div-gpt-ad-1785161218129-gen3" />
-          </div>
         </div>
         </div>
       </main>

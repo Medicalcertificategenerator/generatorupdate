@@ -3,7 +3,6 @@ import Script from "next/script";
 import { DM_Sans, Outfit } from "next/font/google";
 import { Providers } from "@/components/layout/Providers";
 import { CookieConsent } from "@/components/layout/CookieConsent";
-import { AdManager } from "@/components/ads/AdManager";
 import "@/index.css";
 
 const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-sans" });
@@ -176,22 +175,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           2. Load gpt.js afterInteractive (non-blocking).
           3. enableServices() once after the library is ready — NOT per ad slot.
         */}
-        {/* GPT library must load first so the cmd queue flushed by gpt-init
-            has a real googletag object to execute against. */}
         <Script
           strategy="afterInteractive"
-          src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6410539899255473"
           crossOrigin="anonymous"
         />
-        <Script id="gpt-init" strategy="afterInteractive">
-          {`window.googletag = window.googletag || { cmd: [] };
-          window.googletag.cmd.push(function() {
-            window.googletag.pubads().collapseEmptyDivs(true);
-            window.googletag.pubads().enableSingleRequest();
-            window.googletag.pubads().disableInitialLoad();
-            window.googletag.enableServices();
-          });`}
-        </Script>
         <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-C6359RT200" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
@@ -223,7 +212,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
         </Providers>
         <CookieConsent />
-        <AdManager />
       </body>
     </html>
   );

@@ -1,29 +1,22 @@
 "use client";
 
 import React from "react";
-import { GamAdSlot } from "@/components/ads/GamAdSlot";
+import { AdSenseSlot } from "@/components/ads/AdSenseSlot";
 
 interface BlogAdContentRendererProps {
   content: React.ReactNode;
-  postSlug?: string;
 }
 
 /**
- * Smart Blog Content Ad Renderer
- *
- * Automatically injects responsive display ads into blog articles adhering to
- * strict AdSense guidelines:
- *  - Top of content ad
- *  - Intro excerpt ad (after 1st paragraph / 2 sentences)
- *  - Ads before H2 headings & every 2-3 paragraphs
- *  - Never splits lists, tables, code blocks, images, or FAQs
- *  - Never inserts an ad directly between an H2 heading and its immediate text
- *  - Never places two ads consecutively
+ * Renders blog content with Google AdSense slots safely injected:
+ * - Ads 2 (slot 2508914694) after 3-4 paragraphs
+ * - Ads 3 (slot 9311674928) after 7-8 paragraphs
+ * - Ads 4 (slot 7615449878) after 11-12 paragraphs
+ * - Ads 5 (slot 6302368208, autorelaxed) at the end of article content
  */
-export function BlogAdContentRenderer({ content, postSlug = "article" }: BlogAdContentRendererProps) {
+export function BlogAdContentRenderer({ content }: BlogAdContentRendererProps) {
   if (!content) return null;
 
-  // Extract children from wrapper div if content is a valid React element
   let children: React.ReactNode[] = [];
   if (React.isValidElement(content) && content.props && (content.props as { children?: React.ReactNode }).children) {
     children = React.Children.toArray((content.props as { children?: React.ReactNode }).children);
@@ -33,28 +26,8 @@ export function BlogAdContentRenderer({ content, postSlug = "article" }: BlogAdC
 
   const elementsWithAds: React.ReactNode[] = [];
   let paragraphCount = 0;
-  let lastAdBlockIndex = -10; // Track block index to prevent back-to-back ads
-  let adSlotIndex = 1;
 
-  // Helper to generate unique div IDs per article slot.
-  // Uses a random 6-char suffix so no two blog articles ever produce the
-  // same div ID, even when their slugs share a common prefix.
-  const slugSuffix = postSlug
-    .replace(/[^a-zA-Z0-9]/g, "")
-    .slice(0, 12)
-    .toLowerCase();
-  const getAdDivId = () => {
-    const divId = `div-gpt-ad-${slugSuffix}-s${adSlotIndex}`;
-    adSlotIndex++;
-    return divId;
-  };
-
-  // Top of Article Ad (Placement 1)
-  elementsWithAds.push(
-    <GamAdSlot key={`blog-top-ad`} divId={getAdDivId()} className="my-6" />
-  );
-
-  children.forEach((child, index) => {
+  children.forEach((child) => {
     const isElement = React.isValidElement(child);
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const type = isElement ? (child.type as any) : null;
@@ -72,47 +45,36 @@ export function BlogAdContentRenderer({ content, postSlug = "article" }: BlogAdC
       (typeof type === "string" && type.toLowerCase() === "p") ||
       (isElement && !isH2 && typeof props?.children === "string");
 
-    // Before H2 heading check (ensure last ad wasn't within 2 blocks)
-    if (isH2 && index - lastAdBlockIndex >= 2) {
-      elementsWithAds.push(
-        <GamAdSlot key={`blog-ad-h2-${index}`} divId={getAdDivId()} className="my-6 md:my-8" />
-      );
-      lastAdBlockIndex = index;
-    }
-
     elementsWithAds.push(child);
 
     if (isParagraph) {
       paragraphCount++;
-    }
-
-    // After 1st paragraph (Intro Ad Placement 2) or every 3 paragraphs thereafter
-    const shouldInsertAfterParagraph =
-      (paragraphCount === 1 && index - lastAdBlockIndex >= 2) ||
-      (paragraphCount > 1 && paragraphCount % 3 === 0 && index - lastAdBlockIndex >= 3);
-
-    // Ensure we don't insert immediately before an upcoming H2 heading
-    const nextChild = children[index + 1];
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const nextType = React.isValidElement(nextChild) ? (nextChild.type as any) : null;
-    const nextIsH2 = nextType === "h2" || (typeof nextType === "string" && nextType.toLowerCase() === "h2");
-
-    if (shouldInsertAfterParagraph && !nextIsH2 && index < children.length - 1) {
-      elementsWithAds.push(
-        <GamAdSlot key={`blog-ad-p-${index}`} divId={getAdDivId()} className="my-6 md:my-8" />
-      );
-      lastAdBlockIndex = index;
+      // Ads 2: after 3-4 paragraphs
+      if (paragraphCount === 3) {
+        elementsWithAds.push(
+          <AdSenseSlot key="blog-ads-2" slot="2508914694" className="my-6 md:my-8" />
+        );
+      }
+      // Ads 3: after another 3-5 paragraphs (paragraph 7)
+      else if (paragraphCount === 7) {
+        elementsWithAds.push(
+          <AdSenseSlot key="blog-ads-3" slot="9311674928" className="my-6 md:my-8" />
+        );
+      }
+      // Ads 4: after another 3-5 paragraphs (paragraph 11)
+      else if (paragraphCount === 11) {
+        elementsWithAds.push(
+          <AdSenseSlot key="blog-ads-4" slot="7615449878" className="my-6 md:my-8" />
+        );
+      }
     }
   });
 
-  // End of Article Ad (Placement before CTA)
-  if (children.length - lastAdBlockIndex >= 2) {
-    elementsWithAds.push(
-      <GamAdSlot key={`blog-bottom-ad`} divId={getAdDivId()} className="my-6 md:my-8" />
-    );
-  }
+  // Ads 5: at the end of article content
+  elementsWithAds.push(
+    <AdSenseSlot key="blog-ads-5" slot="6302368208" format="autorelaxed" className="my-8" />
+  );
 
-  // Preserve outer container styling if original content was wrapped
   if (React.isValidElement(content) && (content.props as { className?: string })?.className) {
     return <div className={(content.props as { className?: string }).className}>{elementsWithAds}</div>;
   }
