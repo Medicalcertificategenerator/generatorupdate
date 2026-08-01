@@ -21,18 +21,50 @@ export function AdSenseSlot({
   const pushedRef = useRef(false);
 
   useEffect(() => {
-    if (pushedRef.current) return;
+    pushedRef.current = false;
+  }, [slot]);
 
-    try {
-      if (typeof window !== "undefined") {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+  useEffect(() => {
+    if (!slot) return;
+
+    let timeoutId: NodeJS.Timeout;
+
+    const pushAd = () => {
+      if (pushedRef.current) return;
+
+      const container = containerRef.current;
+      if (!container) return;
+
+      const ins = container.querySelector("ins.adsbygoogle");
+      if (!ins) return;
+
+      // Check if AdSense script has already initialized this <ins> element
+      const status = ins.getAttribute("data-adsbygoogle-status") || ins.getAttribute("data-ad-status");
+      if (status) {
         pushedRef.current = true;
+        return;
       }
-    } catch (err) {
-      console.error("[AdSense] push error:", err);
-    }
-  }, []);
+
+      try {
+        if (typeof window !== "undefined") {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+          pushedRef.current = true;
+        }
+      } catch (err) {
+        console.error("[AdSense] push error:", err);
+      }
+    };
+
+    // Small delay + animation frame ensures container layout & width (> 0) are computed
+    timeoutId = setTimeout(() => {
+      requestAnimationFrame(pushAd);
+    }, 150);
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [slot]);
 
   return (
     <div
@@ -40,6 +72,7 @@ export function AdSenseSlot({
       className={`w-full flex justify-center items-center my-6 overflow-hidden min-h-[90px] ${className}`}
     >
       <ins
+        key={slot}
         className="adsbygoogle"
         style={style || { display: "block", width: "100%", textAlign: "center" }}
         data-ad-client="ca-pub-6410539899255473"
@@ -50,3 +83,4 @@ export function AdSenseSlot({
     </div>
   );
 }
+

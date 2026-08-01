@@ -320,6 +320,9 @@ export default function Generator() {
                 </div>
               </section>
 
+              {/* Ads 2: Form ad inside scroll area */}
+              <AdSenseSlot slot="2508914694" className="my-4" />
+
               {/* Styling */}
               <section className="space-y-4">
                 <div className="flex items-center gap-2 pb-2 border-b">
@@ -380,9 +383,6 @@ export default function Generator() {
 
           {/* Download + Share footer */}
           <div className="p-4 border-t border-border bg-card space-y-2">
-            {/* Ads 2: Before first button that appears */}
-            <AdSenseSlot slot="2508914694" className="my-1" />
-
             {/* Download row */}
             <div className="flex gap-2">
               <Button className="flex-1 h-11 font-semibold shadow-lg shadow-primary/20" onClick={handleDownloadPng} disabled={isDownloadingPng || isDownloadingPdf}>
@@ -394,9 +394,6 @@ export default function Generator() {
                 {isDownloadingPdf ? "Generating…" : "Download PDF"}
               </Button>
             </div>
-
-            {/* Ads 3: Below first button that shows */}
-            <AdSenseSlot slot="9311674928" className="my-1" />
 
             {/* Share row */}
             <div className="flex items-center gap-1.5">
@@ -480,6 +477,11 @@ export default function Generator() {
                 ))}
               </div>
             </div>
+          </div>
+
+          {/* Ads 3: Before SEO Content Section */}
+          <div className="max-w-[800px] mx-auto px-4 mb-6">
+            <AdSenseSlot slot="9311674928" />
           </div>
 
           {/* SEO Content Block */}
