@@ -50,25 +50,9 @@ export default function PrivacyPolicy() {
             <li><strong>Analytics Cookies:</strong> Google Analytics aggregates 
             anonymised usage data to help improve the tool. No personally identifiable 
             information is collected.</li>
-            <li><strong>Advertising Cookies:</strong> This site uses Google AdSense to 
-            display advertisements. Google AdSense uses cookies to serve ads based on 
-            your browsing activity. Google's use of advertising cookies is governed by 
-            Google's Privacy Policy at{" "}
-            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" 
-               className="text-primary hover:underline">
-              policies.google.com/privacy
-            </a>.</li>
+            <li><strong>Advertising Cookies:</strong> This site uses cookies to 
+            display relevant advertisements and measure ad performance.</li>
           </ul>
-          <p>You can opt out of personalised advertising by visiting{" "}
-          <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer"
-             className="text-primary hover:underline">
-            Google Ad Settings
-          </a> or by using the{" "}
-          <a href="https://optout.networkadvertising.org/" target="_blank" rel="noopener noreferrer"
-             className="text-primary hover:underline">
-            NAI opt-out tool
-          </a>.
-          </p>
           <p>You can disable non-essential cookies in your browser settings. Note that 
           disabling cookies may affect some site functionality.</p>
         </Section>
@@ -77,7 +61,7 @@ export default function PrivacyPolicy() {
           <p>We may use the following third-party services, each governed by their own privacy policies:</p>
           <ul className="list-disc list-inside space-y-2 ml-2">
             <li>Google Analytics (usage statistics)</li>
-            <li>Google AdSense (advertisement serving)</li>
+            <li>Third-party ad networks (advertisement serving)</li>
             <li>Google Fonts (font loading)</li>
           </ul>
         </Section>

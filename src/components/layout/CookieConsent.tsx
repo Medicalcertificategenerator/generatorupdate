@@ -31,7 +31,7 @@ export function CookieConsent() {
     <div className="fixed bottom-0 left-0 right-0 z-50 bg-background border-t border-border shadow-lg px-4 py-4 md:px-6">
       <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-start sm:items-center gap-4">
         <p className="text-sm text-foreground/80 flex-1 leading-relaxed">
-          We use cookies for analytics and advertising (Google AdSense).{" "}
+          We use cookies for analytics and advertising.{" "}
           <Link href="/privacy-policy" className="text-primary hover:underline">
             Privacy Policy
           </Link>
