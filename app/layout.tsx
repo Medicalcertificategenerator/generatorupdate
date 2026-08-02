@@ -18,6 +18,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  other: {
+    "admaven-placement": "BrHn9pjCE",
+  },
   metadataBase: new URL(BASE_URL),
   title: "Generate Medical Certificate Online (Free PDF + Editable India Format)",
   description:
@@ -168,19 +171,10 @@ import { WebMcpProvider } from "@/components/WebMcpProvider";
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <meta name="admaven-placement" content="BrHn9pjCE" />
+      </head>
       <body className={`${dmSans.variable} ${outfit.variable} antialiased`}>
-        {/*
-          GPT initialisation — order matters:
-          1. Init the cmd queue synchronously so components can push before gpt.js loads.
-          2. Load gpt.js afterInteractive (non-blocking).
-          3. enableServices() once after the library is ready — NOT per ad slot.
-        */}
-        <Script
-          strategy="afterInteractive"
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6410539899255473"
-          crossOrigin="anonymous"
-        />
         <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-C6359RT200" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`

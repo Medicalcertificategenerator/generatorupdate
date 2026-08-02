@@ -39,7 +39,6 @@ import { TEMPLATES } from "@/types/certificate";
 import { LANDING_PAGES } from "@/data/landingPages";
 import { HomeCertGenerator } from "@/components/home/HomeCertGenerator";
 import { HomeInfoSection } from "@/components/home/HomeInfoSection";
-import { AdSenseSlot } from "@/components/ads/AdSenseSlot";
 
 const testimonials = [
   { name: "Rahul Gupta", role: "UI/UX Designer", text: "I needed placeholder documents for a healthcare app prototype. This generated realistic layouts perfectly—saved me hours of Photoshop work.", stars: 5 },
@@ -532,28 +531,16 @@ export default function Home() {
         </m.div>
       </section>
 
-      {/* Ads 1: Below Hero H1 */}
-      <div className="max-w-4xl mx-auto px-4">
-        <AdSenseSlot slot="2199471669" />
-      </div>
-
       {/* ── 2. INTERACTIVE GENERATOR ────────────────────────────── */}
       <section className="px-4 pb-16">
         <HomeCertGenerator />
       </section>
-
-      {/* Ads 4: Before What is a Medical Certificate Generator? heading */}
-      <div className="max-w-4xl mx-auto px-4">
-        <AdSenseSlot slot="7615449878" />
-      </div>
 
       {/* ── 3. ABOUT MEDICAL CERTIFICATES ───────────────────────── */}
       <section className="px-4 pb-20 bg-muted/20">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10 pt-16">
             <h2 className="text-3xl font-extrabold tracking-tight mb-3">What is a Medical Certificate Generator?</h2>
-            {/* Ads 2: Just after first H2 */}
-            <AdSenseSlot slot="2508914694" className="my-4" />
             <p className="text-muted-foreground max-w-2xl mx-auto">
                A medical certificate generator is an online tool that produces highly realistic mock documents for presentations, software testing, or educational references. Generate your medical certificate online with AI-powered features safely.
             </p>
@@ -634,11 +621,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Ads 3: After templates grid / before landing pages */}
-      <div className="max-w-4xl mx-auto px-4">
-        <AdSenseSlot slot="9311674928" />
-      </div>
 
       {/* ── 5. LANDING PAGES SECTION ───────────────────────────── */}
       <section className="px-4 pb-20">
@@ -925,11 +907,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Ads 5: End of content */}
-      <div className="max-w-4xl mx-auto px-4">
-        <AdSenseSlot slot="6302368208" format="autorelaxed" />
-      </div>
 
       {/* ── 13. INFO SECTION & FOOTER ───────────────────────────── */}
       <HomeInfoSection />

@@ -7,7 +7,6 @@ import { Footer } from "@/components/layout/Footer";
 import { Badge } from "@/components/ui/badge";
 import { RefreshCw, Clock, ArrowLeft, ArrowRight, User, CheckCircle, Stethoscope } from "lucide-react";
 import { BLOG_POSTS } from "@/data/blogPosts";
-import { AdSenseSlot } from "@/components/ads/AdSenseSlot";
 import { BlogAdContentRenderer } from "@/components/blog/BlogAdContentRenderer";
 
 export default function BlogPost() {
@@ -99,9 +98,6 @@ export default function BlogPost() {
                 </span>
               ))}
             </div>
-
-            {/* Ads 1: Below title / H1 */}
-            <AdSenseSlot slot="2199471669" className="my-6" />
           </div>
         </div>
 

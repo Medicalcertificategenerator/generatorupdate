@@ -58,7 +58,6 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useToast } from "@/hooks/use-toast";
 import { Badge } from "@/components/ui/badge";
-import { AdSenseSlot } from "@/components/ads/AdSenseSlot";
 
 const DEFAULT_DATA: CertificateData = {
   patientName: "Raj Chourasiya",
@@ -320,9 +319,6 @@ export default function Generator() {
                 </div>
               </section>
 
-              {/* Ads 2: Form ad inside scroll area */}
-              <AdSenseSlot slot="2508914694" className="my-4" />
-
               {/* Styling */}
               <section className="space-y-4">
                 <div className="flex items-center gap-2 pb-2 border-b">
@@ -479,11 +475,6 @@ export default function Generator() {
             </div>
           </div>
 
-          {/* Ads 3: Before SEO Content Section */}
-          <div className="max-w-[800px] mx-auto px-4 mb-6">
-            <AdSenseSlot slot="9311674928" />
-          </div>
-
           {/* SEO Content Block */}
           {templateInfo && (
             <div className="px-4 md:px-8 lg:px-12 pb-20 max-w-[800px] mx-auto">
@@ -509,9 +500,6 @@ export default function Generator() {
                   </ul>
                 </div>
 
-                {/* Ads 4: Gap of 3-4 paragraphs after button / before FAQ */}
-                <AdSenseSlot slot="7615449878" className="my-6" />
-
                 <h2 className="text-2xl font-extrabold mb-4 border-b pb-2">Frequently Asked Questions</h2>
                 <div className="space-y-4 text-sm text-foreground/80 mb-8">
                   <div>
@@ -532,9 +520,6 @@ export default function Generator() {
                   <strong>Disclaimer:</strong> This tool is for educational and staging purposes only. Fraudulent use of generated documents is strictly prohibited.
                 </div>
               </div>
-
-              {/* Ads 5: End of content */}
-              <AdSenseSlot slot="6302368208" format="autorelaxed" className="my-8" />
             </div>
           )}
         </div>

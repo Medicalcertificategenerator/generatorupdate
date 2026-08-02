@@ -17,7 +17,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { AdSenseSlot } from "@/components/ads/AdSenseSlot";
 import { TEMPLATES } from "@/types/certificate";
 import type { LandingPageConfig } from "@/data/landingPages";
 
@@ -58,11 +57,6 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
           </div>
         </section>
 
-        {/* Ads 1: Below title / H1 */}
-        <div className="max-w-4xl mx-auto px-4">
-          <AdSenseSlot slot="2199471669" />
-        </div>
-
         {/* DEEP CONTENT SECTIONS */}
         <section className="py-14 px-4">
           <div className="max-w-4xl mx-auto space-y-12">
@@ -86,11 +80,6 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
             ))}
           </div>
         </section>
-
-        {/* Ads 2: After 3-4 paragraphs / between Content and Use Cases */}
-        <div className="max-w-4xl mx-auto px-4">
-          <AdSenseSlot slot="2508914694" />
-        </div>
 
       {/* USE CASES */}
       <section className="py-14 px-4 bg-muted/40 border-y border-border">
@@ -158,11 +147,6 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
           </div>
         </section>
 
-        {/* Ads 3: After Format/CTA section */}
-        <div className="max-w-4xl mx-auto px-4">
-          <AdSenseSlot slot="9311674928" />
-        </div>
-
         {/* BENEFITS */}
         <section className="py-14 px-4">
           <div className="max-w-5xl mx-auto">
@@ -177,11 +161,6 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
             </div>
           </div>
         </section>
-
-        {/* Ads 4: Before FAQ */}
-        <div className="max-w-4xl mx-auto px-4">
-          <AdSenseSlot slot="7615449878" />
-        </div>
 
         {/* FAQ */}
         <section className="py-14 px-4 bg-muted/40 border-y border-border">
@@ -551,11 +530,6 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
             </div>
           </div>
         </section>
-
-        {/* Ads 5: End of content */}
-        <div className="max-w-4xl mx-auto px-4">
-          <AdSenseSlot slot="6302368208" format="autorelaxed" />
-        </div>
 
         {/* DISCLAIMER */}
         <div className="max-w-5xl mx-auto px-4 pb-12 pt-6">
