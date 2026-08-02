@@ -7,7 +7,7 @@ export default function DMCA() {
       <Navbar />
       <main className="flex-1 max-w-3xl mx-auto px-4 py-16 w-full">
         <h1 className="text-4xl font-extrabold mb-2">DMCA Policy</h1>
-        <p className="text-muted-foreground mb-10">Digital Millennium Copyright Act — Last updated: March 2026</p>
+        <p className="text-muted-foreground mb-10">Digital Millennium Copyright Act — Last updated: August 2026</p>
 
         <section className="mb-10">
           <h2 className="text-2xl font-bold mb-4">Copyright Policy</h2>

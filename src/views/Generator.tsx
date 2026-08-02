@@ -431,7 +431,7 @@ export default function Generator() {
               </div>
               <div className="flex items-center gap-1.5 bg-emerald-500/10 text-emerald-600 px-3 py-1 rounded-full text-[10px] font-bold border border-emerald-500/20 shadow-sm backdrop-blur-sm">
                  <Shield className="w-3 h-3" />
-                 Last Updated: July 2026 | Verified Format
+                 Last Updated: August 2026 | Verified Format
               </div>
             </div>
 

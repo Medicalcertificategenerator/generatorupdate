@@ -14,7 +14,7 @@ export default function Terms() {
       <Navbar />
       <main className="flex-1 max-w-3xl mx-auto px-4 py-16 w-full">
         <h1 className="text-4xl font-extrabold mb-2">Terms & Conditions</h1>
-        <p className="text-muted-foreground mb-10">Last updated: March 2026</p>
+        <p className="text-muted-foreground mb-10">Last updated: August 2026</p>
 
         <Section title="Acceptance of Terms">
           <p>By accessing or using Medical Certificate Generator ("the Service") at medicalcertificategenerator.co.in, you agree to be bound by these Terms and Conditions. If you do not agree to these terms, please do not use the Service.</p>

@@ -829,7 +829,7 @@ export default function Home() {
                     <div className="mt-3 pt-2 border-t border-border/40 flex items-center gap-4 text-[10px] text-muted-foreground/60">
                       <span>Reviewed by: Editorial Team</span>
                       <span>·</span>
-                      <span>Last Updated: May 2026</span>
+                      <span>Last Updated: August 2026</span>
                       <span>·</span>
                       <span>References: NMC Act 2019 / BNS 2023</span>
                     </div>

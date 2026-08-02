@@ -14,7 +14,7 @@ export default function PrivacyPolicy() {
       <Navbar />
       <main className="flex-1 max-w-3xl mx-auto px-4 py-16 w-full">
         <h1 className="text-4xl font-extrabold mb-2">Privacy Policy</h1>
-        <p className="text-muted-foreground mb-10">Last updated: May 2026</p>
+        <p className="text-muted-foreground mb-10">Last updated: August 2026</p>
 
         <Section title="Introduction">
           <p>Welcome to Medical Certificate Generator ("we", "our", "us"). We are committed to protecting your privacy. This Privacy Policy explains how we handle information when you use our Medical Certificate Generator at medicalcertificategenerator.co.in.</p>
