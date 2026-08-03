@@ -174,8 +174,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         {/* AdMaven Pop Ad */}
         <script data-cfasync="false" src="//dcbbwymp1bhlf.cloudfront.net/?wbbcd=1500345" />
-        {/* AdMaven Push Notifications */}
-        <script data-cfasync="false" src="/sw.js" />
         {/* AdMaven In Page Push */}
         <script data-cfasync="false" src="//dcbbwymp1bhlf.cloudfront.net/?wbbcd=1500383" />
       </head>
