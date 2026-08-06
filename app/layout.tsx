@@ -16,11 +16,7 @@ export const viewport: Viewport = {
   maximumScale: 5,
   themeColor: "#2563eb",
 };
-
 export const metadata: Metadata = {
-  other: {
-    "admaven-placement": "BrHn9pjCE",
-  },
   metadataBase: new URL(BASE_URL),
   title: "Generate Medical Certificate Online (Free PDF + Editable India Format)",
   description:
@@ -171,12 +167,7 @@ import { WebMcpProvider } from "@/components/WebMcpProvider";
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        {/* AdMaven Pop Ad */}
-        <script data-cfasync="false" src="//dcbbwymp1bhlf.cloudfront.net/?wbbcd=1500345" />
-        {/* AdMaven In Page Push */}
-        <script data-cfasync="false" src="//dcbbwymp1bhlf.cloudfront.net/?wbbcd=1500383" />
-      </head>
+      <head />
       <body className={`${dmSans.variable} ${outfit.variable} antialiased`}>
         <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-C6359RT200" />
         <Script id="google-analytics" strategy="afterInteractive">
