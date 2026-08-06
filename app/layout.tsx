@@ -17,6 +17,7 @@ export const viewport: Viewport = {
   themeColor: "#2563eb",
 };
 export const metadata: Metadata = {
+  referrer: "no-referrer-when-downgrade",
   other: {
     "c308fac26ac16f68833cc0a74e0795b4873eb44b": "c308fac26ac16f68833cc0a74e0795b4873eb44b",
   },
@@ -172,6 +173,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="c308fac26ac16f68833cc0a74e0795b4873eb44b" content="c308fac26ac16f68833cc0a74e0795b4873eb44b" />
+        <meta name="referrer" content="no-referrer-when-downgrade" />
       </head>
       <body className={`${dmSans.variable} ${outfit.variable} antialiased`}>
         <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-C6359RT200" />
