@@ -39,6 +39,7 @@ import { TEMPLATES } from "@/types/certificate";
 import { LANDING_PAGES } from "@/data/landingPages";
 import { HomeCertGenerator } from "@/components/home/HomeCertGenerator";
 import { HomeInfoSection } from "@/components/home/HomeInfoSection";
+import { GamAdSlot } from "@/components/ads/GamAdSlot";
 
 const testimonials = [
   { name: "Rahul Gupta", role: "UI/UX Designer", text: "I needed placeholder documents for a healthcare app prototype. This generated realistic layouts perfectly—saved me hours of Photoshop work.", stars: 5 },
@@ -531,10 +532,21 @@ export default function Home() {
         </m.div>
       </section>
 
+      {/* Ad Placement 1: Immediately After H1 / Hero Title */}
+      <div className="max-w-4xl mx-auto px-4">
+        <GamAdSlot divId="div-gpt-ad-1785198863577-home0" minHeight={250} />
+      </div>
+
+
       {/* ── 2. INTERACTIVE GENERATOR ────────────────────────────── */}
       <section className="px-4 pb-16">
         <HomeCertGenerator />
       </section>
+
+      {/* Ad Placement 2: After Live Generator / Before About */}
+      <div className="max-w-4xl mx-auto px-4">
+        <GamAdSlot divId="div-gpt-ad-1785160579530-home2" />
+      </div>
 
       {/* ── 3. ABOUT MEDICAL CERTIFICATES ───────────────────────── */}
       <section className="px-4 pb-20 bg-muted/20">
@@ -622,6 +634,11 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Ad Placement 3: 30-40% Scroll / After Templates Grid */}
+      <div className="max-w-4xl mx-auto px-4">
+        <GamAdSlot divId="div-gpt-ad-1785161218129-home3" />
+      </div>
+
       {/* ── 5. LANDING PAGES SECTION ───────────────────────────── */}
       <section className="px-4 pb-20">
         <div className="max-w-7xl mx-auto">
@@ -662,6 +679,11 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Ad Placement 4: Middle 50% Scroll / After Landing Pages */}
+      <div className="max-w-4xl mx-auto px-4">
+        <GamAdSlot divId="div-gpt-ad-1785161287141-home4" />
+      </div>
 
       {/* ── 6. HOW IT WORKS ────────────────────────────────────── */}
       <section className="px-4 py-20 bg-muted/10 border-y border-border/50">
@@ -750,6 +772,12 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Ad Placement 5: 70% Scroll / After Who Uses */}
+      <div className="max-w-4xl mx-auto px-4">
+        <GamAdSlot divId="div-gpt-ad-1785160436458-home5" />
+      </div>
+
+
       {/* ── 8. DISCLAIMER SECTION ────────────────────────────────── */}
       <section className="px-4 py-16 bg-destructive/5 border-y border-destructive/15">
         <div className="max-w-3xl mx-auto text-center space-y-4">
@@ -800,6 +828,11 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Ad Placement 6: Before FAQs Section */}
+      <div className="max-w-4xl mx-auto px-4">
+        <GamAdSlot divId="div-gpt-ad-1785160579530-home6" />
+      </div>
+
       {/* ── 10. UPGRADED FAQS ACCORDION SECTION ───────────────────── */}
       <section className="px-4 py-20 bg-muted/10">
         <div className="max-w-4xl mx-auto space-y-8">
@@ -829,7 +862,7 @@ export default function Home() {
                     <div className="mt-3 pt-2 border-t border-border/40 flex items-center gap-4 text-[10px] text-muted-foreground/60">
                       <span>Reviewed by: Editorial Team</span>
                       <span>·</span>
-                      <span>Last Updated: August 2026</span>
+                      <span>Last Updated: May 2026</span>
                       <span>·</span>
                       <span>References: NMC Act 2019 / BNS 2023</span>
                     </div>
@@ -907,6 +940,11 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Ad Placement 7: Before Footer / End of Content */}
+      <div className="max-w-4xl mx-auto px-4">
+        <GamAdSlot divId="div-gpt-ad-1785161218129-home7" />
+      </div>
 
       {/* ── 13. INFO SECTION & FOOTER ───────────────────────────── */}
       <HomeInfoSection />

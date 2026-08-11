@@ -17,10 +17,6 @@ export const viewport: Viewport = {
   themeColor: "#2563eb",
 };
 export const metadata: Metadata = {
-  referrer: "no-referrer-when-downgrade",
-  other: {
-    "c308fac26ac16f68833cc0a74e0795b4873eb44b": "c308fac26ac16f68833cc0a74e0795b4873eb44b",
-  },
   metadataBase: new URL(BASE_URL),
   title: "Generate Medical Certificate Online (Free PDF + Editable India Format)",
   description:
@@ -171,77 +167,7 @@ import { WebMcpProvider } from "@/components/WebMcpProvider";
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <meta name="c308fac26ac16f68833cc0a74e0795b4873eb44b" content="c308fac26ac16f68833cc0a74e0795b4873eb44b" />
-        <meta name="referrer" content="no-referrer-when-downgrade" />
 
-        {/* Ad Script */}
-        <script data-cfasync="false" src="//fluffy-machine.com/bE3TV.0pPv3XpyvebdmxVVJOZFDv0C3rMJjjk/0mO/DQIf1KLdTKc/yGOkTVQ_4OMvj/km" async />
-
-        {/* MultiBanner Ads */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(kup){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = kup || {};
-s.src = "//unfoldedtrade.com/btX/V.sZdJGqlG0CYdWscE/iehmd9Bu/ZcUzlXkLPwTscny/O/T/Qs4dMqzyM/tyNszNI/5bNsDagHz-NQwI";
-s.async = true;
-s.referrerPolicy = 'no-referrer-when-downgrade';
-l.parentNode.insertBefore(s, l);
-})({})`,
-          }}
-        />
-
-        {/* MultiTag Ads */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(zteu){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = zteu || {};
-s.src = "//unfoldedtrade.com/b.X/VlsUdcGclA0QYPWIcF/je/mE9xu/Z/ULlAk_PrTbcUyzOZT/Qy4ENpDLk/tTNMzPI/5oNIDCg-1/MWwW";
-s.async = true;
-s.referrerPolicy = 'no-referrer-when-downgrade';
-l.parentNode.insertBefore(s, l);
-})({})`,
-          }}
-        />
-
-        {/* InPush Ads */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(uekgx){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = uekgx || {};
-s.src = "//unfoldedtrade.com/b/X/V/s.dPG/lo0MYaWqcE/oesmY9NuZZ/U/lkk/PNTNcIy/OdTvQ_4/NNjFE/t/N/zlIr5lN/Dfg/2/NcQK";
-s.async = true;
-s.referrerPolicy = 'no-referrer-when-downgrade';
-l.parentNode.insertBefore(s, l);
-})({})`,
-          }}
-        />
-
-        {/* Video Slider Ads */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(hvhsa){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = hvhsa || {};
-s.src = "//unfoldedtrade.com/b.XVVzscddG/lN0/YLW_cz/zejm/9RuRZOUhlpkWPyTyccyNOOTXQ/4TNMzGc/tONJzgIv5fNDDFgu4NM/QP";
-s.async = true;
-s.referrerPolicy = 'no-referrer-when-downgrade';
-l.parentNode.insertBefore(s, l);
-})({})`,
-          }}
-        />
-      </head>
       <body className={`${dmSans.variable} ${outfit.variable} antialiased`}>
         <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-C6359RT200" />
         <Script id="google-analytics" strategy="afterInteractive">

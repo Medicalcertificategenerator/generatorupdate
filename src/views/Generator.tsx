@@ -58,6 +58,7 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useToast } from "@/hooks/use-toast";
 import { Badge } from "@/components/ui/badge";
+import { GamAdSlot } from "@/components/ads/GamAdSlot";
 
 const DEFAULT_DATA: CertificateData = {
   patientName: "Raj Chourasiya",
@@ -431,7 +432,7 @@ export default function Generator() {
               </div>
               <div className="flex items-center gap-1.5 bg-emerald-500/10 text-emerald-600 px-3 py-1 rounded-full text-[10px] font-bold border border-emerald-500/20 shadow-sm backdrop-blur-sm">
                  <Shield className="w-3 h-3" />
-                 Last Updated: August 2026 | Verified Format
+                 Last Updated: July 2026 | Verified Format
               </div>
             </div>
 
@@ -475,10 +476,17 @@ export default function Generator() {
             </div>
           </div>
 
+          {/* Ad Placement: Below Related Templates */}
+          <div className="max-w-[800px] mx-auto px-4">
+            <GamAdSlot divId="div-gpt-ad-1785160436458-gen1" />
+          </div>
+          
           {/* SEO Content Block */}
           {templateInfo && (
             <div className="px-4 md:px-8 lg:px-12 pb-20 max-w-[800px] mx-auto">
               <div className="bg-background border border-border rounded-xl p-6 md:p-8 shadow-sm">
+                <GamAdSlot divId="div-gpt-ad-1785160436458-gen-seo1" className="my-4" />
+                
                 <h2 className="text-2xl font-extrabold mb-4 border-b pb-2">How the {templateInfo.name} Generator Works</h2>
                 <div className="text-sm text-foreground/80 space-y-4 mb-8">
                   <p>{templateInfo.description} Using this free tool, you can securely fill out patient details on the left panel, and they will instantly reflect on the certificate preview. Once completed, you can download a high-resolution PNG or print-ready PDF.</p>
@@ -491,6 +499,8 @@ export default function Generator() {
                   </ol>
                 </div>
 
+                <GamAdSlot divId="div-gpt-ad-1785160579530-gen-seo2" className="my-4" />
+
                 <h2 className="text-2xl font-extrabold mb-4 border-b pb-2">Common Use Cases in India</h2>
                 <div className="text-sm text-foreground/80 mb-8">
                   <ul className="list-disc ml-5 space-y-2">
@@ -499,6 +509,8 @@ export default function Generator() {
                     <li><strong>Travel/Event Exemptions:</strong> Claiming refunds or exemptions for missed flights and exams due to verifiable medical reasons.</li>
                   </ul>
                 </div>
+
+                <GamAdSlot divId="div-gpt-ad-1785161218129-gen-seo3" className="my-4" />
 
                 <h2 className="text-2xl font-extrabold mb-4 border-b pb-2">Frequently Asked Questions</h2>
                 <div className="space-y-4 text-sm text-foreground/80 mb-8">
@@ -520,8 +532,16 @@ export default function Generator() {
                   <strong>Disclaimer:</strong> This tool is for educational and staging purposes only. Fraudulent use of generated documents is strictly prohibited.
                 </div>
               </div>
+
+              {/* Ad Placement: Inside SEO block */}
+              <GamAdSlot divId="div-gpt-ad-1785160579530-gen2" />
             </div>
           )}
+
+          {/* Ad Placement: Bottom of Generator Page */}
+          <div className="max-w-[800px] mx-auto px-4 pb-16">
+            <GamAdSlot divId="div-gpt-ad-1785161218129-gen3" />
+          </div>
         </div>
         </div>
       </main>
