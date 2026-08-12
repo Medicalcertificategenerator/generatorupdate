@@ -18,9 +18,6 @@ export const viewport: Viewport = {
 };
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
-  other: {
-    monetag: "98e69664cbc1e9f8cf248bc4b5967a47",
-  },
   title: "Generate Medical Certificate Online (Free PDF + Editable India Format)",
   description:
     "Create a realistic medical certificate in seconds. Choose Indian hospital formats, edit details, and download PDF instantly. 100% free & customizable.",
@@ -170,10 +167,6 @@ import { WebMcpProvider } from "@/components/WebMcpProvider";
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <meta name="monetag" content="98e69664cbc1e9f8cf248bc4b5967a47" />
-        <script src="https://quge5.com/88/tag.min.js" data-zone="269335" async data-cfasync="false" />
-      </head>
       <body className={`${dmSans.variable} ${outfit.variable} antialiased`}>
         <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-C6359RT200" />
         <Script id="google-analytics" strategy="afterInteractive">
