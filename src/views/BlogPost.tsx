@@ -106,9 +106,6 @@ export default function BlogPost() {
         <article className="max-w-3xl mx-auto px-4 py-8 md:py-12">
           <BlogAdContentRenderer content={post.content} />
 
-          {/* Ad Placement 1: After Main Article Content */}
-          <AdsterraBanner unit="300x250" />
-
           {/* Mid / End CTA — appears automatically in every article */}
           <div className="my-10 rounded-2xl overflow-hidden border border-primary/20 bg-gradient-to-br from-primary/5 to-primary/10">
             <div className="p-6 sm:p-8">
@@ -164,9 +161,9 @@ export default function BlogPost() {
           )}
         </div>
 
-        {/* Ad Placement 2: Before Article Navigation & Related Posts */}
+        {/* Ad Placement: Before Article Navigation & Related Posts */}
         <div className="max-w-3xl mx-auto px-4">
-          <AdsterraBanner unit="300x250" />
+          <AdsterraBanner unit="300x250" placementId="blog_end" />
         </div>
 
         {/* Prev / Next navigation */}

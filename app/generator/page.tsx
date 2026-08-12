@@ -11,6 +11,7 @@ import { Footer } from "@/components/layout/Footer";
 import { TEMPLATES } from "@/types/certificate";
 import { LANDING_PAGES } from "@/data/landingPages";
 import { AdsterraBanner } from "@/components/ads/AdsterraBanner";
+import { AdsterraSmartlink } from "@/components/ads/AdsterraSmartlink";
 
 const BASE_URL = "https://medicalcertificategenerator.co.in";
 
@@ -155,7 +156,7 @@ export default function GeneratorIndexPage() {
 
       {/* Ad Placement 1: After Specialized Generators */}
       <div className="max-w-4xl mx-auto px-4">
-        <AdsterraBanner unit="300x250" />
+        <AdsterraBanner unit="300x250" placementId="generator_index_specialized" />
       </div>
 
       {/* LANDING PAGES — For-purpose certificates */}
@@ -210,8 +211,15 @@ export default function GeneratorIndexPage() {
 
       {/* Ad Placement 2: After Purpose-Specific Certificates */}
       <div className="max-w-4xl mx-auto px-4">
-        <AdsterraBanner unit="300x250" />
+        <AdsterraBanner unit="300x250" placementId="generator_index_purpose" />
       </div>
+
+      {/* Smartlink CTA: Secondary Monetization Layer */}
+      <AdsterraSmartlink
+        placementId="generator_index_smartlink"
+        title="Discover Additional Medical Resources"
+        description="Explore curated healthcare guides, legal frameworks, and related documentation tools."
+      />
 
       {/* ALL TEMPLATES */}
       <section className="px-4 py-14">

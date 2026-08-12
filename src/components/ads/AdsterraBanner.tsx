@@ -39,6 +39,7 @@ export interface AdsterraBannerProps {
   label?: string;
   className?: string;
   showLabel?: boolean;
+  placementId?: string;
 }
 
 export function AdsterraBanner({
@@ -46,6 +47,7 @@ export function AdsterraBanner({
   label = "ADVERTISEMENT",
   className = "",
   showLabel = true,
+  placementId,
 }: AdsterraBannerProps) {
   const [mounted, setMounted] = useState(false);
   const [activeUnit, setActiveUnit] = useState<"300x250" | "728x90" | "320x50">("300x250");
@@ -68,6 +70,7 @@ export function AdsterraBanner({
     const width = config ? config.width : 300;
     return (
       <div
+        data-placement-id={placementId}
         className={`my-6 flex flex-col items-center justify-center w-full overflow-hidden transition-all duration-300 ${className}`}
         style={{ minHeight: `${height + (showLabel ? 20 : 0)}px` }}
       >
@@ -115,6 +118,7 @@ export function AdsterraBanner({
 
   return (
     <div
+      data-placement-id={placementId}
       className={`my-6 md:my-8 flex flex-col items-center justify-center w-full overflow-hidden transition-all duration-300 ${className}`}
     >
       {showLabel && label && (

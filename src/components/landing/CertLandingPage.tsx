@@ -20,6 +20,8 @@ import { Footer } from "@/components/layout/Footer";
 import { TEMPLATES } from "@/types/certificate";
 import type { LandingPageConfig } from "@/data/landingPages";
 import { AdsterraBanner } from "@/components/ads/AdsterraBanner";
+import { ContentAdBreak } from "@/components/ads/ContentAdBreak";
+import { AdsterraSmartlink } from "@/components/ads/AdsterraSmartlink";
 
 // Source badge colour mapping
 const SOURCE_COLORS: Record<string, string> = {
@@ -60,7 +62,7 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
 
         {/* Ad Placement 1: After Hero / Quick Answer */}
         <div className="max-w-4xl mx-auto px-4">
-          <AdsterraBanner unit="300x250" />
+          <AdsterraBanner unit="300x250" placementId="landing_intro" />
         </div>
 
         {/* DEEP CONTENT SECTIONS */}
@@ -101,6 +103,9 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
             </ul>
           </div>
         </section>
+
+        {/* Ad Placement 2: After Real-World Use Cases */}
+        <ContentAdBreak unit="300x250" placementId="landing_use_cases" />
 
         {/* FORMAT */}
         <section className="py-14 px-4">
@@ -168,9 +173,16 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
           </div>
         </section>
 
-        {/* Ad Placement 2: Before FAQ */}
+        {/* Smartlink CTA: Secondary Monetization Layer */}
+        <AdsterraSmartlink
+          placementId="landing_smartlink"
+          title="Explore Additional Health & Legal Resources"
+          description="Access related documentation tools, state policies, and partner resources."
+        />
+
+        {/* Ad Placement 3: Before FAQ */}
         <div className="max-w-4xl mx-auto px-4">
-          <AdsterraBanner unit="300x250" />
+          <AdsterraBanner unit="300x250" placementId="landing_before_faq" />
         </div>
 
         {/* FAQ */}
