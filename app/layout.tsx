@@ -172,6 +172,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="monetag" content="98e69664cbc1e9f8cf248bc4b5967a47" />
+        <script src="https://quge5.com/88/tag.min.js" data-zone="269335" async data-cfasync="false" />
       </head>
       <body className={`${dmSans.variable} ${outfit.variable} antialiased`}>
         <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-C6359RT200" />
