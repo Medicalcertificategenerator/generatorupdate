@@ -40,6 +40,7 @@ import { LANDING_PAGES } from "@/data/landingPages";
 import { HomeCertGenerator } from "@/components/home/HomeCertGenerator";
 import { HomeInfoSection } from "@/components/home/HomeInfoSection";
 import { AdsterraBanner } from "@/components/ads/AdsterraBanner";
+import { AdsterraTopAd } from "@/components/ads/AdsterraTopAd";
 import { ContentAdBreak } from "@/components/ads/ContentAdBreak";
 import { AdsterraSmartlink } from "@/components/ads/AdsterraSmartlink";
 
@@ -505,8 +506,11 @@ export default function Home() {
 
       <Navbar />
 
+      {/* UNIVERSAL TOP-OF-PAGE AD: Before Hero / H1 Title */}
+      <AdsterraTopAd placementId="home_top_universal" />
+
       {/* ── 1. HERO SECTION ───────────────────────────────────── */}
-      <section className="relative flex flex-col items-center justify-center px-4 pt-24 pb-12 text-center overflow-hidden">
+      <section className="relative flex flex-col items-center justify-center px-4 pt-8 md:pt-12 pb-12 text-center overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-primary/6 via-background to-background" />
         <div className="absolute -z-10 top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/5 rounded-full blur-3xl" />
         <m.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55 }} className="max-w-3xl mx-auto">
@@ -533,11 +537,6 @@ export default function Home() {
           </p>
         </m.div>
       </section>
-
-      {/* Ad Placement 1: After Hero / Before Generator */}
-      <div className="max-w-4xl mx-auto px-4">
-        <AdsterraBanner unit="responsive-hero" placementId="home_top" />
-      </div>
 
 
       {/* ── 2. INTERACTIVE GENERATOR ────────────────────────────── */}

@@ -11,6 +11,7 @@ import { Footer } from "@/components/layout/Footer";
 import { TEMPLATES } from "@/types/certificate";
 import { LANDING_PAGES } from "@/data/landingPages";
 import { AdsterraBanner } from "@/components/ads/AdsterraBanner";
+import { AdsterraTopAd } from "@/components/ads/AdsterraTopAd";
 import { AdsterraSmartlink } from "@/components/ads/AdsterraSmartlink";
 
 const BASE_URL = "https://medicalcertificategenerator.co.in";
@@ -51,8 +52,11 @@ export default function GeneratorIndexPage() {
     <div className="min-h-screen bg-background flex flex-col">
       <Navbar />
 
+      {/* UNIVERSAL TOP-OF-PAGE AD: Before Generator Index H1 */}
+      <AdsterraTopAd placementId="generator_index_top_universal" />
+
       {/* HERO */}
-      <section className="relative px-4 pt-20 pb-14 text-center overflow-hidden border-b border-border">
+      <section className="relative px-4 pt-6 md:pt-10 pb-14 text-center overflow-hidden border-b border-border">
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-primary/5 via-background to-background" />
         <div className="max-w-3xl mx-auto">
           <Badge

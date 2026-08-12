@@ -59,6 +59,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { useToast } from "@/hooks/use-toast";
 import { Badge } from "@/components/ui/badge";
 import { AdsterraBanner } from "@/components/ads/AdsterraBanner";
+import { AdsterraTopAd } from "@/components/ads/AdsterraTopAd";
 import { AdsterraSmartlink } from "@/components/ads/AdsterraSmartlink";
 
 const DEFAULT_DATA: CertificateData = {
@@ -206,7 +207,10 @@ export default function Generator() {
       <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
 
-      <main className="flex-1 flex flex-col overflow-hidden h-[calc(100vh-64px)]">
+      {/* UNIVERSAL TOP-OF-PAGE AD: Before Generator Title */}
+      <AdsterraTopAd placementId="generator_top_universal" />
+
+      <main className="flex-1 flex flex-col overflow-hidden">
 
         <div className="flex-1 flex flex-col md:flex-row overflow-hidden">
           {/* ── LEFT PANEL – CONTROLS ──────────────────────────── */}

@@ -9,6 +9,7 @@ import { RefreshCw, Clock, ArrowLeft, ArrowRight, User, CheckCircle, Stethoscope
 import { BLOG_POSTS } from "@/data/blogPosts";
 import { BlogAdContentRenderer } from "@/components/blog/BlogAdContentRenderer";
 import { AdsterraBanner } from "@/components/ads/AdsterraBanner";
+import { AdsterraTopAd } from "@/components/ads/AdsterraTopAd";
 
 export default function BlogPost() {
   const params = useParams<{ slug: string }>();
@@ -49,10 +50,14 @@ export default function BlogPost() {
         {/* Article header */}
         <div className="bg-muted/30 border-b border-border">
           <div className="max-w-3xl mx-auto px-4 py-12">
-            <Link href="/blog" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mb-6">
+            <Link href="/blog" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mb-4">
               <ArrowLeft className="w-4 h-4" />
               Back to Blog
             </Link>
+
+            {/* UNIVERSAL TOP-OF-PAGE AD: Before Article Title & Metadata */}
+            <AdsterraTopAd placementId="blog_top_universal" />
+
             <div className="flex flex-wrap items-center gap-3 mb-5">
               <Badge variant="secondary">{post.category}</Badge>
               

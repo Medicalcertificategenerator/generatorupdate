@@ -20,6 +20,7 @@ import { Footer } from "@/components/layout/Footer";
 import { TEMPLATES } from "@/types/certificate";
 import type { LandingPageConfig } from "@/data/landingPages";
 import { AdsterraBanner } from "@/components/ads/AdsterraBanner";
+import { AdsterraTopAd } from "@/components/ads/AdsterraTopAd";
 import { ContentAdBreak } from "@/components/ads/ContentAdBreak";
 import { AdsterraSmartlink } from "@/components/ads/AdsterraSmartlink";
 
@@ -38,6 +39,10 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
+
+      {/* UNIVERSAL TOP-OF-PAGE AD: Before Landing Page H1 Title */}
+      <AdsterraTopAd placementId="landing_top_universal" />
+
       <main className="flex-1">
         {/* HERO */}
         <section className="py-14 md:py-20 px-4 text-center bg-gradient-to-b from-primary/5 to-background border-b border-border">
