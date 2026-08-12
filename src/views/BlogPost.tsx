@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { RefreshCw, Clock, ArrowLeft, ArrowRight, User, CheckCircle, Stethoscope } from "lucide-react";
 import { BLOG_POSTS } from "@/data/blogPosts";
 import { BlogAdContentRenderer } from "@/components/blog/BlogAdContentRenderer";
+import { AdsterraBanner } from "@/components/ads/AdsterraBanner";
 
 export default function BlogPost() {
   const params = useParams<{ slug: string }>();
@@ -105,6 +106,9 @@ export default function BlogPost() {
         <article className="max-w-3xl mx-auto px-4 py-8 md:py-12">
           <BlogAdContentRenderer content={post.content} />
 
+          {/* Ad Placement 1: After Main Article Content */}
+          <AdsterraBanner unit="300x250" />
+
           {/* Mid / End CTA — appears automatically in every article */}
           <div className="my-10 rounded-2xl overflow-hidden border border-primary/20 bg-gradient-to-br from-primary/5 to-primary/10">
             <div className="p-6 sm:p-8">
@@ -158,6 +162,11 @@ export default function BlogPost() {
               </div>
             </div>
           )}
+        </div>
+
+        {/* Ad Placement 2: Before Article Navigation & Related Posts */}
+        <div className="max-w-3xl mx-auto px-4">
+          <AdsterraBanner unit="300x250" />
         </div>
 
         {/* Prev / Next navigation */}

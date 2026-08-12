@@ -19,6 +19,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { TEMPLATES } from "@/types/certificate";
 import type { LandingPageConfig } from "@/data/landingPages";
+import { AdsterraBanner } from "@/components/ads/AdsterraBanner";
 
 // Source badge colour mapping
 const SOURCE_COLORS: Record<string, string> = {
@@ -56,6 +57,11 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
             <p className="text-xs text-muted-foreground mt-4">No signup · No watermark · Free download</p>
           </div>
         </section>
+
+        {/* Ad Placement 1: After Hero / Quick Answer */}
+        <div className="max-w-4xl mx-auto px-4">
+          <AdsterraBanner unit="300x250" />
+        </div>
 
         {/* DEEP CONTENT SECTIONS */}
         <section className="py-14 px-4">
@@ -161,6 +167,11 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
             </div>
           </div>
         </section>
+
+        {/* Ad Placement 2: Before FAQ */}
+        <div className="max-w-4xl mx-auto px-4">
+          <AdsterraBanner unit="300x250" />
+        </div>
 
         {/* FAQ */}
         <section className="py-14 px-4 bg-muted/40 border-y border-border">

@@ -10,6 +10,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { TEMPLATES } from "@/types/certificate";
 import { LANDING_PAGES } from "@/data/landingPages";
+import { AdsterraBanner } from "@/components/ads/AdsterraBanner";
 
 const BASE_URL = "https://medicalcertificategenerator.co.in";
 
@@ -152,6 +153,11 @@ export default function GeneratorIndexPage() {
         </div>
       </section>
 
+      {/* Ad Placement 1: After Specialized Generators */}
+      <div className="max-w-4xl mx-auto px-4">
+        <AdsterraBanner unit="300x250" />
+      </div>
+
       {/* LANDING PAGES — For-purpose certificates */}
       <section className="px-4 py-14 bg-muted/30 border-y border-border">
         <div className="max-w-6xl mx-auto">
@@ -201,6 +207,11 @@ export default function GeneratorIndexPage() {
           )}
         </div>
       </section>
+
+      {/* Ad Placement 2: After Purpose-Specific Certificates */}
+      <div className="max-w-4xl mx-auto px-4">
+        <AdsterraBanner unit="300x250" />
+      </div>
 
       {/* ALL TEMPLATES */}
       <section className="px-4 py-14">

@@ -58,7 +58,7 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useToast } from "@/hooks/use-toast";
 import { Badge } from "@/components/ui/badge";
-import { GamAdSlot } from "@/components/ads/GamAdSlot";
+import { AdsterraBanner } from "@/components/ads/AdsterraBanner";
 
 const DEFAULT_DATA: CertificateData = {
   patientName: "Raj Chourasiya",
@@ -476,17 +476,15 @@ export default function Generator() {
             </div>
           </div>
 
-          {/* Ad Placement: Below Related Templates */}
+          {/* Ad Placement 1: Below Related Templates & Before How Generator Works */}
           <div className="max-w-[800px] mx-auto px-4">
-            <GamAdSlot divId="div-gpt-ad-1785160436458-gen1" />
+            <AdsterraBanner unit="300x250" />
           </div>
           
           {/* SEO Content Block */}
           {templateInfo && (
             <div className="px-4 md:px-8 lg:px-12 pb-20 max-w-[800px] mx-auto">
               <div className="bg-background border border-border rounded-xl p-6 md:p-8 shadow-sm">
-                <GamAdSlot divId="div-gpt-ad-1785160436458-gen-seo1" className="my-4" />
-                
                 <h2 className="text-2xl font-extrabold mb-4 border-b pb-2">How the {templateInfo.name} Generator Works</h2>
                 <div className="text-sm text-foreground/80 space-y-4 mb-8">
                   <p>{templateInfo.description} Using this free tool, you can securely fill out patient details on the left panel, and they will instantly reflect on the certificate preview. Once completed, you can download a high-resolution PNG or print-ready PDF.</p>
@@ -499,8 +497,6 @@ export default function Generator() {
                   </ol>
                 </div>
 
-                <GamAdSlot divId="div-gpt-ad-1785160579530-gen-seo2" className="my-4" />
-
                 <h2 className="text-2xl font-extrabold mb-4 border-b pb-2">Common Use Cases in India</h2>
                 <div className="text-sm text-foreground/80 mb-8">
                   <ul className="list-disc ml-5 space-y-2">
@@ -510,7 +506,8 @@ export default function Generator() {
                   </ul>
                 </div>
 
-                <GamAdSlot divId="div-gpt-ad-1785161218129-gen-seo3" className="my-4" />
+                {/* Ad Placement 2: After Common Use Cases & Before FAQ */}
+                <AdsterraBanner unit="300x250" />
 
                 <h2 className="text-2xl font-extrabold mb-4 border-b pb-2">Frequently Asked Questions</h2>
                 <div className="space-y-4 text-sm text-foreground/80 mb-8">
@@ -532,16 +529,8 @@ export default function Generator() {
                   <strong>Disclaimer:</strong> This tool is for educational and staging purposes only. Fraudulent use of generated documents is strictly prohibited.
                 </div>
               </div>
-
-              {/* Ad Placement: Inside SEO block */}
-              <GamAdSlot divId="div-gpt-ad-1785160579530-gen2" />
             </div>
           )}
-
-          {/* Ad Placement: Bottom of Generator Page */}
-          <div className="max-w-[800px] mx-auto px-4 pb-16">
-            <GamAdSlot divId="div-gpt-ad-1785161218129-gen3" />
-          </div>
         </div>
         </div>
       </main>

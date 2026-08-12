@@ -39,7 +39,7 @@ import { TEMPLATES } from "@/types/certificate";
 import { LANDING_PAGES } from "@/data/landingPages";
 import { HomeCertGenerator } from "@/components/home/HomeCertGenerator";
 import { HomeInfoSection } from "@/components/home/HomeInfoSection";
-import { GamAdSlot } from "@/components/ads/GamAdSlot";
+import { AdsterraBanner } from "@/components/ads/AdsterraBanner";
 
 const testimonials = [
   { name: "Rahul Gupta", role: "UI/UX Designer", text: "I needed placeholder documents for a healthcare app prototype. This generated realistic layouts perfectly—saved me hours of Photoshop work.", stars: 5 },
@@ -532,9 +532,9 @@ export default function Home() {
         </m.div>
       </section>
 
-      {/* Ad Placement 1: Immediately After H1 / Hero Title */}
+      {/* Ad Placement 1: After Hero / Before Generator */}
       <div className="max-w-4xl mx-auto px-4">
-        <GamAdSlot divId="div-gpt-ad-1785198863577-home0" minHeight={250} />
+        <AdsterraBanner unit="responsive-hero" />
       </div>
 
 
@@ -543,9 +543,9 @@ export default function Home() {
         <HomeCertGenerator />
       </section>
 
-      {/* Ad Placement 2: After Live Generator / Before About */}
+      {/* Ad Placement 2: After Interactive Generator */}
       <div className="max-w-4xl mx-auto px-4">
-        <GamAdSlot divId="div-gpt-ad-1785160579530-home2" />
+        <AdsterraBanner unit="300x250" />
       </div>
 
       {/* ── 3. ABOUT MEDICAL CERTIFICATES ───────────────────────── */}
@@ -634,10 +634,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Ad Placement 3: 30-40% Scroll / After Templates Grid */}
-      <div className="max-w-4xl mx-auto px-4">
-        <GamAdSlot divId="div-gpt-ad-1785161218129-home3" />
-      </div>
+
 
       {/* ── 5. LANDING PAGES SECTION ───────────────────────────── */}
       <section className="px-4 pb-20">
@@ -680,10 +677,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Ad Placement 4: Middle 50% Scroll / After Landing Pages */}
-      <div className="max-w-4xl mx-auto px-4">
-        <GamAdSlot divId="div-gpt-ad-1785161287141-home4" />
-      </div>
+
 
       {/* ── 6. HOW IT WORKS ────────────────────────────────────── */}
       <section className="px-4 py-20 bg-muted/10 border-y border-border/50">
@@ -772,10 +766,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Ad Placement 5: 70% Scroll / After Who Uses */}
-      <div className="max-w-4xl mx-auto px-4">
-        <GamAdSlot divId="div-gpt-ad-1785160436458-home5" />
-      </div>
+
 
 
       {/* ── 8. DISCLAIMER SECTION ────────────────────────────────── */}
@@ -828,9 +819,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Ad Placement 6: Before FAQs Section */}
+      {/* Ad Placement 3: Before FAQs Section */}
       <div className="max-w-4xl mx-auto px-4">
-        <GamAdSlot divId="div-gpt-ad-1785160579530-home6" />
+        <AdsterraBanner unit="300x250" />
       </div>
 
       {/* ── 10. UPGRADED FAQS ACCORDION SECTION ───────────────────── */}
@@ -941,10 +932,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Ad Placement 7: Before Footer / End of Content */}
-      <div className="max-w-4xl mx-auto px-4">
-        <GamAdSlot divId="div-gpt-ad-1785161218129-home7" />
-      </div>
+
 
       {/* ── 13. INFO SECTION & FOOTER ───────────────────────────── */}
       <HomeInfoSection />
