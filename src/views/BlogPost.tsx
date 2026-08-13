@@ -8,8 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { RefreshCw, Clock, ArrowLeft, ArrowRight, User, CheckCircle, Stethoscope } from "lucide-react";
 import { BLOG_POSTS } from "@/data/blogPosts";
 import { BlogAdContentRenderer } from "@/components/blog/BlogAdContentRenderer";
-import { AdsterraBanner } from "@/components/ads/AdsterraBanner";
-import { AdsterraTopAd } from "@/components/ads/AdsterraTopAd";
+
 
 export default function BlogPost() {
   const params = useParams<{ slug: string }>();
@@ -55,8 +54,7 @@ export default function BlogPost() {
               Back to Blog
             </Link>
 
-            {/* UNIVERSAL TOP-OF-PAGE AD: Before Article Title & Metadata */}
-            <AdsterraTopAd placementId="blog_top_universal" />
+
 
             <div className="flex flex-wrap items-center gap-3 mb-5">
               <Badge variant="secondary">{post.category}</Badge>
@@ -166,10 +164,7 @@ export default function BlogPost() {
           )}
         </div>
 
-        {/* Ad Placement: Before Article Navigation & Related Posts */}
-        <div className="max-w-3xl mx-auto px-4">
-          <AdsterraBanner unit="300x250" placementId="blog_end" />
-        </div>
+
 
         {/* Prev / Next navigation */}
         <div className="max-w-3xl mx-auto px-4 pb-16">

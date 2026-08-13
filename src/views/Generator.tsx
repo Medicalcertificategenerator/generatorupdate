@@ -58,9 +58,7 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useToast } from "@/hooks/use-toast";
 import { Badge } from "@/components/ui/badge";
-import { AdsterraBanner } from "@/components/ads/AdsterraBanner";
-import { AdsterraTopAd } from "@/components/ads/AdsterraTopAd";
-import { AdsterraSmartlink } from "@/components/ads/AdsterraSmartlink";
+
 
 const DEFAULT_DATA: CertificateData = {
   patientName: "Raj Chourasiya",
@@ -207,8 +205,7 @@ export default function Generator() {
       <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
 
-      {/* UNIVERSAL TOP-OF-PAGE AD: Before Generator Title */}
-      <AdsterraTopAd placementId="generator_top_universal" />
+
 
       <main className="flex-1 flex flex-col overflow-hidden">
 
@@ -481,10 +478,7 @@ export default function Generator() {
             </div>
           </div>
 
-          {/* Ad Placement 1: Below Related Templates & Before How Generator Works */}
-          <div className="max-w-[800px] mx-auto px-4">
-            <AdsterraBanner unit="300x250" placementId="generator_after_templates" />
-          </div>
+
           
           {/* SEO Content Block */}
           {templateInfo && (
@@ -511,15 +505,7 @@ export default function Generator() {
                   </ul>
                 </div>
 
-                {/* Ad Placement 2: After Common Use Cases & Before FAQ */}
-                <AdsterraBanner unit="300x250" placementId="generator_before_faq" />
 
-                {/* Smartlink CTA: Secondary Monetization Layer */}
-                <AdsterraSmartlink
-                  placementId="generator_smartlink"
-                  title="Explore Additional Medical Resources"
-                  description="Find relevant clinical references, documentation tools, and partner offers."
-                />
 
                 <h2 className="text-2xl font-extrabold mb-4 border-b pb-2">Frequently Asked Questions</h2>
                 <div className="space-y-4 text-sm text-foreground/80 mb-8">

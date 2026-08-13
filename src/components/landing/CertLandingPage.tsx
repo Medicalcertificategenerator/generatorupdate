@@ -19,10 +19,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { TEMPLATES } from "@/types/certificate";
 import type { LandingPageConfig } from "@/data/landingPages";
-import { AdsterraBanner } from "@/components/ads/AdsterraBanner";
-import { AdsterraTopAd } from "@/components/ads/AdsterraTopAd";
-import { ContentAdBreak } from "@/components/ads/ContentAdBreak";
-import { AdsterraSmartlink } from "@/components/ads/AdsterraSmartlink";
+
 
 // Source badge colour mapping
 const SOURCE_COLORS: Record<string, string> = {
@@ -40,8 +37,7 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
     <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
 
-      {/* UNIVERSAL TOP-OF-PAGE AD: Before Landing Page H1 Title */}
-      <AdsterraTopAd placementId="landing_top_universal" />
+
 
       <main className="flex-1">
         {/* HERO */}
@@ -65,10 +61,7 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
           </div>
         </section>
 
-        {/* Ad Placement 1: After Hero / Quick Answer */}
-        <div className="max-w-4xl mx-auto px-4">
-          <AdsterraBanner unit="300x250" placementId="landing_intro" />
-        </div>
+
 
         {/* DEEP CONTENT SECTIONS */}
         <section className="py-14 px-4">
@@ -109,8 +102,7 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
           </div>
         </section>
 
-        {/* Ad Placement 2: After Real-World Use Cases */}
-        <ContentAdBreak unit="300x250" placementId="landing_use_cases" />
+
 
         {/* FORMAT */}
         <section className="py-14 px-4">
@@ -178,17 +170,7 @@ export function CertLandingPage({ page }: { page: LandingPageConfig }) {
           </div>
         </section>
 
-        {/* Smartlink CTA: Secondary Monetization Layer */}
-        <AdsterraSmartlink
-          placementId="landing_smartlink"
-          title="Explore Additional Health & Legal Resources"
-          description="Access related documentation tools, state policies, and partner resources."
-        />
 
-        {/* Ad Placement 3: Before FAQ */}
-        <div className="max-w-4xl mx-auto px-4">
-          <AdsterraBanner unit="300x250" placementId="landing_before_faq" />
-        </div>
 
         {/* FAQ */}
         <section className="py-14 px-4 bg-muted/40 border-y border-border">

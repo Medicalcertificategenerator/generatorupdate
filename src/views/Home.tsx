@@ -39,10 +39,7 @@ import { TEMPLATES } from "@/types/certificate";
 import { LANDING_PAGES } from "@/data/landingPages";
 import { HomeCertGenerator } from "@/components/home/HomeCertGenerator";
 import { HomeInfoSection } from "@/components/home/HomeInfoSection";
-import { AdsterraBanner } from "@/components/ads/AdsterraBanner";
-import { AdsterraTopAd } from "@/components/ads/AdsterraTopAd";
-import { ContentAdBreak } from "@/components/ads/ContentAdBreak";
-import { AdsterraSmartlink } from "@/components/ads/AdsterraSmartlink";
+
 
 const testimonials = [
   { name: "Rahul Gupta", role: "UI/UX Designer", text: "I needed placeholder documents for a healthcare app prototype. This generated realistic layouts perfectly—saved me hours of Photoshop work.", stars: 5 },
@@ -506,8 +503,7 @@ export default function Home() {
 
       <Navbar />
 
-      {/* UNIVERSAL TOP-OF-PAGE AD: Before Hero / H1 Title */}
-      <AdsterraTopAd placementId="home_top_universal" />
+
 
       {/* ── 1. HERO SECTION ───────────────────────────────────── */}
       <section className="relative flex flex-col items-center justify-center px-4 pt-8 md:pt-12 pb-12 text-center overflow-hidden">
@@ -544,10 +540,7 @@ export default function Home() {
         <HomeCertGenerator />
       </section>
 
-      {/* Ad Placement 2: After Interactive Generator */}
-      <div className="max-w-4xl mx-auto px-4">
-        <AdsterraBanner unit="300x250" placementId="home_after_generator" />
-      </div>
+
 
       {/* ── 3. ABOUT MEDICAL CERTIFICATES ───────────────────────── */}
       <section className="px-4 pb-20 bg-muted/20">
@@ -635,8 +628,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Ad Placement 3: After Templates Grid */}
-      <ContentAdBreak unit="300x250" placementId="home_after_templates" />
+
 
 
       {/* ── 5. LANDING PAGES SECTION ───────────────────────────── */}
@@ -822,17 +814,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Smartlink CTA: Secondary Monetization Layer */}
-      <AdsterraSmartlink
-        placementId="home_smartlink"
-        title="Explore Healthcare Tools & External Resources"
-        description="Check out curated medical templates, verification guides, and partner utilities."
-      />
 
-      {/* Ad Placement 4: Before FAQs Section */}
-      <div className="max-w-4xl mx-auto px-4">
-        <AdsterraBanner unit="300x250" placementId="home_before_faq" />
-      </div>
 
       {/* ── 10. UPGRADED FAQS ACCORDION SECTION ───────────────────── */}
       <section className="px-4 py-20 bg-muted/10">
