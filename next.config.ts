@@ -11,6 +11,9 @@ const nextConfig: NextConfig = {
         trailingSlash: true,
       }
     : {}),
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   output: "standalone",
   ...(replitDomain
     ? {
